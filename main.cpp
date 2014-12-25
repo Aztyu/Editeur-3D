@@ -64,10 +64,8 @@ int main(void)
     //plane->setMaterialFlag(irr::video::EMF_WIREFRAME, true);
     
     */
-    zone_test.createObjet();
-    zone_test.getObjetPointer(0)->getPointer();
-    delete zone_test.getObjetPointer(0);
-
+    zone_test.createObjet(cylinder);
+   
     wchar_t titre[200];
     
     irr::scene::ILightSceneNode* lumiere = sceneManager->addLightSceneNode (0, irr::core::vector3df(70.0f, 70.0f, 20.0f),

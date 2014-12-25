@@ -21,7 +21,9 @@ public:
     virtual ~Objet();
     virtual void printObjet();
     void setPosition(float x, float y, float z);
+    void setScale(float x, float y, float z);
     Objet* getPointer();
+    irr::scene::ISceneNode* getSceneNode();
     
 protected:
     irr::scene::ISceneNode* objet;

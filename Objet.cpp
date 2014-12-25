@@ -63,9 +63,21 @@ void Objet::setPosition(float x, float y, float z){
     position.X = x;
     position.Y = y;
     position.Z = z;
+    objet->setPosition(irr::core::vector3df(x, y, z));
+}
+
+void Objet::setScale(float x, float y, float z){
+    scale.X = x;
+    scale.Y = y;
+    scale.Z = z;
+    objet->setScale(irr::core::vector3df(x, y, z));
 }
 
 Objet* Objet::getPointer(){
     return this;
+}
+
+irr::scene::ISceneNode* Objet::getSceneNode(){
+    return objet;
 }
 

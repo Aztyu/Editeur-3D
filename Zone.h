@@ -28,7 +28,8 @@ public:
     Zone(const Zone& orig);
     virtual ~Zone();
     void addObjet(Objet* objet);
-    void createObjet();
+    void removeObjet(int index);
+    void createObjet(object form);
     int getObjectCount();
     void printZone();
     Objet* getObjetPointer(int index);
