@@ -1,4 +1,5 @@
 #include "Zone.h"
+#include "event.h"
 
 int main(void)
 {
@@ -42,6 +43,9 @@ int main(void)
     irr::scene::ICameraSceneNode *camera = sceneManager->getActiveCamera();
 
     Zone zone_test("zone de test", sceneManager);
+    
+    CEventReceiver receiver(&zone_test);
+    device->setEventReceiver(&receiver);
     //set up mesh
     /*
      * irr::scene::IMeshSceneNode* cylinder = sceneManager->addMeshSceneNode(sceneManager->getMesh("ressources/cylinder.obj"));

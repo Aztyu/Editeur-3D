@@ -33,6 +33,7 @@ public:
     int getObjectCount();
     void printZone();
     Objet* getObjetPointer(int index);
+    Zone* getPointer();
     
 private:
     std::vector<Objet*> tableau;

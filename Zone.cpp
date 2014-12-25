@@ -88,3 +88,7 @@ Objet* Zone::getObjetPointer(int index){
     }
 }
 
+Zone* Zone::getPointer(){
+    return this;
+}
+

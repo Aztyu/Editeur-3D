@@ -1,49 +1,33 @@
 #include "event.h"
  
-CEventReceiver::CEventReceiver(irr::scene::IAnimatedMeshSceneNode* Nmodele)
+CEventReceiver::CEventReceiver(Zone* zone)
 {
     //On pointe le mesh passe en parametre.
-    m_Nmodele = Nmodele;
-    //Par defaut on ne bouge pas
-    m_isMoving = false;
+    zone_actuelle = zone;
 }
  
  
 bool CEventReceiver::OnEvent(const irr::SEvent &event)
 {
     //On verifie que le pointeur est ok
-    if(m_Nmodele != 0
-    //Qu'il s'agit d'un event concernant un appui/relachement de touche
-    && event.EventType == irr::EET_KEY_INPUT_EVENT
-    //Qu'il s'agit de la touche z
-    && event.KeyInput.Key == irr::KEY_KEY_Z)
-    {
-        //Si il s'agit d'un appui
-        if(event.KeyInput.PressedDown == true)
-            m_isMoving = true;
-        //Sinon c'est un relachement
-        else
-            m_isMoving = false;
-        //L'event est traite, on retourne true
-        return true;
+    if(zone_actuelle != 0 && event.EventType == irr::EET_KEY_INPUT_EVENT && event.KeyInput.PressedDown == true){
+        switch(event.KeyInput.Key){
+            case irr::KEY_KEY_1:
+                //zone_actuelle->createObjet(cylinder);
+                std::cout << "1 presse" << std::endl;
+                break;
+            case irr::KEY_KEY_2:
+                std::cout << "2 presse" << std::endl;
+                break;
+            case irr::KEY_KEY_3:
+                std::cout << "3 presse" << std::endl;
+                break;
+            case irr::KEY_KEY_4:
+                std::cout << "4 presse" << std::endl;
+                break;
+        }
     }
-    //Si on arrive la, c'est qu'on a pas traite l'event
     return false;
 }
  
- 
-void CEventReceiver::majPosMesh()
-{
-    //On verifie que le pointeur vers le mesh est
-    //ok et que la touche est enfoncee
-    if(m_Nmodele != 0 && m_isMoving == true)
-    {
-        //On commence par recuperer la position actuelle
-        irr::core::vector3df v = m_Nmodele->getPosition();
-        //On y ajoute la valeur de deplacement
-        v.X += 1.0f;
-        //On renvoie la nouvelle position
-        m_Nmodele->setPosition(v);
-    }
-}
 
