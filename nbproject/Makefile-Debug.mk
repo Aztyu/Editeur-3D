@@ -35,9 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Cube.o \
 	${OBJECTDIR}/Objet.o \
-	${OBJECTDIR}/Sphere.o \
 	${OBJECTDIR}/Zone.o \
 	${OBJECTDIR}/event.o \
 	${OBJECTDIR}/main.o
@@ -67,20 +65,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/editeur-3d.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/editeur-3d ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Cube.o: Cube.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Cube.o Cube.cpp
-
 ${OBJECTDIR}/Objet.o: Objet.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Objet.o Objet.cpp
-
-${OBJECTDIR}/Sphere.o: Sphere.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Sphere.o Sphere.cpp
 
 ${OBJECTDIR}/Zone.o: Zone.cpp 
 	${MKDIR} -p ${OBJECTDIR}

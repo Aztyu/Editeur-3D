@@ -4,9 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>Cube.h</itemPath>
       <itemPath>Objet.h</itemPath>
-      <itemPath>Sphere.h</itemPath>
       <itemPath>Zone.h</itemPath>
       <itemPath>event.h</itemPath>
     </logicalFolder>
@@ -19,9 +17,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>Cube.cpp</itemPath>
       <itemPath>Objet.cpp</itemPath>
-      <itemPath>Sphere.cpp</itemPath>
       <itemPath>Zone.cpp</itemPath>
       <itemPath>event.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -58,17 +54,9 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="Cube.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Cube.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Objet.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Objet.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Sphere.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Sphere.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Zone.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -105,17 +93,9 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="Cube.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Cube.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="Objet.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Objet.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="Sphere.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Sphere.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Zone.cpp" ex="false" tool="1" flavor2="0">
       </item>

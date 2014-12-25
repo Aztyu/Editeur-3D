@@ -9,11 +9,14 @@
 
 using namespace std;
 
-Zone::Zone() {
+Zone::Zone(irr::scene::ISceneManager* scn) {
+    scene = scn;
+    tableau.reserve(10);
 }
 
-Zone::Zone(char* name){
+Zone::Zone(char* name, irr::scene::ISceneManager* scn){
     zone_name = name;
+    scene = scn;
     tableau.reserve(10);
     cout << "Creation de la zone " << zone_name << endl;
 }
@@ -26,6 +29,10 @@ Zone::~Zone() {
 
 void Zone::addObjet(Objet* objet){
     tableau.push_back(objet);
+}
+
+void Zone::createObjet(){
+    tableau.push_back(new Objet(scene->addMeshSceneNode(scene->getMesh("ressources/pyramide.obj"))));
 }
 
 int Zone::getObjectCount(){

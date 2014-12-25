@@ -11,13 +11,24 @@
 #include <vector>
 #include "Objet.h"
 
+enum object {
+    rectangle,
+    line,
+    circle,
+    trapeze,
+    cube,
+    pyramid,
+    sphere,
+    cylinder};
+
 class Zone {
 public:
-    Zone();
-    Zone(char* name);
+    Zone(irr::scene::ISceneManager* scn);
+    Zone(char* name, irr::scene::ISceneManager* scn);
     Zone(const Zone& orig);
     virtual ~Zone();
     void addObjet(Objet* objet);
+    void createObjet();
     int getObjectCount();
     void printZone();
     Objet* getObjetPointer(int index);
@@ -25,6 +36,7 @@ public:
 private:
     std::vector<Objet*> tableau;
     std::string zone_name;
+    irr::scene::ISceneManager* scene;
 };
 
 #endif	/* ZONE_H */

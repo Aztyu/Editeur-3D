@@ -1,11 +1,16 @@
-#include <irrlicht.h>
+#include "Zone.h"
 
 int main(void)
 {
     irr::IrrlichtDevice *device = irr::createDevice (
         irr::video::EDT_OPENGL,
         irr::core::dimension2d<irr::u32>(800,600),
-        32,false,true,false,0);
+        32,
+        false,
+        true,
+        false,
+        0);
+    
     irr::video::IVideoDriver* driver = device->getVideoDriver ();
     irr::scene::ISceneManager *sceneManager = device->getSceneManager ();
 
@@ -13,7 +18,7 @@ int main(void)
     irr::gui::IGUIEnvironment *gui = device->getGUIEnvironment();
     
     irr::gui::ICursorControl *curseur = device->getCursorControl();
-    //curseur->setVisible(false);
+    curseur->setVisible(false);
     
     irr::SKeyMap keyMap[5];                    // re-assigne les commandes
     keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
@@ -30,26 +35,24 @@ int main(void)
     sceneManager->addCameraSceneNodeFPS(       // ajout de la camera FPS
         0,                                     // pas de noeud parent
         100.0f,                                // vitesse de rotation
-        0.05f,                                  // vitesse de deplacement
+        0.05f,                                 // vitesse de deplacement
         -1,                                    // pas de numero d'ID
         keyMap,                                // on change la keymap
         5);   
     irr::scene::ICameraSceneNode *camera = sceneManager->getActiveCamera();
 
-
-        //set up mesh
-    irr::scene::IMesh* mesh = sceneManager->getMesh("ressources/cylinder.obj");
-    irr::scene::IMeshSceneNode* cylinder = sceneManager->addMeshSceneNode(mesh);
-    mesh = sceneManager->getMesh("ressources/plane.obj");
-    irr::scene::IMeshSceneNode* plane = sceneManager->addMeshSceneNode(mesh);
-    mesh = sceneManager->getMesh("ressources/pyramide.obj");
-    irr::scene::IMeshSceneNode* pyramide = sceneManager->addMeshSceneNode(mesh);
+    Zone zone_test("zone de test", sceneManager);
+    //set up mesh
+    /*
+     * irr::scene::IMeshSceneNode* cylinder = sceneManager->addMeshSceneNode(sceneManager->getMesh("ressources/cylinder.obj"));
+    irr::scene::IMeshSceneNode* plane = sceneManager->addMeshSceneNode(sceneManager->getMesh("ressources/plane.obj"));
+    irr::scene::IMeshSceneNode* pyramide = sceneManager->addMeshSceneNode(sceneManager->getMesh("ressources/pyramide.obj"));
     
     cylinder->setScale(irr::core::vector3df(10.0, 10.0, 5.0));
     cylinder->setPosition(irr::core::vector3df(0.0, 10.0, 100.0));
     //cylinder->setMaterialFlag(irr::video::EMF_LIGHTING, false);
     //cylinder->setMaterialFlag(irr::video::EMF_WIREFRAME, true);
-    //cylinder->setParent()
+
     pyramide->setScale(irr::core::vector3df(15.0, 20.0, 10.0));
     pyramide->setPosition(irr::core::vector3df(0.0, 30.0, 100.0));
     //pyramide->setMaterialFlag(irr::video::EMF_LIGHTING, false);
@@ -59,6 +62,11 @@ int main(void)
     plane->setPosition(irr::core::vector3df(0.0, 0.0, 100.0));
     //plane->setMaterialFlag(irr::video::EMF_LIGHTING, false);
     //plane->setMaterialFlag(irr::video::EMF_WIREFRAME, true);
+    
+    */
+    zone_test.createObjet();
+    zone_test.getObjetPointer(0)->getPointer();
+    delete zone_test.getObjetPointer(0);
 
     wchar_t titre[200];
     
@@ -67,12 +75,10 @@ int main(void)
     
     while(device->run ())                        // la boucle de rendu
     {
-        driver->beginScene(true, true,
-            irr::video::SColor(255,255,255,255));
+        driver->beginScene(true, true, irr::video::SColor(255,255,255,255));
         irr::s32 fps = driver->getFPS();
         irr::core::vector3df posCam;
         posCam = camera->getPosition();
-
         swprintf(titre, 200, L"FPS : %d, X : %f Y : %f Z : %f", fps, posCam.X, posCam.Y, posCam.Z);
         device->setWindowCaption(titre);
         sceneManager->drawAll();
