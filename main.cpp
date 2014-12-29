@@ -15,72 +15,53 @@ int main(void)
         0);
     
     irr::video::IVideoDriver* driver = device->getVideoDriver ();
-    irr::scene::ISceneManager *sceneManager = device->getSceneManager ();
+    irr::scene::ISceneManager *sceneManager = device->getSceneManager();
 
-    // recuperation du pointeur GUI et creation d'une camera
+    // recuperation du pointeur GUI
     irr::gui::IGUIEnvironment *gui = device->getGUIEnvironment();
     
     irr::gui::ICursorControl *curseur = device->getCursorControl();
     //curseur->setVisible(false);
     
-    irr::SKeyMap keyMap[5];                    // re-assigne les commandes
-    keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
-    keyMap[0].KeyCode = irr::KEY_KEY_W;        // w
-    keyMap[1].Action = irr::EKA_MOVE_BACKWARD; // reculer
-    keyMap[1].KeyCode = irr::KEY_KEY_S;        // s
-    keyMap[2].Action = irr::EKA_STRAFE_LEFT;   // a gauche
-    keyMap[2].KeyCode = irr::KEY_KEY_A;        // a
-    keyMap[3].Action = irr::EKA_STRAFE_RIGHT;  // a droite
-    keyMap[3].KeyCode = irr::KEY_KEY_D;        // d
-    keyMap[4].Action = irr::EKA_JUMP_UP;       // saut
-    keyMap[4].KeyCode = irr::KEY_SPACE;
+
     
     sceneManager->addCameraSceneNode(       // ajout de la camera FPS
-        0,
-        irr::core::vector3df(0.0, 10.0, -30.0),                                     // pas de noeud parent
-        irr::core::vector3df(0.0, 0.0, 0.0),                                // vitesse de rotation
-        -1,
+        0,                                       //idparent
+        irr::core::vector3df(0.0, 10.0, -30.0),  //position                                    
+        irr::core::vector3df(0.0, 0.0, 0.0),     //look at
+        -1,                                      //id camera(pas d'id))
         true); 
 
     
     irr::scene::ICameraSceneNode *camera = sceneManager->getActiveCamera();
     camera->bindTargetAndRotation(true);
+    camera->setRotation(irr::core::vector3df(0.0, 0.0, 0.0));
 
-    Zone zone_test("zone de test", sceneManager);
+    Zone zone_test("zone de test", sceneManager, device);
     
-    CEventReceiver receiver(&zone_test);
+    CEventReceiver receiver(&zone_test); //bind de la gestion d'event
     device->setEventReceiver(&receiver);
-
-    irr::core::vector3df vect;
-    vect.X = 0.0;
-    vect.Y = 0.0;
-    vect.Z = 1.0;
     
-    for(int x=0; x < 38; x++){
-        vect.rotateYZBy(10, irr::core::vector3df(0.0, 0.0, 0.0));
-        cout << "vector moved" << vect.X << "," << vect.Y << "," << vect.Z << "," << endl;
-    }
-        /*irr::scene::IMeshSceneNode* cylinder = sceneManager->addMeshSceneNode(sceneManager->getMesh("ressources/cylinder.obj"));
-    irr::scene::IMeshSceneNode* plane = sceneManager->addMeshSceneNode(sceneManager->getMesh("ressources/plane.obj"));
-    irr::scene::IMeshSceneNode* pyramide = sceneManager->addMeshSceneNode(sceneManager->getMesh("ressources/pyramide.obj"));
+    irr::gui::IGUIButton *bouton = gui->addButton(
+        irr::core::rect<irr::s32>(10,10,42,42),
+        0,
+        GUI_ID_SQUARE,
+        L"1");
+    bouton->setImage(driver->getTexture("ressources/squareicon.png"));
     
-
-    cylinder->setScale(irr::core::vector3df(10.0, 10.0, 5.0));
-    cylinder->setPosition(irr::core::vector3df(0.0, 10.0, 100.0));
-    //cylinder->setMaterialFlag(irr::video::EMF_LIGHTING, false);
-    //cylinder->setMaterialFlag(irr::video::EMF_WIREFRAME, true);
-
-    pyramide->setScale(irr::core::vector3df(15.0, 20.0, 10.0));
-    pyramide->setPosition(irr::core::vector3df(0.0, 30.0, 100.0));
-    //pyramide->setMaterialFlag(irr::video::EMF_LIGHTING, false);
-    //pyramide->setMaterialFlag(irr::video::EMF_WIREFRAME, true);
+    irr::gui::IGUIButton *bouton1 = gui->addButton(
+        irr::core::rect<irr::s32>(52,10,84,42),
+        0,
+        GUI_ID_SPHERE,
+        L"2");
+    bouton1->setImage(driver->getTexture("ressources/sphereicon.png"));
     
-    plane->setScale(irr::core::vector3df(100.0, 0.0, 100.0));
-    plane->setPosition(irr::core::vector3df(0.0, 0.0, 100.0));
-    //plane->setMaterialFlag(irr::video::EMF_LIGHTING, false);
-    //plane->setMaterialFlag(irr::video::EMF_WIREFRAME, true);
-    
-    */
+    irr::gui::IGUIButton *bouton2 = gui->addButton(
+        irr::core::rect<irr::s32>(94,10,126,42),
+        0,
+        GUI_ID_PYRAMID,
+        L"3");
+    bouton2->setImage(driver->getTexture("ressources/pyramidicon.png"));
     
     zone_test.createObjet(cylinder);
     zone_test.createObjet(pyramid);
