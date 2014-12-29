@@ -73,6 +73,14 @@ void Objet::setScale(float x, float y, float z){
     objet->setScale(irr::core::vector3df(x, y, z));
 }
 
+void Objet::setRotation(float x, float y, float z){
+    objet->setRotation(irr::core::vector3df(x, y, z));
+}
+
+void Objet::setParent(Objet* parent){
+    objet->setParent(parent->getSceneNode());
+}
+
 Objet* Objet::getPointer(){
     return this;
 }

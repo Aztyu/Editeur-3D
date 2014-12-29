@@ -34,11 +34,13 @@ public:
     void printZone();
     Objet* getObjetPointer(int index);
     Zone* getPointer();
+    irr::scene::ICameraSceneNode* getCamerapointer();
     
 private:
     std::vector<Objet*> tableau;
     std::string zone_name;
     irr::scene::ISceneManager* scene;
+    irr::scene::ICameraSceneNode *current_camera;
 };
 
 #endif	/* ZONE_H */

@@ -11,12 +11,14 @@ using namespace std;
 
 Zone::Zone(irr::scene::ISceneManager* scn) {
     scene = scn;
+    current_camera = scene->getActiveCamera();
     tableau.reserve(10);
 }
 
 Zone::Zone(char* name, irr::scene::ISceneManager* scn){
     zone_name = name;
     scene = scn;
+    current_camera = scene->getActiveCamera();
     tableau.reserve(10);
     cout << "Creation de la zone " << zone_name << endl;
 }
@@ -90,5 +92,9 @@ Objet* Zone::getObjetPointer(int index){
 
 Zone* Zone::getPointer(){
     return this;
+}
+
+irr::scene::ICameraSceneNode* Zone::getCamerapointer(){
+    return current_camera;
 }
 

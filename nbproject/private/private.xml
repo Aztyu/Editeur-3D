@@ -8,9 +8,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Aztyu/Documents/Developpement/Editeur-3D/main.cpp</file>
+            <file>file:/C:/Users/Aztyu/Documents/Developpement/Editeur-3D/event.h</file>
+            <file>file:/C:/Users/Aztyu/Documents/Developpement/Editeur-3D/editor.h</file>
             <file>file:/C:/Users/Aztyu/Documents/Developpement/Editeur-3D/Zone.cpp</file>
+            <file>file:/C:/Users/Aztyu/Documents/Developpement/Editeur-3D/event.cpp</file>
             <file>file:/C:/Users/Aztyu/Documents/Developpement/Editeur-3D/Objet.cpp</file>
             <file>file:/C:/Users/Aztyu/Documents/Developpement/Editeur-3D/Objet.h</file>
+            <file>file:/C:/Users/Aztyu/Documents/Developpement/Editeur-3D/editor.cpp</file>
             <file>file:/C:/Users/Aztyu/Documents/Developpement/Editeur-3D/Zone.h</file>
         </group>
     </open-files>

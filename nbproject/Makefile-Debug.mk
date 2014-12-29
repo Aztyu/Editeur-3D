@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Objet.o \
 	${OBJECTDIR}/Zone.o \
+	${OBJECTDIR}/editor.o \
 	${OBJECTDIR}/event.o \
 	${OBJECTDIR}/main.o
 
@@ -74,6 +75,11 @@ ${OBJECTDIR}/Zone.o: Zone.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Zone.o Zone.cpp
+
+${OBJECTDIR}/editor.o: editor.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/editor.o editor.cpp
 
 ${OBJECTDIR}/event.o: event.cpp 
 	${MKDIR} -p ${OBJECTDIR}

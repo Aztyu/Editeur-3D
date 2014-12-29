@@ -22,6 +22,8 @@ public:
     virtual void printObjet();
     void setPosition(float x, float y, float z);
     void setScale(float x, float y, float z);
+    void setRotation(float x, float y, float z);
+    void setParent(Objet* parent);
     Objet* getPointer();
     irr::scene::ISceneNode* getSceneNode();
     
