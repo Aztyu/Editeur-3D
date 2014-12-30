@@ -9,13 +9,14 @@
 
 using namespace std;
 
-Zone::Zone(char* name){
+Zone::Zone(char* name, irr::scene::ISceneManager* scene){
     zone_name = name;
     tableau.reserve(10);
     
     for(int i=0; i < 8; i++){
         type_number[i] = 0;
     }
+    current_scene = scene;
     
     cout << "Creation de la zone " << zone_name << endl;
 }
@@ -115,8 +116,8 @@ void Zone::createObjet(object form){
     }
     type += ".obj";
     tableau.push_back(new Objet(current_scene->addMeshSceneNode(current_scene->getMesh(type.c_str())), name));
-    wchar_t buffer [100];
-    swprintf( buffer, 100, L"%s", name);
+    //wchar_t buffer [100];
+    //swprintf( buffer, 100, L"%s", name);
     //box_global->addItem(buffer);
 }
 
