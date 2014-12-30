@@ -42,7 +42,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
 
                     direction_mvnt.normalize();
                     direction.X = 5*cos(acos(direction.X));
-                    direction.Y = 5*sin(asin(direction.Y));
+                    direction.Z = 5*sin(asin(direction.Z));
 
                     position.X += direction_mvnt.X;
                     position.Z += direction_mvnt.Z;
@@ -63,7 +63,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
 
                     direction_mvnt.normalize();
                     direction.X = 5*cos(acos(direction.X));
-                    direction.Y = 5*sin(asin(direction.Y));
+                    direction.Z = 5*sin(asin(direction.Y));
 
                     position.X -= direction_mvnt.X;
                     position.Z -= direction_mvnt.Z;
@@ -107,7 +107,21 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
             switch(event.GUIEvent.EventType)
             {
                 case irr::gui::EGET_BUTTON_CLICKED:
-                    irr::core::vector3df position = editeur_actuelle->getCamera()->getTarget();
+                    irr::core::vector3df position = editeur_actuelle->getCamera()->getPosition();
+                    irr::core::vector3df target = editeur_actuelle->getCamera()->getTarget();
+                    irr::core::vector3df direction;
+                    irr::core::vector3df direction_mvnt;
+                    
+                    direction_mvnt.X = target.X - position.X;
+                    direction_mvnt.Y = 0;
+                    direction_mvnt.Z = target.Z - position.Z;
+
+                    direction_mvnt.normalize();
+                    direction.X = 18*cos(acos(direction_mvnt.X));
+                    direction.Z = 18*sin(asin(direction_mvnt.Z));
+
+                    position.X += direction.X;
+                    position.Z += direction.Z;
                     position.Y = 0;
                     
                     switch(id){

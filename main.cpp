@@ -37,9 +37,10 @@ int main(void)
     camera->bindTargetAndRotation(true);
     camera->setRotation(irr::core::vector3df(0.0, 0.0, 0.0));
 
-    Zone zone_test("zone de test", sceneManager, device);
+    Zone zone_test("zone de test", sceneManager);
+    Editor editeur(&zone_test, camera, sceneManager);
     
-    CEventReceiver receiver(&zone_test); //bind de la gestion d'event
+    CEventReceiver receiver(&editeur); //bind de la gestion d'event
     device->setEventReceiver(&receiver);
     
     irr::gui::IGUIButton *bouton = gui->addButton(
