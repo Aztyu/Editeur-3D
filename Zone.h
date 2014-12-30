@@ -8,8 +8,8 @@
 #ifndef ZONE_H
 #define	ZONE_H
 
-#include <vector>
 #include "Objet.h"
+#include <vector>
 
 enum object {
     rectangle,
@@ -21,17 +21,16 @@ enum object {
     sphere,
     cylinder};
     
-enum
-{
+enum {
     GUI_ID_SQUARE,
     GUI_ID_SPHERE,
-    GUI_ID_PYRAMID
+    GUI_ID_PYRAMID,
+    GUI_ID_OBJECT
 };
 
 class Zone {
     public:
-        Zone(irr::scene::ISceneManager* scn, irr::IrrlichtDevice* device);
-        Zone(char* name, irr::scene::ISceneManager* scn, irr::IrrlichtDevice* device);
+        Zone(char* name);
         Zone(const Zone& orig);
         virtual ~Zone();
         void addObjet(Objet* objet);
@@ -41,15 +40,11 @@ class Zone {
         void printZone();
         Objet* getObjetPointer(int index);
         Zone* getPointer();
-        irr::scene::ICameraSceneNode* getCamerapointer();
-        irr::IrrlichtDevice* getDevicepointer();
 
     private:
         std::vector<Objet*> tableau;
         std::string zone_name;
-        irr::scene::ISceneManager* scene;
-        irr::scene::ICameraSceneNode *current_camera;
-        irr::IrrlichtDevice* current_device;
+        int type_number[8];
 };
 
 
