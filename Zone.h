@@ -30,7 +30,7 @@ enum {
 
 class Zone {
     public:
-        Zone(char* name);
+        Zone(char* name, irr::scene::ISceneManager* scene);
         Zone(const Zone& orig);
         virtual ~Zone();
         void addObjet(Objet* objet);
@@ -43,6 +43,7 @@ class Zone {
 
     private:
         std::vector<Objet*> tableau;
+        irr::scene::ISceneManager* current_scene;
         std::string zone_name;
         int type_number[8];
 };

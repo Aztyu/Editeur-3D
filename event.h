@@ -8,21 +8,17 @@
 #ifndef EVENT_H
 #define	EVENT_H
 
-#include <irrlicht.h>
-
-#include "Zone.h"
+#include "editor.h"
  
 class CEventReceiver : public irr::IEventReceiver{
  
     public :
-        //Le constructeur.
-        CEventReceiver(Zone* zone);
-        //Capte automatiquement les events.
+        CEventReceiver(Editor* editor);
         virtual bool OnEvent(const irr::SEvent &event);
  
     private :
         //Le modele qu'on va controler.
-        Zone* zone_actuelle;
+        Editor* editeur_actuelle;
 };
 
 #endif	/* EVENT_H */

@@ -11,12 +11,6 @@
 #include <iostream>
 #include "irrlicht.h"
 
-irr::IrrlichtDevice* current_device = 0;
-irr::video::IVideoDriver* current_driver = 0;
-irr::gui::IGUIEnvironment* current_gui = 0;
-irr::scene::ICameraSceneNode* current_camera = 0;
-irr::scene::ISceneManager* current_scene = 0;
-
 class Objet {
 public:
     Objet(irr::scene::ISceneNode* objet, char* name);
