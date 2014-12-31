@@ -41,9 +41,11 @@ class Zone {
         void printZone();
         Objet* getObjetPointer(int index);
         Zone* getPointer();
+        void setSelectedObject(int index);
 
     private:
         std::vector<Objet*> tableau;
+        Objet* selected_object;
         Pointer* current_pointer;
         std::string zone_name;
         int type_number[8];

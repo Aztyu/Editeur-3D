@@ -103,15 +103,14 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
         if (event.EventType == irr::EET_GUI_EVENT)
         {
             irr::s32 id = event.GUIEvent.Caller->getID();
-
             switch(event.GUIEvent.EventType)
             {
-                case irr::gui::EGET_BUTTON_CLICKED:
+                case irr::gui::EGET_BUTTON_CLICKED:{
                     irr::core::vector3df position = current_editor->getMainPointer()->camera->getPosition();
                     irr::core::vector3df target = current_editor->getMainPointer()->camera->getTarget();
                     irr::core::vector3df direction;
                     irr::core::vector3df direction_mvnt;
-                    
+
                     direction_mvnt.X = target.X - position.X;
                     direction_mvnt.Y = 0;
                     direction_mvnt.Z = target.Z - position.Z;
@@ -123,7 +122,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     position.X += direction.X;
                     position.Z += direction.Z;
                     position.Y = 0;
-                    
+
                     switch(id){
                         case GUI_ID_SQUARE:
                             current_editor->getCurrentZone()->createObjet(cube);
@@ -139,12 +138,20 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                             current_editor->getCurrentZone()->createObjet(pyramid);
                             current_editor->getCurrentZone()->getObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
                             return true;
-                    }
-                    break;   
+                    }}
+                    break; 
+                  
+                case irr::gui::EGET_COMBO_BOX_CHANGED:
+                    OnObjectSelected((irr::gui::IGUIComboBox*)event.GUIEvent.Caller);
+                    break;
             }
         }
     }
     return false;
+}
+
+void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){
+    current_editor->getCurrentZone()->setSelectedObject(combo->getSelected());
 }
  
 

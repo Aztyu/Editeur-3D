@@ -15,7 +15,7 @@ class CEventReceiver : public irr::IEventReceiver{
     public:
         CEventReceiver(Editor* editor);
         virtual bool OnEvent(const irr::SEvent &event);
- 
+        void OnObjectSelected(irr::gui::IGUIComboBox* combo);
     private:
         Editor* current_editor;
 };

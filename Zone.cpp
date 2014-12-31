@@ -18,6 +18,8 @@ Zone::Zone(char* name, Pointer* pointer){
     }
     current_pointer = pointer;
     
+    selected_object = 0;
+    
     cout << "Creation de la zone " << zone_name << endl;
 }
 
@@ -120,6 +122,8 @@ void Zone::createObjet(object form){
     std::wstring widestr = std::wstring(name.begin(), name.end());
     const wchar_t* widecstr = widestr.c_str();
     current_pointer->box_object->addItem(widecstr);
+    
+    setSelectedObject(tableau.size()-1);
 }
 
 int Zone::getObjectCount(){
@@ -143,5 +147,13 @@ Objet* Zone::getObjetPointer(int index){
 
 Zone* Zone::getPointer(){
     return this;
+}
+
+void Zone::setSelectedObject(int index){
+   if(selected_object != 0){
+       selected_object->getSceneNode()->getMaterial(0).EmissiveColor = 0;
+   }
+   selected_object = tableau[index];
+   selected_object->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
 }
 

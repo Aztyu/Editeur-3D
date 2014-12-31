@@ -64,7 +64,7 @@ int main(void)
         L"3");
     bouton2->setImage(driver->getTexture("ressources/pyramidicon.png"));
     
-    irr::gui::IGUIComboBox* box_object = gui->addComboBox(irr::core::rect<irr::s32>(136,10,236,42), 0, -1);
+    irr::gui::IGUIComboBox* box_object = gui->addComboBox(irr::core::rect<irr::s32>(136,10,236,42), 0, GUI_ID_OBJECT);
     
     main_pointers.box_object = box_object;
     main_pointers.camera = camera;
@@ -78,6 +78,7 @@ int main(void)
     zone_test.createObjet(pyramid);
     zone_test.createObjet(sphere);
     
+    //zone_test.getObjetPointer(1)->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
     zone_test.getObjetPointer(1)->setPosition(0.0, 2.0, 0.0);
     zone_test.getObjetPointer(1)->setParent(zone_test.getObjetPointer(0));
     
@@ -92,8 +93,8 @@ int main(void)
     
     wchar_t titre[200];
     
-    irr::scene::ILightSceneNode* lumiere = sceneManager->addLightSceneNode (0, irr::core::vector3df(70.0f, 70.0f, 20.0f),
-                               irr::video::SColorf(1.0f,1.0f,1.0f,0.0f), 2000.0f);
+    irr::scene::ILightSceneNode* lumiere = sceneManager->addLightSceneNode (0, irr::core::vector3df(100.0f, 70.0f, 100.0f),
+                               irr::video::SColorf(1.0f, 0.6f, 0.7f, 1.0f), 5200.0f);
 
     while(device->run ())                        // la boucle de rendu
     {
