@@ -9,14 +9,14 @@
 
 using namespace std;
 
-Zone::Zone(char* name, irr::scene::ISceneManager* scene){
+Zone::Zone(char* name, Pointer* pointer){
     zone_name = name;
     tableau.reserve(10);
     
     for(int i=0; i < 8; i++){
         type_number[i] = 0;
     }
-    current_scene = scene;
+    current_pointer = pointer;
     
     cout << "Creation de la zone " << zone_name << endl;
 }
@@ -44,81 +44,82 @@ void Zone::createObjet(object form){
         case 0:
             name = "Rectangle";
             if(type_number[0] > 0){
-                type_number[0]++;
                 sprintf (buffer, "%d", type_number[0]);
                 name.append(buffer);
             }
+            type_number[0]++;
             type += "rectangle";
             break;
         case 1:
             name = "Line";
             if(type_number[1] > 0){
-                type_number[1]++;
                 sprintf (buffer, "%d", type_number[1]);
                 name.append(buffer);
             }
+            type_number[1]++;
             type += "line";
             break;
         case 2:
             name = "Circle";
             if(type_number[2] > 0){
-                type_number[2]++;
                 sprintf (buffer, "%d", type_number[2]);
                 name.append(buffer);
             }
+            type_number[2]++;
             type += "circle";
             break;
         case 3:
             name = "Trapeze";
+
             if(type_number[3] > 0){
-                type_number[3]++;
                 sprintf (buffer, "%d", type_number[3]);
                 name.append(buffer);
             }
+            type_number[3]++;
             type += "trapeze";
             break;
         case 4:
             name = "Cube";
             if(type_number[4] > 0){
-                type_number[4]++;
                 sprintf (buffer, "%d", type_number[4]);
                 name.append(buffer);
             }
+            type_number[4]++;
             type += "cube";
             break;
         case 5:
             name = "Pyramide";
             if(type_number[5] > 0){
-                type_number[5]++;
                 sprintf (buffer, "%d", type_number[5]);
                 name.append(buffer);
             }
+            type_number[5]++;
             type += "pyramide";
             break;
         case 6:
             name = "Sphere";
             if(type_number[6] > 0){
-                type_number[6]++;
                 sprintf (buffer, "%d", type_number[6]);
                 name.append(buffer);
             }
+            type_number[6]++;
             type += "sphere";
             break;
         case 7:
             name = "Cylinder";
             if(type_number[7] > 0){
-                type_number[7]++;
-                sprintf (buffer, "%d", type_number[7]);
+                sprintf(buffer, "%d", type_number[7]);
                 name.append(buffer);
             }
+            type_number[7]++;
             type += "cylinder";
             break;
     }
     type += ".obj";
-    tableau.push_back(new Objet(current_scene->addMeshSceneNode(current_scene->getMesh(type.c_str())), name.c_str()));
-    wchar_t wbuffer [100];
-    swprintf( wbuffer, 100, L"%s", name.c_str());
-    //box_global->addItem(buffer);
+    tableau.push_back(new Objet(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));
+    std::wstring widestr = std::wstring(name.begin(), name.end());
+    const wchar_t* widecstr = widestr.c_str();
+    current_pointer->box_object->addItem(widecstr);
 }
 
 int Zone::getObjectCount(){

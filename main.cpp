@@ -1,5 +1,6 @@
 #include "Zone.h"
 #include "event.h"
+#include "Pointers.h"
 
 using namespace std;
 
@@ -17,13 +18,10 @@ int main(void)
     irr::video::IVideoDriver* driver = device->getVideoDriver ();
     irr::scene::ISceneManager *sceneManager = device->getSceneManager();
 
-    // recuperation du pointeur GUI
     irr::gui::IGUIEnvironment *gui = device->getGUIEnvironment();
     
     irr::gui::ICursorControl *curseur = device->getCursorControl();
     //curseur->setVisible(false);
-    
-
     
     sceneManager->addCameraSceneNode(       // ajout de la camera FPS
         0,                                       //idparent
@@ -36,9 +34,11 @@ int main(void)
     irr::scene::ICameraSceneNode *camera = sceneManager->getActiveCamera();
     camera->bindTargetAndRotation(true);
     camera->setRotation(irr::core::vector3df(0.0, 0.0, 0.0));
+    
+    Pointer main_pointers;
 
-    Zone zone_test("zone de test", sceneManager);
-    Editor editeur(&zone_test, camera, sceneManager);
+    Zone zone_test("zone de test", &main_pointers);
+    Editor editeur(&zone_test, &main_pointers);
     
     CEventReceiver receiver(&editeur); //bind de la gestion d'event
     device->setEventReceiver(&receiver);
@@ -66,7 +66,12 @@ int main(void)
     
     irr::gui::IGUIComboBox* box_object = gui->addComboBox(irr::core::rect<irr::s32>(136,10,236,42), 0, -1);
     
-    editeur.setObjectBox(box_object);
+    main_pointers.box_object = box_object;
+    main_pointers.camera = camera;
+    main_pointers.device = device;
+    main_pointers.driver = driver;
+    main_pointers.gui = gui;
+    main_pointers.scene = sceneManager;
     
     zone_test.createObjet(cylinder);
     zone_test.createObjet(pyramid);

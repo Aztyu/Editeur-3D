@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>Objet.h</itemPath>
+      <itemPath>Pointers.h</itemPath>
       <itemPath>Zone.h</itemPath>
       <itemPath>editor.h</itemPath>
       <itemPath>event.h</itemPath>
@@ -71,6 +72,8 @@
       </item>
       <item path="Objet.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Pointers.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Zone.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Zone.h" ex="false" tool="3" flavor2="0">
@@ -113,6 +116,8 @@
       <item path="Objet.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Objet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Pointers.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Zone.cpp" ex="false" tool="1" flavor2="0">
       </item>

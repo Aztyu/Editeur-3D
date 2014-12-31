@@ -9,6 +9,7 @@
 #define	ZONE_H
 
 #include "Objet.h"
+#include "Pointers.h"
 #include <vector>
 
 enum object {
@@ -30,7 +31,7 @@ enum {
 
 class Zone {
     public:
-        Zone(char* name, irr::scene::ISceneManager* scene);
+        Zone(char* name, Pointer* pointer);
         Zone(const Zone& orig);
         virtual ~Zone();
         void addObjet(Objet* objet);
@@ -43,7 +44,7 @@ class Zone {
 
     private:
         std::vector<Objet*> tableau;
-        irr::scene::ISceneManager* current_scene;
+        Pointer* current_pointer;
         std::string zone_name;
         int type_number[8];
 };

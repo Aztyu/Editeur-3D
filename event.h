@@ -12,13 +12,12 @@
  
 class CEventReceiver : public irr::IEventReceiver{
  
-    public :
+    public:
         CEventReceiver(Editor* editor);
         virtual bool OnEvent(const irr::SEvent &event);
  
-    private :
-        //Le modele qu'on va controler.
-        Editor* editeur_actuelle;
+    private:
+        Editor* current_editor;
 };
 
 #endif	/* EVENT_H */
