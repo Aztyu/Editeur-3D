@@ -13,10 +13,10 @@
 
 class Objet {
 public:
-    Objet(irr::scene::ISceneNode* objet, char* name);
-    Objet(irr::scene::ISceneNode* objet, float total_scale, char* name);
-    Objet(irr::scene::ISceneNode* objet, float x, float y, float z, char* name);
-    Objet(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, char* name);
+    Objet(irr::scene::ISceneNode* objet, const char* name);
+    Objet(irr::scene::ISceneNode* objet, float total_scale, const char* name);
+    Objet(irr::scene::ISceneNode* objet, float x, float y, float z, const char* name);
+    Objet(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name);
     Objet(const Objet& objetACopier);
     virtual ~Objet();
     virtual void printObjet();

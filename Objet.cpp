@@ -8,7 +8,7 @@
 
 using namespace std;
 
-Objet::Objet(irr::scene::ISceneNode* obj, char* name) {
+Objet::Objet(irr::scene::ISceneNode* obj, const char* name) {
     objet = obj;
     position.X = 0;
     position.Y = 0;
@@ -19,7 +19,7 @@ Objet::Objet(irr::scene::ISceneNode* obj, char* name) {
     object_name = name;
 }
 
-Objet::Objet(irr::scene::ISceneNode* obj, float total_scale, char* name) {
+Objet::Objet(irr::scene::ISceneNode* obj, float total_scale, const char* name) {
     objet = obj;
     position.X = 0;
     position.Y = 0;
@@ -30,7 +30,7 @@ Objet::Objet(irr::scene::ISceneNode* obj, float total_scale, char* name) {
     object_name = name;
 }
 
-Objet::Objet(irr::scene::ISceneNode* obj, float x, float y, float z, char* name){
+Objet::Objet(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name){
     objet = obj;
     position.X = x;
     position.Y = y;
@@ -41,7 +41,7 @@ Objet::Objet(irr::scene::ISceneNode* obj, float x, float y, float z, char* name)
     object_name = name;
 }
 
-Objet::Objet(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, char* name){
+Objet::Objet(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name){
     objet = obj;
     position.X = x;
     position.Y = y;

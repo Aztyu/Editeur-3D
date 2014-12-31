@@ -64,6 +64,10 @@ int main(void)
         L"3");
     bouton2->setImage(driver->getTexture("ressources/pyramidicon.png"));
     
+    irr::gui::IGUIComboBox* box_object = gui->addComboBox(irr::core::rect<irr::s32>(136,10,236,42), 0, -1);
+    
+    editeur.setObjectBox(box_object);
+    
     zone_test.createObjet(cylinder);
     zone_test.createObjet(pyramid);
     zone_test.createObjet(pyramid);
@@ -76,7 +80,6 @@ int main(void)
     zone_test.getObjetPointer(2)->setScale(1.0, 1.0, 3.0);
     zone_test.getObjetPointer(2)->setParent(zone_test.getObjetPointer(0));
     
-    //zone_test.getObjetPointer(0)->setPosition(0.0, 50.0, 0.0);
     zone_test.getObjetPointer(0)->setRotation(0.0, 45.0, 180.0);
     zone_test.getObjetPointer(0)->setScale(3.0, 3.0, 3.0);
     

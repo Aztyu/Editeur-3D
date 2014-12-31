@@ -38,86 +38,86 @@ void Zone::removeObjet(int index){
 }
 
 void Zone::createObjet(object form){
-    char name[50];
-    string type = "ressources/";
+    char buffer[50];
+    string type = "ressources/", name;
     switch((int)form){
         case 0:
+            name = "Rectangle";
             if(type_number[0] > 0){
-                sprintf (name, "Rectangle%d", type_number[0]);
-            }else{
-                sprintf (name, "Rectangle");
+                type_number[0]++;
+                sprintf (buffer, "%d", type_number[0]);
+                name.append(buffer);
             }
             type += "rectangle";
-            type_number[0]++;
             break;
         case 1:
+            name = "Line";
             if(type_number[1] > 0){
-                sprintf (name, "Line%d", type_number[1]);
-            }else{
-                sprintf (name, "Line");
+                type_number[1]++;
+                sprintf (buffer, "%d", type_number[1]);
+                name.append(buffer);
             }
             type += "line";
-            type_number[1]++;
             break;
         case 2:
+            name = "Circle";
             if(type_number[2] > 0){
-                sprintf (name, "Circle%d", type_number[2]);
-            }else{
-                sprintf (name, "Circle");
+                type_number[2]++;
+                sprintf (buffer, "%d", type_number[2]);
+                name.append(buffer);
             }
             type += "circle";
-            type_number[2]++;
             break;
         case 3:
+            name = "Trapeze";
             if(type_number[3] > 0){
-                sprintf (name, "Trapeze%d", type_number[3]);
-            }else{
-                sprintf (name, "Trapeze");
+                type_number[3]++;
+                sprintf (buffer, "%d", type_number[3]);
+                name.append(buffer);
             }
             type += "trapeze";
-            type_number[3]++;
             break;
         case 4:
+            name = "Cube";
             if(type_number[4] > 0){
-                sprintf (name, "Cube%d", type_number[4]);
-            }else{
-                sprintf (name, "Cube");
+                type_number[4]++;
+                sprintf (buffer, "%d", type_number[4]);
+                name.append(buffer);
             }
             type += "cube";
-            type_number[4]++;
             break;
         case 5:
+            name = "Pyramide";
             if(type_number[5] > 0){
-                sprintf (name, "Pyramid%d", type_number[5]);
-            }else{
-                sprintf (name, "Pyramid");
+                type_number[5]++;
+                sprintf (buffer, "%d", type_number[5]);
+                name.append(buffer);
             }
             type += "pyramide";
-            type_number[5]++;
             break;
         case 6:
+            name = "Sphere";
             if(type_number[6] > 0){
-                sprintf (name, "Sphere%d", type_number[6]);
-            }else{
-                sprintf (name, "Sphere");
+                type_number[6]++;
+                sprintf (buffer, "%d", type_number[6]);
+                name.append(buffer);
             }
             type += "sphere";
-            type_number[6]++;
             break;
         case 7:
+            name = "Cylinder";
             if(type_number[7] > 0){
-                sprintf (name, "Cylinder%d", type_number[7]);
-            }else{
-                sprintf (name, "Cylinder");
+                type_number[7]++;
+                sprintf (buffer, "%d", type_number[7]);
+                name.append(buffer);
             }
             type += "cylinder";
-            type_number[7]++;
             break;
     }
     type += ".obj";
-    tableau.push_back(new Objet(current_scene->addMeshSceneNode(current_scene->getMesh(type.c_str())), name));
-    //wchar_t buffer [100];
-    //swprintf( buffer, 100, L"%s", name);
+    tableau.push_back(new Objet(current_scene->addMeshSceneNode(current_scene->getMesh(type.c_str())), name.c_str()));
+    wchar_t wbuffer [100];
+    swprintf( wbuffer, 100, L"%s", name.c_str());
     //box_global->addItem(buffer);
 }
 
