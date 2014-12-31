@@ -9,14 +9,14 @@
 using namespace std;
 
 Objet::Objet(irr::scene::ISceneNode* obj, const char* name) {
-    objet = obj;
+    objet = obj;        //Stock le pointeur vers le node
     position.X = 0;
     position.Y = 0;
     position.Z = 0;
     scale.X = 1.0;
     scale.Y = 1.0;
     scale.Z = 1.0;
-    object_name = name;
+    object_name = name; //Stocke le nom
 }
 
 Objet::Objet(irr::scene::ISceneNode* obj, float total_scale, const char* name) {
@@ -81,7 +81,7 @@ void Objet::setRotation(float x, float y, float z){
     objet->setRotation(irr::core::vector3df(x, y, z));
 }
 
-void Objet::setParent(Objet* parent){
+void Objet::setParent(Objet* parent){  //Utile pour la creation de groupe 
     objet->setParent(parent->getSceneNode());
 }
 
@@ -89,7 +89,7 @@ Objet* Objet::getPointer(){
     return this;
 }
 
-irr::scene::ISceneNode* Objet::getSceneNode(){
+irr::scene::ISceneNode* Objet::getSceneNode(){  //Retourne le pointeur vers le node
     return objet;
 }
 

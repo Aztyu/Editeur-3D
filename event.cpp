@@ -5,8 +5,7 @@ CEventReceiver::CEventReceiver(Editor* editor){
 }
  
 bool CEventReceiver::OnEvent(const irr::SEvent &event){
-    //On verifie que le pointeur est ok
-    if(current_editor != 0){
+    if(current_editor != 0){            //On verifie que le pointeur est ok
         if(event.EventType == irr::EET_KEY_INPUT_EVENT && event.KeyInput.PressedDown == true){
             irr::core::vector3df position = current_editor->getMainPointer()->camera->getPosition();
             irr::core::vector3df rotation = current_editor->getMainPointer()->camera->getRotation();
@@ -15,27 +14,45 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
             irr::core::vector3df direction_mvnt;
 
             switch(event.KeyInput.Key){
-                case irr::KEY_KEY_O:
+                case irr::KEY_RETURN: //Maj de la scale suite a l'appui d'entree
+                    /* set scale
+                    irr::gui::IGUIElement* root = env->getRootGUIElement();
+                    irr::core::vector3df scale;
+                    irr::core::stringc s;
+
+                    s = root->getElementFromId(GUI_ID_X_SCALE, true)->getText();
+                    scale.X = (irr::f32)atof(s.c_str());
+                    s = root->getElementFromId(GUI_ID_Y_SCALE, true)->getText();
+                    scale.Y = (irr::f32)atof(s.c_str());
+                    s = root->getElementFromId(GUI_ID_Z_SCALE, true)->getText();
+                    scale.Z = (irr::f32)atof(s.c_str());
+
+                    if (Model)
+                        Model->setScale(scale);
+                    updateScaleInfo(Model);*/
+                    return true;
+                    
+                case irr::KEY_KEY_O:  //Camera vers le haut
                     rotation.X -= 10;
                     current_editor->getMainPointer()->camera->setRotation(rotation);
                     return true;
 
-                case irr::KEY_KEY_L:
+                case irr::KEY_KEY_L:  //Camera vers le bas
                     rotation.X += 10;
                     current_editor->getMainPointer()->camera->setRotation(rotation);
                     return true;
 
-                case irr::KEY_KEY_A:
+                case irr::KEY_KEY_A:  //Camera vers la gauche
                     rotation.Y -= 10;
                     current_editor->getMainPointer()->camera->setRotation(rotation);
                     return true;
 
-                case irr::KEY_KEY_D:
+                case irr::KEY_KEY_D:  //Camera vers la droite
                     rotation.Y += 10;
                     current_editor->getMainPointer()->camera->setRotation(rotation);
                     return true;
 
-                case irr::KEY_KEY_W:  
+                case irr::KEY_KEY_W:  //Camera avance
                     direction_mvnt.X = target.X - position.X;
                     direction_mvnt.Y = 0;
                     direction_mvnt.Z = target.Z - position.Z;
@@ -56,7 +73,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
                     return true;
                     
-                case irr::KEY_KEY_S:
+                case irr::KEY_KEY_S:  //Camera recule
                     direction_mvnt.X = target.X - position.X;
                     direction_mvnt.Y = 0;
                     direction_mvnt.Z = target.Z - position.Z;
@@ -78,7 +95,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
                     return true;
 
-                case irr::KEY_KEY_I:
+                case irr::KEY_KEY_I:  //Camera monte
                     position.Y += 5;
                     target.Y += 5;
 
@@ -88,7 +105,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
                     return true;
                     
-                case irr::KEY_KEY_K:  
+                case irr::KEY_KEY_K:  //Camera descend  
                     position.Y -= 5;
                     target.Y -= 5;
 
@@ -123,7 +140,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     position.Z += direction.Z;
                     position.Y = 0;
 
-                    switch(id){
+                    switch(id){             //Creation d'objets
                         case GUI_ID_SQUARE:
                             current_editor->getCurrentZone()->createObjet(cube);
                             current_editor->getCurrentZone()->getObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
@@ -150,7 +167,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
     return false;
 }
 
-void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){
+void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){  //Appele lors de la maj de la combo box
     current_editor->getCurrentZone()->setSelectedObject(combo->getSelected());
 }
  

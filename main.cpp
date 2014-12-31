@@ -23,10 +23,10 @@ int main(void)
     irr::gui::ICursorControl *curseur = device->getCursorControl();
     //curseur->setVisible(false);
     
-    sceneManager->addCameraSceneNode(       // ajout de la camera FPS
+    sceneManager->addCameraSceneNode(       // ajout de la camera
         0,                                       //idparent
         irr::core::vector3df(0.0, 10.0, -30.0),  //position                                    
-        irr::core::vector3df(0.0, 0.0, 0.0),     //look at
+        irr::core::vector3df(0.0, 0.0, 0.0),     //regard
         -1,                                      //id camera(pas d'id))
         true); 
 
@@ -93,18 +93,22 @@ int main(void)
     
     wchar_t titre[200];
     
-    irr::scene::ILightSceneNode* lumiere = sceneManager->addLightSceneNode (0, irr::core::vector3df(100.0f, 70.0f, 100.0f),
-                               irr::video::SColorf(1.0f, 0.6f, 0.7f, 1.0f), 5200.0f);
+    irr::scene::ILightSceneNode* lumiere = sceneManager->addLightSceneNode (0,
+            irr::core::vector3df(100.0f, 70.0f, 100.0f),    //Position de la lumiere
+            irr::video::SColorf(1.0f, 0.6f, 0.7f, 1.0f),    //Couleur de la lumiere
+            5200.0f);                                       //Rayon de la lumiere
 
     while(device->run ())                        // la boucle de rendu
     {
         driver->beginScene(true, true, irr::video::SColor(255,125,0,120));
         irr::s32 fps = driver->getFPS();
+        
         irr::core::vector3df posCam;
         posCam = camera->getRotation();
         swprintf(titre, 200, L"FPS : %d, X : %f Y : %f Z : %f", fps, posCam.X, posCam.Y, posCam.Z);
         device->setWindowCaption(titre);
-        sceneManager->drawAll();
+        
+        sceneManager->drawAll();    //Dessin de la scene
         gui->drawAll();
         driver->endScene();
     }

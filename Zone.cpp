@@ -13,12 +13,12 @@ Zone::Zone(char* name, Pointer* pointer){
     zone_name = name;
     tableau.reserve(10);
     
-    for(int i=0; i < 8; i++){
+    for(int i=0; i < 8; i++){ //Mise a zero du nombre d'objets
         type_number[i] = 0;
     }
-    current_pointer = pointer;
+    current_pointer = pointer;  //liste de pointeurs globaux
     
-    selected_object = 0;
+    selected_object = 0;        //Objet selectionne en ce moment   
     
     cout << "Creation de la zone " << zone_name << endl;
 }
@@ -33,7 +33,7 @@ void Zone::addObjet(Objet* objet){
     tableau.push_back(objet);
 }
 
-void Zone::removeObjet(int index){
+void Zone::removeObjet(int index){ //clear l'objet de tout stockage et de la scene
     tableau[index]->getSceneNode()->remove();
     delete tableau[index]->getPointer();
     tableau.erase(tableau.begin()+index);
@@ -42,7 +42,7 @@ void Zone::removeObjet(int index){
 void Zone::createObjet(object form){
     char buffer[50];
     string type = "ressources/", name;
-    switch((int)form){
+    switch((int)form){  //Switch qui va choisir quel fichier charger
         case 0:
             name = "Rectangle";
             if(type_number[0] > 0){
@@ -118,12 +118,12 @@ void Zone::createObjet(object form){
             break;
     }
     type += ".obj";
-    tableau.push_back(new Objet(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));
+    tableau.push_back(new Objet(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));        //Chargement et creation de l'objet
     std::wstring widestr = std::wstring(name.begin(), name.end());
     const wchar_t* widecstr = widestr.c_str();
-    current_pointer->box_object->addItem(widecstr);
+    current_pointer->box_object->addItem(widecstr); //Ajout de l'objet a la combobox
     
-    setSelectedObject(tableau.size()-1);
+    setSelectedObject(tableau.size()-1);    //Le derniere objet cree est par default selectionne
 }
 
 int Zone::getObjectCount(){
@@ -150,10 +150,10 @@ Zone* Zone::getPointer(){
 }
 
 void Zone::setSelectedObject(int index){
-   if(selected_object != 0){
-       selected_object->getSceneNode()->getMaterial(0).EmissiveColor = 0;
+   if(selected_object != 0){    
+       selected_object->getSceneNode()->getMaterial(0).EmissiveColor = 0;   //Si un objet est deja selectionne on le deselectionne en "l'eteignant"
    }
-   selected_object = tableau[index];
+   selected_object = tableau[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
    selected_object->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
 }
 
