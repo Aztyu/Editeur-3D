@@ -8,9 +8,9 @@
 #include "editor.h"
 #include "event.h"
 
-Editor::Editor(Zone* zone, Pointer* struct_pointer) {
+Editor::Editor(Pointer* struct_pointer) {
     main_pointer = struct_pointer;
-    current_zone = zone;
+    createZone("Main");
     std::cout << "finish object" << std::endl;
 }
 
@@ -22,6 +22,11 @@ Editor::~Editor() {
 
 Editor* Editor::getEditor(){
     return this;
+}
+
+void Editor::createZone(char* name){
+    zone_array.push_back(new Zone(name, main_pointer));
+    current_zone = zone_array[zone_array.size()-1];
 }
 
 void Editor::setCurrentZone(Zone* zone){
@@ -39,3 +44,4 @@ void Editor::setMainPointer(Pointer* struct_pointer){
 Pointer* Editor::getMainPointer(){
     return main_pointer;
 }
+

@@ -37,8 +37,7 @@ int main(void)
     
     Pointer main_pointers;
 
-    Zone zone_test("zone de test", &main_pointers);
-    Editor editeur(&zone_test, &main_pointers);
+    Editor editeur(&main_pointers);
     
     CEventReceiver receiver(&editeur); //bind de la gestion d'event
     device->setEventReceiver(&receiver);
@@ -135,23 +134,23 @@ int main(void)
     main_pointers.gui = gui;
     main_pointers.scene = sceneManager;
     
-    zone_test.createObjet(cylinder);
-    zone_test.createObjet(pyramid);
-    zone_test.createObjet(pyramid);
-    zone_test.createObjet(sphere);
+    editeur.getCurrentZone()->createObjet(cylinder);
+    editeur.getCurrentZone()->createObjet(pyramid);
+    editeur.getCurrentZone()->createObjet(pyramid);
+    editeur.getCurrentZone()->createObjet(sphere);
     
-    //zone_test.getObjetPointer(1)->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
-    zone_test.getObjetPointer(1)->setPosition(0.0, 2.0, 0.0);
-    zone_test.getObjetPointer(1)->setParent(zone_test.getObjetPointer(0));
+    //editeur.getCurrentZone().getObjetPointer(1)->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
+    editeur.getCurrentZone()->getObjetPointer(1)->setPosition(0.0, 2.0, 0.0);
+    editeur.getCurrentZone()->getObjetPointer(1)->setParent(editeur.getCurrentZone()->getObjetPointer(0));
     
-    zone_test.getObjetPointer(2)->setPosition(0.0, 0.0, 10.0);
-    zone_test.getObjetPointer(2)->setScale(1.0, 1.0, 3.0);
-    zone_test.getObjetPointer(2)->setParent(zone_test.getObjetPointer(0));
+    editeur.getCurrentZone()->getObjetPointer(2)->setPosition(0.0, 0.0, 10.0);
+    editeur.getCurrentZone()->getObjetPointer(2)->setScale(1.0, 1.0, 3.0);
+    editeur.getCurrentZone()->getObjetPointer(2)->setParent(editeur.getCurrentZone()->getObjetPointer(0));
     
-    zone_test.getObjetPointer(0)->setRotation(0.0, 45.0, 180.0);
-    zone_test.getObjetPointer(0)->setScale(3.0, 3.0, 3.0);
+    editeur.getCurrentZone()->getObjetPointer(0)->setRotation(0.0, 45.0, 180.0);
+    editeur.getCurrentZone()->getObjetPointer(0)->setScale(3.0, 3.0, 3.0);
     
-    zone_test.getObjetPointer(3)->setPosition(0.0, 0.0, 20.0);
+    editeur.getCurrentZone()->getObjetPointer(3)->setPosition(0.0, 0.0, 20.0);
     
     wchar_t titre[200];
     
@@ -160,7 +159,7 @@ int main(void)
             irr::video::SColorf(1.0f, 0.6f, 0.7f, 1.0f),    //Couleur de la lumiere
             5200.0f);                                       //Rayon de la lumiere
 
-        irr::scene::ISceneNode *Skybox = sceneManager->addSkyBoxSceneNode(
+    irr::scene::ISceneNode *Skybox = sceneManager->addSkyBoxSceneNode(
         driver->getTexture("ressources/sky_up.jpg"),
         driver->getTexture("ressources/sky_down.jpg"),
         driver->getTexture("ressources/sky_left.jpg"),
