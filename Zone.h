@@ -26,6 +26,7 @@ enum {
     GUI_ID_SQUARE,
     GUI_ID_SPHERE,
     GUI_ID_PYRAMID,
+    GUI_ID_CIRCLE,
     GUI_ID_OBJECT
 };
 
