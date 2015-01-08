@@ -42,57 +42,36 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     current_editor->getMainPointer()->camera->setRotation(rotation);
                     return true;
 
-                case irr::KEY_KEY_A:  //Camera vers la gauche
-                    rotation.Y -= 10;
-                    current_editor->getMainPointer()->camera->setRotation(rotation);
+                case irr::KEY_KEY_Q:  //Camera vers la gauche
+                    angleCameraRight();
                     return true;
 
                 case irr::KEY_KEY_D:  //Camera vers la droite
-                    rotation.Y += 10;
-                    current_editor->getMainPointer()->camera->setRotation(rotation);
+                    angleCameraLeft();
                     return true;
 
-                case irr::KEY_KEY_W:  //Camera avance
-                    direction_mvnt.X = target.X - position.X;
-                    direction_mvnt.Y = 0;
-                    direction_mvnt.Z = target.Z - position.Z;
-
-                    direction_mvnt.normalize();
-                    direction.X = 5*cos(acos(direction.X));
-                    direction.Z = 5*sin(asin(direction.Z));
-
-                    position.X += direction_mvnt.X;
-                    position.Z += direction_mvnt.Z;
-
-                    target.X += direction_mvnt.X;
-                    target.Z += direction_mvnt.Z;
-
-                    current_editor->getMainPointer()->camera->setPosition(position);
-                    current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
-                    current_editor->getMainPointer()->camera->setTarget(target);
-                    current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
+                case irr::KEY_KEY_Z:  //Camera avance
+                    forwardCamera();
                     return true;
                     
                 case irr::KEY_KEY_S:  //Camera recule
-                    direction_mvnt.X = target.X - position.X;
-                    direction_mvnt.Y = 0;
-                    direction_mvnt.Z = target.Z - position.Z;
+                    backwardCamera();
+                    return true;
+                    
+                case irr::KEY_LEFT:  //Camera vers la gauche
+                    angleCameraRight();
+                    return true;
 
-                    direction_mvnt.normalize();
-                    direction.X = 5*cos(acos(direction.X));
-                    direction.Z = 5*sin(asin(direction.Y));
+                case irr::KEY_RIGHT:  //Camera vers la droite
+                    angleCameraLeft();
+                    return true;
 
-                    position.X -= direction_mvnt.X;
-                    position.Z -= direction_mvnt.Z;
-
-
-                    target.X -= direction_mvnt.X;
-                    target.Z -= direction_mvnt.Z;
-
-                    current_editor->getMainPointer()->camera->setPosition(position);
-                    current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
-                    current_editor->getMainPointer()->camera->setTarget(target);
-                    current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
+                case irr::KEY_UP:  //Camera avance
+                    forwardCamera();
+                    return true;
+                    
+                case irr::KEY_DOWN:  //Camera recule
+                    backwardCamera();
                     return true;
 
                 case irr::KEY_KEY_I:  //Camera monte
@@ -169,6 +148,95 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
 
 void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){  //Appele lors de la maj de la combo box
     current_editor->getCurrentZone()->setSelectedObject(combo->getSelected());
+}
+
+void CEventReceiver::angleCameraRight(){
+    irr::core::vector3df rotation = current_editor->getMainPointer()->camera->getRotation();
+    irr::core::vector3df position = current_editor->getMainPointer()->camera->getPosition();
+    irr::core::vector3df target = current_editor->getMainPointer()->camera->getTarget();
+    irr::core::vector3df direction;
+    irr::core::vector3df direction_mvnt;
+
+    direction_mvnt.X = target.X - position.X;
+    direction_mvnt.Y = 0;
+    direction_mvnt.Z = target.Z - position.Z;
+
+    direction_mvnt.normalize();
+    direction.X = 18*cos(acos(direction_mvnt.X));
+    direction.Z = 18*sin(asin(direction_mvnt.Z));
+
+    position.X += direction.X;
+    position.Z += direction.Z;
+    position.Y = 0;
+                    
+    rotation.Y -= 10;
+    current_editor->getMainPointer()->camera->setRotation(rotation);
+}
+
+void CEventReceiver::angleCameraLeft(){
+    irr::core::vector3df rotation = current_editor->getMainPointer()->camera->getRotation();
+    irr::core::vector3df position = current_editor->getMainPointer()->camera->getPosition();
+    irr::core::vector3df target = current_editor->getMainPointer()->camera->getTarget();
+    irr::core::vector3df direction;
+    irr::core::vector3df direction_mvnt;
+    
+    rotation.Y += 10;
+    current_editor->getMainPointer()->camera->setRotation(rotation);
+}
+
+void CEventReceiver::forwardCamera(){
+    irr::core::vector3df rotation = current_editor->getMainPointer()->camera->getRotation();
+    irr::core::vector3df position = current_editor->getMainPointer()->camera->getPosition();
+    irr::core::vector3df target = current_editor->getMainPointer()->camera->getTarget();
+    irr::core::vector3df direction;
+    irr::core::vector3df direction_mvnt;
+
+    direction_mvnt.X = target.X - position.X;
+    direction_mvnt.Y = 0;
+    direction_mvnt.Z = target.Z - position.Z;
+
+    direction_mvnt.normalize();
+    direction.X = 5*cos(acos(direction.X));
+    direction.Z = 5*sin(asin(direction.Z));
+
+    position.X += direction_mvnt.X;
+    position.Z += direction_mvnt.Z;
+
+    target.X += direction_mvnt.X;
+    target.Z += direction_mvnt.Z;
+
+    current_editor->getMainPointer()->camera->setPosition(position);
+    current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
+    current_editor->getMainPointer()->camera->setTarget(target);
+    current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
+}
+
+void CEventReceiver::backwardCamera(){
+    irr::core::vector3df rotation = current_editor->getMainPointer()->camera->getRotation();
+    irr::core::vector3df position = current_editor->getMainPointer()->camera->getPosition();
+    irr::core::vector3df target = current_editor->getMainPointer()->camera->getTarget();
+    irr::core::vector3df direction;
+    irr::core::vector3df direction_mvnt;
+
+    direction_mvnt.X = target.X - position.X;
+    direction_mvnt.Y = 0;
+    direction_mvnt.Z = target.Z - position.Z;
+
+    direction_mvnt.normalize();
+    direction.X = 5*cos(acos(direction.X));
+    direction.Z = 5*sin(asin(direction.Y));
+
+    position.X -= direction_mvnt.X;
+    position.Z -= direction_mvnt.Z;
+
+
+    target.X -= direction_mvnt.X;
+    target.Z -= direction_mvnt.Z;
+
+    current_editor->getMainPointer()->camera->setPosition(position);
+    current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
+    current_editor->getMainPointer()->camera->setTarget(target);
+    current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
 }
  
 

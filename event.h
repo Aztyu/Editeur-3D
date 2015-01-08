@@ -16,6 +16,10 @@ class CEventReceiver : public irr::IEventReceiver{
         CEventReceiver(Editor* editor);
         virtual bool OnEvent(const irr::SEvent &event);
         void OnObjectSelected(irr::gui::IGUIComboBox* combo);
+        void angleCameraRight();
+        void angleCameraLeft();
+        void forwardCamera();
+        void backwardCamera();
     private:
         Editor* current_editor;
 };
