@@ -27,6 +27,7 @@ Zone::Zone(const Zone& orig) {
 }
 
 Zone::~Zone() {
+    
 }
 
 void Zone::addObjet(Objet* objet){
