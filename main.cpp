@@ -43,6 +43,12 @@ int main(void)
     CEventReceiver receiver(&editeur); //bind de la gestion d'event
     device->setEventReceiver(&receiver);
     
+    irr::gui::IGUIImage *navbar = gui->addImage(driver->getTexture("ressources/navbar.jpg"),
+        irr::core::position2d<irr::s32>(0,0),
+        true,
+        0
+        );
+    
     irr::gui::IGUIButton *bouton = gui->addButton(
         irr::core::rect<irr::s32>(10,10,42,42),
         0,
@@ -64,7 +70,42 @@ int main(void)
         L"3");
     bouton2->setImage(driver->getTexture("ressources/pyramidicon.png"));
     
-    irr::gui::IGUIComboBox* box_object = gui->addComboBox(irr::core::rect<irr::s32>(136,10,236,42), 0, GUI_ID_OBJECT);
+    irr::gui::IGUIButton *bouton3 = gui->addButton(
+        irr::core::rect<irr::s32>(136,10,168,42),
+        0,
+        GUI_ID_CIRCLE,
+        L"4");
+    bouton3->setImage(driver->getTexture("ressources/sphereicon.png"));
+    
+        irr::gui::IGUIButton *bouton4 = gui->addButton(
+        irr::core::rect<irr::s32>(178,10,210,42),
+        0,
+        GUI_ID_CYLINDER,
+        L"5");
+    bouton4->setImage(driver->getTexture("ressources/sphereicon.png"));
+    
+        irr::gui::IGUIButton *bouton5 = gui->addButton(
+        irr::core::rect<irr::s32>(220,10,252,42),
+        0,
+        GUI_ID_RECTANGLE,
+        L"6");
+    bouton5->setImage(driver->getTexture("ressources/sphereicon.png"));
+    
+        irr::gui::IGUIButton *bouton6 = gui->addButton(
+        irr::core::rect<irr::s32>(262,10,294,42),
+        0,
+        GUI_ID_LINE,
+        L"7");
+    bouton6->setImage(driver->getTexture("ressources/sphereicon.png"));
+    
+            irr::gui::IGUIButton *bouton7 = gui->addButton(
+        irr::core::rect<irr::s32>(304,10,336,42),
+        0,
+        GUI_ID_TRAPEZE,
+        L"8");
+    bouton7->setImage(driver->getTexture("ressources/sphereicon.png"));
+    
+    irr::gui::IGUIComboBox* box_object = gui->addComboBox(irr::core::rect<irr::s32>(640,10,790,42), 0, GUI_ID_OBJECT);
     
     main_pointers.box_object = box_object;
     main_pointers.camera = camera;
@@ -98,9 +139,17 @@ int main(void)
             irr::video::SColorf(1.0f, 0.6f, 0.7f, 1.0f),    //Couleur de la lumiere
             5200.0f);                                       //Rayon de la lumiere
 
+        irr::scene::ISceneNode *Skybox = sceneManager->addSkyBoxSceneNode(
+        driver->getTexture("ressources/sky_up.jpg"),
+        driver->getTexture("ressources/sky_down.jpg"),
+        driver->getTexture("ressources/sky_left.jpg"),
+        driver->getTexture("ressources/sky_right.jpg"),
+        driver->getTexture("ressources/sky_front.jpg"),
+        driver->getTexture("ressources/sky_back.jpg"));
+    
     while(device->run ())                        // la boucle de rendu
     {
-        driver->beginScene(true, true, irr::video::SColor(255,125,0,120));
+        driver->beginScene(true, true, irr::video::SColor(255,114,122,124));
         irr::s32 fps = driver->getFPS();
         
         irr::core::vector3df posCam;
