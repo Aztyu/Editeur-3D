@@ -8,7 +8,7 @@
 #ifndef EVENT_H
 #define	EVENT_H
 
-#include "editor.h"
+#include "Editor.h"
  
 class CEventReceiver : public irr::IEventReceiver{
  

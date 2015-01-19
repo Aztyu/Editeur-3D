@@ -1,4 +1,4 @@
-#include "event.h"
+#include "Event.h"
  
 CEventReceiver::CEventReceiver(Editor* editor){
     current_editor = editor;
@@ -33,13 +33,17 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     return true;
                     
                 case irr::KEY_KEY_O:  //Camera vers le haut
-                    rotation.X -= 10;
-                    current_editor->getMainPointer()->camera->setRotation(rotation);
+                    if(rotation.X > -80){
+                        rotation.X -= 10;
+                        current_editor->getMainPointer()->camera->setRotation(rotation);
+                    }
                     return true;
 
                 case irr::KEY_KEY_L:  //Camera vers le bas
-                    rotation.X += 10;
-                    current_editor->getMainPointer()->camera->setRotation(rotation);
+                    if(rotation.X < 80){
+                        rotation.X += 10;
+                        current_editor->getMainPointer()->camera->setRotation(rotation);
+                    }
                     return true;
 
                 case irr::KEY_KEY_Q:  //Camera vers la gauche
@@ -176,37 +180,21 @@ void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){  //Appele
 }
 
 void CEventReceiver::angleCameraRight(){
-    irr::core::vector3df rotation = current_editor->getMainPointer()->camera->getRotation();
-    irr::core::vector3df position = current_editor->getMainPointer()->camera->getPosition();
-    irr::core::vector3df target = current_editor->getMainPointer()->camera->getTarget();
-    irr::core::vector3df direction;
-    irr::core::vector3df direction_mvnt;
-
-    direction_mvnt.X = target.X - position.X;
-    direction_mvnt.Y = 0;
-    direction_mvnt.Z = target.Z - position.Z;
-
-    direction_mvnt.normalize();
-    direction.X = 18*cos(acos(direction_mvnt.X));
-    direction.Z = 18*sin(asin(direction_mvnt.Z));
-
-    position.X += direction.X;
-    position.Z += direction.Z;
-    position.Y = 0;
-                    
+    irr::core::vector3df rotation = current_editor->getMainPointer()->camera->getRotation();      
     rotation.Y -= 10;
-    current_editor->getMainPointer()->camera->setRotation(rotation);
+    
+    if(rotation.Y >= -180){
+        current_editor->getMainPointer()->camera->setRotation(rotation);
+    }
 }
 
 void CEventReceiver::angleCameraLeft(){
     irr::core::vector3df rotation = current_editor->getMainPointer()->camera->getRotation();
-    irr::core::vector3df position = current_editor->getMainPointer()->camera->getPosition();
-    irr::core::vector3df target = current_editor->getMainPointer()->camera->getTarget();
-    irr::core::vector3df direction;
-    irr::core::vector3df direction_mvnt;
     
-    rotation.Y += 10;
-    current_editor->getMainPointer()->camera->setRotation(rotation);
+    if(rotation.Y <= 180){
+        rotation.Y += 10;
+        current_editor->getMainPointer()->camera->setRotation(rotation);
+    }
 }
 
 void CEventReceiver::forwardCamera(){

@@ -5,8 +5,8 @@
  * Created on 26 décembre 2014, 11:29
  */
 
-#include "editor.h"
-#include "event.h"
+#include "Editor.h"
+#include "Event.h"
 
 Editor::Editor(Pointer* struct_pointer) {
     main_pointer = struct_pointer;
