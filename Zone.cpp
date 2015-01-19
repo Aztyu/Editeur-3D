@@ -17,9 +17,7 @@ Zone::Zone(char* name, Pointer* pointer){
         type_number[i] = 0;
     }
     current_pointer = pointer;  //liste de pointeurs globaux
-    
-    selected_object = 0;        //Objet selectionne en ce moment   
-    
+    selected_object = NULL;        //Objet selectionne en ce moment   
     cout << "Creation de la zone " << zone_name << endl;
 }
 
@@ -27,7 +25,10 @@ Zone::Zone(const Zone& orig) {
 }
 
 Zone::~Zone() {
-    
+    for(int i=0 ; i<tableau.size() ; ++i){
+        delete tableau[i];
+    }
+    tableau.clear();
 }
 
 void Zone::addObjet(Objet* objet){
@@ -35,8 +36,7 @@ void Zone::addObjet(Objet* objet){
 }
 
 void Zone::removeObjet(int index){ //clear l'objet de tout stockage et de la scene
-    tableau[index]->getSceneNode()->remove();
-    delete tableau[index]->getPointer();
+    delete tableau[index];
     tableau.erase(tableau.begin()+index);
 }
 

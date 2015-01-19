@@ -30,8 +30,6 @@ public:
 protected:
     irr::scene::ISceneNode* objet;
     std::string object_name;
-    irr::core::vector3df position;
-    irr::core::vector3df scale;
 };
 
 #endif	/* OBJET_H */
