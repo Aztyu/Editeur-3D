@@ -29,5 +29,6 @@ debut juin: 	Documentation et Presentation
 Liste de membres du groupes:
 
 ID				Nom Prenom
-169796			BEAL Corentin
+169796				BEAL Corentin
+169865				ROCHE Arnaud
 ...
