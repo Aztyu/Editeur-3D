@@ -185,20 +185,16 @@ void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){  //Appele
 
 void CEventReceiver::angleCameraRight(){
     irr::core::vector3df rotation = current_editor->getMainPointer()->camera->getRotation();      
-    rotation.Y -= 10;
     
-    if(rotation.Y >= -180){
-        current_editor->getMainPointer()->camera->setRotation(rotation);
-    }
+    rotation.Y -= 10;
+    current_editor->getMainPointer()->camera->setRotation(rotation);
 }
 
 void CEventReceiver::angleCameraLeft(){
     irr::core::vector3df rotation = current_editor->getMainPointer()->camera->getRotation();
     
-    if(rotation.Y <= 180){
-        rotation.Y += 10;
-        current_editor->getMainPointer()->camera->setRotation(rotation);
-    }
+    rotation.Y += 10;
+    current_editor->getMainPointer()->camera->setRotation(rotation);
 }
 
 void CEventReceiver::forwardCamera(){
