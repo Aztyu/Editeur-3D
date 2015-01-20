@@ -158,3 +158,16 @@ void Zone::setSelectedObject(int index){
    selected_object->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
 }
 
+void Zone::setSelectedObject(irr::scene::ISceneNode* objet){
+    for(int i = 0;i<tableau.size(); ++i){
+        if(objet == tableau[i]->getSceneNode()){
+            if(selected_object != 0){    
+                selected_object->getSceneNode()->getMaterial(0).EmissiveColor = 0;   //Si un objet est deja selectionne on le deselectionne en "l'eteignant"
+            }
+            selected_object = tableau[i];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
+            selected_object->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
+            return;
+        }
+    }
+}
+

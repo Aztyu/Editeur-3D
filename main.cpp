@@ -6,14 +6,28 @@ using namespace std;
 
 int main(void)
 {
-    irr::IrrlichtDevice *device = irr::createDevice (
+    
+    irr::SIrrlichtCreationParameters params = irr::SIrrlichtCreationParameters();
+    params.AntiAlias = 16;
+    params.DriverType = irr::video::EDT_OPENGL;
+    params.WindowSize = irr::core::dimension2d<irr::u32>(1280, 720);
+    params.Bits = 32;
+    params.Fullscreen = false;
+    params.Stencilbuffer = true;
+    params.Vsync = true;
+    params.EventReceiver = 0;
+    params.Doublebuffer = true;
+    
+    irr::IrrlichtDevice *device = irr::createDeviceEx(params);
+    /*irr::IrrlichtDevice *device = irr::createDevice (
         irr::video::EDT_OPENGL,
         irr::core::dimension2d<irr::u32>(800,600),
         32,
         false,
         true,
         false,
-        0);
+        0);*/
+    
     
     irr::video::IVideoDriver* driver = device->getVideoDriver ();
     irr::scene::ISceneManager *sceneManager = device->getSceneManager();
@@ -21,7 +35,8 @@ int main(void)
     irr::gui::IGUIEnvironment *gui = device->getGUIEnvironment();
     
     irr::gui::ICursorControl *curseur = device->getCursorControl();
-    //curseur->setVisible(false);
+    
+    //irr::scene::ISceneCollisionManager *collision = sceneManager->getSceneCollisionManager();
     
     sceneManager->addCameraSceneNode(       // ajout de la camera
         0,                                       //idparent

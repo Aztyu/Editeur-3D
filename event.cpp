@@ -170,6 +170,10 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     OnObjectSelected((irr::gui::IGUIComboBox*)event.GUIEvent.Caller);
                     break;
             }
+        }else if(event.EventType == irr::EET_MOUSE_INPUT_EVENT){
+            if(event.MouseInput.isLeftPressed() == true){
+                current_editor->getCurrentZone()->setSelectedObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), 0, false, 0));
+            }
         }
     }
     return false;

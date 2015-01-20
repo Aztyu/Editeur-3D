@@ -47,6 +47,7 @@ class Zone {
         Objet* getObjetPointer(int index);
         Zone* getPointer();
         void setSelectedObject(int index);
+        void setSelectedObject(irr::scene::ISceneNode* objet);
 
     private:
         std::vector<Objet*> tableau;
