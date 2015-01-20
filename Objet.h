@@ -19,7 +19,9 @@ public:
     Objet(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name);
     Objet(const Objet& objetACopier);
     virtual ~Objet();
-    virtual void printObjet();
+    
+    friend std::ostream& operator <<(std::ostream stream, Objet& obj);
+    const char* printObjet();
     void setPosition(float x, float y, float z);
     void setScale(float x, float y, float z);
     void setRotation(float x, float y, float z);

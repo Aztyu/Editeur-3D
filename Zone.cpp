@@ -6,6 +6,7 @@
  */
 
 #include "Zone.h"
+#include "fstream"
 
 using namespace std;
 
@@ -166,5 +167,17 @@ void Zone::setSelectedObject(irr::scene::ISceneNode* objet){
             return;
         }
     }
+}
+
+void Zone::exportZone(){
+    ofstream output("C:\\Users\\Aztyu\\Desktop\\testirrlicht.txt", ofstream::out | ofstream::app);
+        if(output.is_open()){
+            for(int i=0; i<tableau.size() ;++i){
+                output << tableau[i] << endl;
+            }
+            output.close();
+        }else{
+            cout << "error";
+        }
 }
 

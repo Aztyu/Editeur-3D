@@ -35,4 +35,5 @@
 | 170408 | STHEME de JUBECOURT Etienne | [@etiennestm](https://github.com/etiennestm)     |
 | 172320 | ORIOL Guillaume             | [@devguillaume](https://github.com/devguillaume) |
 | 170535 | GARDET Julien               | [@Jitrixis](https://github.com/Jitrixis)         |
+| 200184 | CHIAPPINI Matthieu		   |
 | ...    | ...                         | ...                                              |

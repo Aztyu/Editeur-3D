@@ -42,8 +42,14 @@ Objet::~Objet() {
     cout << "Object deleted" << endl;
 }
 
-void Objet::printObjet(){
-    //cout << "L'objet se trouve en " << position.X  << position.Y << position.Z << "et a pour " << objet << endl;
+std::ostream& operator <<(std::ostream& stream, Objet& obj){
+    stream << obj.printObjet();
+    return stream;
+}
+
+const char* Objet::printObjet(){
+    std::string obj_name = "L'objet se trouve en ";
+    return obj_name.c_str();
 }
 
 void Objet::setPosition(float x, float y, float z){
