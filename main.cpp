@@ -19,17 +19,9 @@ int main(void)
     params.Doublebuffer = true;
     
     irr::IrrlichtDevice *device = irr::createDeviceEx(params);
-    /*irr::IrrlichtDevice *device = irr::createDevice (
-        irr::video::EDT_OPENGL,
-        irr::core::dimension2d<irr::u32>(800,600),
-        32,
-        false,
-        true,
-        false,
-        0);*/
-    
     
     irr::video::IVideoDriver* driver = device->getVideoDriver ();
+    
     irr::scene::ISceneManager *sceneManager = device->getSceneManager();
 
     irr::gui::IGUIEnvironment *gui = device->getGUIEnvironment();
@@ -154,7 +146,6 @@ int main(void)
     editeur.getCurrentZone()->createObjet(pyramid);
     editeur.getCurrentZone()->createObjet(sphere);
     
-    //editeur.getCurrentZone().getObjetPointer(1)->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
     editeur.getCurrentZone()->getObjetPointer(1)->setPosition(0.0, 2.0, 0.0);
     editeur.getCurrentZone()->getObjetPointer(1)->setParent(editeur.getCurrentZone()->getObjetPointer(0));
     
@@ -197,6 +188,6 @@ int main(void)
         driver->endScene();
     }
 
-    device->drop ();
+    device->drop();
     return 0;
 }

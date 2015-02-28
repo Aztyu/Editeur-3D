@@ -38,11 +38,11 @@ Objet::Objet(const Objet& orig) {
 }
 
 Objet::~Objet() {
-    objet->remove();
+    objet->remove();        //Suppression de l'objet dans irrlicht
     cout << "Object deleted" << endl;
 }
 
-std::ostream& operator <<(std::ostream& stream, Objet& obj){
+std::ostream& operator <<(std::ostream& stream, Objet& obj){    //Completer pour l'export
     stream << obj.printObjet();
     return stream;
 }
@@ -52,8 +52,7 @@ const char* Objet::printObjet(){
     return obj_name.c_str();
 }
 
-void Objet::setPosition(float x, float y, float z){
-
+void Objet::setPosition(float x, float y, float z){        //Methodes absolues
     objet->setPosition(irr::core::vector3df(x, y, z));
 }
 
@@ -63,6 +62,18 @@ void Objet::setScale(float x, float y, float z){
 
 void Objet::setRotation(float x, float y, float z){
     objet->setRotation(irr::core::vector3df(x, y, z));
+}
+
+void Objet::modifyPositionBy(float x, float y, float z){        //Methodes relatives, utilise la valeur de base plus celle que vous rajoutez
+    objet->setPosition(irr::core::vector3df(x, y, z) + objet->getPosition());
+}
+
+void Objet::modifyScaleBy(float x, float y, float z){
+    objet->setScale(irr::core::vector3df(x, y, z) + objet->getScale());
+}
+
+void Objet::modifyRotationBy(float x, float y, float z){
+    objet->setRotation(irr::core::vector3df(x, y, z) + objet->getRotation());
 }
 
 void Objet::setParent(Objet* parent){  //Utile pour la creation de groupe 

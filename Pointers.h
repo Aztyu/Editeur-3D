@@ -10,7 +10,7 @@
 
 #include "irrlicht.h"
 
-struct Pointer{
+struct Pointer{     //Pointeur necessaire pour l'acces et le fonctionnement
     irr::IrrlichtDevice* device;
     irr::video::IVideoDriver* driver;
     irr::scene::ISceneManager* scene;

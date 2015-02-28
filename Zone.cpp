@@ -37,8 +37,26 @@ void Zone::addObjet(Objet* objet){
 }
 
 void Zone::removeObjet(int index){ //clear l'objet de tout stockage et de la scene
-    delete tableau[index];
-    tableau.erase(tableau.begin()+index);
+    if(selected_object == tableau[index]){
+        selected_object = NULL;
+    }
+    delete tableau[index];      //On l'enleve du programme
+    tableau.erase(tableau.begin()+index);       //et du vector
+    current_pointer->box_object->removeItem(index);     //Et de la combobox
+}
+
+void Zone::removeObjet(Objet* objet){
+    int index = -1;
+    
+    for(int i = 0;i<tableau.size(); ++i){
+        if(objet == tableau[i]){
+            index = i;
+        }
+    }
+    
+    if(index > -1){     //Si l'objet est present on le supprime 
+        removeObjet(index);
+    }
 }
 
 void Zone::createObjet(object form){
@@ -147,6 +165,10 @@ Objet* Zone::getObjetPointer(int index){
     }
 }
 
+Objet* Zone::getSelectedObjet(){
+    return selected_object;
+}
+
 Zone* Zone::getPointer(){
     return this;
 }
@@ -169,7 +191,7 @@ void Zone::setSelectedObject(irr::scene::ISceneNode* objet){
     }
 }
 
-void Zone::exportZone(){
+void Zone::exportZone(){        //Besoin de travail et deplacement possible dans editor
     ofstream output("C:\\Users\\Aztyu\\Desktop\\testirrlicht.txt", ofstream::out | ofstream::app);
         if(output.is_open()){
             for(int i=0; i<tableau.size() ;++i){

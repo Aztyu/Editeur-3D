@@ -14,7 +14,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
             irr::core::vector3df direction_mvnt;
 
             switch(event.KeyInput.Key){
-                case irr::KEY_RETURN: //Maj de la scale suite a l'appui d'entree
+                case irr::KEY_RETURN: //Maj de la scale suite a l'appui d'entree, exemple recupere dans la doc irrlicht
                     /* set scale
                     irr::gui::IGUIElement* root = env->getRootGUIElement();
                     irr::core::vector3df scale;
@@ -30,6 +30,14 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     if (Model)
                         Model->setScale(scale);
                     updateScaleInfo(Model);*/
+                    return true;
+                
+                case irr::KEY_ESCAPE:  //Ferme le programme
+                    current_editor->getMainPointer()->device->closeDevice();
+                    return true;
+                    
+                case irr::KEY_DELETE:  //Supprime l'objet selectionne
+                    current_editor->getCurrentZone()->removeObjet(current_editor->getCurrentZone()->getSelectedObjet());
                     return true;
                     
                 case irr::KEY_KEY_O:  //Camera vers le haut
@@ -83,7 +91,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     target.Y += 5;
 
                     current_editor->getMainPointer()->camera->setPosition(position);
-                    current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
+                    current_editor->getMainPointer()->camera->bindTargetAndRotation(false);     //Sinon la rotation ce fait mal
                     current_editor->getMainPointer()->camera->setTarget(target);
                     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
                     return true;
@@ -93,7 +101,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     target.Y -= 5;
 
                     current_editor->getMainPointer()->camera->setPosition(position);
-                    current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
+                    current_editor->getMainPointer()->camera->bindTargetAndRotation(false);     //Sinon la rotation ce fait mal
                     current_editor->getMainPointer()->camera->setTarget(target);
                     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
                     return true;
@@ -171,7 +179,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     break;
             }
         }else if(event.EventType == irr::EET_MOUSE_INPUT_EVENT){
-            if(event.MouseInput.isLeftPressed() == true){
+            if(event.MouseInput.isLeftPressed() == true){       //Si on clique sur un objet a l'ecran il est selectionne
                 current_editor->getCurrentZone()->setSelectedObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), 0, false, 0));
             }
         }

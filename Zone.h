@@ -22,7 +22,7 @@ enum object {
     sphere,
     cylinder};
     
-enum {
+enum {                  //Ajoutez les ids utilises dans le GUI ici
     GUI_ID_SQUARE,
     GUI_ID_RECTANGLE,
     GUI_ID_LINE,
@@ -41,10 +41,12 @@ class Zone {
         virtual ~Zone();
         void addObjet(Objet* objet);
         void removeObjet(int index);
+        void removeObjet(Objet* objet);
         void createObjet(object form);
         int getObjectCount();
         void printZone();
         Objet* getObjetPointer(int index);
+        Objet* getSelectedObjet();
         Zone* getPointer();
         void setSelectedObject(int index);
         void setSelectedObject(irr::scene::ISceneNode* objet);
