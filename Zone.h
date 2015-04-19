@@ -8,7 +8,7 @@
 #ifndef ZONE_H
 #define	ZONE_H
 
-#include "Objet.h"
+#include "SingleObjet.h"
 #include "Pointers.h"
 #include <vector>
 
@@ -39,22 +39,22 @@ class Zone {
         Zone(char* name, Pointer* pointer);
         Zone(const Zone& orig);
         virtual ~Zone();
-        void addObjet(Objet* objet);
+        void addObjet(SingleObjet* objet);
         void removeObjet(int index);
-        void removeObjet(Objet* objet);
+        void removeObjet(SingleObjet* objet);
         void createObjet(object form);
         int getObjectCount();
         void printZone();
-        Objet* getObjetPointer(int index);
-        Objet* getSelectedObjet();
+        SingleObjet* getObjetPointer(int index);
+        SingleObjet* getSelectedObjet();
         Zone* getPointer();
         void setSelectedObject(int index);
         void setSelectedObject(irr::scene::ISceneNode* objet);
         void exportZone();
 
     private:
-        std::vector<Objet*> tableau;
-        Objet* selected_object;
+        std::vector<SingleObjet*> tableau;
+        SingleObjet* selected_object;
         Pointer* current_pointer;
         std::string zone_name;
         int type_number[8];

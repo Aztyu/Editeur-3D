@@ -32,7 +32,7 @@ Zone::~Zone() {
     tableau.clear();
 }
 
-void Zone::addObjet(Objet* objet){
+void Zone::addObjet(SingleObjet* objet){
     tableau.push_back(objet);
 }
 
@@ -45,7 +45,7 @@ void Zone::removeObjet(int index){ //clear l'objet de tout stockage et de la sce
     current_pointer->box_object->removeItem(index);     //Et de la combobox
 }
 
-void Zone::removeObjet(Objet* objet){
+void Zone::removeObjet(SingleObjet* objet){
     int index = -1;
     
     for(int i = 0;i<tableau.size(); ++i){
@@ -138,7 +138,7 @@ void Zone::createObjet(object form){
             break;
     }
     type += ".obj";
-    tableau.push_back(new Objet(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));        //Chargement et creation de l'objet
+    tableau.push_back(new SingleObjet(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));        //Chargement et creation de l'objet
     std::wstring widestr = std::wstring(name.begin(), name.end());
     const wchar_t* widecstr = widestr.c_str();
     current_pointer->box_object->addItem(widecstr); //Ajout de l'objet a la combobox
@@ -157,7 +157,7 @@ void Zone::printZone(){
     }
 }
 
-Objet* Zone::getObjetPointer(int index){
+SingleObjet* Zone::getObjetPointer(int index){
     if(index >= 0 && index < tableau.size()){
         return tableau[index];
     }else{
@@ -165,7 +165,7 @@ Objet* Zone::getObjetPointer(int index){
     }
 }
 
-Objet* Zone::getSelectedObjet(){
+SingleObjet* Zone::getSelectedObjet(){
     return selected_object;
 }
 
