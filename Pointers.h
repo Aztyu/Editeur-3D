@@ -8,16 +8,15 @@
 #ifndef POINTERS_H
 #define	POINTERS_H
 
-#include "irrlicht.h"
+//#include "irrlicht.h"
+#include "GraphicalInterface.h"
 
 struct Pointer{     //Pointeur necessaire pour l'acces et le fonctionnement
     irr::IrrlichtDevice* device;
     irr::video::IVideoDriver* driver;
     irr::scene::ISceneManager* scene;
-    irr::scene::ICameraSceneNode* camera;
-    
-    irr::gui::IGUIEnvironment* gui;
-    irr::gui::IGUIComboBox* box_object;
+    irr::scene::ICameraSceneNode* camera; 
+    GraphicalInterface* gui;
 };
 
 #endif	/* POINTERS_H */

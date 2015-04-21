@@ -88,3 +88,7 @@ irr::scene::ISceneNode* SingleObjet::getSceneNode(){  //Retourne le pointeur ver
     return objet;
 }
 
+std::string SingleObjet::getName() {
+    return this->object_name;
+}
+

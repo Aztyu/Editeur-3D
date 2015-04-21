@@ -42,7 +42,7 @@ void Zone::removeObjet(int index){ //clear l'objet de tout stockage et de la sce
     }
     delete tableau[index];      //On l'enleve du programme
     tableau.erase(tableau.begin()+index);       //et du vector
-    current_pointer->box_object->removeItem(index);     //Et de la combobox
+    current_pointer->gui->updateSingleObject(&tableau);     //Et de la combobox
 }
 
 void Zone::removeObjet(SingleObjet* objet){
@@ -139,11 +139,9 @@ void Zone::createObjet(object form){
     }
     type += ".obj";
     tableau.push_back(new SingleObjet(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));        //Chargement et creation de l'objet
-    std::wstring widestr = std::wstring(name.begin(), name.end());
-    const wchar_t* widecstr = widestr.c_str();
-    current_pointer->box_object->addItem(widecstr); //Ajout de l'objet a la combobox
-    
-    setSelectedObject(tableau.size()-1);    //Le derniere objet cree est par default selectionne
+    current_pointer->gui->updateSingleObject(&tableau); //Ajout de l'objet a la combobox
+    current_pointer->gui->setSingleObjetSelected(tableau.size()-1);   //Le derniere objet cree est par default selectionne
+    setSelectedObject(tableau.size());
 }
 
 int Zone::getObjectCount(){
@@ -174,12 +172,16 @@ Zone* Zone::getPointer(){
 }
 
 void Zone::setSelectedObject(int index){
-   if(selected_object != 0){    
-       selected_object->getSceneNode()->getMaterial(0).EmissiveColor = 0;   //Si un objet est deja selectionne on le deselectionne en "l'eteignant"
-   }
-   selected_object = tableau[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
-   selected_object->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
-   current_pointer->box_object->setSelected(index);
+    if(index >= 0 && index < this->tableau.size()){
+        if(selected_object != 0){    
+            selected_object->getSceneNode()->getMaterial(0).EmissiveColor = 0;   //Si un objet est deja selectionne on le deselectionne en "l'eteignant"
+        }
+        selected_object = tableau[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
+        selected_object->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
+        current_pointer->gui->setSingleObjetSelected(index);
+    }else{
+        this->selected_object = 0;
+    }
 }
 
 void Zone::setSelectedObject(irr::scene::ISceneNode* objet){
@@ -189,6 +191,7 @@ void Zone::setSelectedObject(irr::scene::ISceneNode* objet){
             return;
         }
     }
+    //this->selected_object = 0;
 }
 
 void Zone::exportZone(){        //Besoin de travail et deplacement possible dans editor

@@ -22,17 +22,6 @@ enum object {
     sphere,
     cylinder};
     
-enum {                  //Ajoutez les ids utilises dans le GUI ici
-    GUI_ID_SQUARE,
-    GUI_ID_RECTANGLE,
-    GUI_ID_LINE,
-    GUI_ID_TRAPEZE,
-    GUI_ID_SPHERE,
-    GUI_ID_PYRAMID,
-    GUI_ID_CIRCLE,
-    GUI_ID_CYLINDER,
-    GUI_ID_OBJECT
-};
 
 class Zone {
     public:

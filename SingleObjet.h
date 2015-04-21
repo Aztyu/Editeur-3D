@@ -31,6 +31,7 @@ public:
     void setParent(SingleObjet* parent);
     SingleObjet* getPointer();
     irr::scene::ISceneNode* getSceneNode();
+    std::string getName();
     
 protected:
     irr::scene::ISceneNode* objet;
