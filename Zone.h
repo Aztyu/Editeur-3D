@@ -9,6 +9,7 @@
 #define	ZONE_H
 
 #include "Pointers.h"
+#include "GroupObject.h"
 
 enum object {
     rectangle,
@@ -41,8 +42,8 @@ class Zone {
         void exportZone();
 
     private:
-        std::vector<SingleObjet*> single_object_array;
-        //std::vector<GroupObject> group_object_array;
+        std::vector<SingleObjet*> single_object_array; //Ne pas passer de pointer a objet ca fait tout peter
+        std::vector<GroupObject*> group_object_array;
         SingleObjet* selected_object;
         Pointer* current_pointer;
         std::string zone_name;

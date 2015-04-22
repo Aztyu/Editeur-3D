@@ -28,7 +28,7 @@ public:
     //GraphicalInterface(const GraphicalInterface& orig);
     virtual ~GraphicalInterface();
     void drawAll();
-    void updateSingleObject(std::vector<SingleObjet>* tableau);
+    void updateSingleObject(std::vector<SingleObjet*>* tableau);
     void setSingleObjetSelected(int index);
 private:
     irr::gui::IGUIContextMenu* menu;

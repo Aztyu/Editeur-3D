@@ -12,8 +12,7 @@ using namespace std;
 
 Zone::Zone(char* name, Pointer* pointer){
     zone_name = name;
-    tableau.reserve(10);
-    
+    this->single_object_array.reserve(10);
     for(int i=0; i < 8; i++){ //Mise a zero du nombre d'objets
         type_number[i] = 0;
     }
@@ -26,30 +25,30 @@ Zone::Zone(const Zone& orig) {
 }
 
 Zone::~Zone() {
-    for(int i=0 ; i<tableau.size() ; ++i){
-        delete tableau[i];
+    for(int i=0 ; i<this->single_object_array.size() ; ++i){
+        delete this->single_object_array[i];
     }
-    tableau.clear();
+    this->single_object_array.clear();
 }
 
 void Zone::addObjet(SingleObjet* objet){
-    tableau.push_back(objet);
+    this->single_object_array.push_back(objet);
 }
 
 void Zone::removeObjet(int index){ //clear l'objet de tout stockage et de la scene
-    if(selected_object == tableau[index]){
+    if(selected_object == this->single_object_array[index]){
         selected_object = NULL;
     }
-    delete tableau[index];      //On l'enleve du programme
-    tableau.erase(tableau.begin()+index);       //et du vector
-    current_pointer->gui->updateSingleObject(&tableau);     //Et de la combobox
+    delete this->single_object_array[index];      //On l'enleve du programme
+    this->single_object_array.erase(this->single_object_array.begin()+index);       //et du vector
+    current_pointer->gui->updateSingleObject(&this->single_object_array);     //Et de la combobox
 }
 
 void Zone::removeObjet(SingleObjet* objet){
     int index = -1;
     
-    for(int i = 0;i<tableau.size(); ++i){
-        if(objet == tableau[i]){
+    for(int i = 0;i<this->single_object_array.size(); ++i){
+        if(objet == this->single_object_array[i]){
             index = i;
         }
     }
@@ -138,26 +137,28 @@ void Zone::createObjet(object form){
             break;
     }
     type += ".obj";
-    tableau.push_back(new SingleObjet(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));        //Chargement et creation de l'objet
-    current_pointer->gui->updateSingleObject(&tableau); //Ajout de l'objet a la combobox
-    current_pointer->gui->setSingleObjetSelected(tableau.size()-1);   //Le derniere objet cree est par default selectionne
-    setSelectedObject(tableau.size());
+    this->single_object_array.push_back(new SingleObjet(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));        //Chargement et creation de l'objet
+    current_pointer->gui->updateSingleObject(&this->single_object_array); //Ajout de l'objet a la combobox
+    current_pointer->gui->setSingleObjetSelected(this->single_object_array.size()-1);   //Le derniere objet cree est par default selectionne
+    if(selected_object == NULL){
+        setSelectedObject(this->single_object_array.size());
+    }
 }
 
 int Zone::getObjectCount(){
-    return tableau.size();
+    return this->single_object_array.size();
 }
 
 void Zone::printZone(){
     cout << "La zone s'appelle " << zone_name << endl;
-    for(int i=0; i < tableau.size(); i++){
-        tableau[i]->printObjet();
+    for(int i=0; i < this->single_object_array.size(); i++){
+        this->single_object_array[i]->printObjet();
     }
 }
 
-SingleObjet* Zone::getObjetPointer(int index){
-    if(index >= 0 && index < tableau.size()){
-        return tableau[index];
+SingleObjet* Zone::getSingleObjetPointer(int index){
+    if(index >= 0 && index < this->single_object_array.size()){
+        return this->single_object_array[index];
     }else{
         return 0;
     }
@@ -172,11 +173,11 @@ Zone* Zone::getPointer(){
 }
 
 void Zone::setSelectedObject(int index){
-    if(index >= 0 && index < this->tableau.size()){
+    if(index >= 0 && index < this->single_object_array.size()){
         if(selected_object != 0){    
             selected_object->getSceneNode()->getMaterial(0).EmissiveColor = 0;   //Si un objet est deja selectionne on le deselectionne en "l'eteignant"
         }
-        selected_object = tableau[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
+        selected_object = this->single_object_array[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
         selected_object->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
         current_pointer->gui->setSingleObjetSelected(index);
     }else{
@@ -185,20 +186,19 @@ void Zone::setSelectedObject(int index){
 }
 
 void Zone::setSelectedObject(irr::scene::ISceneNode* objet){
-    for(int i = 0;i<tableau.size(); ++i){
-        if(objet == tableau[i]->getSceneNode()){
+    for(int i = 0;i<this->single_object_array.size(); ++i){
+        if(objet == this->single_object_array[i]->getSceneNode()){
             setSelectedObject(i);
             return;
         }
     }
-    //this->selected_object = 0;
 }
 
 void Zone::exportZone(){        //Besoin de travail et deplacement possible dans editor
     ofstream output("C:\\Users\\Aztyu\\Desktop\\testirrlicht.txt", ofstream::out | ofstream::app);
         if(output.is_open()){
-            for(int i=0; i<tableau.size() ;++i){
-                output << tableau[i] << endl;
+            for(int i=0; i<this->single_object_array.size() ;++i){
+                output << this->single_object_array[i] << endl;
             }
             output.close();
         }else{
