@@ -6,6 +6,7 @@
  */
 
 #include "SingleObjet.h"
+#include "GroupObject.h"
 
 #ifndef GRAPHICALINTERFACE_H
 #define	GRAPHICALINTERFACE_H
@@ -30,9 +31,12 @@ public:
     void drawAll();
     void updateSingleObject(std::vector<SingleObjet*>* tableau);
     void setSingleObjetSelected(int index);
+    void updateGroupObject(std::vector<GroupObject*>* tableau);
+    void setGroupObjetSelected(int index);
 private:
     irr::gui::IGUIContextMenu* menu;
     irr::gui::IGUIComboBox* single_object_box;
+    irr::gui::IGUIComboBox* group_object_box;
     
     irr::video::IVideoDriver* driver;
     irr::gui::IGUIEnvironment* gui;

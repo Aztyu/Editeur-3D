@@ -133,42 +133,42 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
 
                     switch(id){             //Creation d'objets
                         case GUI_ID_SQUARE:
-                            current_editor->getCurrentZone()->createObjet(cube);
+                            current_editor->getCurrentZone()->createSingleObjet(cube);
                             current_editor->getCurrentZone()->getSingleObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
                             return true;
                             
                         case GUI_ID_CIRCLE:
-                            current_editor->getCurrentZone()->createObjet(circle);
+                            current_editor->getCurrentZone()->createSingleObjet(circle);
                             current_editor->getCurrentZone()->getSingleObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
                             return true;
 
                         case GUI_ID_SPHERE:
-                            current_editor->getCurrentZone()->createObjet(sphere);
+                            current_editor->getCurrentZone()->createSingleObjet(sphere);
                             current_editor->getCurrentZone()->getSingleObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
                             return true;
                             
                         case GUI_ID_CYLINDER:
-                            current_editor->getCurrentZone()->createObjet(cylinder);
+                            current_editor->getCurrentZone()->createSingleObjet(cylinder);
                             current_editor->getCurrentZone()->getSingleObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
                             return true;
                             
                         case GUI_ID_RECTANGLE:
-                            current_editor->getCurrentZone()->createObjet(rectangle);
+                            current_editor->getCurrentZone()->createSingleObjet(rectangle);
                             current_editor->getCurrentZone()->getSingleObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
                             return true;
                             
                         case GUI_ID_LINE:
-                            current_editor->getCurrentZone()->createObjet(line);
+                            current_editor->getCurrentZone()->createSingleObjet(line);
                             current_editor->getCurrentZone()->getSingleObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
                             return true;
                             
                         case GUI_ID_TRAPEZE:
-                            current_editor->getCurrentZone()->createObjet(trapeze);
+                            current_editor->getCurrentZone()->createSingleObjet(trapeze);
                             current_editor->getCurrentZone()->getSingleObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
                             return true;
 
                         case GUI_ID_PYRAMID:
-                            current_editor->getCurrentZone()->createObjet(pyramid);
+                            current_editor->getCurrentZone()->createSingleObjet(pyramid);
                             current_editor->getCurrentZone()->getSingleObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
                             return true;
                     }}

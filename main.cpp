@@ -56,10 +56,10 @@ int main(void)
     main_pointers.gui = &gui;
     main_pointers.scene = sceneManager;
     
-    editeur.getCurrentZone()->createObjet(cylinder);
-    editeur.getCurrentZone()->createObjet(pyramid);
-    editeur.getCurrentZone()->createObjet(pyramid);
-    editeur.getCurrentZone()->createObjet(sphere);
+    editeur.getCurrentZone()->createSingleObjet(cylinder);
+    editeur.getCurrentZone()->createSingleObjet(pyramid);
+    editeur.getCurrentZone()->createSingleObjet(pyramid);
+    editeur.getCurrentZone()->createSingleObjet(sphere);
     
     editeur.getCurrentZone()->getSingleObjetPointer(1)->setPosition(0.0, 2.0, 0.0);
     editeur.getCurrentZone()->getSingleObjetPointer(1)->setParent(editeur.getCurrentZone()->getSingleObjetPointer(0));

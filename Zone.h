@@ -19,10 +19,12 @@ enum object {
     cube,
     pyramid,
     sphere,
-    cylinder};
+    cylinder,
+    group};
     
 
 class Zone {
+    
     public:
         Zone(char* name, Pointer* pointer);
         Zone(const Zone& orig);
@@ -30,11 +32,12 @@ class Zone {
         void addObjet(SingleObjet* objet);
         void removeObjet(int index);
         void removeObjet(SingleObjet* objet);
-        void createObjet(object form);
+        void createSingleObjet(object form);
+        void createGroupObject();
         int getObjectCount();
         void printZone();
         SingleObjet* getSingleObjetPointer(int index);
-        //GroupObjet* getGroupObjetPointer(int index);
+        GroupObject* getGroupObjetPointer(int index);
         SingleObjet* getSelectedObjet();
         Zone* getPointer();
         void setSelectedObject(int index);

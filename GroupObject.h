@@ -16,6 +16,7 @@ public:
     GroupObject(irr::scene::ISceneNode* objet, float total_scale, const char* name);
     GroupObject(irr::scene::ISceneNode* objet, float x, float y, float z, const char* name);
     GroupObject(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name);
+    virtual ~GroupObject();
     
     friend std::ostream& operator <<(std::ostream stream, SingleObjet& obj);
     const char* printObjet();

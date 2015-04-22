@@ -19,7 +19,7 @@ Editor::Editor(const Editor& orig) {
 }
 
 Editor::~Editor() {
-    delete current_zone;
+    //delete current_zone;
     for (int i=0; i< zone_array.size(); ++i) {
         delete zone_array[i];
     }

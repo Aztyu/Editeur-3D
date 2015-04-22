@@ -25,9 +25,14 @@ Zone::Zone(const Zone& orig) {
 }
 
 Zone::~Zone() {
-    for(int i=0 ; i<this->single_object_array.size() ; ++i){
+    /*for(int i=0 ; i<this->group_object_array.size() ; ++i){
+        delete this->group_object_array[i];
+    }*/
+    this->group_object_array.clear();
+    
+    /*for(int i=0 ; i<this->single_object_array.size() ; ++i){
         delete this->single_object_array[i];
-    }
+    }*/
     this->single_object_array.clear();
 }
 
@@ -58,7 +63,7 @@ void Zone::removeObjet(SingleObjet* objet){
     }
 }
 
-void Zone::createObjet(object form){
+void Zone::createSingleObjet(object form){
     char buffer[50];
     string type = "ressources/", name;
     switch((int)form){  //Switch qui va choisir quel fichier charger
@@ -145,6 +150,21 @@ void Zone::createObjet(object form){
     }
 }
 
+void Zone::createGroupObject(){
+    char buffer[50];
+    string type = "ressources/", name;
+    name = "Group";
+    if(type_number[8] > 0){
+        sprintf (buffer, "%d", type_number[0]);
+        name.append(buffer);
+    }
+    type_number[0]++;
+    type += "rectangle";
+    type += ".obj";
+    this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), 0.1, name.c_str()));        //Chargement et creation de l'objet
+    current_pointer->gui->updateGroupObject(&this->group_object_array); //Ajout de l'objet a la combobox
+}
+
 int Zone::getObjectCount(){
     return this->single_object_array.size();
 }
@@ -163,6 +183,15 @@ SingleObjet* Zone::getSingleObjetPointer(int index){
         return 0;
     }
 }
+
+GroupObject* Zone::getGroupObjetPointer(int index){
+    if(index >= 0 && index < this->group_object_array.size()){
+        return this->group_object_array[index];
+    }else{
+        return 0;
+    }
+}
+
 
 SingleObjet* Zone::getSelectedObjet(){
     return selected_object;

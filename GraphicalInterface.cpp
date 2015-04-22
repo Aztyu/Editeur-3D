@@ -119,3 +119,16 @@ void GraphicalInterface::updateSingleObject(std::vector<SingleObjet*>* tableau){
 void GraphicalInterface::setSingleObjetSelected(int index){
     this->single_object_box->setSelected(index);
 }
+
+void GraphicalInterface::updateGroupObject(std::vector<GroupObject*>* tableau){
+    for(int i = 0; i < tableau->size(); i++){
+        std::string name = tableau->at(i)->getName();
+        std::wstring widestr = std::wstring(name.begin(), name.end());
+        const wchar_t* widecstr = widestr.c_str();
+        this->group_object_box->addItem(widecstr); //Ajout de l'objet a la combobox
+    }
+}
+    
+void GraphicalInterface::setGroupObjetSelected(int index){
+    this->group_object_box->setSelected(index);
+}
