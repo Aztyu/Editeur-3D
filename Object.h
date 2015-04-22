@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include "irrlicht.h"
+#include <vector>
 
 class Object {
 public:

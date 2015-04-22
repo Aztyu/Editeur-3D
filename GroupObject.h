@@ -8,9 +8,7 @@
 #ifndef GROUPOBJECT_H
 #define	GROUPOBJECT_H
 
-#include "Object.h"
 #include "SingleObjet.h"
-#include <vector>
 
 class GroupObject : public Object{
 public:

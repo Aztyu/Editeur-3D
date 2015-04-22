@@ -8,9 +8,7 @@
 #ifndef ZONE_H
 #define	ZONE_H
 
-#include "SingleObjet.h"
 #include "Pointers.h"
-#include <vector>
 
 enum object {
     rectangle,
@@ -28,13 +26,14 @@ class Zone {
         Zone(char* name, Pointer* pointer);
         Zone(const Zone& orig);
         virtual ~Zone();
-        void addObjet(SingleObjet* objet);
+        void addObjet(SingleObjet objet);
         void removeObjet(int index);
         void removeObjet(SingleObjet* objet);
         void createObjet(object form);
         int getObjectCount();
         void printZone();
-        SingleObjet* getObjetPointer(int index);
+        SingleObjet* getSingleObjetPointer(int index);
+        //GroupObjet* getGroupObjetPointer(int index);
         SingleObjet* getSelectedObjet();
         Zone* getPointer();
         void setSelectedObject(int index);
@@ -42,7 +41,8 @@ class Zone {
         void exportZone();
 
     private:
-        std::vector<SingleObjet*> tableau;
+        std::vector<SingleObjet> single_object_array;
+        //std::vector<GroupObject> group_object_array;
         SingleObjet* selected_object;
         Pointer* current_pointer;
         std::string zone_name;

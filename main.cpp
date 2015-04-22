@@ -1,6 +1,6 @@
 #include "Zone.h"
 #include "Event.h"
-#include "Pointers.h"
+//#include "Pointers.h"
 
 using namespace std;
 
@@ -73,8 +73,6 @@ int main(void)
     
     editeur.getCurrentZone()->getSingleObjetPointer(3)->setPosition(0.0, 0.0, 20.0);
     
-    wchar_t titre[200];
-    
     irr::scene::ILightSceneNode* lumiere = sceneManager->addLightSceneNode (0,
             irr::core::vector3df(100.0f, 70.0f, 100.0f),    //Position de la lumiere
             irr::video::SColorf(1.0f, 0.6f, 0.7f, 1.0f),    //Couleur de la lumiere
@@ -90,6 +88,8 @@ int main(void)
     
     while(device->run ())                        // la boucle de rendu
     {
+        wchar_t titre[200];
+        
         driver->beginScene(true, true, irr::video::SColor(255,114,122,124));
         irr::s32 fps = driver->getFPS();
         

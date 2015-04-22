@@ -8,7 +8,6 @@
 #ifndef POINTERS_H
 #define	POINTERS_H
 
-//#include "irrlicht.h"
 #include "GraphicalInterface.h"
 
 struct Pointer{     //Pointeur necessaire pour l'acces et le fonctionnement

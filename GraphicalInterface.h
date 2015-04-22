@@ -5,9 +5,7 @@
  * Created on 19 avril 2015, 16:48
  */
 
-#include "irrlicht.h"
 #include "SingleObjet.h"
-#include <vector>
 
 #ifndef GRAPHICALINTERFACE_H
 #define	GRAPHICALINTERFACE_H
@@ -30,7 +28,7 @@ public:
     //GraphicalInterface(const GraphicalInterface& orig);
     virtual ~GraphicalInterface();
     void drawAll();
-    void updateSingleObject(std::vector<SingleObjet*>* tableau);
+    void updateSingleObject(std::vector<SingleObjet>* tableau);
     void setSingleObjetSelected(int index);
 private:
     irr::gui::IGUIContextMenu* menu;

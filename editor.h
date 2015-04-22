@@ -9,7 +9,6 @@
 #define	EDITOR_H
 
 #include "Zone.h"
-#include "Pointers.h"
 
 class Editor {
     public:
