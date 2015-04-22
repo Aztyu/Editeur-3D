@@ -95,7 +95,9 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
         L"8");
     bouton7->setImage(driver->getTexture("ressources/sphereicon.png"));
     
-    this->single_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(640,30,790,62), 0, GUI_ID_OBJECT);
+    this->single_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(640,30,790,62), 0, GUI_ID_SINGLE_OBJECT_COMBO_BOX);
+    
+    this->group_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(840,30,990,62), 0, GUI_ID_GROUP_OBJECT_COMBO_BOX);
 }
 
 GraphicalInterface::~GraphicalInterface() {

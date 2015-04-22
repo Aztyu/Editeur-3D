@@ -37,11 +37,14 @@ class Zone {
         int getObjectCount();
         void printZone();
         SingleObjet* getSingleObjetPointer(int index);
-        GroupObject* getGroupObjetPointer(int index);
-        SingleObjet* getSelectedObjet();
+        GroupObject* getGroupObjectPointer(int index);
+        SingleObjet* getSelectedSingleObject();
+        GroupObject* getSelectedGroupObject();
         Zone* getPointer();
-        void setSelectedObject(int index);
-        void setSelectedObject(irr::scene::ISceneNode* objet);
+        void setSelectedSingleObject(int index);
+        void setSelectedSingleObject(irr::scene::ISceneNode* objet);
+        void setSelectedGroupObject(int index);
+        void setSelectedGroupObject(irr::scene::ISceneNode* objet);
         void exportZone();
 
     private:
@@ -50,7 +53,7 @@ class Zone {
         SingleObjet* selected_object;
         Pointer* current_pointer;
         std::string zone_name;
-        int type_number[8];
+        int type_number[9];
 };
 
 

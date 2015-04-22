@@ -60,6 +60,7 @@ int main(void)
     editeur.getCurrentZone()->createSingleObjet(pyramid);
     editeur.getCurrentZone()->createSingleObjet(pyramid);
     editeur.getCurrentZone()->createSingleObjet(sphere);
+    editeur.getCurrentZone()->createGroupObject();
     
     editeur.getCurrentZone()->getSingleObjetPointer(1)->setPosition(0.0, 2.0, 0.0);
     editeur.getCurrentZone()->getSingleObjetPointer(1)->setParent(editeur.getCurrentZone()->getSingleObjetPointer(0));

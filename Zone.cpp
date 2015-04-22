@@ -13,7 +13,7 @@ using namespace std;
 Zone::Zone(char* name, Pointer* pointer){
     zone_name = name;
     this->single_object_array.reserve(10);
-    for(int i=0; i < 8; i++){ //Mise a zero du nombre d'objets
+    for(int i=0; i < 9; i++){ //Mise a zero du nombre d'objets
         type_number[i] = 0;
     }
     current_pointer = pointer;  //liste de pointeurs globaux
@@ -146,7 +146,7 @@ void Zone::createSingleObjet(object form){
     current_pointer->gui->updateSingleObject(&this->single_object_array); //Ajout de l'objet a la combobox
     current_pointer->gui->setSingleObjetSelected(this->single_object_array.size()-1);   //Le derniere objet cree est par default selectionne
     if(selected_object == NULL){
-        setSelectedObject(this->single_object_array.size());
+        setSelectedSingleObject(this->single_object_array.size());
     }
 }
 
@@ -155,10 +155,10 @@ void Zone::createGroupObject(){
     string type = "ressources/", name;
     name = "Group";
     if(type_number[8] > 0){
-        sprintf (buffer, "%d", type_number[0]);
+        sprintf (buffer, "%d", type_number[8]);
         name.append(buffer);
     }
-    type_number[0]++;
+    type_number[8]++;
     type += "rectangle";
     type += ".obj";
     this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), 0.1, name.c_str()));        //Chargement et creation de l'objet
@@ -184,7 +184,7 @@ SingleObjet* Zone::getSingleObjetPointer(int index){
     }
 }
 
-GroupObject* Zone::getGroupObjetPointer(int index){
+GroupObject* Zone::getGroupObjectPointer(int index){
     if(index >= 0 && index < this->group_object_array.size()){
         return this->group_object_array[index];
     }else{
@@ -193,7 +193,7 @@ GroupObject* Zone::getGroupObjetPointer(int index){
 }
 
 
-SingleObjet* Zone::getSelectedObjet(){
+SingleObjet* Zone::getSelectedSingleObject(){
     return selected_object;
 }
 
@@ -201,7 +201,7 @@ Zone* Zone::getPointer(){
     return this;
 }
 
-void Zone::setSelectedObject(int index){
+void Zone::setSelectedSingleObject(int index){
     if(index >= 0 && index < this->single_object_array.size()){
         if(selected_object != 0){    
             selected_object->getSceneNode()->getMaterial(0).EmissiveColor = 0;   //Si un objet est deja selectionne on le deselectionne en "l'eteignant"
@@ -214,13 +214,21 @@ void Zone::setSelectedObject(int index){
     }
 }
 
-void Zone::setSelectedObject(irr::scene::ISceneNode* objet){
+void Zone::setSelectedSingleObject(irr::scene::ISceneNode* objet){
     for(int i = 0;i<this->single_object_array.size(); ++i){
         if(objet == this->single_object_array[i]->getSceneNode()){
-            setSelectedObject(i);
+            setSelectedSingleObject(i);
             return;
         }
     }
+}
+
+void Zone::setSelectedGroupObject(int index) {
+    int test;
+}
+
+void Zone::setSelectedGroupObject(irr::scene::ISceneNode* objet) {
+    int test;
 }
 
 void Zone::exportZone(){        //Besoin de travail et deplacement possible dans editor

@@ -37,7 +37,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     return true;
                     
                 case irr::KEY_DELETE:  //Supprime l'objet selectionne
-                    current_editor->getCurrentZone()->removeObjet(current_editor->getCurrentZone()->getSelectedObjet());
+                    current_editor->getCurrentZone()->removeObjet(current_editor->getCurrentZone()->getSelectedSingleObject());
                     return true;
                     
                 case irr::KEY_KEY_O:  //Camera vers le haut
@@ -180,7 +180,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
             }
         }else if(event.EventType == irr::EET_MOUSE_INPUT_EVENT){
             if(event.MouseInput.isLeftPressed() == true){       //Si on clique sur un objet a l'ecran il est selectionne
-                current_editor->getCurrentZone()->setSelectedObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), 0, false, 0));
+                current_editor->getCurrentZone()->setSelectedSingleObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), 0, false, 0));
             }
         }
     }
@@ -188,7 +188,16 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
 }
 
 void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){  //Appele lors de la maj de la combo box
-    current_editor->getCurrentZone()->setSelectedObject(combo->getSelected());
+    switch(combo->getID()){
+        case GUI_ID_SINGLE_OBJECT_COMBO_BOX:
+            current_editor->getCurrentZone()->setSelectedSingleObject(combo->getSelected());
+            break;
+        case GUI_ID_GROUP_OBJECT_COMBO_BOX:
+            current_editor->getCurrentZone()->setSelectedGroupObject(combo->getSelected());
+            break;
+        default:
+            break;
+    }
 }
 
 void CEventReceiver::angleCameraRight(){

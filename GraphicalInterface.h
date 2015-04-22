@@ -20,7 +20,8 @@ enum {                  //Ajoutez les ids utilises dans le GUI ici
     GUI_ID_PYRAMID,
     GUI_ID_CIRCLE,
     GUI_ID_CYLINDER,
-    GUI_ID_OBJECT
+    GUI_ID_SINGLE_OBJECT_COMBO_BOX,
+    GUI_ID_GROUP_OBJECT_COMBO_BOX
 };
 
 class GraphicalInterface {

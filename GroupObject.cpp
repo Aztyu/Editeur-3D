@@ -7,18 +7,24 @@
 
 #include "GroupObject.h"
 
-GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name): Object(obj, name){}
+GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name): Object(obj, name){
+    this->objet->setVisible(0);
+}
 
-GroupObject::GroupObject(irr::scene::ISceneNode* obj, float total_scale, const char* name) : Object(obj, total_scale, name) {}
+GroupObject::GroupObject(irr::scene::ISceneNode* obj, float total_scale, const char* name) : Object(obj, total_scale, name) {
+    this->objet->setVisible(0);
+}
 
-GroupObject::GroupObject(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name) : Object(obj, x, y, z, name){}
+GroupObject::GroupObject(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name) : Object(obj, x, y, z, name){
+    this->objet->setVisible(0);
+}
 
 GroupObject::GroupObject(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name) : Object(obj, x, y, z, total_scale, name){
+    this->objet->setVisible(0);
 }
 
 GroupObject::~GroupObject() {
-    this->objet->remove();
-    
+    //this->objet->remove();
 }
 
 const char* GroupObject::printObjet() {
