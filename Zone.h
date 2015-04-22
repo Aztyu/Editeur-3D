@@ -26,7 +26,7 @@ class Zone {
         Zone(char* name, Pointer* pointer);
         Zone(const Zone& orig);
         virtual ~Zone();
-        void addObjet(SingleObjet objet);
+        void addObjet(SingleObjet* objet);
         void removeObjet(int index);
         void removeObjet(SingleObjet* objet);
         void createObjet(object form);
@@ -41,7 +41,7 @@ class Zone {
         void exportZone();
 
     private:
-        std::vector<SingleObjet> single_object_array;
+        std::vector<SingleObjet*> single_object_array;
         //std::vector<GroupObject> group_object_array;
         SingleObjet* selected_object;
         Pointer* current_pointer;
