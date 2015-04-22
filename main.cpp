@@ -61,17 +61,17 @@ int main(void)
     editeur.getCurrentZone()->createObjet(pyramid);
     editeur.getCurrentZone()->createObjet(sphere);
     
-    editeur.getCurrentZone()->getObjetPointer(1)->setPosition(0.0, 2.0, 0.0);
-    editeur.getCurrentZone()->getObjetPointer(1)->setParent(editeur.getCurrentZone()->getObjetPointer(0));
+    editeur.getCurrentZone()->getSingleObjetPointer(1)->setPosition(0.0, 2.0, 0.0);
+    editeur.getCurrentZone()->getSingleObjetPointer(1)->setParent(editeur.getCurrentZone()->getSingleObjetPointer(0));
     
-    editeur.getCurrentZone()->getObjetPointer(2)->setPosition(0.0, 0.0, 10.0);
-    editeur.getCurrentZone()->getObjetPointer(2)->setScale(1.0, 1.0, 3.0);
-    editeur.getCurrentZone()->getObjetPointer(2)->setParent(editeur.getCurrentZone()->getObjetPointer(0));
+    editeur.getCurrentZone()->getSingleObjetPointer(2)->setPosition(0.0, 0.0, 10.0);
+    editeur.getCurrentZone()->getSingleObjetPointer(2)->setScale(1.0, 1.0, 3.0);
+    editeur.getCurrentZone()->getSingleObjetPointer(2)->setParent(editeur.getCurrentZone()->getSingleObjetPointer(0));
     
-    editeur.getCurrentZone()->getObjetPointer(0)->setRotation(0.0, 45.0, 180.0);
-    editeur.getCurrentZone()->getObjetPointer(0)->setScale(3.0, 3.0, 3.0);
+    editeur.getCurrentZone()->getSingleObjetPointer(0)->setRotation(0.0, 45.0, 180.0);
+    editeur.getCurrentZone()->getSingleObjetPointer(0)->setScale(3.0, 3.0, 3.0);
     
-    editeur.getCurrentZone()->getObjetPointer(3)->setPosition(0.0, 0.0, 20.0);
+    editeur.getCurrentZone()->getSingleObjetPointer(3)->setPosition(0.0, 0.0, 20.0);
     
     wchar_t titre[200];
     
