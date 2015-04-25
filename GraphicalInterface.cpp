@@ -18,6 +18,10 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
         skin->setFont(font); 
         std::cout << "Font changed" << std::endl;
     }
+
+    // create the toolbox window
+    irr::gui::IGUIWindow* wnd = gui->addWindow(irr::core::rect<irr::s32>(1080,85,1280,700),
+        false, L"Toolset", 0, GUI_ID_OBJECT_WINDOW);
     
     irr::gui::IGUIImage *navbar = this->gui->addImage(driver->getTexture("ressources/navbar.jpg"),
     irr::core::position2d<irr::s32>(0,0),
@@ -26,25 +30,26 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     );
     
     this->menu = this->gui->addMenu();
-    menu->addItem(L"Fichier", -1, true, true);
-    menu->addItem(L"Réglages", -1, true, true);
-    menu->addItem(L"Aide", -1, true, true);
+    menu->addItem(L"Fichier", GUI_ID_FILE, true, true);
+    menu->addItem(L"Réglages", GUI_ID_SETTINGS, true, true);
+    menu->addItem(L"Aide", GUI_ID_HELP, true, true);
     
     irr::gui::IGUIContextMenu* submenu;
     
     submenu = menu->getSubMenu(0);
-    submenu->addItem(L"Nouveau");
-    submenu->addItem(L"Charger");
-    submenu->addItem(L"Sauvegarder");
+    submenu->addItem(L"Nouveau", GUI_ID_NEW);
+    submenu->addItem(L"Charger", GUI_ID_LOAD);
+    submenu->addItem(L"Sauvegarder", GUI_ID_SAVE);
     submenu->addSeparator();
-    submenu->addItem(L"Quitter");
+    submenu->addItem(L"Quitter", GUI_ID_QUIT);
     
     submenu = menu->getSubMenu(1);
-    submenu->addItem(L"Skybox");
+    submenu->addItem(L"Skybox", GUI_ID_SKYBOX);
+    submenu->addItem(L"Boite a outils", GUI_ID_TOOLBOX);
 
     submenu = menu->getSubMenu(2);
-    submenu->addItem(L"Documentation");
-    submenu->addItem(L"A propos");
+    submenu->addItem(L"Documentation", GUI_ID_DOC);
+    submenu->addItem(L"A propos", GUI_ID_ABOUT);
     
     irr::gui::IGUIButton *bouton = this->gui->addButton(
         irr::core::rect<irr::s32>(10,30,42,62),
@@ -74,32 +79,32 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
         L"4");
     bouton3->setImage(driver->getTexture("ressources/sphereicon.png"));
     
-        irr::gui::IGUIButton *bouton4 = this->gui->addButton(
+    irr::gui::IGUIButton *bouton4 = this->gui->addButton(
         irr::core::rect<irr::s32>(178,30,210,62),
         0,
         GUI_ID_CYLINDER,
         L"5");
     bouton4->setImage(driver->getTexture("ressources/sphereicon.png"));
     
-        irr::gui::IGUIButton *bouton5 = this->gui->addButton(
+    irr::gui::IGUIButton *bouton5 = this->gui->addButton(
         irr::core::rect<irr::s32>(220,30,252,62),
         0,
         GUI_ID_RECTANGLE,
         L"6");
     bouton5->setImage(driver->getTexture("ressources/sphereicon.png"));
     
-        irr::gui::IGUIButton *bouton6 = this->gui->addButton(
+    irr::gui::IGUIButton *bouton6 = this->gui->addButton(
         irr::core::rect<irr::s32>(262,30,294,62),
         0,
         GUI_ID_LINE,
         L"7");
     bouton6->setImage(driver->getTexture("ressources/sphereicon.png"));
     
-            irr::gui::IGUIButton *bouton7 = this->gui->addButton(
+    irr::gui::IGUIButton *bouton7 = this->gui->addButton(
         irr::core::rect<irr::s32>(304,30,336,62),
         0,
         GUI_ID_TRAPEZE,
-        L"8");
+        L"8");    
     bouton7->setImage(driver->getTexture("ressources/sphereicon.png"));
     
     this->single_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(640,30,790,62), 0, GUI_ID_SINGLE_OBJECT_COMBO_BOX);
@@ -140,4 +145,8 @@ void GraphicalInterface::updateGroupObject(std::vector<GroupObject*>* tableau){
     
 void GraphicalInterface::setGroupObjetSelected(int index){
     this->group_object_box->setSelected(index);
+}
+
+irr::gui::IGUIEnvironment* GraphicalInterface::getGUIEnvironment() {
+    return this->gui;
 }

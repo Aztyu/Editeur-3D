@@ -1,4 +1,5 @@
 #include "Event.h"
+#include "iostream"
  
 CEventReceiver::CEventReceiver(Editor* editor){
     current_editor = editor;
@@ -113,6 +114,10 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
             irr::s32 id = event.GUIEvent.Caller->getID();
             switch(event.GUIEvent.EventType)
             {
+                case irr::gui::EGET_MENU_ITEM_SELECTED:
+                    // a menu item was clicked
+                    onMenuItemSelected((irr::gui::IGUIContextMenu*)event.GUIEvent.Caller );
+                    break;
                 case irr::gui::EGET_BUTTON_CLICKED:{
                     irr::core::vector3df position = current_editor->getMainPointer()->camera->getPosition();
                     irr::core::vector3df target = current_editor->getMainPointer()->camera->getTarget();
@@ -268,5 +273,32 @@ void CEventReceiver::backwardCamera(){
     current_editor->getMainPointer()->camera->setTarget(target);
     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
 }
+
+void CEventReceiver::onMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
+    irr::s32 id = menu->getItemCommandId(menu->getSelectedItem());
+
+    switch(id)
+    {
+        case GUI_ID_QUIT: // FilOnButtonSetScalinge -> Open Model
+            current_editor->getMainPointer()->device->closeDevice();
+            break;
+        
+        case GUI_ID_TOOLBOX:
+            irr::gui::IGUIEnvironment* gui = current_editor->getMainPointer()->gui->getGUIEnvironment();
+            irr::gui::IGUIElement* root = gui->getRootGUIElement();
+            irr::gui::IGUIElement* e = root->getElementFromId(GUI_ID_OBJECT_WINDOW, true);
+            irr::core::rect<irr::s32> test = e->getAbsolutePosition();
+            std::cout << "Hello world" << std::endl;
+            if (e)
+                e->remove();
+
+            // create the toolbox window
+            irr::gui::IGUIWindow* wnd = gui->addWindow(irr::core::rect<irr::s32>(1080,85,1280,700),
+                false, L"Toolset", 0, GUI_ID_OBJECT_WINDOW);
+                
+            break;
+    }
+}
+
  
 

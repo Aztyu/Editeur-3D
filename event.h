@@ -20,6 +20,7 @@ class CEventReceiver : public irr::IEventReceiver{
         void angleCameraLeft();
         void forwardCamera();
         void backwardCamera();
+        void onMenuItemSelected(irr::gui::IGUIContextMenu* menu);
     private:
         Editor* current_editor;
 };

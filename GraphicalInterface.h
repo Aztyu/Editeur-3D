@@ -20,20 +20,36 @@ enum {                  //Ajoutez les ids utilises dans le GUI ici
     GUI_ID_PYRAMID,
     GUI_ID_CIRCLE,
     GUI_ID_CYLINDER,
+    
     GUI_ID_SINGLE_OBJECT_COMBO_BOX,
-    GUI_ID_GROUP_OBJECT_COMBO_BOX
+    GUI_ID_GROUP_OBJECT_COMBO_BOX,
+    
+    GUI_ID_OBJECT_WINDOW,
+    
+    GUI_ID_FILE,
+    GUI_ID_SETTINGS,
+    GUI_ID_HELP,
+    GUI_ID_NEW,
+    GUI_ID_LOAD,
+    GUI_ID_SAVE,
+    GUI_ID_QUIT,
+    GUI_ID_SKYBOX,
+    GUI_ID_TOOLBOX,
+    GUI_ID_DOC,
+    GUI_ID_ABOUT
 };
 
 class GraphicalInterface {
 public:
     GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::video::IVideoDriver* driver);
-    //GraphicalInterface(const GraphicalInterface& orig);
     virtual ~GraphicalInterface();
     void drawAll();
     void updateSingleObject(std::vector<SingleObjet*>* tableau);
     void setSingleObjetSelected(int index);
     void updateGroupObject(std::vector<GroupObject*>* tableau);
     void setGroupObjetSelected(int index);
+    irr::gui::IGUIEnvironment* getGUIEnvironment();
+    
 private:
     irr::gui::IGUIContextMenu* menu;
     irr::gui::IGUIComboBox* single_object_box;

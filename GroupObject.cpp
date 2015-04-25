@@ -28,11 +28,15 @@ GroupObject::~GroupObject() {
 }
 
 void GroupObject::selectObject() {
-
+    for(int i =0; i<this->member_object.size(); i++){
+        this->member_object[i]->groupSelectObject();
+    }
 }
 
 void GroupObject::unselectObject() {
-
+    for(int i =0; i<this->member_object.size(); i++){
+        this->member_object[i]->unselectObject();
+    }
 }
 
 const char* GroupObject::printObjet() {
