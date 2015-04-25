@@ -26,6 +26,9 @@ public:
     void modifyPositionBy(float x, float y, float z);
     void modifyScaleBy(float x, float y, float z);
     void modifyRotationBy(float x, float y, float z);
+    
+    virtual void unselectObject()=0;
+    virtual void selectObject()=0;
     irr::scene::ISceneNode* getSceneNode();
     std::string getName();
     

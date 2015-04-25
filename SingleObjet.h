@@ -16,7 +16,11 @@ public:
     SingleObjet(irr::scene::ISceneNode* objet, float total_scale, const char* name);
     SingleObjet(irr::scene::ISceneNode* objet, float x, float y, float z, const char* name);
     SingleObjet(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name);
-    
+
+    void selectObject();
+    void groupSelectObject();
+    void unselectObject();
+
     friend std::ostream& operator <<(std::ostream stream, SingleObjet& obj);
     const char* printObjet();
     void setParent(SingleObjet* parent);

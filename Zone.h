@@ -44,13 +44,14 @@ class Zone {
         void setSelectedSingleObject(int index);
         void setSelectedSingleObject(irr::scene::ISceneNode* objet);
         void setSelectedGroupObject(int index);
-        void setSelectedGroupObject(irr::scene::ISceneNode* objet);
+        void unselectAll();
         void exportZone();
 
     private:
         std::vector<SingleObjet*> single_object_array; //Ne pas passer de pointer a objet ca fait tout peter
         std::vector<GroupObject*> group_object_array;
         SingleObjet* selected_object;
+        GroupObject* selected_group;
         Pointer* current_pointer;
         std::string zone_name;
         int type_number[9];

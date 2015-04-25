@@ -10,14 +10,15 @@
 
 using namespace std;
 
-Zone::Zone(char* name, Pointer* pointer){
-    zone_name = name;
+Zone::Zone(char* name, Pointer* pointer): zone_name(name){
+    //this->zone_name = name;
     this->single_object_array.reserve(10);
     for(int i=0; i < 9; i++){ //Mise a zero du nombre d'objets
-        type_number[i] = 0;
+        this->type_number[i] = 0;
     }
-    current_pointer = pointer;  //liste de pointeurs globaux
-    selected_object = NULL;        //Objet selectionne en ce moment   
+    this->current_pointer = pointer;  //liste de pointeurs globaux
+    this->selected_object = NULL;        //Objet selectionne en ce moment
+    this->selected_group = NULL;
     cout << "Creation de la zone " << zone_name << endl;
 }
 
@@ -151,10 +152,10 @@ void Zone::createSingleObjet(object form){
 }
 
 void Zone::createGroupObject(){
-    char buffer[50];
     string type = "ressources/", name;
     name = "Group";
     if(type_number[8] > 0){
+        char buffer[50];
         sprintf (buffer, "%d", type_number[8]);
         name.append(buffer);
     }
@@ -224,12 +225,25 @@ void Zone::setSelectedSingleObject(irr::scene::ISceneNode* objet){
 }
 
 void Zone::setSelectedGroupObject(int index) {
-    int test;
+    if(index >= 0 && index < this->group_object_array.size()){
+        this->unselectAll();
+        selected_group = this->group_object_array[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
+        selected_group->selectObject();
+        current_pointer->gui->setGroupObjetSelected(index);
+    }else{
+        this->selected_object = NULL;
+    }
 }
 
-void Zone::setSelectedGroupObject(irr::scene::ISceneNode* objet) {
-    int test;
+void Zone::unselectAll() {
+    if(this->selected_object != NULL){
+        this->selected_object->unselectObject();
+    }
+    if(this->selected_group != NULL){
+        this->selected_group->unselectObject();
+    }
 }
+
 
 void Zone::exportZone(){        //Besoin de travail et deplacement possible dans editor
     ofstream output("C:\\Users\\Aztyu\\Desktop\\testirrlicht.txt", ofstream::out | ofstream::app);

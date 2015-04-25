@@ -27,6 +27,14 @@ GroupObject::~GroupObject() {
     //this->objet->remove();
 }
 
+void GroupObject::selectObject() {
+
+}
+
+void GroupObject::unselectObject() {
+
+}
+
 const char* GroupObject::printObjet() {
     return "test";
 }

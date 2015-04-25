@@ -14,7 +14,21 @@ SingleObjet::SingleObjet(irr::scene::ISceneNode* obj, float total_scale, const c
 
 SingleObjet::SingleObjet(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name) : Object(obj, x, y, z, name){}
 
-SingleObjet::SingleObjet(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name) : Object(obj, x, y, z, total_scale, name){}
+SingleObjet::SingleObjet(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name) : Object(obj, x, y, z, total_scale, name){
+}
+
+void SingleObjet::selectObject() {
+    this->objet->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
+}
+
+void SingleObjet::groupSelectObject() {
+    this->objet->getMaterial(0).EmissiveColor = irr::video::SColor(255, 248, 158, 37);
+}
+
+void SingleObjet::unselectObject() {
+    this->objet->getMaterial(0).EmissiveColor = 0;
+}
+
 
 std::ostream& operator <<(std::ostream& stream, SingleObjet& obj){    //Completer pour l'export
     stream << obj.printObjet();
