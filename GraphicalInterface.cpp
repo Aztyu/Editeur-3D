@@ -12,6 +12,13 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     this->gui = gui;
     this->driver = driver;
     
+    irr::gui::IGUISkin* skin = this->gui->getSkin(); 
+    irr::gui::IGUIFont* font = this->gui->getFont("ressources/editorfont11.xml"); 
+    if (font){ 
+        skin->setFont(font); 
+        std::cout << "Font changed" << std::endl;
+    }
+    
     irr::gui::IGUIImage *navbar = this->gui->addImage(driver->getTexture("ressources/navbar.jpg"),
     irr::core::position2d<irr::s32>(0,0),
         true,
