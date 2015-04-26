@@ -185,7 +185,9 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
             }
         }else if(event.EventType == irr::EET_MOUSE_INPUT_EVENT){
             if(event.MouseInput.isLeftPressed() == true){       //Si on clique sur un objet a l'ecran il est selectionne
-                current_editor->getCurrentZone()->setSelectedSingleObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), 0, false, 0));
+                if(current_editor->getCurrentZone()->setSelectedSingleObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), 0, false, 0))){
+                    current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
+                }
             }
         }
     }
@@ -203,6 +205,7 @@ void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){  //Appele
         default:
             break;
     }
+    current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
 }
 
 void CEventReceiver::angleCameraRight(){
@@ -284,7 +287,7 @@ void CEventReceiver::onMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
             break;
         
         case GUI_ID_TOOLBOX:
-            current_editor->getMainPointer()->gui->updateWindow();             
+            this->current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());             
             break;
     }
 }

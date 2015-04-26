@@ -193,6 +193,15 @@ GroupObject* Zone::getGroupObjectPointer(int index){
     }
 }
 
+Object* Zone::getSelectedObject() {
+    if(this->selected_object != NULL){
+        return this->selected_object;
+    }if(this->selected_group != NULL){
+        return this->selected_group;
+    }else{
+        return NULL;
+    }
+}
 
 SingleObjet* Zone::getSelectedSingleObject(){
     return selected_object;
@@ -215,13 +224,14 @@ void Zone::setSelectedSingleObject(int index){
     }
 }
 
-void Zone::setSelectedSingleObject(irr::scene::ISceneNode* objet){
+bool Zone::setSelectedSingleObject(irr::scene::ISceneNode* objet){
     for(int i = 0;i<this->single_object_array.size(); ++i){
         if(objet == this->single_object_array[i]->getSceneNode()){
             setSelectedSingleObject(i);
-            return;
+            return true;
         }
     }
+    return false;
 }
 
 void Zone::setSelectedGroupObject(int index) {

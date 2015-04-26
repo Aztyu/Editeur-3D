@@ -185,9 +185,9 @@ void GraphicalInterface::updateWindow(Object* object) {
             std::string name = object->getName();
             std::wstring widestr = std::wstring(name.begin(), name.end());
             const wchar_t* widecstr = widestr.c_str();
-            this->gui->addStaticText(widecstr, irr::core::rect<irr::s32>(15,15,80,45), false, true, static_cast<irr::gui::IGUIElement*>(wnd));
+            this->gui->addStaticText(widecstr, irr::core::rect<irr::s32>(15,15,155,45), false, true, static_cast<irr::gui::IGUIElement*>(wnd));
         }else{
-            this->gui->addStaticText(L"Test", irr::core::rect<irr::s32>(15,15,80,45), false, true, static_cast<irr::gui::IGUIElement*>(wnd));
+            this->gui->addStaticText(L"Test", irr::core::rect<irr::s32>(15,15,155,45), false, true, static_cast<irr::gui::IGUIElement*>(wnd));
         }
     }        
 }

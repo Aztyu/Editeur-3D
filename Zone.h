@@ -38,11 +38,12 @@ class Zone {
         void printZone();
         SingleObjet* getSingleObjetPointer(int index);
         GroupObject* getGroupObjectPointer(int index);
+        Object* getSelectedObject();
         SingleObjet* getSelectedSingleObject();
         GroupObject* getSelectedGroupObject();
         Zone* getPointer();
         void setSelectedSingleObject(int index);
-        void setSelectedSingleObject(irr::scene::ISceneNode* objet);
+        bool setSelectedSingleObject(irr::scene::ISceneNode* objet);
         void setSelectedGroupObject(int index);
         void unselectAll();
         void exportZone();
