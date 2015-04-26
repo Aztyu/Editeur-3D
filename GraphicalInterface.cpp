@@ -18,10 +18,18 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
         skin->setFont(font); 
         std::cout << "Font changed" << std::endl;
     }
+    
+    // disable alpha
+
+    for (irr::s32 i=0; i<irr::gui::EGDC_COUNT ; ++i)
+    {
+        irr::video::SColor col = this->gui->getSkin()->getColor((irr::gui::EGUI_DEFAULT_COLOR)i);
+        col.setAlpha(255);
+        this->gui->getSkin()->setColor((irr::gui::EGUI_DEFAULT_COLOR)i, col);
+    }
 
     // create the toolbox window
-    irr::gui::IGUIWindow* wnd = gui->addWindow(irr::core::rect<irr::s32>(1080,85,1280,700),
-        false, L"Toolset", 0, GUI_ID_OBJECT_WINDOW);
+    this->updateWindow();
     
     irr::gui::IGUIImage *navbar = this->gui->addImage(driver->getTexture("ressources/navbar.jpg"),
     irr::core::position2d<irr::s32>(0,0),
@@ -150,3 +158,37 @@ void GraphicalInterface::setGroupObjetSelected(int index){
 irr::gui::IGUIEnvironment* GraphicalInterface::getGUIEnvironment() {
     return this->gui;
 }
+
+void GraphicalInterface::updateWindow(Object* object) {
+    irr::gui::IGUIElement* root = this->gui->getRootGUIElement();
+    irr::gui::IGUIElement* e = root->getElementFromId(GUI_ID_OBJECT_WINDOW, true);
+    
+    irr::gui::IGUIWindow* wnd = NULL;
+    
+    if (e != NULL){
+        irr::core::rect<irr::s32> test = e->getAbsolutePosition();
+        e->remove();
+        if(test.UpperLeftCorner.X != 1080 || test.UpperLeftCorner.Y != 85){
+            wnd = this->gui->addWindow(irr::core::rect<irr::s32>(test.UpperLeftCorner.X, test.UpperLeftCorner.Y, test.LowerRightCorner.X, test.LowerRightCorner.Y),
+                false, L"Outils", 0, GUI_ID_OBJECT_WINDOW);
+        }else{
+            wnd = this->gui->addWindow(irr::core::rect<irr::s32>(1080,85,1280,700),
+                false, L"Outils", 0, GUI_ID_OBJECT_WINDOW);
+        }
+    }else{
+        wnd = this->gui->addWindow(irr::core::rect<irr::s32>(1080,85,1280,700),
+            false, L"Outils", 0, GUI_ID_OBJECT_WINDOW);
+    }
+    
+    if(wnd != NULL){
+        if(object != NULL){
+            std::string name = object->getName();
+            std::wstring widestr = std::wstring(name.begin(), name.end());
+            const wchar_t* widecstr = widestr.c_str();
+            this->gui->addStaticText(widecstr, irr::core::rect<irr::s32>(15,15,80,45), false, true, static_cast<irr::gui::IGUIElement*>(wnd));
+        }else{
+            this->gui->addStaticText(L"Test", irr::core::rect<irr::s32>(15,15,80,45), false, true, static_cast<irr::gui::IGUIElement*>(wnd));
+        }
+    }        
+}
+

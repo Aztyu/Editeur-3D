@@ -284,18 +284,7 @@ void CEventReceiver::onMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
             break;
         
         case GUI_ID_TOOLBOX:
-            irr::gui::IGUIEnvironment* gui = current_editor->getMainPointer()->gui->getGUIEnvironment();
-            irr::gui::IGUIElement* root = gui->getRootGUIElement();
-            irr::gui::IGUIElement* e = root->getElementFromId(GUI_ID_OBJECT_WINDOW, true);
-            irr::core::rect<irr::s32> test = e->getAbsolutePosition();
-            std::cout << "Hello world" << std::endl;
-            if (e)
-                e->remove();
-
-            // create the toolbox window
-            irr::gui::IGUIWindow* wnd = gui->addWindow(irr::core::rect<irr::s32>(1080,85,1280,700),
-                false, L"Toolset", 0, GUI_ID_OBJECT_WINDOW);
-                
+            current_editor->getMainPointer()->gui->updateWindow();             
             break;
     }
 }

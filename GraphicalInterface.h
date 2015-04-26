@@ -49,6 +49,7 @@ public:
     void updateGroupObject(std::vector<GroupObject*>* tableau);
     void setGroupObjetSelected(int index);
     irr::gui::IGUIEnvironment* getGUIEnvironment();
+    void updateWindow(Object* object = NULL);
     
 private:
     irr::gui::IGUIContextMenu* menu;
