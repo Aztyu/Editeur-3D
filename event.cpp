@@ -285,9 +285,12 @@ void CEventReceiver::onMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
         case GUI_ID_QUIT: // FilOnButtonSetScalinge -> Open Model
             current_editor->getMainPointer()->device->closeDevice();
             break;
-        
         case GUI_ID_TOOLBOX:
             this->current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());             
+            break;
+        case GUI_ID_SKYBOX:
+            menu->setItemChecked(menu->getSelectedItem(), !menu->isItemChecked(menu->getSelectedItem()));
+            this->current_editor->getMainPointer()->gui->getSkybox()->setVisible(!this->current_editor->getMainPointer()->gui->getSkybox()->isVisible());
             break;
     }
 }

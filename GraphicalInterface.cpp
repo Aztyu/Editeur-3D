@@ -7,10 +7,11 @@
 
 #include "GraphicalInterface.h"
 
-GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::video::IVideoDriver* driver) {
+GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::video::IVideoDriver* driver, irr::scene::ISceneNode* skybox) {
     
     this->gui = gui;
     this->driver = driver;
+    this->skybox = skybox;
     
     irr::gui::IGUISkin* skin = this->gui->getSkin(); 
     irr::gui::IGUIFont* font = this->gui->getFont("ressources/editorfont11.xml"); 
@@ -191,4 +192,9 @@ void GraphicalInterface::updateWindow(Object* object) {
         }
     }        
 }
+
+irr::scene::ISceneNode* GraphicalInterface::getSkybox() {
+    return this->skybox;
+}
+
 

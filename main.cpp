@@ -40,6 +40,15 @@ int main(void)
     camera->bindTargetAndRotation(true);
     camera->setRotation(irr::core::vector3df(0.0, 0.0, 0.0));
     
+    irr::scene::ISceneNode* Skybox = sceneManager->addSkyBoxSceneNode(
+        driver->getTexture("ressources/sky_up.jpg"),
+        driver->getTexture("ressources/sky_down.jpg"),
+        driver->getTexture("ressources/sky_left.jpg"),
+        driver->getTexture("ressources/sky_right.jpg"),
+        driver->getTexture("ressources/sky_front.jpg"),
+        driver->getTexture("ressources/sky_back.jpg"));
+    Skybox->setVisible(false);
+    
     Pointer main_pointers;
 
     Editor editeur(&main_pointers);
@@ -47,7 +56,7 @@ int main(void)
     CEventReceiver receiver(&editeur); //bind de la gestion d'event
     device->setEventReceiver(&receiver);
     
-    GraphicalInterface gui = GraphicalInterface(device->getGUIEnvironment(), driver);
+    GraphicalInterface gui = GraphicalInterface(device->getGUIEnvironment(), driver, Skybox);
     
     //main_pointers.box_object = box_object;
     main_pointers.camera = camera;
@@ -78,14 +87,6 @@ int main(void)
             irr::core::vector3df(100.0f, 70.0f, 100.0f),    //Position de la lumiere
             irr::video::SColorf(1.0f, 0.6f, 0.7f, 1.0f),    //Couleur de la lumiere
             5200.0f);                                       //Rayon de la lumiere
-
-    irr::scene::ISceneNode *Skybox = sceneManager->addSkyBoxSceneNode(
-        driver->getTexture("ressources/sky_up.jpg"),
-        driver->getTexture("ressources/sky_down.jpg"),
-        driver->getTexture("ressources/sky_left.jpg"),
-        driver->getTexture("ressources/sky_right.jpg"),
-        driver->getTexture("ressources/sky_front.jpg"),
-        driver->getTexture("ressources/sky_back.jpg"));
     
     while(device->run ())                        // la boucle de rendu
     {

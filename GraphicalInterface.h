@@ -41,7 +41,7 @@ enum {                  //Ajoutez les ids utilises dans le GUI ici
 
 class GraphicalInterface {
 public:
-    GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::video::IVideoDriver* driver);
+    GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::video::IVideoDriver* driver, irr::scene::ISceneNode* skybox);
     virtual ~GraphicalInterface();
     void drawAll();
     void updateSingleObject(std::vector<SingleObjet*>* tableau);
@@ -50,11 +50,13 @@ public:
     void setGroupObjetSelected(int index);
     irr::gui::IGUIEnvironment* getGUIEnvironment();
     void updateWindow(Object* object = NULL);
+    irr::scene::ISceneNode* getSkybox();
     
 private:
     irr::gui::IGUIContextMenu* menu;
     irr::gui::IGUIComboBox* single_object_box;
     irr::gui::IGUIComboBox* group_object_box;
+    irr::scene::ISceneNode* skybox;
     
     irr::video::IVideoDriver* driver;
     irr::gui::IGUIEnvironment* gui;
