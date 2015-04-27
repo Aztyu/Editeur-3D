@@ -25,6 +25,8 @@ enum {                  //Ajoutez les ids utilises dans le GUI ici
     GUI_ID_GROUP_OBJECT_COMBO_BOX,
     
     GUI_ID_OBJECT_WINDOW,
+    GUI_ID_OBJECT_WINDOW_SCALE_UP,
+    GUI_ID_OBJECT_WINDOW_SCALE_DOWN,
     
     GUI_ID_FILE,
     GUI_ID_SETTINGS,
@@ -51,6 +53,8 @@ public:
     irr::gui::IGUIEnvironment* getGUIEnvironment();
     void updateWindow(Object* object = NULL);
     irr::scene::ISceneNode* getSkybox();
+    Object* getTargetObject();
+    bool isInWindow(irr::core::vector2di position);
     
 private:
     irr::gui::IGUIContextMenu* menu;
@@ -60,6 +64,9 @@ private:
     
     irr::video::IVideoDriver* driver;
     irr::gui::IGUIEnvironment* gui;
+    irr::gui::IGUIWindow* window;
+    
+    Object* current_object;
 };
 
 #endif	/* GRAPHICALINTERFACE_H */

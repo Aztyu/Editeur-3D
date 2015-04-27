@@ -251,9 +251,12 @@ void Zone::setSelectedGroupObject(int index) {
 void Zone::unselectAll() {
     if(this->selected_object != NULL){
         this->selected_object->unselectObject();
+        this->selected_object = NULL;
     }
+    
     if(this->selected_group != NULL){
         this->selected_group->unselectObject();
+        this->selected_group = NULL;
     }
 }
 

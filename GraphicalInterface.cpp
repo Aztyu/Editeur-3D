@@ -161,40 +161,69 @@ irr::gui::IGUIEnvironment* GraphicalInterface::getGUIEnvironment() {
 }
 
 void GraphicalInterface::updateWindow(Object* object) {
+    this->current_object = object;
+    
     irr::gui::IGUIElement* root = this->gui->getRootGUIElement();
     irr::gui::IGUIElement* e = root->getElementFromId(GUI_ID_OBJECT_WINDOW, true);
     
-    irr::gui::IGUIWindow* wnd = NULL;
+    this->window = NULL;
     
     if (e != NULL){
         irr::core::rect<irr::s32> test = e->getAbsolutePosition();
         e->remove();
         if(test.UpperLeftCorner.X != 1080 || test.UpperLeftCorner.Y != 85){
-            wnd = this->gui->addWindow(irr::core::rect<irr::s32>(test.UpperLeftCorner.X, test.UpperLeftCorner.Y, test.LowerRightCorner.X, test.LowerRightCorner.Y),
+            this->window = this->gui->addWindow(irr::core::rect<irr::s32>(test.UpperLeftCorner.X, test.UpperLeftCorner.Y, test.LowerRightCorner.X, test.LowerRightCorner.Y),
                 false, L"Outils", 0, GUI_ID_OBJECT_WINDOW);
         }else{
-            wnd = this->gui->addWindow(irr::core::rect<irr::s32>(1080,85,1280,700),
+            this->window = this->gui->addWindow(irr::core::rect<irr::s32>(1080,85,1280,700),
                 false, L"Outils", 0, GUI_ID_OBJECT_WINDOW);
         }
     }else{
-        wnd = this->gui->addWindow(irr::core::rect<irr::s32>(1080,85,1280,700),
+        this->window = this->gui->addWindow(irr::core::rect<irr::s32>(1080,85,1280,700),
             false, L"Outils", 0, GUI_ID_OBJECT_WINDOW);
     }
     
-    if(wnd != NULL){
+    if(this->window != NULL){
         if(object != NULL){
             std::string name = object->getName();
             std::wstring widestr = std::wstring(name.begin(), name.end());
             const wchar_t* widecstr = widestr.c_str();
-            this->gui->addStaticText(widecstr, irr::core::rect<irr::s32>(15,15,155,45), false, true, static_cast<irr::gui::IGUIElement*>(wnd));
+            this->gui->addStaticText(widecstr, irr::core::rect<irr::s32>(15,15,155,45),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
         }else{
-            this->gui->addStaticText(L"Test", irr::core::rect<irr::s32>(15,15,155,45), false, true, static_cast<irr::gui::IGUIElement*>(wnd));
+            this->gui->addStaticText(L"Test",
+                irr::core::rect<irr::s32>(15,15,155,45),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
         }
+        
+        irr::gui::IGUIButton *bouton2 = this->gui->addButton(
+            irr::core::rect<irr::s32>(15,50,155,70),
+            static_cast<irr::gui::IGUIElement*>(this->window),
+            GUI_ID_OBJECT_WINDOW_SCALE_UP,
+            L"+");
     }        
 }
 
 irr::scene::ISceneNode* GraphicalInterface::getSkybox() {
     return this->skybox;
 }
+
+Object* GraphicalInterface::getTargetObject() {
+    return this->current_object;
+}
+
+bool GraphicalInterface::isInWindow(irr::core::vector2di position) {
+    if(this->window != NULL){
+        return this->window->getAbsoluteClippingRect().isPointInside(position);
+    }else{
+        return false;
+    }
+}
+
+
 
 

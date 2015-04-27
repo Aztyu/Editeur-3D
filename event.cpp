@@ -107,10 +107,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
                     return true;
             }
-        }
-        
-        if (event.EventType == irr::EET_GUI_EVENT)
-        {
+        }else if (event.EventType == irr::EET_GUI_EVENT){
             irr::s32 id = event.GUIEvent.Caller->getID();
             switch(event.GUIEvent.EventType)
             {
@@ -176,17 +173,29 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                             current_editor->getCurrentZone()->createSingleObjet(pyramid);
                             current_editor->getCurrentZone()->getSingleObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
                             return true;
+                            
+                        case GUI_ID_OBJECT_WINDOW_SCALE_UP:
+                            Object* target = this->current_editor->getMainPointer()->gui->getTargetObject();
+                            if(target != NULL){
+                                target->modifyScaleBy(0.5, 0.5, 0.5);
+                            }
+                            return true;
+                            break;
                     }}
                     break; 
                   
                 case irr::gui::EGET_COMBO_BOX_CHANGED:
                     OnObjectSelected((irr::gui::IGUIComboBox*)event.GUIEvent.Caller);
+                    return true;
                     break;
             }
         }else if(event.EventType == irr::EET_MOUSE_INPUT_EVENT){
             if(event.MouseInput.isLeftPressed() == true){       //Si on clique sur un objet a l'ecran il est selectionne
-                if(current_editor->getCurrentZone()->setSelectedSingleObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), 0, false, 0))){
-                    current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
+                irr::core::vector2di position = irr::core::vector2di(event.MouseInput.X, event.MouseInput.Y);
+                if(!this->current_editor->getMainPointer()->gui->isInWindow(position)){ //Si le clic est en dehors de la fenetre outil
+                    if(current_editor->getCurrentZone()->setSelectedSingleObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), 0, false, 0))){
+                        current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
+                    }
                 }
             }
         }
