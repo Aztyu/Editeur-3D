@@ -66,7 +66,7 @@ void Zone::removeObjet(SingleObjet* objet){
 
 void Zone::createSingleObjet(object form){
     char buffer[50];
-    string type = "ressources/", name;
+    string type = "ressources/form/", name;
     switch((int)form){  //Switch qui va choisir quel fichier charger
         case 0:
             name = "Rectangle";
@@ -152,7 +152,7 @@ void Zone::createSingleObjet(object form){
 }
 
 void Zone::createGroupObject(){
-    string type = "ressources/", name;
+    string type = "ressources/form/", name;
     name = "Group";
     if(type_number[8] > 0){
         char buffer[50];

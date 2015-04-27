@@ -14,7 +14,7 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     this->skybox = skybox;
     
     irr::gui::IGUISkin* skin = this->gui->getSkin(); 
-    irr::gui::IGUIFont* font = this->gui->getFont("ressources/editorfont11.xml"); 
+    irr::gui::IGUIFont* font = this->gui->getFont("ressources/font/editorfont11.xml"); 
     if (font){ 
         skin->setFont(font); 
         std::cout << "Font changed" << std::endl;
@@ -32,7 +32,7 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     // create the toolbox window
     this->updateWindow();
     
-    irr::gui::IGUIImage *navbar = this->gui->addImage(driver->getTexture("ressources/navbar.jpg"),
+    irr::gui::IGUIImage *navbar = this->gui->addImage(driver->getTexture("ressources/icon/navbar.jpg"),
     irr::core::position2d<irr::s32>(0,0),
         true,
         0
@@ -65,56 +65,56 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
         0,
         GUI_ID_SQUARE,
         L"1");
-    bouton->setImage(driver->getTexture("ressources/squareicon.png"));
+    bouton->setImage(driver->getTexture("ressources/icon/squareicon.png"));
     
     irr::gui::IGUIButton *bouton1 = this->gui->addButton(
         irr::core::rect<irr::s32>(52,30,84,62),
         0,
         GUI_ID_SPHERE,
         L"2");
-    bouton1->setImage(driver->getTexture("ressources/sphereicon.png"));
+    bouton1->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
     
     irr::gui::IGUIButton *bouton2 = this->gui->addButton(
         irr::core::rect<irr::s32>(94,30,126,62),
         0,
         GUI_ID_PYRAMID,
         L"3");
-    bouton2->setImage(driver->getTexture("ressources/pyramidicon.png"));
+    bouton2->setImage(driver->getTexture("ressources/icon/pyramidicon.png"));
     
     irr::gui::IGUIButton *bouton3 = this->gui->addButton(
         irr::core::rect<irr::s32>(136,30,168,62),
         0,
         GUI_ID_CIRCLE,
         L"4");
-    bouton3->setImage(driver->getTexture("ressources/sphereicon.png"));
+    bouton3->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
     
     irr::gui::IGUIButton *bouton4 = this->gui->addButton(
         irr::core::rect<irr::s32>(178,30,210,62),
         0,
         GUI_ID_CYLINDER,
         L"5");
-    bouton4->setImage(driver->getTexture("ressources/sphereicon.png"));
+    bouton4->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
     
     irr::gui::IGUIButton *bouton5 = this->gui->addButton(
         irr::core::rect<irr::s32>(220,30,252,62),
         0,
         GUI_ID_RECTANGLE,
         L"6");
-    bouton5->setImage(driver->getTexture("ressources/sphereicon.png"));
+    bouton5->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
     
     irr::gui::IGUIButton *bouton6 = this->gui->addButton(
         irr::core::rect<irr::s32>(262,30,294,62),
         0,
         GUI_ID_LINE,
         L"7");
-    bouton6->setImage(driver->getTexture("ressources/sphereicon.png"));
+    bouton6->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
     
     irr::gui::IGUIButton *bouton7 = this->gui->addButton(
         irr::core::rect<irr::s32>(304,30,336,62),
         0,
         GUI_ID_TRAPEZE,
         L"8");    
-    bouton7->setImage(driver->getTexture("ressources/sphereicon.png"));
+    bouton7->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
     
     this->single_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(640,30,790,62), 0, GUI_ID_SINGLE_OBJECT_COMBO_BOX);
     

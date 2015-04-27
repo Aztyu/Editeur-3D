@@ -41,12 +41,12 @@ int main(void)
     camera->setRotation(irr::core::vector3df(0.0, 0.0, 0.0));
     
     irr::scene::ISceneNode* Skybox = sceneManager->addSkyBoxSceneNode(
-        driver->getTexture("ressources/sky_up.jpg"),
-        driver->getTexture("ressources/sky_down.jpg"),
-        driver->getTexture("ressources/sky_left.jpg"),
-        driver->getTexture("ressources/sky_right.jpg"),
-        driver->getTexture("ressources/sky_front.jpg"),
-        driver->getTexture("ressources/sky_back.jpg"));
+        driver->getTexture("ressources/skybox/sky_up.jpg"),
+        driver->getTexture("ressources/skybox/sky_down.jpg"),
+        driver->getTexture("ressources/skybox/sky_left.jpg"),
+        driver->getTexture("ressources/skybox/sky_right.jpg"),
+        driver->getTexture("ressources/skybox/sky_front.jpg"),
+        driver->getTexture("ressources/skybox/sky_back.jpg"));
     Skybox->setVisible(false);
     
     Pointer main_pointers;
