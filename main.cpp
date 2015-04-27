@@ -58,7 +58,6 @@ int main(void)
     
     GraphicalInterface gui = GraphicalInterface(device->getGUIEnvironment(), driver, Skybox);
     
-    //main_pointers.box_object = box_object;
     main_pointers.camera = camera;
     main_pointers.device = device;
     main_pointers.driver = driver;
@@ -72,14 +71,21 @@ int main(void)
     editeur.getCurrentZone()->createGroupObject();
     
     editeur.getCurrentZone()->getSingleObjetPointer(1)->setPosition(0.0, 2.0, 0.0);
-    editeur.getCurrentZone()->getSingleObjetPointer(1)->setParent(editeur.getCurrentZone()->getSingleObjetPointer(0));
+    
+    //editeur.getCurrentZone()->getSingleObjetPointer(1)->setParent(editeur.getCurrentZone()->getSingleObjetPointer(0));
+    editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjetPointer(0)->getPointer());
+    editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjetPointer(1)->getPointer());
     
     editeur.getCurrentZone()->getSingleObjetPointer(2)->setPosition(0.0, 0.0, 10.0);
     editeur.getCurrentZone()->getSingleObjetPointer(2)->setScale(1.0, 1.0, 3.0);
-    editeur.getCurrentZone()->getSingleObjetPointer(2)->setParent(editeur.getCurrentZone()->getSingleObjetPointer(0));
     
-    editeur.getCurrentZone()->getSingleObjetPointer(0)->setRotation(0.0, 45.0, 180.0);
-    editeur.getCurrentZone()->getSingleObjetPointer(0)->setScale(3.0, 3.0, 3.0);
+    //editeur.getCurrentZone()->getSingleObjetPointer(2)->setParent(editeur.getCurrentZone()->getSingleObjetPointer(0));
+    editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjetPointer(2)->getPointer());
+    
+    //editeur.getCurrentZone()->getSingleObjetPointer(0)->setRotation(0.0, 45.0, 180.0);
+    //editeur.getCurrentZone()->getSingleObjetPointer(0)->setScale(3.0, 3.0, 3.0);
+    editeur.getCurrentZone()->getGroupObjectPointer(0)->setRotation(0.0, 45.0, 180.0);
+    editeur.getCurrentZone()->getGroupObjectPointer(0)->setScale(3.0, 3.0, 3.0);
     
     editeur.getCurrentZone()->getSingleObjetPointer(3)->setPosition(0.0, 0.0, 20.0);
     

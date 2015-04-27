@@ -23,7 +23,8 @@ public:
 
     friend std::ostream& operator <<(std::ostream stream, SingleObjet& obj);
     const char* printObjet();
-    void setParent(SingleObjet* parent);
+    void setParent(Object* parent);
+    bool hasParent();
     SingleObjet* getPointer();
 };
 

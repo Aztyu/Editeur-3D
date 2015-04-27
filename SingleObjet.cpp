@@ -40,8 +40,12 @@ const char* SingleObjet::printObjet(){
     return obj_name.c_str();
 }
 
-void SingleObjet::setParent(SingleObjet* parent){  //Utile pour la creation de groupe 
+void SingleObjet::setParent(Object* parent){  //Utile pour la creation de groupe 
     objet->setParent(parent->getSceneNode());
+}
+
+bool SingleObjet::hasParent() {
+    return this->objet->getParent() != NULL;
 }
 
 SingleObjet* SingleObjet::getPointer(){

@@ -160,9 +160,9 @@ void Zone::createGroupObject(){
         name.append(buffer);
     }
     type_number[8]++;
-    type += "rectangle";
+    type += "group";
     type += ".obj";
-    this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), 0.1, name.c_str()));        //Chargement et creation de l'objet
+    this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));        //Chargement et creation de l'objet
     current_pointer->gui->updateGroupObject(&this->group_object_array); //Ajout de l'objet a la combobox
 }
 
@@ -213,12 +213,15 @@ Zone* Zone::getPointer(){
 
 void Zone::setSelectedSingleObject(int index){
     if(index >= 0 && index < this->single_object_array.size()){
-        if(selected_object != 0){    
-            selected_object->getSceneNode()->getMaterial(0).EmissiveColor = 0;   //Si un objet est deja selectionne on le deselectionne en "l'eteignant"
+        if(this->selected_object != NULL){    
+            this->selected_object->unselectObject();
         }
-        selected_object = this->single_object_array[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
-        selected_object->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
-        current_pointer->gui->setSingleObjetSelected(index);
+        if(this->selected_group != NULL){
+            selected_group->unselectObject();
+        }
+        this->selected_object = this->single_object_array[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
+        this->selected_object->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
+        this->current_pointer->gui->setSingleObjetSelected(index);
     }else{
         this->selected_object = 0;
     }

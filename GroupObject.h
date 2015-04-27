@@ -20,6 +20,10 @@ public:
    
     void selectObject();
     void unselectObject();
+    
+    void addMember(SingleObjet* object);
+    void removeMember(int index);
+    void removeMember(SingleObjet* object);
 
     friend std::ostream& operator <<(std::ostream stream, SingleObjet& obj);
     const char* printObjet();

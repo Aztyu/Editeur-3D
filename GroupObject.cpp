@@ -8,23 +8,18 @@
 #include "GroupObject.h"
 
 GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name): Object(obj, name){
-    this->objet->setVisible(0);
 }
 
 GroupObject::GroupObject(irr::scene::ISceneNode* obj, float total_scale, const char* name) : Object(obj, total_scale, name) {
-    this->objet->setVisible(0);
 }
 
 GroupObject::GroupObject(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name) : Object(obj, x, y, z, name){
-    this->objet->setVisible(0);
 }
 
 GroupObject::GroupObject(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name) : Object(obj, x, y, z, total_scale, name){
-    this->objet->setVisible(0);
 }
 
 GroupObject::~GroupObject() {
-    //this->objet->remove();
 }
 
 void GroupObject::selectObject() {
@@ -38,6 +33,31 @@ void GroupObject::unselectObject() {
         this->member_object[i]->unselectObject();
     }
 }
+
+void GroupObject::addMember(SingleObjet* object) {
+    this->member_object.push_back(object);
+    object->setParent(this);
+}
+
+void GroupObject::removeMember(int index) {
+    if(index >= 0 && index < this->member_object.size()){
+        if(this->member_object[index] != NULL){
+            this->member_object[index]->setParent(NULL);
+            this->member_object.erase(this->member_object.begin()+index);
+        }
+    }
+}
+
+void GroupObject::removeMember(SingleObjet* object) {
+    for(int i = 0;i<this->member_object.size(); ++i){
+        if(object == this->member_object[i]){
+            this->removeMember(i);
+            return;
+        }
+    }
+}
+
+
 
 const char* GroupObject::printObjet() {
     return "test";
