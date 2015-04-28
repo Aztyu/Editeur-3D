@@ -35,9 +35,9 @@ std::ostream& operator <<(std::ostream& stream, SingleObjet& obj){    //Complete
     return stream;
 }
 
-const char* SingleObjet::printObjet(){
+const string SingleObjet::printObjet(){
     std::string obj_name = "L'objet se trouve en ";
-    return obj_name.c_str();
+    return obj_name;
 }
 
 void SingleObjet::setParent(Object* parent){  //Utile pour la creation de groupe 

@@ -8,18 +8,14 @@
 #include "Editor.h"
 #include "Event.h"
 
-Editor::Editor(Pointer* struct_pointer) {
-    main_pointer = struct_pointer;
+Editor::Editor(Pointer* struct_pointer) : main_pointer(struct_pointer) {
     createZone("Main");
     current_zone = zone_array[zone_array.size()-1];
     std::cout << "finish object" << std::endl;
 }
 
-Editor::Editor(const Editor& orig) {
-}
-
 Editor::~Editor() {
-    //delete current_zone;
+    //delete current zones;
     for (int i=0; i< zone_array.size(); ++i) {
         delete zone_array[i];
     }

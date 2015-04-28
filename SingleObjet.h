@@ -22,7 +22,7 @@ public:
     void unselectObject();
 
     friend std::ostream& operator <<(std::ostream stream, SingleObjet& obj);
-    const char* printObjet();
+    const std::string printObjet();
     void setParent(Object* parent);
     bool hasParent();
     SingleObjet* getPointer();

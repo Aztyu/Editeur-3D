@@ -27,7 +27,6 @@ class Zone {
     
     public:
         Zone(char* name, Pointer* pointer);
-        Zone(const Zone& orig);
         virtual ~Zone();
         void addObjet(SingleObjet* objet);
         void removeObjet(int index);

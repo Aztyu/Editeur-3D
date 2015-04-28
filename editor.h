@@ -13,7 +13,6 @@
 class Editor {
     public:
         Editor(Pointer* struct_pointer);
-        Editor(const Editor& orig);
         virtual ~Editor();
         Editor* getEditor();
         void createZone(char* name);

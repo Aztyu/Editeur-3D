@@ -32,7 +32,7 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     // create the toolbox window
     this->updateWindow();
     
-    irr::gui::IGUIImage *navbar = this->gui->addImage(driver->getTexture("ressources/icon/navbar.jpg"),
+    this->gui->addImage(driver->getTexture("ressources/icon/navbar.jpg"),
     irr::core::position2d<irr::s32>(0,0),
         true,
         0
@@ -200,7 +200,7 @@ void GraphicalInterface::updateWindow(Object* object) {
                 static_cast<irr::gui::IGUIElement*>(this->window));
         }
         
-        irr::gui::IGUIButton *bouton2 = this->gui->addButton(
+        this->gui->addButton(
             irr::core::rect<irr::s32>(15,50,155,70),
             static_cast<irr::gui::IGUIElement*>(this->window),
             GUI_ID_OBJECT_WINDOW_SCALE_UP,

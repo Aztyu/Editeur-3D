@@ -22,9 +22,6 @@ Zone::Zone(char* name, Pointer* pointer): zone_name(name){
     cout << "Creation de la zone " << zone_name << endl;
 }
 
-Zone::Zone(const Zone& orig) {
-}
-
 Zone::~Zone() {
     /*for(int i=0 ; i<this->group_object_array.size() ; ++i){
         delete this->group_object_array[i];
