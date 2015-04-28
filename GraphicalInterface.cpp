@@ -188,13 +188,17 @@ void GraphicalInterface::updateWindow(Object* object) {
             std::string name = object->getName();
             std::wstring widestr = std::wstring(name.begin(), name.end());
             const wchar_t* widecstr = widestr.c_str();
-            this->gui->addStaticText(widecstr, irr::core::rect<irr::s32>(15,15,155,45),
+            this->gui->addStaticText(L"Nom : ", irr::core::rect<irr::s32>(10,20,55,50),
                 false,
                 true,
                 static_cast<irr::gui::IGUIElement*>(this->window));
+            this->gui->addEditBox(widecstr,
+                    irr::core::rect<irr::s32>(60,20,195,50),
+                    true,
+                    static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_OBJECT_NAME);
         }else{
             this->gui->addStaticText(L"Test",
-                irr::core::rect<irr::s32>(15,15,155,45),
+                irr::core::rect<irr::s32>(10,20,85,50),
                 false,
                 true,
                 static_cast<irr::gui::IGUIElement*>(this->window));
@@ -203,7 +207,7 @@ void GraphicalInterface::updateWindow(Object* object) {
         this->gui->addButton(
             irr::core::rect<irr::s32>(15,50,155,70),
             static_cast<irr::gui::IGUIElement*>(this->window),
-            GUI_ID_OBJECT_WINDOW_SCALE_UP,
+            GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_UP,
             L"+");
     }        
 }

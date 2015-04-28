@@ -26,10 +26,6 @@ enum Gui{                  //Ajoutez les ids utilises dans le GUI ici
     GUI_ID_SINGLE_OBJECT_COMBO_BOX,         /**< combobox pour objet simple. */
     GUI_ID_GROUP_OBJECT_COMBO_BOX,          /**< combobox pour groupe d'objets. */
 
-    GUI_ID_OBJECT_WINDOW,                   /**< fenetre d'outils. */
-    GUI_ID_OBJECT_WINDOW_SCALE_UP,          /**< gros plus de debug. */
-    GUI_ID_OBJECT_WINDOW_SCALE_DOWN,        /**< enum value TVal1. */
-
     GUI_ID_FILE,                            /**< element "Fichier". */
     GUI_ID_NEW,                             /**< element "Nouveau". */
     GUI_ID_LOAD,                            /**< element "Charger". */
@@ -42,7 +38,46 @@ enum Gui{                  //Ajoutez les ids utilises dans le GUI ici
     
     GUI_ID_HELP,                            /**< element "Aide". */
     GUI_ID_DOC,                             /**< element "Documentation". */
-    GUI_ID_ABOUT                            /**< element "A propos". */
+    GUI_ID_ABOUT,                            /**< element "A propos". */
+            
+    GUI_ID_OBJECT_WINDOW,                   /**< fenetre d'outils. */
+    GUI_ID_OBJECT_WINDOW_OBJECT_NAME,       /**< nom de l'objet. */
+    
+    GUI_ID_OBJECT_WINDOW_POSITION_X_UP,     /**< gros plus de debug. */
+    GUI_ID_OBJECT_WINDOW_POSITION_X_VALUE,  /**< fenetre d'outils. */
+    GUI_ID_OBJECT_WINDOW_POSITION_X_DOWN,   /**< enum value TVal1. */
+    GUI_ID_OBJECT_WINDOW_POSITION_Y_UP,     /**< gros plus de debug. */
+    GUI_ID_OBJECT_WINDOW_POSITION_Y_VALUE,  /**< fenetre d'outils. */
+    GUI_ID_OBJECT_WINDOW_POSITION_Y_DOWN,   /**< enum value TVal1. */
+    GUI_ID_OBJECT_WINDOW_POSITION_Z_UP,     /**< gros plus de debug. */
+    GUI_ID_OBJECT_WINDOW_POSITION_Z_VALUE,  /**< fenetre d'outils. */
+    GUI_ID_OBJECT_WINDOW_POSITION_Z_DOWN,   /**< enum value TVal1. */
+    
+    GUI_ID_OBJECT_WINDOW_ROTATION_X_UP,     /**< gros plus de debug. */
+    GUI_ID_OBJECT_WINDOW_ROTATION_X_VALUE,  /**< fenetre d'outils. */
+    GUI_ID_OBJECT_WINDOW_ROTATION_X_DOWN,   /**< enum value TVal1. */
+    GUI_ID_OBJECT_WINDOW_ROTATION_Y_UP,     /**< gros plus de debug. */
+    GUI_ID_OBJECT_WINDOW_ROTATION_Y_VALUE,  /**< fenetre d'outils. */
+    GUI_ID_OBJECT_WINDOW_ROTATION_Y_DOWN,   /**< enum value TVal1. */
+    GUI_ID_OBJECT_WINDOW_ROTATION_Z_UP,     /**< gros plus de debug. */
+    GUI_ID_OBJECT_WINDOW_ROTATION_Z_VALUE,  /**< fenetre d'outils. */
+    GUI_ID_OBJECT_WINDOW_ROTATION_Z_DOWN,   /**< enum value TVal1. */
+    
+    GUI_ID_OBJECT_WINDOW_SCALE_X_UP,        /**< gros plus de debug. */
+    GUI_ID_OBJECT_WINDOW_SCALE_X_VALUE,     /**< fenetre d'outils. */
+    GUI_ID_OBJECT_WINDOW_SCALE_X_DOWN,      /**< enum value TVal1. */
+    GUI_ID_OBJECT_WINDOW_SCALE_Y_UP,        /**< gros plus de debug. */
+    GUI_ID_OBJECT_WINDOW_SCALE_Y_VALUE,     /**< fenetre d'outils. */
+    GUI_ID_OBJECT_WINDOW_SCALE_Y_DOWN,      /**< enum value TVal1. */
+    GUI_ID_OBJECT_WINDOW_SCALE_Z_UP,        /**< gros plus de debug. */
+    GUI_ID_OBJECT_WINDOW_SCALE_Z_VALUE,     /**< fenetre d'outils. */
+    GUI_ID_OBJECT_WINDOW_SCALE_Z_DOWN,      /**< enum value TVal1. */
+    GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_UP,    /**< gros plus de debug. */
+    GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_DOWN,  /**< enum value TVal1. */
+    
+    GUI_ID_OBJECT_WINDOW_GROUP_BOX,         /**< gros plus de debug. */
+    GUI_ID_OBJECT_WINDOW_ADD_TO_GROUP,      /**< fenetre d'outils. */
+    GUI_ID_OBJECT_WINDOW_ADD_TO__NEW_GROUP  /**< enum value TVal1. */
 };
 
 
