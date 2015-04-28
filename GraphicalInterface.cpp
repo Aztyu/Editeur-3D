@@ -1,4 +1,4 @@
-/* 
+ /* 
  * File:   GraphicalInterface.cpp
  * Author: Aztyu
  * 
@@ -54,11 +54,11 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     
     submenu = menu->getSubMenu(1);
     submenu->addItem(L"Skybox", GUI_ID_SKYBOX);
-    submenu->addItem(L"Boite a outils", GUI_ID_TOOLBOX);
+    submenu->addItem(L"Boite à outils", GUI_ID_TOOLBOX);
 
     submenu = menu->getSubMenu(2);
     submenu->addItem(L"Documentation", GUI_ID_DOC);
-    submenu->addItem(L"A propos", GUI_ID_ABOUT);
+    submenu->addItem(L"À propos", GUI_ID_ABOUT);
     
     irr::gui::IGUIButton *bouton = this->gui->addButton(
         irr::core::rect<irr::s32>(10,30,42,62),
