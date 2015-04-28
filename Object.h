@@ -27,6 +27,10 @@ public:
     void modifyScaleBy(float x, float y, float z);
     void modifyRotationBy(float x, float y, float z);
     
+    const irr::core::vector3df& getPosition();
+    const irr::core::vector3df& getScale();
+    const irr::core::vector3df& getRotation();
+    
     virtual void unselectObject()=0;
     virtual void selectObject()=0;
     irr::scene::ISceneNode* getSceneNode();

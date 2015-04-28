@@ -192,10 +192,41 @@ void GraphicalInterface::updateWindow(Object* object) {
                 false,
                 true,
                 static_cast<irr::gui::IGUIElement*>(this->window));
+            
             this->gui->addEditBox(widecstr,
-                    irr::core::rect<irr::s32>(60,20,195,50),
+                    irr::core::rect<irr::s32>(60,25,195,45),
                     true,
                     static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_OBJECT_NAME);
+            
+            this->gui->addStaticText(L"Position", irr::core::rect<irr::s32>(10,50,195,75),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+                    
+            this->gui->addButton(irr::core::rect<irr::s32>(20,75,50,105),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_POSITION_X_DOWN,
+                L"-");
+            
+            this->gui->addStaticText(L"X", irr::core::rect<irr::s32>(55,78,70,105),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+            
+            irr::core::vector3df vector = object->getPosition();
+            
+            widecstr = irr::core::stringw(vector.X).c_str();
+            
+            this->gui->addEditBox(widecstr,
+                    irr::core::rect<irr::s32>(70,75,150,105),
+                    true,
+                    static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_POSITION_X_VALUE);
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(150,75,180,105),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_POSITION_X_UP,
+                L"+");
+        
         }else{
             this->gui->addStaticText(L"Test",
                 irr::core::rect<irr::s32>(10,20,85,50),
@@ -203,12 +234,6 @@ void GraphicalInterface::updateWindow(Object* object) {
                 true,
                 static_cast<irr::gui::IGUIElement*>(this->window));
         }
-        
-        this->gui->addButton(
-            irr::core::rect<irr::s32>(15,50,155,70),
-            static_cast<irr::gui::IGUIElement*>(this->window),
-            GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_UP,
-            L"+");
     }        
 }
 

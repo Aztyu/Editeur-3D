@@ -60,6 +60,18 @@ void Object::modifyRotationBy(float x, float y, float z){
     objet->setRotation(irr::core::vector3df(x, y, z) + objet->getRotation());
 }
 
+const irr::core::vector3df& Object::getPosition() {
+    return this->objet->getPosition();
+}
+
+const irr::core::vector3df& Object::getScale() {
+    return this->objet->getScale();
+}
+
+const irr::core::vector3df& Object::getRotation() {
+    return this->objet->getRotation();
+}
+
 irr::scene::ISceneNode* Object::getSceneNode(){  //Retourne le pointeur vers le node
     return objet;
 }

@@ -98,14 +98,40 @@ public:
     void drawAll();
     
     //! Mets a jour la combobox des SingleObject.
+    /** \param tableau vector de SingleObject mis a jour pour le transferer */
     void updateSingleObject(std::vector<SingleObjet*>* tableau);
+    
+    //! Selectionne un SingleObject specifique dans la combo box.
+    /** \param index Index de l'objet dans la combo box.*/
     void setSingleObjetSelected(int index);
+    
+    //! Mets a jour la combo box qui contient les groupes.
+    /** \param tableau vector de GroupObject mis a jour pour le transferer */
     void updateGroupObject(std::vector<GroupObject*>* tableau);
+    
+    //! Selectionne un GroupObject specifique dans la combo box.
+    /** \param index Index de l'objet dans la combo box. */
     void setGroupObjetSelected(int index);
+    
+    //! Permet de recuperer un pointeur vers le GUI Environment.
+    /** \return Pointeur vers le GUI Environment en cours d'utilisation */
     irr::gui::IGUIEnvironment* getGUIEnvironment();
+    
+    //! Mets à jour la fenetre Outils.
+    /** \param object L'objet qui sera concerne par les modifications dans la fenetre*/
     void updateWindow(Object* object = NULL);
+    
+    //! Permet de recuperer un pointeur vers l'element skybox.
+    /** \return Un pointeur vers un ISceneNode pour pouvoir modifier la skybox */
     irr::scene::ISceneNode* getSkybox();
+    
+    //! Renvoie l'objet actuellement selectionne.
+    /** \return Un pointeur vers l'objet selectionne qui apparait dans la fenetre Outils */
     Object* getTargetObject();
+    
+    //! Retourne un booleen qui indique si le point est ou non dans la fenetre Outils.
+    /** \param position Vector2di qui contient le point a teste.
+		\return True si le point est dans la fenetre, False sinon ou si la fenetre néxiste pas. */
     bool isInWindow(irr::core::vector2di position);
     
 private:
