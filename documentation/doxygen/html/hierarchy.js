@@ -7,7 +7,7 @@ var hierarchy =
     ] ],
     [ "Object", "class_object.html", [
       [ "GroupObject", "class_group_object.html", null ],
-      [ "SingleObjet", "class_single_objet.html", null ]
+      [ "SingleObject", "class_single_object.html", null ]
     ] ],
     [ "Pointer", "struct_pointer.html", null ],
     [ "Zone", "class_zone.html", null ]

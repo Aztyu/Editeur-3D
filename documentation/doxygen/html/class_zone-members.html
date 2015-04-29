@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Éditeur 3D
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Un simple éditeur 3D, projet de fin d&#39;année</div>
   </td>
@@ -114,9 +114,9 @@ $(document).ready(function(){initNavTree('class_zone.html','');});
 
 <p>This is the complete list of members for <a class="el" href="class_zone.html">Zone</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_zone.html#ac595ec6a2795a1c4762f122d9324fd91">addObjet</a>(SingleObjet *objet)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_zone.html#aa0c04b030a1194a83c9bda0390cac2f5">addObject</a>(SingleObject *objet)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_zone.html#a5009a75765c83b0eb363de845e300ede">createGroupObject</a>()</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_zone.html#a272849ec03d907e2a093b316f9f5bbb6">createSingleObjet</a>(object form)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_zone.html#a9b0e4f67a9f2f68ebf29efc9087f5aab">createSingleObject</a>(object form)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_zone.html#a80cf746645cd00566dea9fcd32d33fb4">current_pointer</a></td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_zone.html#ae8d63f36dcfe7e30dd1afcfa16199b64">exportZone</a>()</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_zone.html#a1c813f191e86a398fc04ab37765cf1a2">getGroupObjectPointer</a>(int index)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
@@ -124,30 +124,29 @@ $(document).ready(function(){initNavTree('class_zone.html','');});
   <tr><td class="entry"><a class="el" href="class_zone.html#a309b7e12792087ae35e71a3fefad0fe3">getPointer</a>()</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_zone.html#aabe22af9fa6575b0eb3b08f743e2ddcb">getSelectedGroupObject</a>()</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_zone.html#a2bb5975171249485b572debd1125e8f3">getSelectedObject</a>()</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_zone.html#a639f430c4641d3129e354c95b507763f">getSelectedSingleObject</a>()</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_zone.html#a3ba01b174ce72392df341c1bbcf1a60a">getSingleObjetPointer</a>(int index)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_zone.html#aa3c294c14d125f8cd95cb1c5b88b87cd">getSelectedSingleObject</a>()</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_zone.html#af1db951914db9b97c41f5543920e048f">getSingleObjectPointer</a>(int index)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_zone.html#a06660482753a89f65da552f6c20334aa">group_object_array</a></td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_zone.html#a5ccbf75095dc7c9b44681fa4aae70cad">printZone</a>()</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_zone.html#a1c3710cc378cd6ffd462edd756753c38">removeObjet</a>(int index)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_zone.html#aef224505752f7a9ea20c3aa8f1211c61">removeObjet</a>(SingleObjet *objet)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_zone.html#a3d9919f6123c5a13c1db9010519cd63b">removeObject</a>(int index)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_zone.html#a887df1794948f8e260f3aa0f26dca7e2">removeObject</a>(SingleObject *objet)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_zone.html#a44a0794a2af98a9a042a2b9c85f7be25">selected_group</a></td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_zone.html#a65eb0596e9eff64f0ebe309f39a19e3d">selected_object</a></td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_zone.html#a1a4abffed25a000ecc898cf7deb32820">selected_object</a></td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_zone.html#a6c08e929f98be2a995e66a0b0615e26b">setSelectedGroupObject</a>(int index)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_zone.html#ad82a7db9d08491742c2fba2e22594c73">setSelectedSingleObject</a>(int index)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_zone.html#ad2f8eebd5a5e7ca09dbd7ecf4723833c">setSelectedSingleObject</a>(irr::scene::ISceneNode *objet)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_zone.html#a7cf3040a2f6a2994c5b25f4212b7f14a">single_object_array</a></td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_zone.html#a11c21e13b18c328994d2b1c9f6c0017b">single_object_array</a></td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_zone.html#afcf8a165b68158407488a1678bdd2d78">type_number</a></td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_zone.html#a8994954cffd14da36e9d940537914983">unselectAll</a>()</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_zone.html#af2aebc9c50e25cb4aa97c5ac862de377">Zone</a>(char *name, Pointer *pointer)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_zone.html#a4535c0140ca5d4d0822153fded1a0c15">Zone</a>(const Zone &amp;orig)</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_zone.html#a0df1fac4c7aee18061fc42a6a03faa1b">zone_name</a></td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_zone.html#a562607cb5c4120a9316c5e967a5c610b">~Zone</a>()</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_zone.html#a0df1fac4c7aee18061fc42a6a03faa1b">zone_name</a></td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_zone.html#a562607cb5c4120a9316c5e967a5c610b">~Zone</a>()</td><td class="entry"><a class="el" href="class_zone.html">Zone</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Apr 28 2015 10:47:30 for Éditeur 3D by
+    <li class="footer">Generated on Wed Apr 29 2015 16:52:22 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

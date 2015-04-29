@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['singleobjet',['SingleObjet',['../class_single_objet.html',1,'']]]
+  ['singleobject',['SingleObject',['../class_single_object.html',1,'']]]
 ];

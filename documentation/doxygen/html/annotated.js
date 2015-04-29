@@ -6,6 +6,6 @@ var annotated =
     [ "GroupObject", "class_group_object.html", "class_group_object" ],
     [ "Object", "class_object.html", "class_object" ],
     [ "Pointer", "struct_pointer.html", "struct_pointer" ],
-    [ "SingleObjet", "class_single_objet.html", "class_single_objet" ],
+    [ "SingleObject", "class_single_object.html", "class_single_object" ],
     [ "Zone", "class_zone.html", "class_zone" ]
 ];

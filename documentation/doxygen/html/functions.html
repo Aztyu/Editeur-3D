@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Éditeur 3D
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Un simple éditeur 3D, projet de fin d&#39;année</div>
   </td>
@@ -142,10 +142,10 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>addMember()
-: <a class="el" href="class_group_object.html#aa2a1de28a94039fceb6cfe8db83641fb">GroupObject</a>
+: <a class="el" href="class_group_object.html#ac13668b6ad228c6120daa7eb4b4efa8e">GroupObject</a>
 </li>
-<li>addObjet()
-: <a class="el" href="class_zone.html#ac595ec6a2795a1c4762f122d9324fd91">Zone</a>
+<li>addObject()
+: <a class="el" href="class_zone.html#aa0c04b030a1194a83c9bda0390cac2f5">Zone</a>
 </li>
 <li>angleCameraLeft()
 : <a class="el" href="class_c_event_receiver.html#ace2bb715d2a4609ceee0113647624aa1">CEventReceiver</a>
@@ -173,8 +173,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>createGroupObject()
 : <a class="el" href="class_zone.html#a5009a75765c83b0eb363de845e300ede">Zone</a>
 </li>
-<li>createSingleObjet()
-: <a class="el" href="class_zone.html#a272849ec03d907e2a093b316f9f5bbb6">Zone</a>
+<li>createSingleObject()
+: <a class="el" href="class_zone.html#a9b0e4f67a9f2f68ebf29efc9087f5aab">Zone</a>
 </li>
 <li>createZone()
 : <a class="el" href="class_editor.html#ae7237d39d3d23d56ace1cfbbf33c3dc1">Editor</a>
@@ -190,6 +190,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>current_zone
 : <a class="el" href="class_editor.html#ad10b239b94d45993501dde063429e725">Editor</a>
+</li>
+<li>custom_gui
+: <a class="el" href="class_c_event_receiver.html#aa25c7588b95eaa98bea91611d29cfd67">CEventReceiver</a>
 </li>
 </ul>
 
@@ -248,8 +251,17 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_zone.html#a6147bbd80bbc3a430d7a6e8966a30d38">Zone</a>
 </li>
 <li>getPointer()
-: <a class="el" href="class_single_objet.html#aaaa19bed6aed1567245658dfee3bde2b">SingleObjet</a>
+: <a class="el" href="class_single_object.html#a71cdfbf291b0114652cc8af68bc9ccd0">SingleObject</a>
 , <a class="el" href="class_zone.html#a309b7e12792087ae35e71a3fefad0fe3">Zone</a>
+</li>
+<li>getPosition()
+: <a class="el" href="class_object.html#ab4407a20a44be8764cef1623e3e177ef">Object</a>
+</li>
+<li>getRotation()
+: <a class="el" href="class_object.html#a5c15a4c2db2345ef8d99f22c5f76b8ed">Object</a>
+</li>
+<li>getScale()
+: <a class="el" href="class_object.html#a53c7c9cb7e1c7f94cf39ddb5ca22a272">Object</a>
 </li>
 <li>getSceneNode()
 : <a class="el" href="class_object.html#a9ffa743e764efa6739be20c94e24eeba">Object</a>
@@ -261,10 +273,10 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_zone.html#a2bb5975171249485b572debd1125e8f3">Zone</a>
 </li>
 <li>getSelectedSingleObject()
-: <a class="el" href="class_zone.html#a639f430c4641d3129e354c95b507763f">Zone</a>
+: <a class="el" href="class_zone.html#aa3c294c14d125f8cd95cb1c5b88b87cd">Zone</a>
 </li>
-<li>getSingleObjetPointer()
-: <a class="el" href="class_zone.html#a3ba01b174ce72392df341c1bbcf1a60a">Zone</a>
+<li>getSingleObjectPointer()
+: <a class="el" href="class_zone.html#af1db951914db9b97c41f5543920e048f">Zone</a>
 </li>
 <li>getSkybox()
 : <a class="el" href="class_graphical_interface.html#a47fcbbf5c31dc89d1c6f5168af0b4eae">GraphicalInterface</a>
@@ -285,7 +297,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_group_object.html#a339e7b49653ded6620fc32a7a25aa99e">GroupObject</a>
 </li>
 <li>groupSelectObject()
-: <a class="el" href="class_single_objet.html#aa916f8b9bc73b53334320c8b98b18bb0">SingleObjet</a>
+: <a class="el" href="class_single_object.html#a9cd17fcd1f6a12434dbdd839aab4285f">SingleObject</a>
 </li>
 <li>gui
 : <a class="el" href="class_graphical_interface.html#a3fe2a63ac05a37b17a53e0aedef1277b">GraphicalInterface</a>
@@ -296,7 +308,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
 <li>hasParent()
-: <a class="el" href="class_single_objet.html#ad6e18b7bb62e3747a55755507aac4112">SingleObjet</a>
+: <a class="el" href="class_single_object.html#ad2c41337764c670eedb52803669ae8b6">SingleObject</a>
 </li>
 </ul>
 
@@ -313,7 +325,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_editor.html#ada0d7701b1702364d0fc73dd7052c4cd">Editor</a>
 </li>
 <li>member_object
-: <a class="el" href="class_group_object.html#a766a3e667f5e92b35288cc4bace2fc3c">GroupObject</a>
+: <a class="el" href="class_group_object.html#a6ea7271f1a2ed302185b68185b2f4b18">GroupObject</a>
 </li>
 <li>menu
 : <a class="el" href="class_graphical_interface.html#ad1ccb05705dfb3579d945801f7b43650">GraphicalInterface</a>
@@ -343,23 +355,29 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>OnEvent()
 : <a class="el" href="class_c_event_receiver.html#ad9ca3a8c45f4563d4c6cdafe6de7f983">CEventReceiver</a>
 </li>
-<li>onMenuItemSelected()
-: <a class="el" href="class_c_event_receiver.html#a24997ebe9eae2685e3dd738049fa70db">CEventReceiver</a>
+<li>OnMenuItemSelected()
+: <a class="el" href="class_c_event_receiver.html#a43edae6467fb4a33e26532969ea2cfbc">CEventReceiver</a>
+</li>
+<li>OnObjectCreation()
+: <a class="el" href="class_c_event_receiver.html#abd4d447023316eb4263ef31860ae8ef7">CEventReceiver</a>
 </li>
 <li>OnObjectSelected()
 : <a class="el" href="class_c_event_receiver.html#a3ecac7bd7526986381d369dc4e56a57a">CEventReceiver</a>
 </li>
+<li>OnToolBoxItemSelected()
+: <a class="el" href="class_c_event_receiver.html#a300d2a9e0a753bbcd029d1247102415a">CEventReceiver</a>
+</li>
 <li>operator&lt;&lt;
-: <a class="el" href="class_group_object.html#a90b35f44292ea95018955f60f8e114bb">GroupObject</a>
-, <a class="el" href="class_single_objet.html#a90b35f44292ea95018955f60f8e114bb">SingleObjet</a>
+: <a class="el" href="class_group_object.html#a0f61d0ec96671d0ad2598e0dc0370dd5">GroupObject</a>
+, <a class="el" href="class_single_object.html#a0f61d0ec96671d0ad2598e0dc0370dd5">SingleObject</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
-<li>printObjet()
-: <a class="el" href="class_group_object.html#a9dea0a88898892665aaa64e36185a570">GroupObject</a>
-, <a class="el" href="class_single_objet.html#aaa045fbe766fff123a2bc93eba40c73b">SingleObjet</a>
+<li>printObject()
+: <a class="el" href="class_group_object.html#ad03df6c10ee670e99839832ffdcf8a58">GroupObject</a>
+, <a class="el" href="class_single_object.html#a58e5b8c436971966f03d353a468db0c6">SingleObject</a>
 </li>
 <li>printZone()
 : <a class="el" href="class_zone.html#a5ccbf75095dc7c9b44681fa4aae70cad">Zone</a>
@@ -371,8 +389,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>removeMember()
 : <a class="el" href="class_group_object.html#aeb19fcd9c93a8d4fcec71f89dba5e352">GroupObject</a>
 </li>
-<li>removeObjet()
-: <a class="el" href="class_zone.html#a1c3710cc378cd6ffd462edd756753c38">Zone</a>
+<li>removeObject()
+: <a class="el" href="class_zone.html#a3d9919f6123c5a13c1db9010519cd63b">Zone</a>
 </li>
 </ul>
 
@@ -385,24 +403,24 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_zone.html#a44a0794a2af98a9a042a2b9c85f7be25">Zone</a>
 </li>
 <li>selected_object
-: <a class="el" href="class_zone.html#a65eb0596e9eff64f0ebe309f39a19e3d">Zone</a>
+: <a class="el" href="class_zone.html#a1a4abffed25a000ecc898cf7deb32820">Zone</a>
 </li>
 <li>selectObject()
 : <a class="el" href="class_group_object.html#ad78f66261e44c79fde43d6aceacd6849">GroupObject</a>
 , <a class="el" href="class_object.html#a598259a5f54193a5657d8f26c5b62b59">Object</a>
-, <a class="el" href="class_single_objet.html#ad852d56844b469f96e9fe19fce786d5e">SingleObjet</a>
+, <a class="el" href="class_single_object.html#a2f4ea2843f43235fb4d3017d10c7127f">SingleObject</a>
 </li>
 <li>setCurrentZone()
 : <a class="el" href="class_editor.html#a3a66d825ac095e7ed3ba716aadf0f76f">Editor</a>
 </li>
-<li>setGroupObjetSelected()
-: <a class="el" href="class_graphical_interface.html#aab44e1037d0290ae3efef7ab771bdcd1">GraphicalInterface</a>
+<li>setGroupObjectSelected()
+: <a class="el" href="class_graphical_interface.html#a5620f7161a11e24c91e1cd7a224709a3">GraphicalInterface</a>
 </li>
 <li>setMainPointer()
 : <a class="el" href="class_editor.html#a9a0a67df1ae8125f35272ea4aa4d0c48">Editor</a>
 </li>
 <li>setParent()
-: <a class="el" href="class_single_objet.html#a01e776f05e2f94f8722c4d388757a950">SingleObjet</a>
+: <a class="el" href="class_single_object.html#ab1666211ad7887a6d4b09af47af4100b">SingleObject</a>
 </li>
 <li>setPosition()
 : <a class="el" href="class_object.html#a3f791496e7faa8e728268b88f56496d1">Object</a>
@@ -419,17 +437,17 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>setSelectedSingleObject()
 : <a class="el" href="class_zone.html#ad82a7db9d08491742c2fba2e22594c73">Zone</a>
 </li>
-<li>setSingleObjetSelected()
-: <a class="el" href="class_graphical_interface.html#a4e6d2b7509ae7b134bdc983bb77c7885">GraphicalInterface</a>
+<li>setSingleObjectSelected()
+: <a class="el" href="class_graphical_interface.html#a906dff32de9a713121f9775127fc33a5">GraphicalInterface</a>
 </li>
 <li>single_object_array
-: <a class="el" href="class_zone.html#a7cf3040a2f6a2994c5b25f4212b7f14a">Zone</a>
+: <a class="el" href="class_zone.html#a11c21e13b18c328994d2b1c9f6c0017b">Zone</a>
 </li>
 <li>single_object_box
 : <a class="el" href="class_graphical_interface.html#a8cbe9f56f55b45e3382817a6ec788be5">GraphicalInterface</a>
 </li>
-<li>SingleObjet()
-: <a class="el" href="class_single_objet.html#a978e1c8c6da2aee699895d99a21f19f2">SingleObjet</a>
+<li>SingleObject()
+: <a class="el" href="class_single_object.html#af66a3e1ff65c78df5cd52fb7871b8629">SingleObject</a>
 </li>
 <li>skybox
 : <a class="el" href="class_graphical_interface.html#a76899c47a903c3057aa284dd136061dc">GraphicalInterface</a>
@@ -451,13 +469,13 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>unselectObject()
 : <a class="el" href="class_group_object.html#a9f9f33e4e81fc1d5fba5c26f6c073a81">GroupObject</a>
 , <a class="el" href="class_object.html#aabb72e1baac8b58834f0cce5041ce697">Object</a>
-, <a class="el" href="class_single_objet.html#a6b5828228bdad88ebf816c5fd8c2efe7">SingleObjet</a>
+, <a class="el" href="class_single_object.html#a949adf548c2be426cc4d54987eb92f31">SingleObject</a>
 </li>
 <li>updateGroupObject()
 : <a class="el" href="class_graphical_interface.html#a8a5800ef8df6738199e5cb6f370f29df">GraphicalInterface</a>
 </li>
 <li>updateSingleObject()
-: <a class="el" href="class_graphical_interface.html#a06669cfc1f6b1902f2adc34782004b31">GraphicalInterface</a>
+: <a class="el" href="class_graphical_interface.html#a10ffd5e51b88c0f1814d294108a88e92">GraphicalInterface</a>
 </li>
 <li>updateWindow()
 : <a class="el" href="class_graphical_interface.html#a5404ff344a32c7283673cdec13beca8e">GraphicalInterface</a>
@@ -507,7 +525,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Apr 28 2015 10:47:30 for Éditeur 3D by
+    <li class="footer">Generated on Wed Apr 29 2015 16:52:22 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

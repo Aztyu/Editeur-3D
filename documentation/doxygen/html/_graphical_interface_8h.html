@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Éditeur 3D
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Un simple éditeur 3D, projet de fin d&#39;année</div>
   </td>
@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('_graphical_interface_8h.html','');});
 <div class="title">C:/Users/Aztyu/Documents/Developpement/Editeur-3D/GraphicalInterface.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_single_objet_8h_source.html">SingleObjet.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_single_object_8h_source.html">SingleObject.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_group_object_8h_source.html">GroupObject.h</a>&quot;</code><br />
 </div>
 <p><a href="_graphical_interface_8h_source.html">Go to the source code of this file.</a></p>
@@ -138,23 +138,62 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca4db4c10462f6b344047c26cc564f46e5">GUI_ID_SINGLE_OBJECT_COMBO_BOX</a>, 
 <a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca231611f5ef430bfb866e21a15a079de3">GUI_ID_GROUP_OBJECT_COMBO_BOX</a>, 
-<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caf1daae9b8417c03c8f63c9cbf7f6c0a5">GUI_ID_OBJECT_WINDOW</a>, 
-<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cafdbb229f33925775ed70c2f2c90eb93a">GUI_ID_OBJECT_WINDOW_SCALE_UP</a>, 
-<br />
-&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca2d09882b27a1eb2ea157c903c63c6cad">GUI_ID_OBJECT_WINDOW_SCALE_DOWN</a>, 
 <a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca7bbaf2e294d98d1065da25203fe2824b">GUI_ID_FILE</a>, 
-<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca5a514e0e233816316bfebd7fb838c13a">GUI_ID_SETTINGS</a>, 
-<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cafc966a63b7520b952cafee2f540eee7d">GUI_ID_HELP</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca13c71b2dbfde56e8bfa85b60acc38fa9">GUI_ID_NEW</a>, 
 <br />
-&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca13c71b2dbfde56e8bfa85b60acc38fa9">GUI_ID_NEW</a>, 
-<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caab8a78354038db493e6a2491e01affe9">GUI_ID_LOAD</a>, 
+&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caab8a78354038db493e6a2491e01affe9">GUI_ID_LOAD</a>, 
 <a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca5ff888e8f9310379ad44daf6c72d3128">GUI_ID_SAVE</a>, 
 <a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cae39bc54c5a9759868fb0cc1296846e4d">GUI_ID_QUIT</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca5a514e0e233816316bfebd7fb838c13a">GUI_ID_SETTINGS</a>, 
 <br />
 &#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca36fc1b46c836651e13506a8ee2715d57">GUI_ID_SKYBOX</a>, 
 <a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca17e72fbeafdf9cce6382ce55deff9d2f">GUI_ID_TOOLBOX</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cafc966a63b7520b952cafee2f540eee7d">GUI_ID_HELP</a>, 
 <a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca9c68ccf40f2412ed9d4f663418243262">GUI_ID_DOC</a>, 
-<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cabf3ef31d30701203871c07c256307c45">GUI_ID_ABOUT</a>
+<br />
+&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cabf3ef31d30701203871c07c256307c45">GUI_ID_ABOUT</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caf1daae9b8417c03c8f63c9cbf7f6c0a5">GUI_ID_OBJECT_WINDOW</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cad3fb11d45826fbf7d6449b0932e69a1c">GUI_ID_OBJECT_WINDOW_OBJECT_NAME</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca89ed1ef6c642a3d9067d682e44dad9a1">GUI_ID_OBJECT_WINDOW_POSITION_X_UP</a>, 
+<br />
+&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caa7ddbdbe92ac2beb3c34c8b4d2681d1d">GUI_ID_OBJECT_WINDOW_POSITION_X_VALUE</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cac8ed0646c5f7cf63cd2a0c8baf5b3c22">GUI_ID_OBJECT_WINDOW_POSITION_X_DOWN</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca6100513a700ab9e17ff3b144b83a740f">GUI_ID_OBJECT_WINDOW_POSITION_Y_UP</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca7e9d4c24b12ee24d416cf6cc4a547648">GUI_ID_OBJECT_WINDOW_POSITION_Y_VALUE</a>, 
+<br />
+&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca2842485baf3d255155c1f2c010e8cab0">GUI_ID_OBJECT_WINDOW_POSITION_Y_DOWN</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca1e5ef044909a286a750f62e1b8c3233d">GUI_ID_OBJECT_WINDOW_POSITION_Z_UP</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caadfa7fcb6e2022d7aa5d55e4ea267210">GUI_ID_OBJECT_WINDOW_POSITION_Z_VALUE</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca23e469f9fb8544148c2f99d37b728e9b">GUI_ID_OBJECT_WINDOW_POSITION_Z_DOWN</a>, 
+<br />
+&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cacab23c7c14d6113205e78f8be118b11a">GUI_ID_OBJECT_WINDOW_ROTATION_X_UP</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cac4572616ba8c2dcf0138c64e3c7e39ed">GUI_ID_OBJECT_WINDOW_ROTATION_X_VALUE</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caa7f4c630dd50ed7e692e13f47651b031">GUI_ID_OBJECT_WINDOW_ROTATION_X_DOWN</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cac4bd870e7f0b0a95eb8a778a83b0c7ec">GUI_ID_OBJECT_WINDOW_ROTATION_Y_UP</a>, 
+<br />
+&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cac5a8d62157b79011ec8de70ee308b563">GUI_ID_OBJECT_WINDOW_ROTATION_Y_VALUE</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca647f2d1f336d97ca6330b543fae8f4a5">GUI_ID_OBJECT_WINDOW_ROTATION_Y_DOWN</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cab1e3a83029e1c9c875478c8a8729191a">GUI_ID_OBJECT_WINDOW_ROTATION_Z_UP</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cac78248dd53b19377123ac3f01845eecb">GUI_ID_OBJECT_WINDOW_ROTATION_Z_VALUE</a>, 
+<br />
+&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cafcff5c6c4c72c5bc23a43aae77bec958">GUI_ID_OBJECT_WINDOW_ROTATION_Z_DOWN</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca2ef8d014b73d73f6beccdc9a057cd959">GUI_ID_OBJECT_WINDOW_SCALE_X_UP</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca4478b44fb0c260d85ef056c0473a7946">GUI_ID_OBJECT_WINDOW_SCALE_X_VALUE</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cabbf05d76ed7ac41b13b625f0c950723b">GUI_ID_OBJECT_WINDOW_SCALE_X_DOWN</a>, 
+<br />
+&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca3be42c3c28608dc6222da0c3f4963172">GUI_ID_OBJECT_WINDOW_SCALE_Y_UP</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cabcf842789b1aea86c51d65cb1e6483ca">GUI_ID_OBJECT_WINDOW_SCALE_Y_VALUE</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cac434717a77e16f9242e8aa9be0266ec6">GUI_ID_OBJECT_WINDOW_SCALE_Y_DOWN</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cac1cc2e259c245975729b2651165569c0">GUI_ID_OBJECT_WINDOW_SCALE_Z_UP</a>, 
+<br />
+&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca137c9ecd6678854191fcbbe3e6e4ff7f">GUI_ID_OBJECT_WINDOW_SCALE_Z_VALUE</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca37115188be332a46a701a4d71c9caa4f">GUI_ID_OBJECT_WINDOW_SCALE_Z_DOWN</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca0acc69d26fbb3239af06a5c71835e796">GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_UP</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca5c9d268ae2193ba4ec2054d6f702d5fc">GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_DOWN</a>, 
+<br />
+&#160;&#160;<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cad1f67059d1caf9a274289bc4fa20681b">GUI_ID_OBJECT_WINDOW_GROUP_BOX</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca726da5715d64130875295ddff6d87b13">GUI_ID_OBJECT_WINDOW_ADD_TO_GROUP</a>, 
+<a class="el" href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cabf83708b2735080b094d3c2b966ecb87">GUI_ID_OBJECT_WINDOW_ADD_TO__NEW_GROUP</a>
 <br />
  }</td></tr>
 <tr class="memdesc:aa7dc61091ee76eb1375e64889805575c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration pour les elements de l'interface.  <a href="_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575c">More...</a><br /></td></tr>
@@ -174,75 +213,168 @@ Enumerations</h2></td></tr>
 <p>Enumeration pour les elements de l'interface. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cadb74950b44e62d785cc4132d12b502bb"></a>GUI_ID_SQUARE&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>Creation d'un cube. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca0b981281ff36334b3f43942518e0c215"></a>GUI_ID_RECTANGLE&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>Creation d'un carré(2D). </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca0f15b2bd03adc9bf4187fe0fd3cbc14c"></a>GUI_ID_LINE&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>Creation d'une ligne(2D). </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca23de3de377afcd7f6e1165e6f694f3f9"></a>GUI_ID_TRAPEZE&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>Creation d'un trapeze(2D). </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca79d047dbf6c340dd630728c9825d6a25"></a>GUI_ID_SPHERE&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>Creation d'une sphere. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cae580d26b944feed7ef72f5fb54dad59a"></a>GUI_ID_PYRAMID&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>Creation d'une pyramide. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca17d95d23456e76608737c79bf33120c5"></a>GUI_ID_CIRCLE&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>Creation d'un cercle(2D). </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575caa86afab812e584da357753cbf55162d1"></a>GUI_ID_CYLINDER&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>Creation d'un cylindre. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca4db4c10462f6b344047c26cc564f46e5"></a>GUI_ID_SINGLE_OBJECT_COMBO_BOX&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>combobox pour objet simple. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca231611f5ef430bfb866e21a15a079de3"></a>GUI_ID_GROUP_OBJECT_COMBO_BOX&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575caf1daae9b8417c03c8f63c9cbf7f6c0a5"></a>GUI_ID_OBJECT_WINDOW&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cafdbb229f33925775ed70c2f2c90eb93a"></a>GUI_ID_OBJECT_WINDOW_SCALE_UP&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca2d09882b27a1eb2ea157c903c63c6cad"></a>GUI_ID_OBJECT_WINDOW_SCALE_DOWN&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>combobox pour groupe d'objets. </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca7bbaf2e294d98d1065da25203fe2824b"></a>GUI_ID_FILE&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca5a514e0e233816316bfebd7fb838c13a"></a>GUI_ID_SETTINGS&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
-</td></tr>
-<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cafc966a63b7520b952cafee2f540eee7d"></a>GUI_ID_HELP&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>element "Fichier". </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca13c71b2dbfde56e8bfa85b60acc38fa9"></a>GUI_ID_NEW&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>element "Nouveau". </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575caab8a78354038db493e6a2491e01affe9"></a>GUI_ID_LOAD&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>element "Charger". </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca5ff888e8f9310379ad44daf6c72d3128"></a>GUI_ID_SAVE&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>element "Sauvegarder". </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cae39bc54c5a9759868fb0cc1296846e4d"></a>GUI_ID_QUIT&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>element "Quitter". </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca5a514e0e233816316bfebd7fb838c13a"></a>GUI_ID_SETTINGS&#160;</td><td class="fielddoc">
+<p>element "Reglages". </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca36fc1b46c836651e13506a8ee2715d57"></a>GUI_ID_SKYBOX&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>element "Skybox". </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca17e72fbeafdf9cce6382ce55deff9d2f"></a>GUI_ID_TOOLBOX&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>element "Boite a outils". </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cafc966a63b7520b952cafee2f540eee7d"></a>GUI_ID_HELP&#160;</td><td class="fielddoc">
+<p>element "Aide". </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca9c68ccf40f2412ed9d4f663418243262"></a>GUI_ID_DOC&#160;</td><td class="fielddoc">
-<p>enum value TVal1. </p>
+<p>element "Documentation". </p>
 </td></tr>
 <tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cabf3ef31d30701203871c07c256307c45"></a>GUI_ID_ABOUT&#160;</td><td class="fielddoc">
+<p>element "A propos". </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575caf1daae9b8417c03c8f63c9cbf7f6c0a5"></a>GUI_ID_OBJECT_WINDOW&#160;</td><td class="fielddoc">
+<p>fenetre d'outils. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cad3fb11d45826fbf7d6449b0932e69a1c"></a>GUI_ID_OBJECT_WINDOW_OBJECT_NAME&#160;</td><td class="fielddoc">
+<p>nom de l'objet. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca89ed1ef6c642a3d9067d682e44dad9a1"></a>GUI_ID_OBJECT_WINDOW_POSITION_X_UP&#160;</td><td class="fielddoc">
+<p>gros plus de debug. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575caa7ddbdbe92ac2beb3c34c8b4d2681d1d"></a>GUI_ID_OBJECT_WINDOW_POSITION_X_VALUE&#160;</td><td class="fielddoc">
+<p>fenetre d'outils. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cac8ed0646c5f7cf63cd2a0c8baf5b3c22"></a>GUI_ID_OBJECT_WINDOW_POSITION_X_DOWN&#160;</td><td class="fielddoc">
+<p>enum value TVal1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca6100513a700ab9e17ff3b144b83a740f"></a>GUI_ID_OBJECT_WINDOW_POSITION_Y_UP&#160;</td><td class="fielddoc">
+<p>gros plus de debug. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca7e9d4c24b12ee24d416cf6cc4a547648"></a>GUI_ID_OBJECT_WINDOW_POSITION_Y_VALUE&#160;</td><td class="fielddoc">
+<p>fenetre d'outils. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca2842485baf3d255155c1f2c010e8cab0"></a>GUI_ID_OBJECT_WINDOW_POSITION_Y_DOWN&#160;</td><td class="fielddoc">
+<p>enum value TVal1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca1e5ef044909a286a750f62e1b8c3233d"></a>GUI_ID_OBJECT_WINDOW_POSITION_Z_UP&#160;</td><td class="fielddoc">
+<p>gros plus de debug. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575caadfa7fcb6e2022d7aa5d55e4ea267210"></a>GUI_ID_OBJECT_WINDOW_POSITION_Z_VALUE&#160;</td><td class="fielddoc">
+<p>fenetre d'outils. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca23e469f9fb8544148c2f99d37b728e9b"></a>GUI_ID_OBJECT_WINDOW_POSITION_Z_DOWN&#160;</td><td class="fielddoc">
+<p>enum value TVal1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cacab23c7c14d6113205e78f8be118b11a"></a>GUI_ID_OBJECT_WINDOW_ROTATION_X_UP&#160;</td><td class="fielddoc">
+<p>gros plus de debug. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cac4572616ba8c2dcf0138c64e3c7e39ed"></a>GUI_ID_OBJECT_WINDOW_ROTATION_X_VALUE&#160;</td><td class="fielddoc">
+<p>fenetre d'outils. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575caa7f4c630dd50ed7e692e13f47651b031"></a>GUI_ID_OBJECT_WINDOW_ROTATION_X_DOWN&#160;</td><td class="fielddoc">
+<p>enum value TVal1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cac4bd870e7f0b0a95eb8a778a83b0c7ec"></a>GUI_ID_OBJECT_WINDOW_ROTATION_Y_UP&#160;</td><td class="fielddoc">
+<p>gros plus de debug. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cac5a8d62157b79011ec8de70ee308b563"></a>GUI_ID_OBJECT_WINDOW_ROTATION_Y_VALUE&#160;</td><td class="fielddoc">
+<p>fenetre d'outils. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca647f2d1f336d97ca6330b543fae8f4a5"></a>GUI_ID_OBJECT_WINDOW_ROTATION_Y_DOWN&#160;</td><td class="fielddoc">
+<p>enum value TVal1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cab1e3a83029e1c9c875478c8a8729191a"></a>GUI_ID_OBJECT_WINDOW_ROTATION_Z_UP&#160;</td><td class="fielddoc">
+<p>gros plus de debug. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cac78248dd53b19377123ac3f01845eecb"></a>GUI_ID_OBJECT_WINDOW_ROTATION_Z_VALUE&#160;</td><td class="fielddoc">
+<p>fenetre d'outils. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cafcff5c6c4c72c5bc23a43aae77bec958"></a>GUI_ID_OBJECT_WINDOW_ROTATION_Z_DOWN&#160;</td><td class="fielddoc">
+<p>enum value TVal1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca2ef8d014b73d73f6beccdc9a057cd959"></a>GUI_ID_OBJECT_WINDOW_SCALE_X_UP&#160;</td><td class="fielddoc">
+<p>gros plus de debug. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca4478b44fb0c260d85ef056c0473a7946"></a>GUI_ID_OBJECT_WINDOW_SCALE_X_VALUE&#160;</td><td class="fielddoc">
+<p>fenetre d'outils. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cabbf05d76ed7ac41b13b625f0c950723b"></a>GUI_ID_OBJECT_WINDOW_SCALE_X_DOWN&#160;</td><td class="fielddoc">
+<p>enum value TVal1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca3be42c3c28608dc6222da0c3f4963172"></a>GUI_ID_OBJECT_WINDOW_SCALE_Y_UP&#160;</td><td class="fielddoc">
+<p>gros plus de debug. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cabcf842789b1aea86c51d65cb1e6483ca"></a>GUI_ID_OBJECT_WINDOW_SCALE_Y_VALUE&#160;</td><td class="fielddoc">
+<p>fenetre d'outils. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cac434717a77e16f9242e8aa9be0266ec6"></a>GUI_ID_OBJECT_WINDOW_SCALE_Y_DOWN&#160;</td><td class="fielddoc">
+<p>enum value TVal1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cac1cc2e259c245975729b2651165569c0"></a>GUI_ID_OBJECT_WINDOW_SCALE_Z_UP&#160;</td><td class="fielddoc">
+<p>gros plus de debug. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca137c9ecd6678854191fcbbe3e6e4ff7f"></a>GUI_ID_OBJECT_WINDOW_SCALE_Z_VALUE&#160;</td><td class="fielddoc">
+<p>fenetre d'outils. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca37115188be332a46a701a4d71c9caa4f"></a>GUI_ID_OBJECT_WINDOW_SCALE_Z_DOWN&#160;</td><td class="fielddoc">
+<p>enum value TVal1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca0acc69d26fbb3239af06a5c71835e796"></a>GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_UP&#160;</td><td class="fielddoc">
+<p>gros plus de debug. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca5c9d268ae2193ba4ec2054d6f702d5fc"></a>GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_DOWN&#160;</td><td class="fielddoc">
+<p>enum value TVal1. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cad1f67059d1caf9a274289bc4fa20681b"></a>GUI_ID_OBJECT_WINDOW_GROUP_BOX&#160;</td><td class="fielddoc">
+<p>gros plus de debug. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575ca726da5715d64130875295ddff6d87b13"></a>GUI_ID_OBJECT_WINDOW_ADD_TO_GROUP&#160;</td><td class="fielddoc">
+<p>fenetre d'outils. </p>
+</td></tr>
+<tr><td class="fieldname"><a class="anchor" id="aa7dc61091ee76eb1375e64889805575cabf83708b2735080b094d3c2b966ecb87"></a>GUI_ID_OBJECT_WINDOW_ADD_TO__NEW_GROUP&#160;</td><td class="fielddoc">
 <p>enum value TVal1. </p>
 </td></tr>
 </table>
@@ -257,7 +389,7 @@ Enumerations</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="_graphical_interface_8h.html">GraphicalInterface.h</a></li>
-    <li class="footer">Generated on Tue Apr 28 2015 10:47:30 for Éditeur 3D by
+    <li class="footer">Generated on Wed Apr 29 2015 16:52:22 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

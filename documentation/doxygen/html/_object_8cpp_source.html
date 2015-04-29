@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Éditeur 3D
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Un simple éditeur 3D, projet de fin d&#39;année</div>
   </td>
@@ -120,88 +120,121 @@ $(document).ready(function(){initNavTree('_object_8cpp_source.html','');});
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">   12</a></span>&#160;<a class="code" href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">Object::Object</a>(irr::scene::ISceneNode* obj, <span class="keyword">const</span> <span class="keywordtype">char</span>* name) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    objet = obj;        <span class="comment">//Stock le pointeur vers le node</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    object_name = name; <span class="comment">//Stocke le nom</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    objet-&gt;setPosition(irr::core::vector3df(0, 0, 0));</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_object.html#aa60a00ff1a9fb870f52dfb0d5c30af66">   18</a></span>&#160;<a class="code" href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">Object::Object</a>(irr::scene::ISceneNode* obj, <span class="keywordtype">float</span> total_scale, <span class="keyword">const</span> <span class="keywordtype">char</span>* name) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    objet = obj;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    objet-&gt;setPosition(irr::core::vector3df(0, 0, 0));</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    objet-&gt;setScale(irr::core::vector3df(total_scale, total_scale, total_scale));</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    object_name = name;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_object.html#afbf4bf740e6c2718b379f3d2aab988c2">   25</a></span>&#160;<a class="code" href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">Object::Object</a>(irr::scene::ISceneNode* obj, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keyword">const</span> <span class="keywordtype">char</span>* name){</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    objet = obj;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    objet-&gt;setPosition(irr::core::vector3df(x, y, z));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    object_name = name;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_object.html#aa1964f4f8060e0fa4ba04864e55edc8e">   31</a></span>&#160;<a class="code" href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">Object::Object</a>(irr::scene::ISceneNode* obj, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keywordtype">float</span> total_scale, <span class="keyword">const</span> <span class="keywordtype">char</span>* name){</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    objet = obj;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    object_name = name;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    objet-&gt;setPosition(irr::core::vector3df(x, y, z));</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    objet-&gt;setScale(irr::core::vector3df(total_scale, total_scale, total_scale));</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">   38</a></span>&#160;<a class="code" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">Object::~Object</a>() {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    objet-&gt;remove();        <span class="comment">//Suppression de l&#39;objet dans irrlicht</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Object deleted&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">   12</a></span>&#160;<a class="code" href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">Object::Object</a>(irr::scene::ISceneNode* obj, <span class="keyword">const</span> <span class="keywordtype">char</span>* name) : object_name(name){</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a> = obj;        <span class="comment">//Stock le pointeur vers le node</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setPosition(irr::core::vector3df(0, 0, 0));</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_object.html#aa60a00ff1a9fb870f52dfb0d5c30af66">   17</a></span>&#160;<a class="code" href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">Object::Object</a>(irr::scene::ISceneNode* obj, <span class="keywordtype">float</span> total_scale, <span class="keyword">const</span> <span class="keywordtype">char</span>* name) : object_name(name){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a> = obj;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setPosition(irr::core::vector3df(0, 0, 0));</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setScale(irr::core::vector3df(total_scale, total_scale, total_scale));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_object.html#afbf4bf740e6c2718b379f3d2aab988c2">   23</a></span>&#160;<a class="code" href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">Object::Object</a>(irr::scene::ISceneNode* obj, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keyword">const</span> <span class="keywordtype">char</span>* name) : object_name(name){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a> = obj;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setPosition(irr::core::vector3df(x, y, z));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_object.html#aa1964f4f8060e0fa4ba04864e55edc8e">   28</a></span>&#160;<a class="code" href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">Object::Object</a>(irr::scene::ISceneNode* obj, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keywordtype">float</span> total_scale, <span class="keyword">const</span> <span class="keywordtype">char</span>* name) : object_name(name){</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a> = obj;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setPosition(irr::core::vector3df(x, y, z));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setScale(irr::core::vector3df(total_scale, total_scale, total_scale));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">   34</a></span>&#160;<a class="code" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">Object::~Object</a>() {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;remove();        <span class="comment">//Suppression de l&#39;objet dans irrlicht</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Object deleted&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_object.html#a3f791496e7faa8e728268b88f56496d1">   39</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#a3f791496e7faa8e728268b88f56496d1">Object::setPosition</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){        <span class="comment">//Methodes absolues</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setPosition(irr::core::vector3df(x, y, z));</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_object.html#a3f791496e7faa8e728268b88f56496d1">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#a3f791496e7faa8e728268b88f56496d1">Object::setPosition</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){        <span class="comment">//Methodes absolues</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    objet-&gt;setPosition(irr::core::vector3df(x, y, z));</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_object.html#aa6851b042761bda5450fceb0b5e98428">   43</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#aa6851b042761bda5450fceb0b5e98428">Object::setScale</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setScale(irr::core::vector3df(x, y, z));</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_object.html#aa6851b042761bda5450fceb0b5e98428">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#aa6851b042761bda5450fceb0b5e98428">Object::setScale</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    objet-&gt;setScale(irr::core::vector3df(x, y, z));</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_object.html#a27a19187ba6283151bc271d5927c6abc">   47</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#a27a19187ba6283151bc271d5927c6abc">Object::setRotation</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setRotation(irr::core::vector3df(x, y, z));</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_object.html#a27a19187ba6283151bc271d5927c6abc">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#a27a19187ba6283151bc271d5927c6abc">Object::setRotation</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    objet-&gt;setRotation(irr::core::vector3df(x, y, z));</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_object.html#a0bc35a2616873c1dc861e81b63d38c90">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#a0bc35a2616873c1dc861e81b63d38c90">Object::modifyPositionBy</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){        <span class="comment">//Methodes relatives, utilise la valeur de base plus celle que vous rajoutez</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setPosition(irr::core::vector3df(x, y, z) + <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;getPosition());</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_object.html#a0bc35a2616873c1dc861e81b63d38c90">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#a0bc35a2616873c1dc861e81b63d38c90">Object::modifyPositionBy</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){        <span class="comment">//Methodes relatives, utilise la valeur de base plus celle que vous rajoutez</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    objet-&gt;setPosition(irr::core::vector3df(x, y, z) + objet-&gt;getPosition());</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_object.html#aeae16a9ab6ef677bf7d3bf697910c58d">   59</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#aeae16a9ab6ef677bf7d3bf697910c58d">Object::modifyScaleBy</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    objet-&gt;setScale(irr::core::vector3df(x, y, z) + objet-&gt;getScale());</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="class_object.html#aeab2da3a7c16f11d088a24c85282c511">   63</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#aeab2da3a7c16f11d088a24c85282c511">Object::modifyRotationBy</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    objet-&gt;setRotation(irr::core::vector3df(x, y, z) + objet-&gt;getRotation());</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_object.html#a9ffa743e764efa6739be20c94e24eeba">   67</a></span>&#160;irr::scene::ISceneNode* <a class="code" href="class_object.html#a9ffa743e764efa6739be20c94e24eeba">Object::getSceneNode</a>(){  <span class="comment">//Retourne le pointeur vers le node</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> objet;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_object.html#ae2e7f745c015b67a580c735609cba5b8">   71</a></span>&#160;std::string <a class="code" href="class_object.html#ae2e7f745c015b67a580c735609cba5b8">Object::getName</a>() {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> this-&gt;object_name;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="ttc" id="class_object_html_a3f791496e7faa8e728268b88f56496d1"><div class="ttname"><a href="class_object.html#a3f791496e7faa8e728268b88f56496d1">Object::setPosition</a></div><div class="ttdeci">void setPosition(float x, float y, float z)</div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00043">Object.cpp:43</a></div></div>
-<div class="ttc" id="class_object_html_aa6851b042761bda5450fceb0b5e98428"><div class="ttname"><a href="class_object.html#aa6851b042761bda5450fceb0b5e98428">Object::setScale</a></div><div class="ttdeci">void setScale(float x, float y, float z)</div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00047">Object.cpp:47</a></div></div>
-<div class="ttc" id="class_object_html_ae2e7f745c015b67a580c735609cba5b8"><div class="ttname"><a href="class_object.html#ae2e7f745c015b67a580c735609cba5b8">Object::getName</a></div><div class="ttdeci">std::string getName()</div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00071">Object.cpp:71</a></div></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_object.html#aeae16a9ab6ef677bf7d3bf697910c58d">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#aeae16a9ab6ef677bf7d3bf697910c58d">Object::modifyScaleBy</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    irr::core::vector3df scale = <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;getScale();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(x &gt; 0){</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        scale.X *= x;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(x &lt; 0){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        scale.X /= x;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span>(y &gt; 0){</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        scale.Y *= y;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(y &lt; 0){</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        scale.Y /= y;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span>(z &gt; 0){</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        scale.Z *= z;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(z &lt; 0){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        scale.Z /= z;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setScale(scale);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="class_object.html#aeab2da3a7c16f11d088a24c85282c511">   79</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_object.html#aeab2da3a7c16f11d088a24c85282c511">Object::modifyRotationBy</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z){</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;setRotation(irr::core::vector3df(x, y, z) + <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;getRotation());</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_object.html#ab4407a20a44be8764cef1623e3e177ef">   83</a></span>&#160;<span class="keyword">const</span> irr::core::vector3df&amp; <a class="code" href="class_object.html#ab4407a20a44be8764cef1623e3e177ef">Object::getPosition</a>() {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;getPosition();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_object.html#a53c7c9cb7e1c7f94cf39ddb5ca22a272">   87</a></span>&#160;<span class="keyword">const</span> irr::core::vector3df&amp; <a class="code" href="class_object.html#a53c7c9cb7e1c7f94cf39ddb5ca22a272">Object::getScale</a>() {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;getScale();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_object.html#a5c15a4c2db2345ef8d99f22c5f76b8ed">   91</a></span>&#160;<span class="keyword">const</span> irr::core::vector3df&amp; <a class="code" href="class_object.html#a5c15a4c2db2345ef8d99f22c5f76b8ed">Object::getRotation</a>() {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>-&gt;getRotation();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_object.html#a9ffa743e764efa6739be20c94e24eeba">   95</a></span>&#160;irr::scene::ISceneNode* <a class="code" href="class_object.html#a9ffa743e764efa6739be20c94e24eeba">Object::getSceneNode</a>(){  <span class="comment">//Retourne le pointeur vers le node</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_object.html#ae2e7f745c015b67a580c735609cba5b8">   99</a></span>&#160;std::string <a class="code" href="class_object.html#ae2e7f745c015b67a580c735609cba5b8">Object::getName</a>() {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_object.html#ae90266171b7af87eea6bca7884268731">object_name</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="ttc" id="class_object_html_a3f791496e7faa8e728268b88f56496d1"><div class="ttname"><a href="class_object.html#a3f791496e7faa8e728268b88f56496d1">Object::setPosition</a></div><div class="ttdeci">void setPosition(float x, float y, float z)</div><div class="ttdoc">Change la position de l&#39;objet pour celle passee en parametre. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00039">Object.cpp:39</a></div></div>
+<div class="ttc" id="class_object_html_aa6851b042761bda5450fceb0b5e98428"><div class="ttname"><a href="class_object.html#aa6851b042761bda5450fceb0b5e98428">Object::setScale</a></div><div class="ttdeci">void setScale(float x, float y, float z)</div><div class="ttdoc">Change l&#39;echelle de l&#39;objet pour celle passee en parametre. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00043">Object.cpp:43</a></div></div>
+<div class="ttc" id="class_object_html_a5c15a4c2db2345ef8d99f22c5f76b8ed"><div class="ttname"><a href="class_object.html#a5c15a4c2db2345ef8d99f22c5f76b8ed">Object::getRotation</a></div><div class="ttdeci">const irr::core::vector3df &amp; getRotation()</div><div class="ttdoc">Recupere la rotation de l&#39;objet. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00091">Object.cpp:91</a></div></div>
+<div class="ttc" id="class_object_html_ae2e7f745c015b67a580c735609cba5b8"><div class="ttname"><a href="class_object.html#ae2e7f745c015b67a580c735609cba5b8">Object::getName</a></div><div class="ttdeci">std::string getName()</div><div class="ttdoc">Retourne le nom de l&#39;objet. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00099">Object.cpp:99</a></div></div>
+<div class="ttc" id="class_object_html_ae90266171b7af87eea6bca7884268731"><div class="ttname"><a href="class_object.html#ae90266171b7af87eea6bca7884268731">Object::object_name</a></div><div class="ttdeci">std::string object_name</div><div class="ttdef"><b>Definition:</b> <a href="_object_8h_source.html#l00116">Object.h:116</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
-<div class="ttc" id="class_object_html_aeae16a9ab6ef677bf7d3bf697910c58d"><div class="ttname"><a href="class_object.html#aeae16a9ab6ef677bf7d3bf697910c58d">Object::modifyScaleBy</a></div><div class="ttdeci">void modifyScaleBy(float x, float y, float z)</div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00059">Object.cpp:59</a></div></div>
-<div class="ttc" id="class_object_html_a2c80836a45d1d7a209aace24b51ebdc3"><div class="ttname"><a href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">Object::Object</a></div><div class="ttdeci">Object(irr::scene::ISceneNode *objet, const char *name)</div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00012">Object.cpp:12</a></div></div>
-<div class="ttc" id="class_object_html_a0bc35a2616873c1dc861e81b63d38c90"><div class="ttname"><a href="class_object.html#a0bc35a2616873c1dc861e81b63d38c90">Object::modifyPositionBy</a></div><div class="ttdeci">void modifyPositionBy(float x, float y, float z)</div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00055">Object.cpp:55</a></div></div>
-<div class="ttc" id="class_object_html_ae8f5483f459e46687bd01e6f9977afd3"><div class="ttname"><a href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">Object::~Object</a></div><div class="ttdeci">virtual ~Object()</div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00038">Object.cpp:38</a></div></div>
-<div class="ttc" id="class_object_html_aeab2da3a7c16f11d088a24c85282c511"><div class="ttname"><a href="class_object.html#aeab2da3a7c16f11d088a24c85282c511">Object::modifyRotationBy</a></div><div class="ttdeci">void modifyRotationBy(float x, float y, float z)</div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00063">Object.cpp:63</a></div></div>
+<div class="ttc" id="class_object_html_aeae16a9ab6ef677bf7d3bf697910c58d"><div class="ttname"><a href="class_object.html#aeae16a9ab6ef677bf7d3bf697910c58d">Object::modifyScaleBy</a></div><div class="ttdeci">void modifyScaleBy(float x, float y, float z)</div><div class="ttdoc">Multiplie ou divise l&#39;échelle de l&#39;objet par celle passée en paramètre. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00055">Object.cpp:55</a></div></div>
+<div class="ttc" id="class_object_html_a53c7c9cb7e1c7f94cf39ddb5ca22a272"><div class="ttname"><a href="class_object.html#a53c7c9cb7e1c7f94cf39ddb5ca22a272">Object::getScale</a></div><div class="ttdeci">const irr::core::vector3df &amp; getScale()</div><div class="ttdoc">Recupere l&#39;échelle de l&#39;objet. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00087">Object.cpp:87</a></div></div>
+<div class="ttc" id="class_object_html_ab4407a20a44be8764cef1623e3e177ef"><div class="ttname"><a href="class_object.html#ab4407a20a44be8764cef1623e3e177ef">Object::getPosition</a></div><div class="ttdeci">const irr::core::vector3df &amp; getPosition()</div><div class="ttdoc">Recupere la position de l&#39;objet. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00083">Object.cpp:83</a></div></div>
+<div class="ttc" id="class_object_html_a2c80836a45d1d7a209aace24b51ebdc3"><div class="ttname"><a href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">Object::Object</a></div><div class="ttdeci">Object(irr::scene::ISceneNode *objet, const char *name)</div><div class="ttdoc">Constructeur de base. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00012">Object.cpp:12</a></div></div>
+<div class="ttc" id="class_object_html_a0bc35a2616873c1dc861e81b63d38c90"><div class="ttname"><a href="class_object.html#a0bc35a2616873c1dc861e81b63d38c90">Object::modifyPositionBy</a></div><div class="ttdeci">void modifyPositionBy(float x, float y, float z)</div><div class="ttdoc">Modifie la position de l&#39;objet par celle passee en parametre. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00051">Object.cpp:51</a></div></div>
+<div class="ttc" id="class_object_html_ae8f5483f459e46687bd01e6f9977afd3"><div class="ttname"><a href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">Object::~Object</a></div><div class="ttdeci">virtual ~Object()</div><div class="ttdoc">Destructeur par defaut. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00034">Object.cpp:34</a></div></div>
+<div class="ttc" id="class_object_html_aeab2da3a7c16f11d088a24c85282c511"><div class="ttname"><a href="class_object.html#aeab2da3a7c16f11d088a24c85282c511">Object::modifyRotationBy</a></div><div class="ttdeci">void modifyRotationBy(float x, float y, float z)</div><div class="ttdoc">Modifie la rotation de l&#39;objet par celle passee en parametre. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00079">Object.cpp:79</a></div></div>
+<div class="ttc" id="class_object_html_aec7fd614a6532ca343394de846507738"><div class="ttname"><a href="class_object.html#aec7fd614a6532ca343394de846507738">Object::objet</a></div><div class="ttdeci">irr::scene::ISceneNode * objet</div><div class="ttdef"><b>Definition:</b> <a href="_object_8h_source.html#l00115">Object.h:115</a></div></div>
 <div class="ttc" id="_object_8h_html"><div class="ttname"><a href="_object_8h.html">Object.h</a></div></div>
-<div class="ttc" id="class_object_html_a27a19187ba6283151bc271d5927c6abc"><div class="ttname"><a href="class_object.html#a27a19187ba6283151bc271d5927c6abc">Object::setRotation</a></div><div class="ttdeci">void setRotation(float x, float y, float z)</div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00051">Object.cpp:51</a></div></div>
-<div class="ttc" id="class_object_html_a9ffa743e764efa6739be20c94e24eeba"><div class="ttname"><a href="class_object.html#a9ffa743e764efa6739be20c94e24eeba">Object::getSceneNode</a></div><div class="ttdeci">irr::scene::ISceneNode * getSceneNode()</div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00067">Object.cpp:67</a></div></div>
+<div class="ttc" id="class_object_html_a27a19187ba6283151bc271d5927c6abc"><div class="ttname"><a href="class_object.html#a27a19187ba6283151bc271d5927c6abc">Object::setRotation</a></div><div class="ttdeci">void setRotation(float x, float y, float z)</div><div class="ttdoc">Change la rotation de l&#39;objet pour celle passee en parametre. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00047">Object.cpp:47</a></div></div>
+<div class="ttc" id="class_object_html_a9ffa743e764efa6739be20c94e24eeba"><div class="ttname"><a href="class_object.html#a9ffa743e764efa6739be20c94e24eeba">Object::getSceneNode</a></div><div class="ttdeci">irr::scene::ISceneNode * getSceneNode()</div><div class="ttdoc">Retourne l&#39;ISceneNode contenu dans l&#39;objet. </div><div class="ttdef"><b>Definition:</b> <a href="_object_8cpp_source.html#l00095">Object.cpp:95</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="_object_8cpp.html">Object.cpp</a></li>
-    <li class="footer">Generated on Tue Apr 28 2015 10:47:30 for Éditeur 3D by
+    <li class="footer">Generated on Wed Apr 29 2015 16:52:22 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

@@ -6,7 +6,9 @@ var searchData=
   ['object_5fname',['object_name',['../class_object.html#ae90266171b7af87eea6bca7884268731',1,'Object']]],
   ['objet',['objet',['../class_object.html#aec7fd614a6532ca343394de846507738',1,'Object']]],
   ['onevent',['OnEvent',['../class_c_event_receiver.html#ad9ca3a8c45f4563d4c6cdafe6de7f983',1,'CEventReceiver']]],
-  ['onmenuitemselected',['onMenuItemSelected',['../class_c_event_receiver.html#a24997ebe9eae2685e3dd738049fa70db',1,'CEventReceiver']]],
+  ['onmenuitemselected',['OnMenuItemSelected',['../class_c_event_receiver.html#a43edae6467fb4a33e26532969ea2cfbc',1,'CEventReceiver']]],
+  ['onobjectcreation',['OnObjectCreation',['../class_c_event_receiver.html#abd4d447023316eb4263ef31860ae8ef7',1,'CEventReceiver']]],
   ['onobjectselected',['OnObjectSelected',['../class_c_event_receiver.html#a3ecac7bd7526986381d369dc4e56a57a',1,'CEventReceiver']]],
-  ['operator_3c_3c',['operator&lt;&lt;',['../class_group_object.html#a90b35f44292ea95018955f60f8e114bb',1,'GroupObject::operator&lt;&lt;()'],['../class_single_objet.html#a90b35f44292ea95018955f60f8e114bb',1,'SingleObjet::operator&lt;&lt;()'],['../_single_objet_8cpp.html#a3687f94926fb3acf7a061b0ebc5dcd38',1,'operator&lt;&lt;():&#160;SingleObjet.cpp']]]
+  ['ontoolboxitemselected',['OnToolBoxItemSelected',['../class_c_event_receiver.html#a300d2a9e0a753bbcd029d1247102415a',1,'CEventReceiver']]],
+  ['operator_3c_3c',['operator&lt;&lt;',['../class_group_object.html#a0f61d0ec96671d0ad2598e0dc0370dd5',1,'GroupObject::operator&lt;&lt;()'],['../class_single_object.html#a0f61d0ec96671d0ad2598e0dc0370dd5',1,'SingleObject::operator&lt;&lt;()'],['../_single_object_8cpp.html#ad6edfa2051d4bb6ea32f769af57856b3',1,'operator&lt;&lt;():&#160;SingleObject.cpp']]]
 ];

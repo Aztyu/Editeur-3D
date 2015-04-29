@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['editor',['Editor',['../class_editor.html',1,'Editor'],['../class_editor.html#ac5c22bc0cff1db6632f93c329f752d05',1,'Editor::Editor(Pointer *struct_pointer)'],['../class_editor.html#ac958861a494378d5e54563bde7cfe4fd',1,'Editor::Editor(const Editor &amp;orig)']]],
+  ['editor',['Editor',['../class_editor.html',1,'Editor'],['../class_editor.html#ac5c22bc0cff1db6632f93c329f752d05',1,'Editor::Editor()']]],
   ['editor_2ecpp',['Editor.cpp',['../_editor_8cpp.html',1,'']]],
   ['editor_2eh',['Editor.h',['../_editor_8h.html',1,'']]],
   ['event_2ecpp',['Event.cpp',['../_event_8cpp.html',1,'']]],

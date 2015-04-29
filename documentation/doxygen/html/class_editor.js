@@ -1,7 +1,6 @@
 var class_editor =
 [
     [ "Editor", "class_editor.html#ac5c22bc0cff1db6632f93c329f752d05", null ],
-    [ "Editor", "class_editor.html#ac958861a494378d5e54563bde7cfe4fd", null ],
     [ "~Editor", "class_editor.html#ad465abc9575af92b4fa61525085172d6", null ],
     [ "createZone", "class_editor.html#ae7237d39d3d23d56ace1cfbbf33c3dc1", null ],
     [ "getCurrentZone", "class_editor.html#a860bab7b03f4adf150c1ceca7941f8b8", null ],

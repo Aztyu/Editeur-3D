@@ -2,6 +2,6 @@ var searchData=
 [
   ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
   ['rectangle',['rectangle',['../_zone_8h.html#ad03408aabe16bb53c780fae6cf3910f9a449880e21d81f06ea8599e0a091995a9',1,'Zone.h']]],
-  ['removemember',['removeMember',['../class_group_object.html#aeb19fcd9c93a8d4fcec71f89dba5e352',1,'GroupObject::removeMember(int index)'],['../class_group_object.html#a2ac306984fac42040eb72e85d7ca7480',1,'GroupObject::removeMember(SingleObjet *object)']]],
-  ['removeobjet',['removeObjet',['../class_zone.html#a1c3710cc378cd6ffd462edd756753c38',1,'Zone::removeObjet(int index)'],['../class_zone.html#aef224505752f7a9ea20c3aa8f1211c61',1,'Zone::removeObjet(SingleObjet *objet)']]]
+  ['removemember',['removeMember',['../class_group_object.html#aeb19fcd9c93a8d4fcec71f89dba5e352',1,'GroupObject::removeMember(int index)'],['../class_group_object.html#ae74c5122084d6f1704012c8ae4e549ce',1,'GroupObject::removeMember(SingleObject *objet)']]],
+  ['removeobject',['removeObject',['../class_zone.html#a3d9919f6123c5a13c1db9010519cd63b',1,'Zone::removeObject(int index)'],['../class_zone.html#a887df1794948f8e260f3aa0f26dca7e2',1,'Zone::removeObject(SingleObject *objet)']]]
 ];

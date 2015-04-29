@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Éditeur 3D
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Un simple éditeur 3D, projet de fin d&#39;année</div>
   </td>
@@ -116,6 +116,9 @@ $(document).ready(function(){initNavTree('class_object.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>Classe de base pour SIngleObject et <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a>, gere les ISceneNodes natif a Irrlicht.  
+ <a href="class_object.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_object_8h_source.html">Object.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Object:</div>
@@ -123,42 +126,66 @@ Inheritance diagram for Object:</div>
  <div class="center">
   <img src="class_object.png" usemap="#Object_map" alt=""/>
   <map id="Object_map" name="Object_map">
-<area href="class_group_object.html" alt="GroupObject" shape="rect" coords="0,56,84,80"/>
-<area href="class_single_objet.html" alt="SingleObjet" shape="rect" coords="94,56,178,80"/>
+<area href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. " alt="GroupObject" shape="rect" coords="0,56,84,80"/>
+<area href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. " alt="SingleObject" shape="rect" coords="94,56,178,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2c80836a45d1d7a209aace24b51ebdc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a2c80836a45d1d7a209aace24b51ebdc3">Object</a> (irr::scene::ISceneNode *<a class="el" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>, const char *name)</td></tr>
+<tr class="memdesc:a2c80836a45d1d7a209aace24b51ebdc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de base.  <a href="#a2c80836a45d1d7a209aace24b51ebdc3">More...</a><br /></td></tr>
 <tr class="separator:a2c80836a45d1d7a209aace24b51ebdc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa60a00ff1a9fb870f52dfb0d5c30af66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#aa60a00ff1a9fb870f52dfb0d5c30af66">Object</a> (irr::scene::ISceneNode *<a class="el" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>, float total_scale, const char *name)</td></tr>
+<tr class="memdesc:aa60a00ff1a9fb870f52dfb0d5c30af66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec echelle.  <a href="#aa60a00ff1a9fb870f52dfb0d5c30af66">More...</a><br /></td></tr>
 <tr class="separator:aa60a00ff1a9fb870f52dfb0d5c30af66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbf4bf740e6c2718b379f3d2aab988c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#afbf4bf740e6c2718b379f3d2aab988c2">Object</a> (irr::scene::ISceneNode *<a class="el" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>, float x, float y, float z, const char *name)</td></tr>
+<tr class="memdesc:afbf4bf740e6c2718b379f3d2aab988c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec position de base.  <a href="#afbf4bf740e6c2718b379f3d2aab988c2">More...</a><br /></td></tr>
 <tr class="separator:afbf4bf740e6c2718b379f3d2aab988c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1964f4f8060e0fa4ba04864e55edc8e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#aa1964f4f8060e0fa4ba04864e55edc8e">Object</a> (irr::scene::ISceneNode *<a class="el" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a>, float x, float y, float z, float total_scale, const char *name)</td></tr>
+<tr class="memdesc:aa1964f4f8060e0fa4ba04864e55edc8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur avec echelle et position.  <a href="#aa1964f4f8060e0fa4ba04864e55edc8e">More...</a><br /></td></tr>
 <tr class="separator:aa1964f4f8060e0fa4ba04864e55edc8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8f5483f459e46687bd01e6f9977afd3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">~Object</a> ()</td></tr>
+<tr class="memdesc:ae8f5483f459e46687bd01e6f9977afd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur par defaut.  <a href="#ae8f5483f459e46687bd01e6f9977afd3">More...</a><br /></td></tr>
 <tr class="separator:ae8f5483f459e46687bd01e6f9977afd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f791496e7faa8e728268b88f56496d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a3f791496e7faa8e728268b88f56496d1">setPosition</a> (float x, float y, float z)</td></tr>
+<tr class="memdesc:a3f791496e7faa8e728268b88f56496d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change la position de l'objet pour celle passee en parametre.  <a href="#a3f791496e7faa8e728268b88f56496d1">More...</a><br /></td></tr>
 <tr class="separator:a3f791496e7faa8e728268b88f56496d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6851b042761bda5450fceb0b5e98428"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#aa6851b042761bda5450fceb0b5e98428">setScale</a> (float x, float y, float z)</td></tr>
+<tr class="memdesc:aa6851b042761bda5450fceb0b5e98428"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change l'echelle de l'objet pour celle passee en parametre.  <a href="#aa6851b042761bda5450fceb0b5e98428">More...</a><br /></td></tr>
 <tr class="separator:aa6851b042761bda5450fceb0b5e98428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27a19187ba6283151bc271d5927c6abc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a27a19187ba6283151bc271d5927c6abc">setRotation</a> (float x, float y, float z)</td></tr>
+<tr class="memdesc:a27a19187ba6283151bc271d5927c6abc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change la rotation de l'objet pour celle passee en parametre.  <a href="#a27a19187ba6283151bc271d5927c6abc">More...</a><br /></td></tr>
 <tr class="separator:a27a19187ba6283151bc271d5927c6abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bc35a2616873c1dc861e81b63d38c90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a0bc35a2616873c1dc861e81b63d38c90">modifyPositionBy</a> (float x, float y, float z)</td></tr>
+<tr class="memdesc:a0bc35a2616873c1dc861e81b63d38c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie la position de l'objet par celle passee en parametre.  <a href="#a0bc35a2616873c1dc861e81b63d38c90">More...</a><br /></td></tr>
 <tr class="separator:a0bc35a2616873c1dc861e81b63d38c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeae16a9ab6ef677bf7d3bf697910c58d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#aeae16a9ab6ef677bf7d3bf697910c58d">modifyScaleBy</a> (float x, float y, float z)</td></tr>
+<tr class="memdesc:aeae16a9ab6ef677bf7d3bf697910c58d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplie ou divise l'échelle de l'objet par celle passée en paramètre.  <a href="#aeae16a9ab6ef677bf7d3bf697910c58d">More...</a><br /></td></tr>
 <tr class="separator:aeae16a9ab6ef677bf7d3bf697910c58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeab2da3a7c16f11d088a24c85282c511"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#aeab2da3a7c16f11d088a24c85282c511">modifyRotationBy</a> (float x, float y, float z)</td></tr>
+<tr class="memdesc:aeab2da3a7c16f11d088a24c85282c511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie la rotation de l'objet par celle passee en parametre.  <a href="#aeab2da3a7c16f11d088a24c85282c511">More...</a><br /></td></tr>
 <tr class="separator:aeab2da3a7c16f11d088a24c85282c511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4407a20a44be8764cef1623e3e177ef"><td class="memItemLeft" align="right" valign="top">const irr::core::vector3df &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ab4407a20a44be8764cef1623e3e177ef">getPosition</a> ()</td></tr>
+<tr class="memdesc:ab4407a20a44be8764cef1623e3e177ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupere la position de l'objet.  <a href="#ab4407a20a44be8764cef1623e3e177ef">More...</a><br /></td></tr>
+<tr class="separator:ab4407a20a44be8764cef1623e3e177ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53c7c9cb7e1c7f94cf39ddb5ca22a272"><td class="memItemLeft" align="right" valign="top">const irr::core::vector3df &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a53c7c9cb7e1c7f94cf39ddb5ca22a272">getScale</a> ()</td></tr>
+<tr class="memdesc:a53c7c9cb7e1c7f94cf39ddb5ca22a272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupere l'échelle de l'objet.  <a href="#a53c7c9cb7e1c7f94cf39ddb5ca22a272">More...</a><br /></td></tr>
+<tr class="separator:a53c7c9cb7e1c7f94cf39ddb5ca22a272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c15a4c2db2345ef8d99f22c5f76b8ed"><td class="memItemLeft" align="right" valign="top">const irr::core::vector3df &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a5c15a4c2db2345ef8d99f22c5f76b8ed">getRotation</a> ()</td></tr>
+<tr class="memdesc:a5c15a4c2db2345ef8d99f22c5f76b8ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupere la rotation de l'objet.  <a href="#a5c15a4c2db2345ef8d99f22c5f76b8ed">More...</a><br /></td></tr>
+<tr class="separator:a5c15a4c2db2345ef8d99f22c5f76b8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabb72e1baac8b58834f0cce5041ce697"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#aabb72e1baac8b58834f0cce5041ce697">unselectObject</a> ()=0</td></tr>
+<tr class="memdesc:aabb72e1baac8b58834f0cce5041ce697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deselectionne l'objet en changeant la couleur.  <a href="#aabb72e1baac8b58834f0cce5041ce697">More...</a><br /></td></tr>
 <tr class="separator:aabb72e1baac8b58834f0cce5041ce697"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a598259a5f54193a5657d8f26c5b62b59"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a598259a5f54193a5657d8f26c5b62b59">selectObject</a> ()=0</td></tr>
+<tr class="memdesc:a598259a5f54193a5657d8f26c5b62b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selectionne l'objet en changeant la couleur.  <a href="#a598259a5f54193a5657d8f26c5b62b59">More...</a><br /></td></tr>
 <tr class="separator:a598259a5f54193a5657d8f26c5b62b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ffa743e764efa6739be20c94e24eeba"><td class="memItemLeft" align="right" valign="top">irr::scene::ISceneNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a9ffa743e764efa6739be20c94e24eeba">getSceneNode</a> ()</td></tr>
+<tr class="memdesc:a9ffa743e764efa6739be20c94e24eeba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne l'ISceneNode contenu dans l'objet.  <a href="#a9ffa743e764efa6739be20c94e24eeba">More...</a><br /></td></tr>
 <tr class="separator:a9ffa743e764efa6739be20c94e24eeba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2e7f745c015b67a580c735609cba5b8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ae2e7f745c015b67a580c735609cba5b8">getName</a> ()</td></tr>
+<tr class="memdesc:ae2e7f745c015b67a580c735609cba5b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nom de l'objet.  <a href="#ae2e7f745c015b67a580c735609cba5b8">More...</a><br /></td></tr>
 <tr class="separator:ae2e7f745c015b67a580c735609cba5b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -169,8 +196,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:ae90266171b7af87eea6bca7884268731"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_object_8h_source.html#l00015">15</a> of file <a class="el" href="_object_8h_source.html">Object.h</a>.</p>
+<div class="textblock"><p>Classe de base pour SIngleObject et <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a>, gere les ISceneNodes natif a Irrlicht. </p>
+
+<p>Definition at line <a class="el" href="_object_8h_source.html#l00016">16</a> of file <a class="el" href="_object_8h_source.html">Object.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a2c80836a45d1d7a209aace24b51ebdc3"></a>
 <div class="memitem">
@@ -195,6 +223,15 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructeur de base. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objet</td><td>Pointeur vers le ISceneNode qui est donne par Irrlicht. </td></tr>
+    <tr><td class="paramname">name</td><td>Le nom desire pour l'objet. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Definition at line <a class="el" href="_object_8cpp_source.html#l00012">12</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
@@ -230,7 +267,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00018">18</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Constructeur avec echelle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objet</td><td>Pointeur vers le ISceneNode qui est donne par Irrlicht. </td></tr>
+    <tr><td class="paramname">name</td><td>Le nom desire pour l'objet. </td></tr>
+    <tr><td class="paramname">total_scale</td><td>Un entier qui indique l'echelle de l'objet. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00017">17</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -276,7 +323,19 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00025">25</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Constructeur avec position de base. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objet</td><td>Pointeur vers le ISceneNode qui est donne par Irrlicht. </td></tr>
+    <tr><td class="paramname">x</td><td>Position en x. </td></tr>
+    <tr><td class="paramname">y</td><td>Position en y. </td></tr>
+    <tr><td class="paramname">z</td><td>Position en z. </td></tr>
+    <tr><td class="paramname">name</td><td>Le nom desire pour l'objet. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00023">23</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -328,7 +387,20 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00031">31</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Constructeur avec echelle et position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objet</td><td>Pointeur vers le ISceneNode qui est donne par Irrlicht. </td></tr>
+    <tr><td class="paramname">x</td><td>Position en x. </td></tr>
+    <tr><td class="paramname">y</td><td>Position en y. </td></tr>
+    <tr><td class="paramname">z</td><td>Position en z. </td></tr>
+    <tr><td class="paramname">total_scale</td><td>Un entier qui indique l'echelle de l'objet. </td></tr>
+    <tr><td class="paramname">name</td><td>Le nom desire pour l'objet. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00028">28</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,7 +425,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00038">38</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Destructeur par defaut. </p>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00034">34</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -371,7 +445,70 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00071">71</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Retourne le nom de l'objet. </p>
+<dl class="section return"><dt>Returns</dt><dd>Le nom de l'objet </dd></dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00099">99</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab4407a20a44be8764cef1623e3e177ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const irr::core::vector3df &amp; Object::getPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupere la position de l'objet. </p>
+<dl class="section return"><dt>Returns</dt><dd>Un vector3df qui contient la position de l'objet </dd></dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00083">83</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5c15a4c2db2345ef8d99f22c5f76b8ed"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const irr::core::vector3df &amp; Object::getRotation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupere la rotation de l'objet. </p>
+<dl class="section return"><dt>Returns</dt><dd>Un vector3df qui contient la rotation de l'objet </dd></dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00091">91</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a53c7c9cb7e1c7f94cf39ddb5ca22a272"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const irr::core::vector3df &amp; Object::getScale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recupere l'échelle de l'objet. </p>
+<dl class="section return"><dt>Returns</dt><dd>Un vector3df qui contient l'échelle de l'objet </dd></dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00087">87</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -388,7 +525,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00067">67</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Retourne l'ISceneNode contenu dans l'objet. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointeur vers l'ISceneNode(l'objet sous Irrlicht) </dd></dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00095">95</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -422,7 +562,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00055">55</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Modifie la position de l'objet par celle passee en parametre. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Decalage en x par rapport a la position actuelle. </td></tr>
+    <tr><td class="paramname">y</td><td>Decalage en y par rapport a la position actuelle. </td></tr>
+    <tr><td class="paramname">z</td><td>Decalage en z par rapport a la position actuelle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00051">51</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +606,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00063">63</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Modifie la rotation de l'objet par celle passee en parametre. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Rotation en degre sur l'axe x par rapport a la rotation actuelle. </td></tr>
+    <tr><td class="paramname">y</td><td>Rotation en degre sur l'axe y par rapport a la rotation actuelle. </td></tr>
+    <tr><td class="paramname">z</td><td>Rotation en degre sur l'axe z par rapport a la rotation actuelle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00079">79</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -490,7 +650,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00059">59</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Multiplie ou divise l'échelle de l'objet par celle passée en paramètre. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Nombre par laquelle on multiplie(+) ou divise(-) l'échelle en x. </td></tr>
+    <tr><td class="paramname">y</td><td>Nombre par laquelle on multiplie(+) ou divise(-) l'échelle en y. </td></tr>
+    <tr><td class="paramname">z</td><td>Nombre par laquelle on multiplie(+) ou divise(-) l'échelle en z. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00055">55</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -515,7 +685,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_group_object.html#ad78f66261e44c79fde43d6aceacd6849">GroupObject</a>, and <a class="el" href="class_single_objet.html#ad852d56844b469f96e9fe19fce786d5e">SingleObjet</a>.</p>
+<p>Selectionne l'objet en changeant la couleur. </p>
+
+<p>Implemented in <a class="el" href="class_group_object.html#ad78f66261e44c79fde43d6aceacd6849">GroupObject</a>, and <a class="el" href="class_single_object.html#a2f4ea2843f43235fb4d3017d10c7127f">SingleObject</a>.</p>
 
 </div>
 </div>
@@ -549,7 +721,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00043">43</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Change la position de l'objet pour celle passee en parametre. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Position en x par rapport a l'origine. </td></tr>
+    <tr><td class="paramname">y</td><td>Position en y par rapport a l'origine. </td></tr>
+    <tr><td class="paramname">z</td><td>Position en z par rapport a l'origine. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00039">39</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -583,7 +765,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00051">51</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Change la rotation de l'objet pour celle passee en parametre. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Rotation en degre sur l'axe x par rapport a la rotation d'origine. </td></tr>
+    <tr><td class="paramname">y</td><td>Rotation en degre sur l'axe y par rapport a la rotation d'origine. </td></tr>
+    <tr><td class="paramname">z</td><td>Rotation en degre sur l'axe z par rapport a la rotation d'origine. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00047">47</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -617,7 +809,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00047">47</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
+<p>Change l'echelle de l'objet pour celle passee en parametre. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Echelle x par rapport a l'echelle d'origine. </td></tr>
+    <tr><td class="paramname">y</td><td>Echelle y par rapport a l'echelle d'origine. </td></tr>
+    <tr><td class="paramname">z</td><td>Echelle z par rapport a l'echelle d'origine. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_object_8cpp_source.html#l00043">43</a> of file <a class="el" href="_object_8cpp_source.html">Object.cpp</a>.</p>
 
 </div>
 </div>
@@ -642,7 +844,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_group_object.html#a9f9f33e4e81fc1d5fba5c26f6c073a81">GroupObject</a>, and <a class="el" href="class_single_objet.html#a6b5828228bdad88ebf816c5fd8c2efe7">SingleObjet</a>.</p>
+<p>Deselectionne l'objet en changeant la couleur. </p>
+
+<p>Implemented in <a class="el" href="class_group_object.html#a9f9f33e4e81fc1d5fba5c26f6c073a81">GroupObject</a>, and <a class="el" href="class_single_object.html#a949adf548c2be426cc4d54987eb92f31">SingleObject</a>.</p>
 
 </div>
 </div>
@@ -665,7 +869,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8h_source.html#l00037">37</a> of file <a class="el" href="_object_8h_source.html">Object.h</a>.</p>
+<p>Definition at line <a class="el" href="_object_8h_source.html#l00116">116</a> of file <a class="el" href="_object_8h_source.html">Object.h</a>.</p>
 
 </div>
 </div>
@@ -687,7 +891,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_object_8h_source.html#l00036">36</a> of file <a class="el" href="_object_8h_source.html">Object.h</a>.</p>
+<p>Definition at line <a class="el" href="_object_8h_source.html#l00115">115</a> of file <a class="el" href="_object_8h_source.html">Object.h</a>.</p>
 
 </div>
 </div>
@@ -701,7 +905,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_object.html">Object</a></li>
-    <li class="footer">Generated on Tue Apr 28 2015 10:47:30 for Éditeur 3D by
+    <li class="footer">Generated on Wed Apr 29 2015 16:52:22 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

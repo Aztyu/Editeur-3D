@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['singleobjet_2ecpp',['SingleObjet.cpp',['../_single_objet_8cpp.html',1,'']]],
-  ['singleobjet_2eh',['SingleObjet.h',['../_single_objet_8h.html',1,'']]]
+  ['singleobject_2ecpp',['SingleObject.cpp',['../_single_object_8cpp.html',1,'']]],
+  ['singleobject_2eh',['SingleObject.h',['../_single_object_8h.html',1,'']]]
 ];

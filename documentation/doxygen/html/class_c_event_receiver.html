@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Éditeur 3D
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">0.1</span>
    </div>
    <div id="projectbrief">Un simple éditeur 3D, projet de fin d&#39;année</div>
   </td>
@@ -116,6 +116,9 @@ $(document).ready(function(){initNavTree('class_c_event_receiver.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>Classe qui gere tous les evenements du programme.  
+ <a href="class_c_event_receiver.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_event_8h_source.html">Event.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CEventReceiver:</div>
@@ -129,30 +132,47 @@ Inheritance diagram for CEventReceiver:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac2d6ef7a87ca5295de8d90cbe3eeb8cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#ac2d6ef7a87ca5295de8d90cbe3eeb8cd">CEventReceiver</a> (<a class="el" href="class_editor.html">Editor</a> *editor)</td></tr>
+<tr class="memdesc:ac2d6ef7a87ca5295de8d90cbe3eeb8cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructeur de base.  <a href="#ac2d6ef7a87ca5295de8d90cbe3eeb8cd">More...</a><br /></td></tr>
 <tr class="separator:ac2d6ef7a87ca5295de8d90cbe3eeb8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9ca3a8c45f4563d4c6cdafe6de7f983"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#ad9ca3a8c45f4563d4c6cdafe6de7f983">OnEvent</a> (const irr::SEvent &amp;event)</td></tr>
+<tr class="memdesc:ad9ca3a8c45f4563d4c6cdafe6de7f983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reçoit les evenement envoye par Irrlicht.  <a href="#ad9ca3a8c45f4563d4c6cdafe6de7f983">More...</a><br /></td></tr>
 <tr class="separator:ad9ca3a8c45f4563d4c6cdafe6de7f983"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ecac7bd7526986381d369dc4e56a57a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#a3ecac7bd7526986381d369dc4e56a57a">OnObjectSelected</a> (irr::gui::IGUIComboBox *combo)</td></tr>
+<tr class="memdesc:a3ecac7bd7526986381d369dc4e56a57a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gere les changements des combo box.  <a href="#a3ecac7bd7526986381d369dc4e56a57a">More...</a><br /></td></tr>
 <tr class="separator:a3ecac7bd7526986381d369dc4e56a57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43edae6467fb4a33e26532969ea2cfbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#a43edae6467fb4a33e26532969ea2cfbc">OnMenuItemSelected</a> (irr::gui::IGUIContextMenu *menu)</td></tr>
+<tr class="memdesc:a43edae6467fb4a33e26532969ea2cfbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gere les clics dans les menus.  <a href="#a43edae6467fb4a33e26532969ea2cfbc">More...</a><br /></td></tr>
+<tr class="separator:a43edae6467fb4a33e26532969ea2cfbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a300d2a9e0a753bbcd029d1247102415a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#a300d2a9e0a753bbcd029d1247102415a">OnToolBoxItemSelected</a> (irr::s32 id)</td></tr>
+<tr class="memdesc:a300d2a9e0a753bbcd029d1247102415a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gere les clics dans la fenêtre "Outil".  <a href="#a300d2a9e0a753bbcd029d1247102415a">More...</a><br /></td></tr>
+<tr class="separator:a300d2a9e0a753bbcd029d1247102415a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd4d447023316eb4263ef31860ae8ef7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#abd4d447023316eb4263ef31860ae8ef7">OnObjectCreation</a> (irr::s32 id)</td></tr>
+<tr class="memdesc:abd4d447023316eb4263ef31860ae8ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gere les clics sur les boutons de création d'objet.  <a href="#abd4d447023316eb4263ef31860ae8ef7">More...</a><br /></td></tr>
+<tr class="separator:abd4d447023316eb4263ef31860ae8ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c8cee284d8d7c0aa12cbe357e6e6fd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#a1c8cee284d8d7c0aa12cbe357e6e6fd4">angleCameraRight</a> ()</td></tr>
+<tr class="memdesc:a1c8cee284d8d7c0aa12cbe357e6e6fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait tourner la camera vers la droite.  <a href="#a1c8cee284d8d7c0aa12cbe357e6e6fd4">More...</a><br /></td></tr>
 <tr class="separator:a1c8cee284d8d7c0aa12cbe357e6e6fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace2bb715d2a4609ceee0113647624aa1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#ace2bb715d2a4609ceee0113647624aa1">angleCameraLeft</a> ()</td></tr>
+<tr class="memdesc:ace2bb715d2a4609ceee0113647624aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait tourner la camera vers la gauche.  <a href="#ace2bb715d2a4609ceee0113647624aa1">More...</a><br /></td></tr>
 <tr class="separator:ace2bb715d2a4609ceee0113647624aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6e66800222483c76e1d0c180d489755"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#ab6e66800222483c76e1d0c180d489755">forwardCamera</a> ()</td></tr>
+<tr class="memdesc:ab6e66800222483c76e1d0c180d489755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait avancer la camera.  <a href="#ab6e66800222483c76e1d0c180d489755">More...</a><br /></td></tr>
 <tr class="separator:ab6e66800222483c76e1d0c180d489755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ce1bcfe1324870a28faf53eea9f0932"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#a7ce1bcfe1324870a28faf53eea9f0932">backwardCamera</a> ()</td></tr>
+<tr class="memdesc:a7ce1bcfe1324870a28faf53eea9f0932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait reculer la camera.  <a href="#a7ce1bcfe1324870a28faf53eea9f0932">More...</a><br /></td></tr>
 <tr class="separator:a7ce1bcfe1324870a28faf53eea9f0932"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24997ebe9eae2685e3dd738049fa70db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#a24997ebe9eae2685e3dd738049fa70db">onMenuItemSelected</a> (irr::gui::IGUIContextMenu *menu)</td></tr>
-<tr class="separator:a24997ebe9eae2685e3dd738049fa70db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:acb7b8b2c76f42b5acf0b52fe4dad3e10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_editor.html">Editor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#acb7b8b2c76f42b5acf0b52fe4dad3e10">current_editor</a></td></tr>
 <tr class="separator:acb7b8b2c76f42b5acf0b52fe4dad3e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa25c7588b95eaa98bea91611d29cfd67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_graphical_interface.html">GraphicalInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#aa25c7588b95eaa98bea91611d29cfd67">custom_gui</a></td></tr>
+<tr class="separator:aa25c7588b95eaa98bea91611d29cfd67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_event_8h_source.html#l00013">13</a> of file <a class="el" href="_event_8h_source.html">Event.h</a>.</p>
+<div class="textblock"><p>Classe qui gere tous les evenements du programme. </p>
+
+<p>Definition at line <a class="el" href="_event_8h_source.html#l00014">14</a> of file <a class="el" href="_event_8h_source.html">Event.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac2d6ef7a87ca5295de8d90cbe3eeb8cd"></a>
 <div class="memitem">
@@ -167,6 +187,14 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructeur de base. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">editor</td><td>Pointeur vers l'<a class="el" href="class_editor.html" title="Classe de base qui contient toutes les zones et la plupart des informations. ">Editor</a> actuellement en usage. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Definition at line <a class="el" href="_event_8cpp_source.html#l00004">4</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
 
@@ -186,7 +214,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00227">227</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Fait tourner la camera vers la gauche. </p>
+
+<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00250">250</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
 
 </div>
 </div>
@@ -203,7 +233,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00220">220</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Fait tourner la camera vers la droite. </p>
+
+<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00243">243</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
 
 </div>
 </div>
@@ -220,7 +252,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00261">261</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Fait reculer la camera. </p>
+
+<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00284">284</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
 
 </div>
 </div>
@@ -237,7 +271,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00234">234</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Fait avancer la camera. </p>
+
+<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00257">257</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
 
 </div>
 </div>
@@ -263,16 +299,25 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Reçoit les evenement envoye par Irrlicht. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>Evenement envoye par Irrlicht. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True si traité, False sinon </dd></dl>
+
 <p>Definition at line <a class="el" href="_event_8cpp_source.html#l00008">8</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a24997ebe9eae2685e3dd738049fa70db"></a>
+<a class="anchor" id="a43edae6467fb4a33e26532969ea2cfbc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void CEventReceiver::onMenuItemSelected </td>
+          <td class="memname">void CEventReceiver::OnMenuItemSelected </td>
           <td>(</td>
           <td class="paramtype">irr::gui::IGUIContextMenu *&#160;</td>
           <td class="paramname"><em>menu</em></td><td>)</td>
@@ -281,7 +326,41 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00289">289</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Gere les clics dans les menus. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu</td><td>Pointeur vers le menu touchée par l'évènement. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00160">160</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd4d447023316eb4263ef31860ae8ef7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CEventReceiver::OnObjectCreation </td>
+          <td>(</td>
+          <td class="paramtype">irr::s32&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gere les clics sur les boutons de création d'objet. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>ID du bouton de création. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00189">189</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
 
 </div>
 </div>
@@ -299,7 +378,41 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00206">206</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Gere les changements des combo box. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">combo</td><td>Pointeur vers la combo box touchée par l'évènement. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00146">146</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a300d2a9e0a753bbcd029d1247102415a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CEventReceiver::OnToolBoxItemSelected </td>
+          <td>(</td>
+          <td class="paramtype">irr::s32&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gere les clics dans la fenêtre "Outil". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>ID de l'élèment touchée par l'évènement. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00178">178</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
 
 </div>
 </div>
@@ -322,7 +435,29 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_event_8h_source.html#l00025">25</a> of file <a class="el" href="_event_8h_source.html">Event.h</a>.</p>
+<p>Definition at line <a class="el" href="_event_8h_source.html#l00055">55</a> of file <a class="el" href="_event_8h_source.html">Event.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa25c7588b95eaa98bea91611d29cfd67"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_graphical_interface.html">GraphicalInterface</a>* CEventReceiver::custom_gui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_event_8h_source.html#l00056">56</a> of file <a class="el" href="_event_8h_source.html">Event.h</a>.</p>
 
 </div>
 </div>
@@ -336,7 +471,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_c_event_receiver.html">CEventReceiver</a></li>
-    <li class="footer">Generated on Tue Apr 28 2015 10:47:30 for Éditeur 3D by
+    <li class="footer">Generated on Wed Apr 29 2015 16:52:22 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

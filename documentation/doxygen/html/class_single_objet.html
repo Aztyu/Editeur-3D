@@ -143,8 +143,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa916f8b9bc73b53334320c8b98b18bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b5828228bdad88ebf816c5fd8c2efe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_single_objet.html#a6b5828228bdad88ebf816c5fd8c2efe7">unselectObject</a> ()</td></tr>
 <tr class="separator:a6b5828228bdad88ebf816c5fd8c2efe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa045fbe766fff123a2bc93eba40c73b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_single_objet.html#aaa045fbe766fff123a2bc93eba40c73b">printObjet</a> ()</td></tr>
-<tr class="separator:aaa045fbe766fff123a2bc93eba40c73b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb23a49228f901e39eee0c408b5dca8"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_single_objet.html#a0cb23a49228f901e39eee0c408b5dca8">printObjet</a> ()</td></tr>
+<tr class="separator:a0cb23a49228f901e39eee0c408b5dca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01e776f05e2f94f8722c4d388757a950"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_single_objet.html#a01e776f05e2f94f8722c4d388757a950">setParent</a> (<a class="el" href="class_object.html">Object</a> *parent)</td></tr>
 <tr class="separator:a01e776f05e2f94f8722c4d388757a950"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6e18b7bb62e3747a55755507aac4112"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_single_objet.html#ad6e18b7bb62e3747a55755507aac4112">hasParent</a> ()</td></tr>
@@ -174,6 +174,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeae16a9ab6ef677bf7d3bf697910c58d inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeab2da3a7c16f11d088a24c85282c511 inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#aeab2da3a7c16f11d088a24c85282c511">modifyRotationBy</a> (float x, float y, float z)</td></tr>
 <tr class="separator:aeab2da3a7c16f11d088a24c85282c511 inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4407a20a44be8764cef1623e3e177ef inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">const irr::core::vector3df &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ab4407a20a44be8764cef1623e3e177ef">getPosition</a> ()</td></tr>
+<tr class="separator:ab4407a20a44be8764cef1623e3e177ef inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53c7c9cb7e1c7f94cf39ddb5ca22a272 inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">const irr::core::vector3df &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a53c7c9cb7e1c7f94cf39ddb5ca22a272">getScale</a> ()</td></tr>
+<tr class="separator:a53c7c9cb7e1c7f94cf39ddb5ca22a272 inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c15a4c2db2345ef8d99f22c5f76b8ed inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">const irr::core::vector3df &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a5c15a4c2db2345ef8d99f22c5f76b8ed">getRotation</a> ()</td></tr>
+<tr class="separator:a5c15a4c2db2345ef8d99f22c5f76b8ed inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ffa743e764efa6739be20c94e24eeba inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">irr::scene::ISceneNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#a9ffa743e764efa6739be20c94e24eeba">getSceneNode</a> ()</td></tr>
 <tr class="separator:a9ffa743e764efa6739be20c94e24eeba inherit pub_methods_class_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2e7f745c015b67a580c735609cba5b8 inherit pub_methods_class_object"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_object.html#ae2e7f745c015b67a580c735609cba5b8">getName</a> ()</td></tr>
@@ -408,12 +414,12 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aaa045fbe766fff123a2bc93eba40c73b"></a>
+<a class="anchor" id="a0cb23a49228f901e39eee0c408b5dca8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char * SingleObjet::printObjet </td>
+          <td class="memname">const string SingleObjet::printObjet </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -542,7 +548,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_single_objet.html">SingleObjet</a></li>
-    <li class="footer">Generated on Tue Apr 28 2015 10:47:30 for Éditeur 3D by
+    <li class="footer">Generated on Tue Apr 28 2015 21:56:21 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>
