@@ -10,11 +10,13 @@
 
 #include "Editor.h"
  
+//! Classe qui gere tous les evenements du programme
 class CEventReceiver : public irr::IEventReceiver{
  
     public:
         CEventReceiver(Editor* editor);
         virtual bool OnEvent(const irr::SEvent &event);
+        
         void OnObjectSelected(irr::gui::IGUIComboBox* combo);
         void OnMenuItemSelected(irr::gui::IGUIContextMenu* menu);
         void OnToolBoxItemSelected(irr::s32 id);

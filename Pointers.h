@@ -10,7 +10,8 @@
 
 #include "GraphicalInterface.h"
 
-struct Pointer{     //Pointeur necessaire pour l'acces et le fonctionnement
+//! Pointeurs necessaire pour l'acces et le fonctionnement dans le programme entier
+struct Pointer{
     irr::IrrlichtDevice* device;
     irr::video::IVideoDriver* driver;
     irr::scene::ISceneManager* scene;

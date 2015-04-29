@@ -10,16 +10,22 @@
 
 #include "Zone.h"
 
+//! Classe de base qui contient toutes les zones et la plupart des informations
 class Editor {
     public:
         Editor(Pointer* struct_pointer);
         virtual ~Editor();
-        Editor* getEditor();
+        
+        //Gestion des zones
         void createZone(char* name);
         void setCurrentZone(Zone* zone);
-        Zone* getCurrentZone();
         void setMainPointer(Pointer* struct_pointer);
+        
+        //Recuperation d'informations
         Pointer* getMainPointer();
+        Editor* getEditor();
+        Zone* getCurrentZone();
+        
     private:
         std::vector<Zone*> zone_array;
         Zone* current_zone;

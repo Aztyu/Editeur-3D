@@ -187,6 +187,7 @@ void GraphicalInterface::updateWindow(Object* object) {
         if(object != NULL){
             std::string name = object->getName();
             std::wstring widestr = std::wstring(name.begin(), name.end());
+            
             const wchar_t* widecstr = widestr.c_str();
             this->gui->addStaticText(L"Nom : ", irr::core::rect<irr::s32>(10,20,55,50),
                 false,
@@ -234,7 +235,7 @@ void GraphicalInterface::updateWindow(Object* object) {
                 true,
                 static_cast<irr::gui::IGUIElement*>(this->window));
         }
-    }        
+    }       
 }
 
 irr::scene::ISceneNode* GraphicalInterface::getSkybox() {

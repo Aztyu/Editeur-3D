@@ -85,7 +85,7 @@ enum Gui{                  //Ajoutez les ids utilises dans le GUI ici
 class GraphicalInterface {
  
 public:
-    //! Constructeur par default.
+    //! Constructeur par defaut.
     /** \param gui Pointeur vers l'element GUI d'Irrlicht.
 		\param driver Pointeur vers le gestionnaire video d'Irrlicht.
 		\param skybox Pointeur vers la skybox. */
@@ -113,7 +113,7 @@ public:
     /** \param index Index de l'objet dans la combo box. */
     void setGroupObjetSelected(int index);
     
-    //! Permet de recuperer un pointeur vers le GUI Environment.
+    //! Recupere un pointeur vers le GUI Environment.
     /** \return Pointeur vers le GUI Environment en cours d'utilisation */
     irr::gui::IGUIEnvironment* getGUIEnvironment();
     
@@ -121,7 +121,7 @@ public:
     /** \param object L'objet qui sera concerne par les modifications dans la fenetre*/
     void updateWindow(Object* object = NULL);
     
-    //! Permet de recuperer un pointeur vers l'element skybox.
+    //! Recupere un pointeur vers l'element skybox.
     /** \return Un pointeur vers un ISceneNode pour pouvoir modifier la skybox */
     irr::scene::ISceneNode* getSkybox();
     

@@ -53,7 +53,27 @@ void Object::modifyPositionBy(float x, float y, float z){        //Methodes rela
 }
 
 void Object::modifyScaleBy(float x, float y, float z){
-    objet->setScale(irr::core::vector3df(x, y, z) + objet->getScale());
+    irr::core::vector3df scale = objet->getScale();
+    
+    if(x > 0){
+        scale.X *= x;
+    }else if(x < 0){
+        scale.X /= x;
+    }
+    
+    if(y > 0){
+        scale.Y *= y;
+    }else if(y < 0){
+        scale.Y /= y;
+    }
+    
+    if(z > 0){
+        scale.Z *= z;
+    }else if(z < 0){
+        scale.Z /= z;
+    }
+    
+    objet->setScale(scale);
 }
 
 void Object::modifyRotationBy(float x, float y, float z){
