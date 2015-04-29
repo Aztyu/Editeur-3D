@@ -64,30 +64,30 @@ int main(void)
     main_pointers.gui = &gui;
     main_pointers.scene = sceneManager;
     
-    editeur.getCurrentZone()->createSingleObjet(cylinder);
-    editeur.getCurrentZone()->createSingleObjet(pyramid);
-    editeur.getCurrentZone()->createSingleObjet(pyramid);
-    editeur.getCurrentZone()->createSingleObjet(sphere);
+    editeur.getCurrentZone()->createSingleObject(cylinder);
+    editeur.getCurrentZone()->createSingleObject(pyramid);
+    editeur.getCurrentZone()->createSingleObject(pyramid);
+    editeur.getCurrentZone()->createSingleObject(sphere);
     editeur.getCurrentZone()->createGroupObject();
     
-    editeur.getCurrentZone()->getSingleObjetPointer(1)->setPosition(0.0, 2.0, 0.0);
+    editeur.getCurrentZone()->getSingleObjectPointer(1)->setPosition(0.0, 2.0, 0.0);
     
-    //editeur.getCurrentZone()->getSingleObjetPointer(1)->setParent(editeur.getCurrentZone()->getSingleObjetPointer(0));
-    editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjetPointer(0)->getPointer());
-    editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjetPointer(1)->getPointer());
+    //editeur.getCurrentZone()->getSingleObjectPointer(1)->setParent(editeur.getCurrentZone()->getSingleObjectPointer(0));
+    editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjectPointer(0)->getPointer());
+    editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjectPointer(1)->getPointer());
     
-    editeur.getCurrentZone()->getSingleObjetPointer(2)->setPosition(0.0, 0.0, 10.0);
-    editeur.getCurrentZone()->getSingleObjetPointer(2)->setScale(1.0, 1.0, 3.0);
+    editeur.getCurrentZone()->getSingleObjectPointer(2)->setPosition(0.0, 0.0, 10.0);
+    editeur.getCurrentZone()->getSingleObjectPointer(2)->setScale(1.0, 1.0, 3.0);
     
-    //editeur.getCurrentZone()->getSingleObjetPointer(2)->setParent(editeur.getCurrentZone()->getSingleObjetPointer(0));
-    editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjetPointer(2)->getPointer());
+    //editeur.getCurrentZone()->getSingleObjectPointer(2)->setParent(editeur.getCurrentZone()->getSingleObjectPointer(0));
+    editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjectPointer(2)->getPointer());
     
-    //editeur.getCurrentZone()->getSingleObjetPointer(0)->setRotation(0.0, 45.0, 180.0);
-    //editeur.getCurrentZone()->getSingleObjetPointer(0)->setScale(3.0, 3.0, 3.0);
+    //editeur.getCurrentZone()->getSingleObjectPointer(0)->setRotation(0.0, 45.0, 180.0);
+    //editeur.getCurrentZone()->getSingleObjectPointer(0)->setScale(3.0, 3.0, 3.0);
     editeur.getCurrentZone()->getGroupObjectPointer(0)->setRotation(0.0, 45.0, 180.0);
     editeur.getCurrentZone()->getGroupObjectPointer(0)->setScale(3.0, 3.0, 3.0);
     
-    editeur.getCurrentZone()->getSingleObjetPointer(3)->setPosition(0.0, 0.0, 20.0);
+    editeur.getCurrentZone()->getSingleObjectPointer(3)->setPosition(0.0, 0.0, 20.0);
     
     irr::scene::ILightSceneNode* lumiere = sceneManager->addLightSceneNode (0,
             irr::core::vector3df(100.0f, 70.0f, 100.0f),    //Position de la lumiere

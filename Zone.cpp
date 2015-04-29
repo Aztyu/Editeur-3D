@@ -34,11 +34,11 @@ Zone::~Zone() {
     this->single_object_array.clear();
 }
 
-void Zone::addObjet(SingleObjet* objet){
+void Zone::addObject(SingleObject* objet){
     this->single_object_array.push_back(objet);
 }
 
-void Zone::removeObjet(int index){ //clear l'objet de tout stockage et de la scene
+void Zone::removeObject(int index){ //clear l'objet de tout stockage et de la scene
     if(selected_object == this->single_object_array[index]){
         selected_object = NULL;
     }
@@ -47,7 +47,7 @@ void Zone::removeObjet(int index){ //clear l'objet de tout stockage et de la sce
     current_pointer->gui->updateSingleObject(&this->single_object_array);     //Et de la combobox
 }
 
-void Zone::removeObjet(SingleObjet* objet){
+void Zone::removeObject(SingleObject* objet){
     int index = -1;
     
     for(int i = 0;i<this->single_object_array.size(); ++i){
@@ -57,11 +57,11 @@ void Zone::removeObjet(SingleObjet* objet){
     }
     
     if(index > -1){     //Si l'objet est present on le supprime 
-        removeObjet(index);
+        removeObject(index);
     }
 }
 
-void Zone::createSingleObjet(object form){
+void Zone::createSingleObject(object form){
     char buffer[50];
     string type = "ressources/form/", name;
     switch((int)form){  //Switch qui va choisir quel fichier charger
@@ -140,9 +140,9 @@ void Zone::createSingleObjet(object form){
             break;
     }
     type += ".obj";
-    this->single_object_array.push_back(new SingleObjet(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));        //Chargement et creation de l'objet
+    this->single_object_array.push_back(new SingleObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));        //Chargement et creation de l'objet
     current_pointer->gui->updateSingleObject(&this->single_object_array); //Ajout de l'objet a la combobox
-    current_pointer->gui->setSingleObjetSelected(this->single_object_array.size()-1);   //Le derniere objet cree est par default selectionne
+    current_pointer->gui->setSingleObjectSelected(this->single_object_array.size()-1);   //Le derniere objet cree est par default selectionne
     if(selected_object == NULL){
         setSelectedSingleObject(this->single_object_array.size());
     }
@@ -170,11 +170,11 @@ int Zone::getObjectCount(){
 void Zone::printZone(){
     cout << "La zone s'appelle " << zone_name << endl;
     for(int i=0; i < this->single_object_array.size(); i++){
-        this->single_object_array[i]->printObjet();
+        this->single_object_array[i]->printObject();
     }
 }
 
-SingleObjet* Zone::getSingleObjetPointer(int index){
+SingleObject* Zone::getSingleObjectPointer(int index){
     if(index >= 0 && index < this->single_object_array.size()){
         return this->single_object_array[index];
     }else{
@@ -200,7 +200,7 @@ Object* Zone::getSelectedObject() {
     }
 }
 
-SingleObjet* Zone::getSelectedSingleObject(){
+SingleObject* Zone::getSelectedSingleObject(){
     return selected_object;
 }
 
@@ -218,7 +218,7 @@ void Zone::setSelectedSingleObject(int index){
         }
         this->selected_object = this->single_object_array[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
         this->selected_object->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
-        this->current_pointer->gui->setSingleObjetSelected(index);
+        this->current_pointer->gui->setSingleObjectSelected(index);
     }else{
         this->selected_object = 0;
     }
@@ -239,7 +239,7 @@ void Zone::setSelectedGroupObject(int index) {
         this->unselectAll();
         selected_group = this->group_object_array[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
         selected_group->selectObject();
-        current_pointer->gui->setGroupObjetSelected(index);
+        current_pointer->gui->setGroupObjectSelected(index);
     }else{
         this->selected_object = NULL;
     }

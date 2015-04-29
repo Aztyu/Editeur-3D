@@ -5,7 +5,7 @@
  * Created on 19 avril 2015, 16:48
  */
 
-#include "SingleObjet.h"
+#include "SingleObject.h"
 #include "GroupObject.h"
 
 #ifndef GRAPHICALINTERFACE_H
@@ -99,11 +99,11 @@ public:
     
     //! Mets a jour la combobox des SingleObject.
     /** \param tableau vector de SingleObject mis a jour pour le transferer */
-    void updateSingleObject(std::vector<SingleObjet*>* tableau);
+    void updateSingleObject(std::vector<SingleObject*>* tableau);
     
     //! Selectionne un SingleObject specifique dans la combo box.
     /** \param index Index de l'objet dans la combo box.*/
-    void setSingleObjetSelected(int index);
+    void setSingleObjectSelected(int index);
     
     //! Mets a jour la combo box qui contient les groupes.
     /** \param tableau vector de GroupObject mis a jour pour le transferer */
@@ -111,7 +111,7 @@ public:
     
     //! Selectionne un GroupObject specifique dans la combo box.
     /** \param index Index de l'objet dans la combo box. */
-    void setGroupObjetSelected(int index);
+    void setGroupObjectSelected(int index);
     
     //! Recupere un pointeur vers le GUI Environment.
     /** \return Pointeur vers le GUI Environment en cours d'utilisation */

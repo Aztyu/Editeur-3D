@@ -34,7 +34,7 @@ void GroupObject::unselectObject() {
     }
 }
 
-void GroupObject::addMember(SingleObjet* object) {
+void GroupObject::addMember(SingleObject* object) {
     this->member_object.push_back(object);
     object->setParent(this);
 }
@@ -48,7 +48,7 @@ void GroupObject::removeMember(int index) {
     }
 }
 
-void GroupObject::removeMember(SingleObjet* object) {
+void GroupObject::removeMember(SingleObject* object) {
     for(int i = 0;i<this->member_object.size(); ++i){
         if(object == this->member_object[i]){
             this->removeMember(i);
@@ -59,7 +59,7 @@ void GroupObject::removeMember(SingleObjet* object) {
 
 
 
-const char* GroupObject::printObjet() {
+const char* GroupObject::printObject() {
     return "test";
 }
 

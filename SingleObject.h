@@ -11,18 +11,18 @@
 #include "Object.h"
 
 //! Classe qui est utilise pour creer un simple objet
-class SingleObjet : public Object{
+class SingleObject : public Object{
 public:
     //! Constructeur de base.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
 		\param name Le nom desire pour l'objet. */
-    SingleObjet(irr::scene::ISceneNode* objet, const char* name);
+    SingleObject(irr::scene::ISceneNode* objet, const char* name);
     
     //! Constructeur avec echelle.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
 		\param name Le nom desire pour l'objet.
                 \param total_scale Un entier qui indique l'echelle de l'objet. */
-    SingleObjet(irr::scene::ISceneNode* objet, float total_scale, const char* name);
+    SingleObject(irr::scene::ISceneNode* objet, float total_scale, const char* name);
     
     //! Constructeur avec position de base.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
@@ -30,7 +30,7 @@ public:
      *          \param y Position en y.
      *          \param z Position en z.
      * 		\param name Le nom desire pour l'objet. */
-    SingleObjet(irr::scene::ISceneNode* objet, float x, float y, float z, const char* name);
+    SingleObject(irr::scene::ISceneNode* objet, float x, float y, float z, const char* name);
     
     //! Constructeur avec echelle et position.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
@@ -39,7 +39,7 @@ public:
      *          \param z Position en z.
      *          \param total_scale Un entier qui indique l'echelle de l'objet.
      * 		\param name Le nom desire pour l'objet. */
-    SingleObjet(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name);
+    SingleObject(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name);
 
     //Selection/Deselection
     //! Selection de l'objet.
@@ -52,8 +52,8 @@ public:
     void unselectObject();
 
     //Sauvegarde (en cours)
-    friend std::ostream& operator <<(std::ostream stream, SingleObjet& obj);
-    const std::string printObjet();
+    friend std::ostream& operator <<(std::ostream stream, SingleObject& obj);
+    const std::string printObject();
     
     //Gestion de groupe
     //! Definit l'élèment parent de l'objet(donc le groupe).
@@ -66,7 +66,7 @@ public:
     
     //! Recupere le pointeur vers cette objet.
     /** \return Un pointeur vers cette objet */
-    SingleObjet* getPointer();
+    SingleObject* getPointer();
 };
 
 #endif	/* SINGLEOBJECT_H */

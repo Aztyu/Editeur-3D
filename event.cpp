@@ -39,7 +39,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                         return true;
 
                     case irr::KEY_DELETE:  //Supprime l'objet selectionne
-                        current_editor->getCurrentZone()->removeObjet(current_editor->getCurrentZone()->getSelectedSingleObject());
+                        current_editor->getCurrentZone()->removeObject(current_editor->getCurrentZone()->getSelectedSingleObject());
                         return true;
 
                     case irr::KEY_KEY_O:  //Camera vers le haut
@@ -206,38 +206,38 @@ void CEventReceiver::OnObjectCreation(irr::s32 id) {
                     
     switch(id){             //Creation d'objets
         case GUI_ID_SQUARE:
-            current_editor->getCurrentZone()->createSingleObjet(cube);
+            current_editor->getCurrentZone()->createSingleObject(cube);
             break;
 
         case GUI_ID_CIRCLE:
-            current_editor->getCurrentZone()->createSingleObjet(circle);
+            current_editor->getCurrentZone()->createSingleObject(circle);
             break;
 
         case GUI_ID_SPHERE:
-            current_editor->getCurrentZone()->createSingleObjet(sphere);
+            current_editor->getCurrentZone()->createSingleObject(sphere);
             break;
 
         case GUI_ID_CYLINDER:
-            current_editor->getCurrentZone()->createSingleObjet(cylinder);
+            current_editor->getCurrentZone()->createSingleObject(cylinder);
             break;
 
         case GUI_ID_RECTANGLE:
-            current_editor->getCurrentZone()->createSingleObjet(rectangle);
+            current_editor->getCurrentZone()->createSingleObject(rectangle);
             break;
 
         case GUI_ID_LINE:
-            current_editor->getCurrentZone()->createSingleObjet(line);
+            current_editor->getCurrentZone()->createSingleObject(line);
             break;
 
         case GUI_ID_TRAPEZE:
-            current_editor->getCurrentZone()->createSingleObjet(trapeze);
+            current_editor->getCurrentZone()->createSingleObject(trapeze);
             break;
 
         case GUI_ID_PYRAMID:
-            current_editor->getCurrentZone()->createSingleObjet(pyramid);
+            current_editor->getCurrentZone()->createSingleObject(pyramid);
             break;
     }
-    current_editor->getCurrentZone()->getSingleObjetPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
+    current_editor->getCurrentZone()->getSingleObjectPointer(current_editor->getCurrentZone()->getObjectCount()-1)->setPosition(position.X, position.Y, position.Z);
 }
 
 void CEventReceiver::angleCameraRight(){

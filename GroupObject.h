@@ -8,7 +8,7 @@
 #ifndef GROUPOBJECT_H
 #define	GROUPOBJECT_H
 
-#include "SingleObjet.h"
+#include "SingleObject.h"
 
 //! Classe qui est utilise pour creer un groupe d' objet
 class GroupObject : public Object{
@@ -55,7 +55,7 @@ public:
     //Gestion des objets du groupe
     //! Ajoute un objet au groupe.
     /** \param object Objet a ajouter. */
-    void addMember(SingleObjet* object);
+    void addMember(SingleObject* object);
     
     //! Supprime un objet du groupe selon sa place dans le vector.
     /** \param index Position de l'objet dans le groupe. */
@@ -63,13 +63,13 @@ public:
     
     //! Supprime un objet du groupe selon un pointeur de l'objet.
     /** \param objet Pointeur de l'objet du groupe. */
-    void removeMember(SingleObjet* object);
+    void removeMember(SingleObject* object);
 
     //Sauvegarde(en cours)
-    friend std::ostream& operator <<(std::ostream stream, SingleObjet& obj);
-    const char* printObjet();
+    friend std::ostream& operator <<(std::ostream stream, SingleObject& obj);
+    const char* printObject();
 private:
-    std::vector<SingleObjet*> member_object;
+    std::vector<SingleObject*> member_object;
 };
 
 #endif	/* GROUPOBJECT_H */

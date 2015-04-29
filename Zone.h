@@ -37,28 +37,28 @@ class Zone {
         //Creation/Suppression des objets
         //! Rajoute un objet qui existe déjà, à la zone.
         /** \param objet Pointer vers l'objet à ajouter. */
-        void addObjet(SingleObjet* objet);
+        void addObject(SingleObject* objet);
         
         //! Supprime un objet de la zone selon sa place dans le vector.
         /** \param index Place de l'objet dans le vector. */
-        void removeObjet(int index);
+        void removeObject(int index);
         
         //! Supprime un objet de la zone selon un pointeur de l'objet.
         /** \param objet Pointeur de l'objet du groupe. */
-        void removeObjet(SingleObjet* objet);
+        void removeObject(SingleObject* objet);
         
         //! Créer un SingleObjet dans la zone selon une énumération object.
         /** \param form Enumeration qui definit le type d'objet créer. */
-        void createSingleObjet(object form);
+        void createSingleObject(object form);
         
         //! Créer un GroupObject dans la zone.
         void createGroupObject();
         
         //Recuperation d'information
-        SingleObjet* getSingleObjetPointer(int index);
+        SingleObject* getSingleObjectPointer(int index);
         GroupObject* getGroupObjectPointer(int index);
         Object* getSelectedObject();
-        SingleObjet* getSelectedSingleObject();
+        SingleObject* getSelectedSingleObject();
         GroupObject* getSelectedGroupObject();
         Zone* getPointer();
         int getObjectCount();
@@ -75,9 +75,9 @@ class Zone {
         void printZone();
 
     private:
-        std::vector<SingleObjet*> single_object_array; //Ne pas passer de pointer a objet ca fait tout peter
+        std::vector<SingleObject*> single_object_array; //Ne pas passer de pointer a objet ca fait tout peter
         std::vector<GroupObject*> group_object_array;
-        SingleObjet* selected_object;
+        SingleObject* selected_object;
         GroupObject* selected_group;
         Pointer* current_pointer;
         std::string zone_name;

@@ -128,7 +128,7 @@ void GraphicalInterface::drawAll(){
     this->gui->drawAll();
 }
 
-void GraphicalInterface::updateSingleObject(std::vector<SingleObjet*>* tableau){
+void GraphicalInterface::updateSingleObject(std::vector<SingleObject*>* tableau){
     this->single_object_box->clear();
     
     for(int i = 0; i < tableau->size(); i++){
@@ -139,7 +139,7 @@ void GraphicalInterface::updateSingleObject(std::vector<SingleObjet*>* tableau){
     }
 }
 
-void GraphicalInterface::setSingleObjetSelected(int index){
+void GraphicalInterface::setSingleObjectSelected(int index){
     this->single_object_box->setSelected(index);
 }
 
@@ -152,7 +152,7 @@ void GraphicalInterface::updateGroupObject(std::vector<GroupObject*>* tableau){
     }
 }
     
-void GraphicalInterface::setGroupObjetSelected(int index){
+void GraphicalInterface::setGroupObjectSelected(int index){
     this->group_object_box->setSelected(index);
 }
 
