@@ -29,7 +29,7 @@ class Zone {
         //! Constructeur de base.
         /** \param name Nom de la zone.
 		\param pointer Pointer vers la structure de pointeur. */
-        Zone(char* name, Pointer* pointer);
+        Zone(char* name, Pointer* pointer, irr::scene::ISceneNode* obj);
         
         //! Destructeur de base.
         virtual ~Zone();
@@ -41,11 +41,15 @@ class Zone {
         
         //! Supprime un objet de la zone selon sa place dans le vector.
         /** \param index Place de l'objet dans le vector single_object_array. */
-        void removeObject(int index);
+        void removeSingleObject(int index);
+        
+        //! Supprime un objet de la zone selon sa place dans le vector.
+        /** \param index Place de l'objet dans le vector group_object_array. */
+        void removeGroupObject(int index);
         
         //! Supprime un objet de la zone selon un pointeur de l'objet.
         /** \param objet Pointeur de l'objet du groupe. */
-        void removeObject(SingleObject* objet);
+        void removeObject(Object* objet);
         
         //! Créer un SingleObjet dans la zone selon une énumération object.
         /** \param form Enumeration qui definit le type d'objet créer. */
@@ -81,6 +85,10 @@ class Zone {
         /** \return Pointeur vers cette zone. */
         Zone* getPointer();
         
+        //! Recupere le pointeur vers l'ISceneNode de la zone actuelle.
+        /** \return Pointeur vers l'ISceneNode . */
+        irr::scene::ISceneNode* getMeshPointer();
+        
         //! Recupere le pointeur vers la zone actuelle.
         /** \return Le nombre d'objet de cette zone. */
         int getObjectCount();
@@ -114,6 +122,7 @@ class Zone {
         SingleObject* selected_object;
         GroupObject* selected_group;
         Pointer* current_pointer;
+        irr::scene::ISceneNode* zone_mesh;
         std::string zone_name;
         int type_number[9];
 };

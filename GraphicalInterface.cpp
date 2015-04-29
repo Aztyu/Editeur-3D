@@ -144,6 +144,8 @@ void GraphicalInterface::setSingleObjectSelected(int index){
 }
 
 void GraphicalInterface::updateGroupObject(std::vector<GroupObject*>* tableau){
+    this->group_object_box->clear();
+    
     for(int i = 0; i < tableau->size(); i++){
         std::string name = tableau->at(i)->getName();
         std::wstring widestr = std::wstring(name.begin(), name.end());

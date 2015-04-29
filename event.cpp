@@ -39,7 +39,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                         return true;
 
                     case irr::KEY_DELETE:  //Supprime l'objet selectionne
-                        current_editor->getCurrentZone()->removeObject(current_editor->getCurrentZone()->getSelectedSingleObject());
+                        current_editor->getCurrentZone()->removeObject(current_editor->getCurrentZone()->getSelectedObject());
                         return true;
 
                     case irr::KEY_KEY_O:  //Camera vers le haut

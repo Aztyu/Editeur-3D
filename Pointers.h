@@ -9,6 +9,7 @@
 #define	POINTERS_H
 
 #include "GraphicalInterface.h"
+class Editor;
 
 //! Pointeurs necessaire pour l'acces et le fonctionnement dans le programme entier
 struct Pointer{
@@ -17,6 +18,7 @@ struct Pointer{
     irr::scene::ISceneManager* scene;       /**< Pointeur vers la scene d'Irrlicht. */
     irr::scene::ICameraSceneNode* camera;   /**< Pointeur vers la camera. */
     GraphicalInterface* gui;                /**< Pointeur vers l'objet GraphicalInterface. */
+    Editor* current_editor;                 /**< Pointeur vers l'Editor actuelle. */
 };
 
 #endif	/* POINTERS_H */

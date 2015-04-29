@@ -9,30 +9,34 @@
 
 using namespace std;
 
-Object::Object(irr::scene::ISceneNode* obj, const char* name) : object_name(name){
+Object::Object(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent) : object_name(name){
     objet = obj;        //Stock le pointeur vers le node
     objet->setPosition(irr::core::vector3df(0, 0, 0));
+    this->default_parent = parent;
 }
 
-Object::Object(irr::scene::ISceneNode* obj, float total_scale, const char* name) : object_name(name){
+Object::Object(irr::scene::ISceneNode* obj, float total_scale, const char* name, irr::scene::ISceneNode* parent) : object_name(name){
     objet = obj;
     objet->setPosition(irr::core::vector3df(0, 0, 0));
     objet->setScale(irr::core::vector3df(total_scale, total_scale, total_scale));
+    this->default_parent = parent;
 }
 
-Object::Object(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name) : object_name(name){
+Object::Object(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent) : object_name(name){
     objet = obj;
     objet->setPosition(irr::core::vector3df(x, y, z));
+    this->default_parent = parent;
 }
 
-Object::Object(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name) : object_name(name){
+Object::Object(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent) : object_name(name){
     objet = obj;
     objet->setPosition(irr::core::vector3df(x, y, z));
     objet->setScale(irr::core::vector3df(total_scale, total_scale, total_scale));
+    this->default_parent = parent;
 }
 
 Object::~Object() {
-    objet->remove();        //Suppression de l'objet dans irrlicht
+    //objet->remove();        //Suppression de l'objet dans irrlicht
     cout << "Object deleted" << endl;
 }
 

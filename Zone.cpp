@@ -7,11 +7,12 @@
 
 #include "Zone.h"
 #include "fstream"
+#include "Editor.h"
 
 using namespace std;
 
-Zone::Zone(char* name, Pointer* pointer): zone_name(name){
-    //this->zone_name = name;
+Zone::Zone(char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zone_name(name){
+    this->zone_mesh = obj;
     this->single_object_array.reserve(10);
     for(int i=0; i < 9; i++){ //Mise a zero du nombre d'objets
         this->type_number[i] = 0;
@@ -23,14 +24,8 @@ Zone::Zone(char* name, Pointer* pointer): zone_name(name){
 }
 
 Zone::~Zone() {
-    /*for(int i=0 ; i<this->group_object_array.size() ; ++i){
-        delete this->group_object_array[i];
-    }*/
     this->group_object_array.clear();
     
-    /*for(int i=0 ; i<this->single_object_array.size() ; ++i){
-        delete this->single_object_array[i];
-    }*/
     this->single_object_array.clear();
 }
 
@@ -38,7 +33,7 @@ void Zone::addObject(SingleObject* objet){
     this->single_object_array.push_back(objet);
 }
 
-void Zone::removeObject(int index){ //clear l'objet de tout stockage et de la scene
+void Zone::removeSingleObject(int index){ //clear l'objet de tout stockage et de la scene
     if(selected_object == this->single_object_array[index]){
         selected_object = NULL;
     }
@@ -47,7 +42,17 @@ void Zone::removeObject(int index){ //clear l'objet de tout stockage et de la sc
     current_pointer->gui->updateSingleObject(&this->single_object_array);     //Et de la combobox
 }
 
-void Zone::removeObject(SingleObject* objet){
+void Zone::removeGroupObject(int index) {
+    if(selected_group == this->group_object_array[index]){
+        selected_group = NULL;
+    }
+    delete this->group_object_array[index];      //On l'enleve du programme
+    this->group_object_array.erase(this->group_object_array.begin()+index);       //et du vector
+    current_pointer->gui->updateGroupObject(&this->group_object_array);     //Et de la combobox
+}
+
+
+void Zone::removeObject(Object* objet){
     int index = -1;
     
     for(int i = 0;i<this->single_object_array.size(); ++i){
@@ -57,7 +62,19 @@ void Zone::removeObject(SingleObject* objet){
     }
     
     if(index > -1){     //Si l'objet est present on le supprime 
-        removeObject(index);
+        removeSingleObject(index);
+    }else{
+        int index = -1;
+    
+        for(int i = 0;i<this->group_object_array.size(); ++i){
+            if(objet == this->group_object_array[i]){
+                index = i;
+            }
+        }
+        
+        if(index > -1){     //Si l'objet est present on le supprime 
+            removeGroupObject(index);
+        }
     }
 }
 
@@ -140,7 +157,7 @@ void Zone::createSingleObject(object form){
             break;
     }
     type += ".obj";
-    this->single_object_array.push_back(new SingleObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));        //Chargement et creation de l'objet
+    this->single_object_array.push_back(new SingleObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str()), this->zone_mesh), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
     current_pointer->gui->updateSingleObject(&this->single_object_array); //Ajout de l'objet a la combobox
     current_pointer->gui->setSingleObjectSelected(this->single_object_array.size()-1);   //Le derniere objet cree est par default selectionne
     if(selected_object == NULL){
@@ -159,7 +176,7 @@ void Zone::createGroupObject(){
     type_number[8]++;
     type += "group";
     type += ".obj";
-    this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str()));        //Chargement et creation de l'objet
+    this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->current_pointer->current_editor->getCurrentZone()->getMeshPointer()));        //Chargement et creation de l'objet
     current_pointer->gui->updateGroupObject(&this->group_object_array); //Ajout de l'objet a la combobox
 }
 
@@ -208,19 +225,17 @@ Zone* Zone::getPointer(){
     return this;
 }
 
+irr::scene::ISceneNode* Zone::getMeshPointer() {
+    return this->zone_mesh;
+}
+
 void Zone::setSelectedSingleObject(int index){
+    this->unselectAll();
+    
     if(index >= 0 && index < this->single_object_array.size()){
-        if(this->selected_object != NULL){    
-            this->selected_object->unselectObject();
-        }
-        if(this->selected_group != NULL){
-            selected_group->unselectObject();
-        }
         this->selected_object = this->single_object_array[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
         this->selected_object->getSceneNode()->getMaterial(0).EmissiveColor = irr::video::SColor(255, 213, 228, 56);
         this->current_pointer->gui->setSingleObjectSelected(index);
-    }else{
-        this->selected_object = 0;
     }
 }
 
@@ -235,8 +250,8 @@ bool Zone::setSelectedSingleObject(irr::scene::ISceneNode* objet){
 }
 
 void Zone::setSelectedGroupObject(int index) {
-    if(index >= 0 && index < this->group_object_array.size()){
-        this->unselectAll();
+    this->unselectAll();
+    if(index >= 0 && index < this->group_object_array.size()){  
         selected_group = this->group_object_array[index];        //Mise en place de la selection, changement de l'objet selectionne et ajout de la lumiere
         selected_group->selectObject();
         current_pointer->gui->setGroupObjectSelected(index);

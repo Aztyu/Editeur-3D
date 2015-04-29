@@ -50,11 +50,6 @@ int main(void)
     Skybox->setVisible(false);
     
     Pointer main_pointers;
-
-    Editor editeur(&main_pointers);
-    
-    CEventReceiver receiver(&editeur); //bind de la gestion d'event
-    device->setEventReceiver(&receiver);
     
     GraphicalInterface gui = GraphicalInterface(device->getGUIEnvironment(), driver, Skybox);
     
@@ -63,6 +58,11 @@ int main(void)
     main_pointers.driver = driver;
     main_pointers.gui = &gui;
     main_pointers.scene = sceneManager;
+    
+    Editor editeur(&main_pointers);
+    
+    CEventReceiver receiver(&editeur); //bind de la gestion d'event
+    device->setEventReceiver(&receiver);
     
     editeur.getCurrentZone()->createSingleObject(cylinder);
     editeur.getCurrentZone()->createSingleObject(pyramid);

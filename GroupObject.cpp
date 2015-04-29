@@ -7,19 +7,25 @@
 
 #include "GroupObject.h"
 
-GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name): Object(obj, name){
+GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent): Object(obj, name, parent){
 }
 
-GroupObject::GroupObject(irr::scene::ISceneNode* obj, float total_scale, const char* name) : Object(obj, total_scale, name) {
+GroupObject::GroupObject(irr::scene::ISceneNode* obj, float total_scale, const char* name, irr::scene::ISceneNode* parent) : Object(obj, total_scale, name, parent) {
 }
 
-GroupObject::GroupObject(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name) : Object(obj, x, y, z, name){
+GroupObject::GroupObject(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent) : Object(obj, x, y, z, name, parent){
 }
 
-GroupObject::GroupObject(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name) : Object(obj, x, y, z, total_scale, name){
+GroupObject::GroupObject(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent) : Object(obj, x, y, z, total_scale, name, parent){
 }
 
 GroupObject::~GroupObject() {
+    for(int i =0; i<this->member_object.size(); i++){
+        this->member_object[i]->setParent(NULL);
+    }
+    this->unselectObject();
+    this->objet->remove();        //Suppression de l'objet dans irrlicht
+    std::cout << "Object deleted" << std::endl;
 }
 
 void GroupObject::selectObject() {

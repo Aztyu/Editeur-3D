@@ -8,13 +8,25 @@
 
 using namespace std;
 
-SingleObject::SingleObject(irr::scene::ISceneNode* obj, const char* name): Object(obj, name){}
+SingleObject::SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent): Object(obj, name, parent){
+    this->parent = NULL;
+}
 
-SingleObject::SingleObject(irr::scene::ISceneNode* obj, float total_scale, const char* name) : Object(obj, total_scale, name) {}
+SingleObject::SingleObject(irr::scene::ISceneNode* obj, float total_scale, const char* name, irr::scene::ISceneNode* parent) : Object(obj, total_scale, name, parent) {
+    this->parent = NULL;
+}
 
-SingleObject::SingleObject(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name) : Object(obj, x, y, z, name){}
+SingleObject::SingleObject(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent) : Object(obj, x, y, z, name, parent){
+    this->parent = NULL;
+}
 
-SingleObject::SingleObject(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name) : Object(obj, x, y, z, total_scale, name){
+SingleObject::SingleObject(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent) : Object(obj, x, y, z, total_scale, name, parent){
+    this->parent = NULL;
+}
+
+SingleObject::~SingleObject() {
+    this->objet->remove();        //Suppression de l'objet dans irrlicht
+    cout << "Object deleted" << endl;
 }
 
 void SingleObject::selectObject() {
@@ -41,11 +53,17 @@ const string SingleObject::printObject(){
 }
 
 void SingleObject::setParent(Object* parent){  //Utile pour la creation de groupe 
-    objet->setParent(parent->getSceneNode());
+    if(parent == NULL){
+        this->objet->setParent(this->default_parent);
+        this->parent = NULL;
+    }else{
+        objet->setParent(parent->getSceneNode());
+        this->parent = parent;
+    }
 }
 
 bool SingleObject::hasParent() {
-    return this->objet->getParent() != NULL;
+    return this->parent != NULL;
 }
 
 SingleObject* SingleObject::getPointer(){

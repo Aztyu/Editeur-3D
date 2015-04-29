@@ -15,22 +15,25 @@ class GroupObject : public Object{
 public:
     //! Constructeur de base.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
-		\param name Le nom desire pour l'objet. */
-    GroupObject(irr::scene::ISceneNode* objet, const char* name);
+		\param name Le nom desire pour l'objet.
+     *          \param parent L'ISceneNode de la Zone. */
+    GroupObject(irr::scene::ISceneNode* objet, const char* name, irr::scene::ISceneNode* parent);
     
     //! Constructeur avec echelle.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
 		\param name Le nom desire pour l'objet.
-                \param total_scale Un entier qui indique l'echelle de l'objet. */
-    GroupObject(irr::scene::ISceneNode* objet, float total_scale, const char* name);
+                \param total_scale Un entier qui indique l'echelle de l'objet.
+     *          \param parent L'ISceneNode de la Zone. */
+    GroupObject(irr::scene::ISceneNode* objet, float total_scale, const char* name, irr::scene::ISceneNode* parent);
     
     //! Constructeur avec position de base.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
      *          \param x Position en x.
      *          \param y Position en y.
      *          \param z Position en z.
-     * 		\param name Le nom desire pour l'objet. */
-    GroupObject(irr::scene::ISceneNode* objet, float x, float y, float z, const char* name);
+     * 		\param name Le nom desire pour l'objet.
+     *          \param parent L'ISceneNode de la Zone.  */
+    GroupObject(irr::scene::ISceneNode* objet, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent);
     
     //! Constructeur avec echelle et position.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
@@ -38,8 +41,9 @@ public:
      *          \param y Position en y.
      *          \param z Position en z.
      *          \param total_scale Un entier qui indique l'echelle de l'objet.
-     * 		\param name Le nom desire pour l'objet. */
-    GroupObject(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name);
+     * 		\param name Le nom desire pour l'objet.
+     *          \param parent L'ISceneNode de la Zone.  */
+    GroupObject(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent);
     
     //! Destructeur par defaut
     virtual ~GroupObject();
