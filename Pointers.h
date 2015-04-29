@@ -12,11 +12,11 @@
 
 //! Pointeurs necessaire pour l'acces et le fonctionnement dans le programme entier
 struct Pointer{
-    irr::IrrlichtDevice* device;
-    irr::video::IVideoDriver* driver;
-    irr::scene::ISceneManager* scene;
-    irr::scene::ICameraSceneNode* camera; 
-    GraphicalInterface* gui;
+    irr::IrrlichtDevice* device;            /**< Pointeur vers le device d'Irrlicht. */
+    irr::video::IVideoDriver* driver;       /**< Pointeur vers le driver d'Irrlicht. */
+    irr::scene::ISceneManager* scene;       /**< Pointeur vers la scene d'Irrlicht. */
+    irr::scene::ICameraSceneNode* camera;   /**< Pointeur vers la camera. */
+    GraphicalInterface* gui;                /**< Pointeur vers l'objet GraphicalInterface. */
 };
 
 #endif	/* POINTERS_H */

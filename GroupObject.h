@@ -63,7 +63,7 @@ public:
     
     //! Supprime un objet du groupe selon un pointeur de l'objet.
     /** \param objet Pointeur de l'objet du groupe. */
-    void removeMember(SingleObject* object);
+    void removeMember(SingleObject* objet);
 
     //Sauvegarde(en cours)
     friend std::ostream& operator <<(std::ostream stream, SingleObject& obj);

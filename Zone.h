@@ -40,7 +40,7 @@ class Zone {
         void addObject(SingleObject* objet);
         
         //! Supprime un objet de la zone selon sa place dans le vector.
-        /** \param index Place de l'objet dans le vector. */
+        /** \param index Place de l'objet dans le vector single_object_array. */
         void removeObject(int index);
         
         //! Supprime un objet de la zone selon un pointeur de l'objet.
@@ -55,18 +55,52 @@ class Zone {
         void createGroupObject();
         
         //Recuperation d'information
+        //! Recupere le pointeur vers un SingleObject.
+        /** \param index Position de l'objet dans le vector single_object_array.
+            \return Pointeur vers un SingleObject*/
         SingleObject* getSingleObjectPointer(int index);
+        
+        //! Recupere le pointeur vers un GroupObject.
+        /** \param index Position de l'objet dans le vector group_object_array.
+            \return Pointeur vers un GroupObject*/
         GroupObject* getGroupObjectPointer(int index);
+        
+        //! Recupere le pointeur vers l'objet sélectionné.
+        /** \return Pointeur vers l'objet actuellement selectionné, NULL si il n'y en a pas. */
         Object* getSelectedObject();
+        
+        //! Recupere le pointeur vers le SingleObject sélectionné.
+        /** \return Pointeur vers le SingleObject actuellement selectionné, NULL si il n'y en a pas. */
         SingleObject* getSelectedSingleObject();
+        
+        //! Recupere le pointeur vers le GroupObject sélectionné.
+        /** \return Pointeur vers le GroupObject actuellement selectionné, NULL si il n'y en a pas. */
         GroupObject* getSelectedGroupObject();
+        
+        //! Recupere le pointeur vers la zone actuelle.
+        /** \return Pointeur vers cette zone. */
         Zone* getPointer();
+        
+        //! Recupere le pointeur vers la zone actuelle.
+        /** \return Le nombre d'objet de cette zone. */
         int getObjectCount();
         
         //Selection d'objets
+        
+        //! Selectionne un SingleObject dans la zone selon sa position dans le vector.
+        /** \param index Position de l'objet dans le vector single_object_array. */
         void setSelectedSingleObject(int index);
+        
+        //! Selectionne un SingleObject dans la zone selon sa position dans le vector.
+        /** \param objet Pointeur vers l'ISceneNode de l'objet que l'on veut selectionner.
+         *  \return True si l'objet a été selectionné, False sinon. */
         bool setSelectedSingleObject(irr::scene::ISceneNode* objet);
+        
+        //! Selectionne un GroupObject dans la zone selon sa position dans le vector.
+        /** \param index Position de l'objet dans le vector group_object_array. */
         void setSelectedGroupObject(int index);
+        
+        //! Deselectionne toute objet dans cette zone.
         void unselectAll();
         
         
