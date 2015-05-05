@@ -5,6 +5,7 @@
  * Created on 22 décembre 2014, 15:06
  */
 #include "SingleObject.h"
+#include "GroupObject.h"
 
 using namespace std;
 
@@ -25,6 +26,9 @@ SingleObject::SingleObject(irr::scene::ISceneNode* obj, float x, float y, float 
 }
 
 SingleObject::~SingleObject() {
+    if(parent != NULL){
+        static_cast<GroupObject*>(parent)->removeMember(this);
+    }
     this->objet->remove();        //Suppression de l'objet dans irrlicht
     cout << "Object deleted" << endl;
 }
@@ -52,7 +56,7 @@ const string SingleObject::printObject(){
     return obj_name;
 }
 
-void SingleObject::setParent(Object* parent){  //Utile pour la creation de groupe 
+void SingleObject::setParent(Object* parent){
     if(parent == NULL){
         this->objet->setParent(this->default_parent);
         this->parent = NULL;

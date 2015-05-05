@@ -150,7 +150,7 @@ void GraphicalInterface::updateGroupObject(std::vector<GroupObject*>* tableau){
         std::string name = tableau->at(i)->getName();
         std::wstring widestr = std::wstring(name.begin(), name.end());
         const wchar_t* widecstr = widestr.c_str();
-        this->group_object_box->addItem(widecstr); //Ajout de l'objet a la combobox
+        this->group_object_box->addItem(widecstr);      //Ajout de l'objet a la combobox
     }
 }
     
@@ -231,7 +231,7 @@ void GraphicalInterface::updateWindow(Object* object) {
                 L"+");
         
         }else{
-            this->gui->addStaticText(L"Test",
+            this->gui->addStaticText(L"None",
                 irr::core::rect<irr::s32>(10,20,85,50),
                 false,
                 true,
