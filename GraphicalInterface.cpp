@@ -191,27 +191,29 @@ void GraphicalInterface::updateWindow(Object* object) {
             std::wstring widestr = std::wstring(name.begin(), name.end());
             
             const wchar_t* widecstr = widestr.c_str();
-            this->gui->addStaticText(L"Nom : ", irr::core::rect<irr::s32>(10,20,55,50),
+            this->gui->addStaticText(L"Nom : ", irr::core::rect<irr::s32>(15,20,60,50),
                 false,
                 true,
                 static_cast<irr::gui::IGUIElement*>(this->window));
             
             this->gui->addEditBox(widecstr,
-                    irr::core::rect<irr::s32>(60,25,195,45),
+                    irr::core::rect<irr::s32>(60,25,185,45),
                     true,
                     static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_OBJECT_NAME);
             
-            this->gui->addStaticText(L"Position", irr::core::rect<irr::s32>(10,50,195,75),
+            this->gui->addStaticText(L"Position", irr::core::rect<irr::s32>(15,50,200,75),
                 false,
                 true,
                 static_cast<irr::gui::IGUIElement*>(this->window));
+            
+            //Position
                     
-            this->gui->addButton(irr::core::rect<irr::s32>(20,75,50,105),
+            this->gui->addButton(irr::core::rect<irr::s32>(15,75,45,105),
                 static_cast<irr::gui::IGUIElement*>(this->window),
                 GUI_ID_OBJECT_WINDOW_POSITION_X_DOWN,
                 L"-");
             
-            this->gui->addStaticText(L"X", irr::core::rect<irr::s32>(55,78,70,105),
+            this->gui->addStaticText(L"X", irr::core::rect<irr::s32>(50,78,65,105),
                 false,
                 true,
                 static_cast<irr::gui::IGUIElement*>(this->window));
@@ -221,15 +223,205 @@ void GraphicalInterface::updateWindow(Object* object) {
             widecstr = irr::core::stringw(vector.X).c_str();
             
             this->gui->addEditBox(widecstr,
-                    irr::core::rect<irr::s32>(70,75,150,105),
+                    irr::core::rect<irr::s32>(65,75,145,105),
                     true,
                     static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_POSITION_X_VALUE);
             
-            this->gui->addButton(irr::core::rect<irr::s32>(150,75,180,105),
+            this->gui->addButton(irr::core::rect<irr::s32>(155,75,185,105),
                 static_cast<irr::gui::IGUIElement*>(this->window),
                 GUI_ID_OBJECT_WINDOW_POSITION_X_UP,
                 L"+");
-        
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(15,115,45,145),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_POSITION_Y_DOWN,
+                L"-");
+            
+            this->gui->addStaticText(L"Y", irr::core::rect<irr::s32>(50,118,65,145),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+                        
+            widecstr = irr::core::stringw(vector.Y).c_str();
+            
+            this->gui->addEditBox(widecstr,
+                irr::core::rect<irr::s32>(65,115,145,145),
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_POSITION_Y_VALUE);
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(155,115,185,145),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_POSITION_Y_UP,
+                L"+");
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(15,155,45,185),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_POSITION_Z_DOWN,
+                L"-");
+            
+            this->gui->addStaticText(L"Z", irr::core::rect<irr::s32>(50,158,65,185),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+                        
+            widecstr = irr::core::stringw(vector.Z).c_str();
+            
+            this->gui->addEditBox(widecstr,
+                irr::core::rect<irr::s32>(65,155,145,185),
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_POSITION_Z_VALUE);
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(155,155,185,185),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_POSITION_Z_UP,
+                L"+");
+            
+            //Rotation
+            
+            this->gui->addStaticText(L"Rotation", irr::core::rect<irr::s32>(15,200,200,225),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(15,225,45,255),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_ROTATION_X_DOWN,
+                L"-");
+            
+            this->gui->addStaticText(L"X", irr::core::rect<irr::s32>(50,228,65,255),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+                        
+            widecstr = irr::core::stringw(vector.X).c_str();
+            
+            this->gui->addEditBox(widecstr,
+                    irr::core::rect<irr::s32>(65,225,145,255),
+                    true,
+                    static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_ROTATION_X_VALUE);
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(155,225,185,255),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_ROTATION_X_UP,
+                L"+");
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(15,265,45,295),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_ROTATION_Y_DOWN,
+                L"-");
+            
+            this->gui->addStaticText(L"Y", irr::core::rect<irr::s32>(50,268,65,295),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+                        
+            widecstr = irr::core::stringw(vector.Y).c_str();
+            
+            this->gui->addEditBox(widecstr,
+                    irr::core::rect<irr::s32>(65,265,145,295),
+                    true,
+                    static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_ROTATION_Y_VALUE);
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(155,265,185,295),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_ROTATION_Y_UP,
+                L"+");
+
+            this->gui->addButton(irr::core::rect<irr::s32>(15,305,45,335),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_ROTATION_Z_DOWN,
+                L"-");
+            
+            this->gui->addStaticText(L"Z", irr::core::rect<irr::s32>(50,308,65,335),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+      
+            widecstr = irr::core::stringw(vector.Z).c_str();
+
+            this->gui->addEditBox(widecstr,
+                    irr::core::rect<irr::s32>(65,305,145,335),
+                    true,
+                    static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_ROTATION_Z_VALUE);
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(155,305,185,335),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_ROTATION_Z_UP,
+                L"+");
+            
+            //Echelle
+            
+            this->gui->addStaticText(L"Echelle", irr::core::rect<irr::s32>(15,350,200,375),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(15,375,45,405),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_SCALE_X_DOWN,
+                L"-");
+            
+            this->gui->addStaticText(L"X", irr::core::rect<irr::s32>(50,378,65,405),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+                        
+            widecstr = irr::core::stringw(vector.X).c_str();
+            
+            this->gui->addEditBox(widecstr,
+                    irr::core::rect<irr::s32>(65,375,145,405),
+                    true,
+                    static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_SCALE_X_VALUE);
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(155,375,185,405),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_SCALE_X_UP,
+                L"+");
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(15,415,45,445),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_SCALE_Y_DOWN,
+                L"-");
+            
+            this->gui->addStaticText(L"Y", irr::core::rect<irr::s32>(50,418,65,445),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+                        
+            widecstr = irr::core::stringw(vector.Y).c_str();
+            
+            this->gui->addEditBox(widecstr,
+                    irr::core::rect<irr::s32>(65,415,145,445),
+                    true,
+                    static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_SCALE_Y_VALUE);
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(155,415,185,445),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_SCALE_Y_UP,
+                L"+");
+
+            this->gui->addButton(irr::core::rect<irr::s32>(15,455,45,485),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_SCALE_Z_DOWN,
+                L"-");
+            
+            this->gui->addStaticText(L"Z", irr::core::rect<irr::s32>(50,458,65,485),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+      
+            widecstr = irr::core::stringw(vector.Z).c_str();
+
+            this->gui->addEditBox(widecstr,
+                    irr::core::rect<irr::s32>(65,455,145,485),
+                    true,
+                    static_cast<irr::gui::IGUIElement*>(this->window), GUI_ID_OBJECT_WINDOW_SCALE_Z_VALUE);
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(155,455,185,485),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_SCALE_Z_UP,
+                L"+");
+
         }else{
             this->gui->addStaticText(L"None",
                 irr::core::rect<irr::s32>(10,20,85,50),
