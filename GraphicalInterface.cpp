@@ -293,6 +293,8 @@ void GraphicalInterface::updateWindow(Object* object) {
                 true,
                 static_cast<irr::gui::IGUIElement*>(this->window));
                         
+            vector = object->getRotation();
+            
             widecstr = irr::core::stringw(vector.X).c_str();
             
             this->gui->addEditBox(widecstr,
@@ -350,6 +352,7 @@ void GraphicalInterface::updateWindow(Object* object) {
                 L"+");
             
             //Echelle
+            vector = object->getScale();
             
             this->gui->addStaticText(L"Echelle", irr::core::rect<irr::s32>(15,350,200,375),
                 false,
