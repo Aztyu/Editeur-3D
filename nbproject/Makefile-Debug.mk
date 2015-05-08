@@ -59,13 +59,11 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=../../../../../irrlicht-1.8.1/lib/Win32-gcc/libIrrlicht.a
+LDLIBSOPTIONS=-lIrrlicht
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/editeur-3d.exe
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/editeur-3d.exe: ../../../../../irrlicht-1.8.1/lib/Win32-gcc/libIrrlicht.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/editeur-3d.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}

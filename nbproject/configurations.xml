@@ -73,7 +73,7 @@
         </ccTool>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>../../../../../irrlicht-1.8.1/lib/Win32-gcc/libIrrlicht.a</linkerLibFileItem>
+            <linkerLibLibItem>Irrlicht</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
