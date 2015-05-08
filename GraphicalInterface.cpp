@@ -155,6 +155,7 @@ void GraphicalInterface::updateGroupObject(std::vector<GroupObject*>* tableau){
     }
 }
     
+
 void GraphicalInterface::setGroupObjectSelected(int index){
     this->group_object_box->setSelected(index);
 }
@@ -447,6 +448,7 @@ void GraphicalInterface::updateWindow() {
                 L"+");
 
         }else{
+            
             this->gui->addStaticText(L"None",
                 irr::core::rect<irr::s32>(10,20,85,50),
                 false,
