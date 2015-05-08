@@ -5,6 +5,8 @@
  * Created on 21 avril 2015, 17:07
  */
 
+#include <cmath>
+
 #include "Object.h"
 
 using namespace std;
@@ -56,33 +58,68 @@ void Object::modifyPositionBy(float x, float y, float z){        //Methodes rela
     objet->setPosition(irr::core::vector3df(x, y, z) + objet->getPosition());
 }
 
+void Object::modifyPositionBy(irr::core::vector3df values) {
+    this->objet->setPosition(values + this->objet->getPosition());
+}
+
+
 void Object::modifyScaleBy(float x, float y, float z){
     irr::core::vector3df scale = objet->getScale();
     
     if(x > 0){
         scale.X *= x;
     }else if(x < 0){
-        scale.X /= x;
+        scale.X /= abs(x);
     }
     
     if(y > 0){
         scale.Y *= y;
     }else if(y < 0){
-        scale.Y /= y;
+        scale.Y /= abs(y);
     }
     
     if(z > 0){
         scale.Z *= z;
     }else if(z < 0){
-        scale.Z /= z;
+        scale.Z /= abs(z);
     }
     
     objet->setScale(scale);
 }
 
+void Object::modifyScaleBy(irr::core::vector3df values) {
+    irr::core::vector3df scale = objet->getScale();
+    
+    if(values.X > 0){
+        scale.X *= values.X;
+    }else if(values.X < 0){
+        scale.X /= std::abs(values.X);
+    }
+    
+    if(values.Y > 0){
+        scale.Y *= values.Y;
+    }else if(values.Y < 0){
+        scale.Y /= std::abs(values.Y);
+    }
+    
+    if(values.Z > 0){
+        scale.Z *= values.Z;
+    }else if(values.Z < 0){
+        scale.Z /= abs(values.Z);
+    }
+    
+    objet->setScale(scale);
+}
+
+
 void Object::modifyRotationBy(float x, float y, float z){
     objet->setRotation(irr::core::vector3df(x, y, z) + objet->getRotation());
 }
+
+void Object::modifyRotationBy(irr::core::vector3df values) {
+    objet->setRotation(values + objet->getRotation());
+}
+
 
 const irr::core::vector3df& Object::getPosition() {
     return this->objet->getPosition();

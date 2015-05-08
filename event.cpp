@@ -2,7 +2,8 @@
 #include "iostream"
  
 CEventReceiver::CEventReceiver(Editor* editor){
-    current_editor = editor;
+    this->current_editor = editor;
+    this->custom_gui = this->current_editor->getMainPointer()->gui;
 }
  
 bool CEventReceiver::OnEvent(const irr::SEvent &event){
@@ -178,10 +179,86 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
 void CEventReceiver::OnToolBoxItemSelected(irr::s32 id) {
     Object* target = this->current_editor->getMainPointer()->gui->getTargetObject();
     if(target != NULL){
-        switch(id){
-            case GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_UP:
-                target->modifyScaleBy(0.5, 0.5, 0.5);
-                break; 
+        irr::core::vector3df modification = irr::core::vector3df();
+        if(id <= GUI_ID_OBJECT_WINDOW_POSITION_Z_DOWN && id >= GUI_ID_OBJECT_WINDOW_POSITION_X_UP){
+            switch(id){
+                case GUI_ID_OBJECT_WINDOW_POSITION_X_UP:
+                    modification.X = 1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_POSITION_X_DOWN:
+                    modification.X = -1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_POSITION_Y_UP:
+                    modification.Y = 1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_POSITION_Y_DOWN:
+                    modification.Y = -1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_POSITION_Z_UP:
+                    modification.Z = 1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_POSITION_Z_DOWN:
+                    modification.Z = -1;
+                    break;
+            }
+            target->modifyPositionBy(modification);
+            this->custom_gui->updateWindow();
+        }else if(id <= GUI_ID_OBJECT_WINDOW_ROTATION_Z_DOWN && id >= GUI_ID_OBJECT_WINDOW_ROTATION_X_UP){
+            switch(id){
+                case GUI_ID_OBJECT_WINDOW_ROTATION_X_UP:
+                    modification.X = 15;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_ROTATION_X_DOWN:
+                    modification.X = -15;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_ROTATION_Y_UP:
+                    modification.Y = 15;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_ROTATION_Y_DOWN:
+                    modification.Y = -15;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_ROTATION_Z_UP:
+                    modification.Z = 15;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_ROTATION_Z_DOWN:
+                    modification.Z = -15;
+                    break;
+            }
+            target->modifyRotationBy(modification);
+            this->custom_gui->updateWindow();
+        }else if(id <= GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_DOWN && id >= GUI_ID_OBJECT_WINDOW_SCALE_X_UP){
+            switch(id){
+                case GUI_ID_OBJECT_WINDOW_SCALE_X_UP:
+                    modification.X = 1.1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_SCALE_X_DOWN:
+                    modification.X = -1.1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_SCALE_Y_UP:
+                    modification.Y = 1.1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_SCALE_Y_DOWN:
+                    modification.Y = -1.1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_SCALE_Z_UP:
+                    modification.Z = 1.1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_SCALE_Z_DOWN:
+                    modification.Z = -1.1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_UP:
+                    modification.X = 1.1;
+                    modification.Y = 1.1;
+                    modification.Z = 1.1;
+                    break;
+                case GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_DOWN:
+                    modification.X = -1.1;
+                    modification.Y = -1.1;
+                    modification.Z = -1.1;
+                    break;
+            }
+            target->modifyScaleBy(modification);
+            this->custom_gui->updateWindow();
         }
     }
 }

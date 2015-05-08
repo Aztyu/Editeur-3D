@@ -75,17 +75,29 @@ public:
      *          \param z Decalage en z par rapport a la position actuelle. */
     void modifyPositionBy(float x, float y, float z);
     
+    //! Modifie la position de l'objet par celle passee en parametre.
+    /** \param values Vector3D qui contient le decalage dans toutes les directions par rapport a la position actuelle. */
+    void modifyPositionBy(irr::core::vector3df values);
+    
     //! Multiplie ou divise l'échelle de l'objet par celle passée en paramètre.
     /** \param x Nombre par laquelle on multiplie(+) ou divise(-) l'échelle en x.
      *          \param y Nombre par laquelle on multiplie(+) ou divise(-) l'échelle en y.
      *          \param z Nombre par laquelle on multiplie(+) ou divise(-) l'échelle en z. */
     void modifyScaleBy(float x, float y, float z);
     
+    //! Multiplie ou divise l'échelle de l'objet par celle passée en paramètre.
+    /** \param values Vector3D qui contient le nombre par laquelle on multiplie(+) ou divise(-) l'échelle dans toutes les directions. */
+    void modifyScaleBy(irr::core::vector3df values);
+    
     //! Modifie la rotation de l'objet par celle passee en parametre.
     /** \param x Rotation en degre sur l'axe x par rapport a la rotation actuelle.
      *          \param y Rotation en degre sur l'axe y par rapport a la rotation actuelle.
      *          \param z Rotation en degre sur l'axe z par rapport a la rotation actuelle. */
     void modifyRotationBy(float x, float y, float z);
+    
+    //! Modifie la rotation de l'objet par celle passee en parametre.
+    /** \param values Vector3D qui contient la rotation en degre sur tous les axes par rapport a la rotation actuelle. */
+    void modifyRotationBy(irr::core::vector3df values);
     
     //Recuperation des informations
     //! Recupere la position de l'objet

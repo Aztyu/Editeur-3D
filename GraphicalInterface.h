@@ -119,7 +119,10 @@ public:
     
     //! Mets à jour la fenetre Outils.
     /** \param object L'objet qui sera concerne par les modifications dans la fenetre*/
-    void updateWindow(Object* object = NULL);
+    void updateWindow(Object* object);
+    
+    //! Mets à jour la fenetre Outils grace a l'attribut current_object.
+    void updateWindow();
     
     //! Recupere un pointeur vers l'element skybox.
     /** \return Un pointeur vers un ISceneNode pour pouvoir modifier la skybox */

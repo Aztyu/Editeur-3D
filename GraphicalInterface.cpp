@@ -12,6 +12,7 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     this->gui = gui;
     this->driver = driver;
     this->skybox = skybox;
+    this->current_object = NULL;
     
     irr::gui::IGUISkin* skin = this->gui->getSkin(); 
     irr::gui::IGUIFont* font = this->gui->getFont("ressources/font/editorfont11.xml"); 
@@ -164,6 +165,11 @@ irr::gui::IGUIEnvironment* GraphicalInterface::getGUIEnvironment() {
 
 void GraphicalInterface::updateWindow(Object* object) {
     this->current_object = object;
+    this->updateWindow();
+}
+
+void GraphicalInterface::updateWindow() {
+    Object* object = this->current_object;
     
     irr::gui::IGUIElement* root = this->gui->getRootGUIElement();
     irr::gui::IGUIElement* e = root->getElementFromId(GUI_ID_OBJECT_WINDOW, true);
@@ -424,6 +430,21 @@ void GraphicalInterface::updateWindow(Object* object) {
                 static_cast<irr::gui::IGUIElement*>(this->window),
                 GUI_ID_OBJECT_WINDOW_SCALE_Z_UP,
                 L"+");
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(15,495,45,525),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_DOWN,
+                L"-");
+            
+            this->gui->addStaticText(L"Total", irr::core::rect<irr::s32>(50,498,145,528),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+            
+            this->gui->addButton(irr::core::rect<irr::s32>(155,495,185,525),
+                static_cast<irr::gui::IGUIElement*>(this->window),
+                GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_UP,
+                L"+");
 
         }else{
             this->gui->addStaticText(L"None",
@@ -432,8 +453,9 @@ void GraphicalInterface::updateWindow(Object* object) {
                 true,
                 static_cast<irr::gui::IGUIElement*>(this->window));
         }
-    }       
+    } 
 }
+
 
 irr::scene::ISceneNode* GraphicalInterface::getSkybox() {
     return this->skybox;
