@@ -57,17 +57,29 @@ public:
      *          \param z Position en z par rapport a l'origine. */
     void setPosition(float x, float y, float z);
     
+    //! Change la position de l'objet pour celle passee en parametre.
+    /** \param values Vector3D qui contient la nouvelle position. */
+    void setPosition(irr::core::vector3df values);
+    
     //! Change l'echelle de l'objet pour celle passee en parametre.
     /** \param x Echelle x par rapport a l'echelle d'origine.
      *          \param y Echelle y par rapport a l'echelle d'origine.
      *          \param z Echelle z par rapport a l'echelle d'origine. */
     void setScale(float x, float y, float z);
     
+    //! Change l'echelle de l'objet pour celle passee en parametre.
+    /** \param values Vector3D qui contient la nouvelle echelle. */
+    void setScale(irr::core::vector3df values);
+    
     //! Change la rotation de l'objet pour celle passee en parametre.
     /** \param x Rotation en degre sur l'axe x par rapport a la rotation d'origine.
      *          \param y Rotation en degre sur l'axe y par rapport a la rotation d'origine.
      *          \param z Rotation en degre sur l'axe z par rapport a la rotation d'origine. */
     void setRotation(float x, float y, float z);
+    
+    //! Change la rotation de l'objet pour celle passee en parametre.
+    /** \param values Vector3D qui contient la rotation en degre sur tous les axes. */
+    void setRotation(irr::core::vector3df values);
     
     //! Modifie la position de l'objet par celle passee en parametre.
     /** \param x Decalage en x par rapport a la position actuelle.

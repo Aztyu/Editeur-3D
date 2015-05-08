@@ -39,6 +39,10 @@ class CEventReceiver : public irr::IEventReceiver{
         /** \param id ID du bouton de création.*/
         void OnObjectCreation(irr::s32 id);
         
+        //! Gere les modifications des valeurs de la fenetre "Outils".
+        /** \param editbox Pointeur vers l'editbox touchée par l'évènement.*/
+        void OnValueChanged(irr::gui::IGUIEditBox* editbox);
+        
         //! Fait tourner la camera vers la droite.
         void angleCameraRight();
         

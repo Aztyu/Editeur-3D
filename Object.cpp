@@ -46,12 +46,26 @@ void Object::setPosition(float x, float y, float z){        //Methodes absolues
     objet->setPosition(irr::core::vector3df(x, y, z));
 }
 
+void Object::setPosition(irr::core::vector3df values) {
+    objet->setPosition(values);
+}
+
+
 void Object::setScale(float x, float y, float z){
     objet->setScale(irr::core::vector3df(x, y, z));
 }
 
+void Object::setScale(irr::core::vector3df values) {
+    objet->setScale(values);
+}
+
+
 void Object::setRotation(float x, float y, float z){
     objet->setRotation(irr::core::vector3df(x, y, z));
+}
+
+void Object::setRotation(irr::core::vector3df values){
+    objet->setRotation(values);
 }
 
 void Object::modifyPositionBy(float x, float y, float z){        //Methodes relatives, utilise la valeur de base plus celle que vous rajoutez

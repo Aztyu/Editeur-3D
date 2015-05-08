@@ -12,29 +12,26 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
             irr::core::vector3df position = current_editor->getMainPointer()->camera->getPosition();
             irr::core::vector3df rotation = current_editor->getMainPointer()->camera->getRotation();
             irr::core::vector3df target = current_editor->getMainPointer()->camera->getTarget();
+            int focus_id = -1;
             
-            bool hasfocus = current_editor->getMainPointer()->gui->getGUIEnvironment()->hasFocus(current_editor->getMainPointer()->gui->getGUIEnvironment()->getRootGUIElement()->getElementFromId(GUI_ID_OBJECT_WINDOW_OBJECT_NAME, true));
+            if(current_editor->getMainPointer()->gui->getGUIEnvironment()->getFocus() != NULL){
+                focus_id = current_editor->getMainPointer()->gui->getGUIEnvironment()->getFocus()->getID();
+            }
+            bool hasfocus = false;
             bool exist = (current_editor->getMainPointer()->gui->getGUIEnvironment()->getRootGUIElement()->getElementFromId(GUI_ID_OBJECT_WINDOW_OBJECT_NAME, true) != NULL);
+            
+            if(focus_id >= GUI_ID_OBJECT_WINDOW && focus_id <= GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP){
+                hasfocus = true;
+            }
+            
+
             if(!exist || !hasfocus){
                 switch(event.KeyInput.Key){
-                    case irr::KEY_RETURN: //Maj de la scale suite a l'appui d'entree, exemple recupere dans la doc irrlicht
-                        /* set scale
-                        irr::gui::IGUIElement* root = env->getRootGUIElement();
-                        irr::core::vector3df scale;
-                        irr::core::stringc s;
-
-                        s = root->getElementFromId(GUI_ID_X_SCALE, true)->getText();
-                        scale.X = (irr::f32)atof(s.c_str());
-                        s = root->getElementFromId(GUI_ID_Y_SCALE, true)->getText();
-                        scale.Y = (irr::f32)atof(s.c_str());
-                        s = root->getElementFromId(GUI_ID_Z_SCALE, true)->getText();
-                        scale.Z = (irr::f32)atof(s.c_str());
-
-                        if (Model)
-                            Model->setScale(scale);
-                        updateScaleInfo(Model);*/
-                        return true;
-
+                    case irr::KEY_RETURN:{
+                        int testtettete = 54;
+                        //irr::core::vector3df scale = irr::core::vector3df();
+                        return true;}
+                        
                     case irr::KEY_ESCAPE:  //Ferme le programme
                         current_editor->getMainPointer()->device->closeDevice();
                         return true;
@@ -118,7 +115,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     OnMenuItemSelected((irr::gui::IGUIContextMenu*)event.GUIEvent.Caller );
                     break;
                 case irr::gui::EGET_BUTTON_CLICKED:{
-                    if(id <= GUI_ID_OBJECT_WINDOW_ADD_TO__NEW_GROUP && id >= GUI_ID_OBJECT_WINDOW_OBJECT_NAME){
+                    if(id <= GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP && id >= GUI_ID_OBJECT_WINDOW_OBJECT_NAME){
                         this->OnToolBoxItemSelected(id);
                     }else{
                         this->OnObjectCreation(id);
@@ -127,6 +124,10 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                   
                 case irr::gui::EGET_COMBO_BOX_CHANGED:
                     OnObjectSelected((irr::gui::IGUIComboBox*)event.GUIEvent.Caller);
+                    return true;
+                    break;
+                case irr::gui::EGET_EDITBOX_ENTER:
+                    OnValueChanged((irr::gui::IGUIEditBox*)event.GUIEvent.Caller);
                     return true;
                     break;
             }
@@ -262,6 +263,65 @@ void CEventReceiver::OnToolBoxItemSelected(irr::s32 id) {
         }
     }
 }
+
+void CEventReceiver::OnValueChanged(irr::gui::IGUIEditBox* editbox) {
+    int id = editbox->getID();
+    irr::core::vector3df modification = irr::core::vector3df();
+    Object* target = this->current_editor->getMainPointer()->gui->getTargetObject();
+    
+    irr::gui::IGUIElement* root = this->custom_gui->getGUIEnvironment()->getRootGUIElement();
+    irr::core::stringc s = root->getElementFromId(id, true)->getText();
+    irr::f32 value = (irr::f32)atof(s.c_str());
+    
+    if(id <= GUI_ID_OBJECT_WINDOW_POSITION_Z_VALUE && id >= GUI_ID_OBJECT_WINDOW_POSITION_X_VALUE){
+        modification = target->getPosition();
+        switch(id){
+            case GUI_ID_OBJECT_WINDOW_POSITION_X_VALUE:
+                modification.X = value;
+                break;
+            case GUI_ID_OBJECT_WINDOW_POSITION_Y_VALUE:
+                modification.Y = value;
+                break;
+            case GUI_ID_OBJECT_WINDOW_POSITION_Z_VALUE:
+                modification.Z = value;
+                break;
+        }
+        target->setPosition(modification);
+        this->custom_gui->updateWindow();
+    }else if(id <= GUI_ID_OBJECT_WINDOW_ROTATION_Z_VALUE && id >= GUI_ID_OBJECT_WINDOW_ROTATION_X_VALUE){
+        modification = target->getRotation();
+        switch(id){
+            case GUI_ID_OBJECT_WINDOW_ROTATION_X_VALUE:
+                modification.X = value;
+                break;
+            case GUI_ID_OBJECT_WINDOW_ROTATION_Y_VALUE:
+                modification.Y = value;
+                break;
+            case GUI_ID_OBJECT_WINDOW_ROTATION_Z_VALUE:
+                modification.Z = value;
+                break;
+        }
+        target->setRotation(modification);
+        this->custom_gui->updateWindow();
+    }else if(id <= GUI_ID_OBJECT_WINDOW_SCALE_Z_VALUE && id >= GUI_ID_OBJECT_WINDOW_SCALE_X_VALUE){
+        modification = target->getScale();
+        switch(id){
+            case GUI_ID_OBJECT_WINDOW_SCALE_X_VALUE:
+                modification.X = value;
+                break;
+            case GUI_ID_OBJECT_WINDOW_SCALE_Y_VALUE:
+                modification.Y = value;
+                break;
+            case GUI_ID_OBJECT_WINDOW_SCALE_Z_VALUE:
+                modification.Z = value;
+                break;
+        }
+        target->setScale(modification);
+        this->custom_gui->updateWindow();
+    }
+    current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
+}
+
 
 void CEventReceiver::OnObjectCreation(irr::s32 id) {
     irr::core::vector3df position = current_editor->getMainPointer()->camera->getPosition();
