@@ -1,7 +1,7 @@
 Editeur-3D
 ==========
 
-Projet de fin d’année SUPINFO ,l’éditeur 3D base sur Irrlicht
+:busts_in_silhouette: 2PJT → 2DEV : 3D-KIT
 
 ## 2DEV - 3D-KIT
 
