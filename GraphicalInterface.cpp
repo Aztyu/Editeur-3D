@@ -87,35 +87,35 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
         0,
         GUI_ID_CIRCLE,
         L"4");
-    bouton3->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
+    bouton3->setImage(driver->getTexture("ressources/icon/circle_icon.png"));
     
     irr::gui::IGUIButton *bouton4 = this->gui->addButton(
         irr::core::rect<irr::s32>(178,30,210,62),
         0,
         GUI_ID_CYLINDER,
         L"5");
-    bouton4->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
+    bouton4->setImage(driver->getTexture("ressources/icon/cylindre_icon.png"));
     
     irr::gui::IGUIButton *bouton5 = this->gui->addButton(
         irr::core::rect<irr::s32>(220,30,252,62),
         0,
         GUI_ID_RECTANGLE,
         L"6");
-    bouton5->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
+    bouton5->setImage(driver->getTexture("ressources/icon/cube_icon.png"));
     
     irr::gui::IGUIButton *bouton6 = this->gui->addButton(
         irr::core::rect<irr::s32>(262,30,294,62),
         0,
         GUI_ID_LINE,
         L"7");
-    bouton6->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
+    bouton6->setImage(driver->getTexture("ressources/icon/ligne_icon.png"));
     
     irr::gui::IGUIButton *bouton7 = this->gui->addButton(
         irr::core::rect<irr::s32>(304,30,336,62),
         0,
         GUI_ID_TRAPEZE,
         L"8");    
-    bouton7->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
+    bouton7->setImage(driver->getTexture("ressources/icon/trapeze_icon.png"));
     
     this->single_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(640,30,790,62), 0, GUI_ID_SINGLE_OBJECT_COMBO_BOX);
     
