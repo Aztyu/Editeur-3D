@@ -9,6 +9,7 @@
 #define	POINTERS_H
 
 #include "GraphicalInterface.h"
+
 class Editor;
 
 //! Pointeurs necessaire pour l'acces et le fonctionnement dans le programme entier

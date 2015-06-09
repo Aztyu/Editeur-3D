@@ -117,9 +117,24 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
         L"8");    
     bouton7->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
     
-    this->single_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(640,30,790,62), 0, GUI_ID_SINGLE_OBJECT_COMBO_BOX);
+    this->gui->addStaticText(L"Objects",
+                irr::core::rect<irr::s32>(540,35,630,62),
+                false,
+                true);
     
-    this->group_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(840,30,990,62), 0, GUI_ID_GROUP_OBJECT_COMBO_BOX);
+    this->gui->addStaticText(L"Groups",
+                irr::core::rect<irr::s32>(790,35,880,62),
+                false,
+                true);
+    
+    this->gui->addStaticText(L"Zones",
+                irr::core::rect<irr::s32>(1040,35,1130,62),
+                false,
+                true);
+    
+    this->single_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(630,30,780,62), 0, GUI_ID_SINGLE_OBJECT_COMBO_BOX);
+    
+    this->group_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(880,30,1030,62), 0, GUI_ID_GROUP_OBJECT_COMBO_BOX);
 }
 
 GraphicalInterface::~GraphicalInterface() {
@@ -152,6 +167,17 @@ void GraphicalInterface::updateGroupObject(std::vector<GroupObject*>* tableau){
         std::wstring widestr = std::wstring(name.begin(), name.end());
         const wchar_t* widecstr = widestr.c_str();
         this->group_object_box->addItem(widecstr);      //Ajout de l'objet a la combobox
+    }
+}
+
+void GraphicalInterface::updateZoneObject(std::vector<Zone*>* tableau){
+    this->zone_box->clear();
+    
+    for(int i = 0; i < tableau->size(); i++){
+        std::string name = tableau->at(i)->getName();
+        std::wstring widestr = std::wstring(name.begin(), name.end());
+        const wchar_t* widecstr = widestr.c_str();
+        this->zone_box->addItem(widecstr);      //Ajout de l'objet a la combobox
     }
 }
     
