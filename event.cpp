@@ -26,12 +26,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
             
 
             if(!exist || !hasfocus){
-                switch(event.KeyInput.Key){
-                    case irr::KEY_RETURN:{
-                        int testtettete = 54;
-                        //irr::core::vector3df scale = irr::core::vector3df();
-                        return true;}
-                        
+                switch(event.KeyInput.Key){                        
                     case irr::KEY_ESCAPE:  //Ferme le programme
                         current_editor->getMainPointer()->device->closeDevice();
                         return true;

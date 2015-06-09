@@ -58,6 +58,9 @@ class Zone {
         //! Créer un GroupObject dans la zone.
         void createGroupObject();
         
+        //! Créer un GroupObject dans la zone.
+        void createGroupObject(Object* base_object);
+        
         //Recuperation d'information
         //! Recupere le pointeur vers un SingleObject.
         /** \param index Position de l'objet dans le vector single_object_array.

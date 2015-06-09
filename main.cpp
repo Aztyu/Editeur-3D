@@ -26,8 +26,6 @@ int main(void)
     
     irr::gui::ICursorControl *curseur = device->getCursorControl();
     
-    //irr::scene::ISceneCollisionManager *collision = sceneManager->getSceneCollisionManager();
-    
     sceneManager->addCameraSceneNode(       // ajout de la camera
         0,                                       //idparent
         irr::core::vector3df(0.0, 10.0, -30.0),  //position                                    
@@ -72,18 +70,14 @@ int main(void)
     
     editeur.getCurrentZone()->getSingleObjectPointer(1)->setPosition(0.0, 2.0, 0.0);
     
-    //editeur.getCurrentZone()->getSingleObjectPointer(1)->setParent(editeur.getCurrentZone()->getSingleObjectPointer(0));
     editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjectPointer(0)->getPointer());
     editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjectPointer(1)->getPointer());
     
     editeur.getCurrentZone()->getSingleObjectPointer(2)->setPosition(0.0, 0.0, 10.0);
     editeur.getCurrentZone()->getSingleObjectPointer(2)->setScale(1.0, 1.0, 3.0);
     
-    //editeur.getCurrentZone()->getSingleObjectPointer(2)->setParent(editeur.getCurrentZone()->getSingleObjectPointer(0));
     editeur.getCurrentZone()->getGroupObjectPointer(0)->addMember(editeur.getCurrentZone()->getSingleObjectPointer(2)->getPointer());
     
-    //editeur.getCurrentZone()->getSingleObjectPointer(0)->setRotation(0.0, 45.0, 180.0);
-    //editeur.getCurrentZone()->getSingleObjectPointer(0)->setScale(3.0, 3.0, 3.0);
     editeur.getCurrentZone()->getGroupObjectPointer(0)->setRotation(0.0, 45.0, 180.0);
     editeur.getCurrentZone()->getGroupObjectPointer(0)->setScale(3.0, 3.0, 3.0);
     
