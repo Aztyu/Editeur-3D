@@ -6,7 +6,6 @@
  */
 
 #include "GraphicalInterface.h"
-#include "Zone.h"
 
 GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::video::IVideoDriver* driver, irr::scene::ISceneNode* skybox) {
     

@@ -5,8 +5,9 @@
  * Created on 22 décembre 2014, 15:50
  */
 
-#include "Pointers.h"
+
 #include "Zone.h"
+#include "Pointers.h"
 #include "fstream"
 #include "Editor.h"
 

@@ -8,7 +8,6 @@
 #ifndef ZONE_H
 #define	ZONE_H
 
-//#include "Pointers.h"
 #include "GroupObject.h"
 
 class Pointer;
@@ -30,7 +29,8 @@ class Zone {
     public:
         //! Constructeur de base.
         /** \param name Nom de la zone.
-		\param pointer Pointer vers la structure de pointeur. */
+		\param pointer Pointer vers la structure de pointeur.
+         *      \param obj Pointeur vers le scenenode de la zone. */
         Zone(char* name, Pointer* pointer, irr::scene::ISceneNode* obj);
         
         //! Destructeur de base.
