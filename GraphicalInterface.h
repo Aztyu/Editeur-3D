@@ -5,13 +5,15 @@
  * Created on 19 avril 2015, 16:48
  */
 
-#include "SingleObject.h"
-#include "GroupObject.h"
+//#include "SingleObject.h"
+//#include "GroupObject.h"
+#include "Zone.h"
+#include "Pointers.h"
 
 #ifndef GRAPHICALINTERFACE_H
 #define	GRAPHICALINTERFACE_H
 
-
+class Pointer;
 //! Enumeration pour les elements de l'interface
 enum Gui{                  //Ajoutez les ids utilises dans le GUI ici
     GUI_ID_SQUARE,                          /**< Creation d'un cube. */
@@ -109,6 +111,10 @@ public:
     /** \param tableau vector de GroupObject mis a jour pour le transferer */
     void updateGroupObject(std::vector<GroupObject*>* tableau);
     
+    //! Mets a jour la combobox des SingleObject.
+    /** \param tableau vector de SingleObject mis a jour pour le transferer */
+    void updateZone(std::vector<Zone*>* tableau);
+    
     //! Selectionne un GroupObject specifique dans la combo box.
     /** \param index Index de l'objet dans la combo box. */
     void setGroupObjectSelected(int index);
@@ -141,6 +147,7 @@ private:
     irr::gui::IGUIContextMenu* menu;
     irr::gui::IGUIComboBox* single_object_box;
     irr::gui::IGUIComboBox* group_object_box;
+    irr::gui::IGUIComboBox* zone_box;
     irr::scene::ISceneNode* skybox;
     
     irr::video::IVideoDriver* driver;

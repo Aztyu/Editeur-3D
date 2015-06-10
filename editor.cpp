@@ -7,11 +7,11 @@
 
 #include "Editor.h"
 #include "Event.h"
+#include "Pointers.h"
 
-Editor::Editor(Pointer* struct_pointer) : main_pointer(struct_pointer) {
-    createZone("Main");
+Editor::Editor(Pointer* struct_pointer) : main_pointer(struct_pointer), current_zone(NULL){
     this->main_pointer->current_editor = this;
-    current_zone = zone_array[zone_array.size()-1];
+    createZone("Main");
     std::cout << "finish object" << std::endl;
 }
 

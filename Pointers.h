@@ -8,9 +8,10 @@
 #ifndef POINTERS_H
 #define	POINTERS_H
 
-#include "GraphicalInterface.h"
+#include "Event.h"
 
 class Editor;
+class GraphicalInterface;
 
 //! Pointeurs necessaire pour l'acces et le fonctionnement dans le programme entier
 struct Pointer{

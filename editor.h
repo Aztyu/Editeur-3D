@@ -8,7 +8,7 @@
 #ifndef EDITOR_H
 #define	EDITOR_H
 
-#include "Zone.h"
+#include "GraphicalInterface.h"
 
 //! Classe de base qui contient toutes les zones et la plupart des informations
 class Editor {

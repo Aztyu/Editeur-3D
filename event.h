@@ -9,6 +9,9 @@
 #define	EVENT_H
 
 #include "Editor.h"
+
+class Editor;
+class GraphicalInterface;
  
 //! Classe qui gere tous les evenements du programme
 class CEventReceiver : public irr::IEventReceiver{

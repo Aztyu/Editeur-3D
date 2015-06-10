@@ -5,6 +5,7 @@
  * Created on 22 décembre 2014, 15:50
  */
 
+#include "Pointers.h"
 #include "Zone.h"
 #include "fstream"
 #include "Editor.h"
@@ -227,6 +228,10 @@ Zone* Zone::getPointer(){
 
 irr::scene::ISceneNode* Zone::getMeshPointer() {
     return this->zone_mesh;
+}
+
+std::string Zone::getName() {
+    return this->zone_name;
 }
 
 void Zone::setSelectedSingleObject(int index){

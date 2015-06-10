@@ -8,8 +8,10 @@
 #ifndef ZONE_H
 #define	ZONE_H
 
-#include "Pointers.h"
+//#include "Pointers.h"
 #include "GroupObject.h"
+
+class Pointer;
 
 //! Enumeration utilise pour lors de la creation d'objets
 enum object {
@@ -91,6 +93,10 @@ class Zone {
         //! Recupere le pointeur vers l'ISceneNode de la zone actuelle.
         /** \return Pointeur vers l'ISceneNode . */
         irr::scene::ISceneNode* getMeshPointer();
+        
+        //! Recupere le nom de la zone actuelle.
+        /** \return String contenant le nom de cette zone. */
+        std::string getName();
         
         //! Recupere le pointeur vers la zone actuelle.
         /** \return Le nombre d'objet de cette zone. */

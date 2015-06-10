@@ -6,6 +6,7 @@
  */
 
 #include "GraphicalInterface.h"
+#include "Zone.h"
 
 GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::video::IVideoDriver* driver, irr::scene::ISceneNode* skybox) {
     
@@ -170,7 +171,7 @@ void GraphicalInterface::updateGroupObject(std::vector<GroupObject*>* tableau){
     }
 }
 
-void GraphicalInterface::updateZoneObject(std::vector<Zone*>* tableau){
+void GraphicalInterface::updateZone(std::vector<Zone*>* tableau){
     this->zone_box->clear();
     
     for(int i = 0; i < tableau->size(); i++){
