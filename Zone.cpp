@@ -13,7 +13,7 @@
 
 using namespace std;
 
-Zone::Zone(char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zone_name(name){
+Zone::Zone(const char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zone_name(name){
     this->zone_mesh = obj;
     this->single_object_array.reserve(10);
     for(int i=0; i < 9; i++){ //Mise a zero du nombre d'objets
@@ -163,9 +163,9 @@ void Zone::createSingleObject(object form){
     type += ".obj";
     this->single_object_array.push_back(new SingleObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str()), this->zone_mesh), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
     current_pointer->gui->updateSingleObject(&this->single_object_array); //Ajout de l'objet a la combobox
-    current_pointer->gui->setSingleObjectSelected(this->single_object_array.size()-1);   //Le derniere objet cree est par default selectionne
-    if(selected_object == NULL){
-        setSelectedSingleObject(this->single_object_array.size());
+    if(selected_object == NULL){    //Si aucun objet n'est selectionne alors on selectionne celui-la
+        setSelectedSingleObject(this->single_object_array.size()-1);
+        current_pointer->gui->setSingleObjectSelected(this->single_object_array.size()-1);
     }
 }
 
@@ -180,8 +180,13 @@ void Zone::createGroupObject(){
     type_number[8]++;
     type += "group";
     type += ".obj";
-    this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->current_pointer->current_editor->getCurrentZone()->getMeshPointer()));        //Chargement et creation de l'objet
+    this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
     current_pointer->gui->updateGroupObject(&this->group_object_array); //Ajout de l'objet a la combobox
+    
+    if(selected_object == NULL){    //Si aucun objet n'est selectionne alors on selectionne celui-la
+        setSelectedGroupObject(this->group_object_array.size()-1);
+        current_pointer->gui->setGroupObjectSelected(this->group_object_array.size()-1);
+    }
 }
 
 int Zone::getObjectCount(){
@@ -207,7 +212,7 @@ GroupObject* Zone::getGroupObjectPointer(int index){
     if(index >= 0 && index < this->group_object_array.size()){
         return this->group_object_array[index];
     }else{
-        return 0;
+        return NULL;
     }
 }
 
@@ -235,6 +240,14 @@ irr::scene::ISceneNode* Zone::getMeshPointer() {
 
 std::string Zone::getName() {
     return this->zone_name;
+}
+
+std::vector<GroupObject*>* Zone::getGroupObjectVector() {
+    return &this->group_object_array;
+}
+
+std::vector<SingleObject*>* Zone::getSingleObjectVector() {
+    return &this->single_object_array;
 }
 
 void Zone::setSelectedSingleObject(int index){
@@ -266,6 +279,21 @@ void Zone::setSelectedGroupObject(int index) {
     }else{
         this->selected_object = NULL;
     }
+}
+
+bool Zone::setSelectedGroupObject(irr::scene::ISceneNode* objet){
+    for(int i = 0;i<this->group_object_array.size(); ++i){
+        if(objet == this->group_object_array[i]->getSceneNode()){
+            setSelectedGroupObject(i);
+            return true;
+        }
+    }
+    return false;
+}
+
+
+GroupObject* Zone::getSelectedGroupObject() {
+    return this->selected_group;
 }
 
 void Zone::unselectAll() {

@@ -47,11 +47,15 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     irr::gui::IGUIContextMenu* submenu;
     
     submenu = menu->getSubMenu(0);
-    submenu->addItem(L"Nouveau", GUI_ID_NEW);
+    submenu->addItem(L"Nouveau...", GUI_ID_NEW, true, true, false, false);
     submenu->addItem(L"Charger", GUI_ID_LOAD);
     submenu->addItem(L"Sauvegarder", GUI_ID_SAVE);
     submenu->addSeparator();
     submenu->addItem(L"Quitter", GUI_ID_QUIT);
+    
+    submenu = submenu->getSubMenu(0);
+    submenu->addItem(L"Groupe", GUI_ID_NEW_GROUP, true, false, false);
+    submenu->addItem(L"Zone", GUI_ID_NEW_ZONE, true, false, false);
     
     submenu = menu->getSubMenu(1);
     submenu->addItem(L"Skybox", GUI_ID_SKYBOX);
@@ -137,6 +141,8 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     this->single_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(630,30,780,62), 0, GUI_ID_SINGLE_OBJECT_COMBO_BOX);
     
     this->group_object_box = this->gui->addComboBox(irr::core::rect<irr::s32>(880,30,1030,62), 0, GUI_ID_GROUP_OBJECT_COMBO_BOX);
+    
+    this->zone_box = this->gui->addComboBox(irr::core::rect<irr::s32>(1130,30,1280,62), 0, GUI_ID_ZONE_COMBO_BOX);
 }
 
 GraphicalInterface::~GraphicalInterface() {
@@ -187,6 +193,11 @@ void GraphicalInterface::updateZone(std::vector<Zone*>* tableau){
 void GraphicalInterface::setGroupObjectSelected(int index){
     this->group_object_box->setSelected(index);
 }
+
+void GraphicalInterface::setZoneSelected(int index) {
+    this->zone_box->setSelected(index);
+}
+
 
 irr::gui::IGUIEnvironment* GraphicalInterface::getGUIEnvironment() {
     return this->gui;

@@ -148,6 +148,9 @@ void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){  //Appele
         case GUI_ID_GROUP_OBJECT_COMBO_BOX:
             current_editor->getCurrentZone()->setSelectedGroupObject(combo->getSelected());
             break;
+        case GUI_ID_ZONE_COMBO_BOX:
+            current_editor->setCurrentZone(combo->getSelected());
+            break;
         default:
             break;
     }
@@ -168,6 +171,9 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
         case GUI_ID_SKYBOX:
             menu->setItemChecked(menu->getSelectedItem(), !menu->isItemChecked(menu->getSelectedItem()));
             this->current_editor->getMainPointer()->gui->getSkybox()->setVisible(!this->current_editor->getMainPointer()->gui->getSkybox()->isVisible());
+            break;
+        case GUI_ID_NEW_ZONE:
+            this->current_editor->createZone();
             break;
     }
 }

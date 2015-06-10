@@ -21,17 +21,31 @@ class Editor {
         virtual ~Editor();
         
         //Gestion des zones
-        //! Creer une zone.
+        //! Creer une zone ayant un nom donne.
         /** \param name Le nom de la zone à créer.*/
-        void createZone(char* name);
+        void createZone(const char* name);
+        
+        //! Creer une zone sans nom specifique.*/
+        void createZone();
         
         //! Definit la zone actuelle.
         /** \param zone Pointeur vers la zone à définir comme actuelle.*/
         void setCurrentZone(Zone* zone);
         
+        //! Selectionne une Zone selon sa position dans le vector.
+        /** \param index Position de l'objet dans le vector zone_array. */
+        void setCurrentZone(int index);
+        
         //! Definit le Pointers utilisé dans le programme.
         /** \param struct_pointer Pointeur vers le Pointers à utiliser.*/
         void setMainPointer(Pointer* struct_pointer);
+        
+        //! Change la visibilite de la Zone et les GroupObject.
+        /** \param isVisible booleen qui definit la visibilite ou non.*/
+        void setCurrentZoneVisible(bool isVisible);
+        
+        //! Effectue toutes les operations necessaires au changement de Zone.*/
+        void finishZoneSwitch();
         
         //Recuperation d'informations
         //! Renvoie le Pointers utilisé.
@@ -45,6 +59,10 @@ class Editor {
         //! Renvoie un pointeur vers la zone actuelle
         /** \return Un pointer vers la zone actuellement utilisé.*/
         Zone* getCurrentZone();
+        
+        //! Nous indique si le nom est deja pris
+        /** \return true si il est pris, false autrement */
+        bool isNameTaken(std::string name);
         
     private:
         std::vector<Zone*> zone_array;

@@ -23,12 +23,16 @@ enum Gui{                  //Ajoutez les ids utilises dans le GUI ici
 
     GUI_ID_SINGLE_OBJECT_COMBO_BOX,         /**< combobox pour objet simple. */
     GUI_ID_GROUP_OBJECT_COMBO_BOX,          /**< combobox pour groupe d'objets. */
+    GUI_ID_ZONE_COMBO_BOX,                   /**< combobox pour les zones. */
 
     GUI_ID_FILE,                            /**< element "Fichier". */
     GUI_ID_NEW,                             /**< element "Nouveau". */
     GUI_ID_LOAD,                            /**< element "Charger". */
     GUI_ID_SAVE,                            /**< element "Sauvegarder". */
     GUI_ID_QUIT,                            /**< element "Quitter". */
+    
+    GUI_ID_NEW_ZONE,                        /**< element "Nouveau"-"Zone". */
+    GUI_ID_NEW_GROUP,                       /**< element "Nouveau"-"Group". */
     
     GUI_ID_SETTINGS,                        /**< element "Reglages". */
     GUI_ID_SKYBOX,                          /**< element "Skybox". */
@@ -114,6 +118,10 @@ public:
     //! Selectionne un GroupObject specifique dans la combo box.
     /** \param index Index de l'objet dans la combo box. */
     void setGroupObjectSelected(int index);
+    
+    //! Selectionne une Zone specifique dans la combo box.
+    /** \param index Index de la zone dans la combo box. */
+    void setZoneSelected(int index);
     
     //! Recupere un pointeur vers le GUI Environment.
     /** \return Pointeur vers le GUI Environment en cours d'utilisation */

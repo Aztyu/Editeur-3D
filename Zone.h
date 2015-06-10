@@ -31,7 +31,7 @@ class Zone {
         /** \param name Nom de la zone.
 		\param pointer Pointer vers la structure de pointeur.
          *      \param obj Pointeur vers le scenenode de la zone. */
-        Zone(char* name, Pointer* pointer, irr::scene::ISceneNode* obj);
+        Zone(const char* name, Pointer* pointer, irr::scene::ISceneNode* obj);
         
         //! Destructeur de base.
         virtual ~Zone();
@@ -102,6 +102,14 @@ class Zone {
         /** \return Le nombre d'objet de cette zone. */
         int getObjectCount();
         
+        //! Renvoie le pointeur vers le vector de SingleObject.
+        /** \return le pointeur vers le vector de SingleObject. */
+        std::vector<SingleObject*>* getSingleObjectVector();
+        
+        //! Renvoie le pointeur vers le vector de GroupObject.
+        /** \return le pointeur vers le vector de GroupObject. */
+        std::vector<GroupObject*>* getGroupObjectVector();
+        
         //Selection d'objets
         
         //! Selectionne un SingleObject dans la zone selon sa position dans le vector.
@@ -116,6 +124,11 @@ class Zone {
         //! Selectionne un GroupObject dans la zone selon sa position dans le vector.
         /** \param index Position de l'objet dans le vector group_object_array. */
         void setSelectedGroupObject(int index);
+        
+        //! Selectionne un GroupObject dans la zone selon sa position dans le vector.
+        /** \param objet Pointeur vers l'ISceneNode de l'objet que l'on veut selectionner.
+         *  \return True si l'objet a été selectionné, False sinon. */
+        bool setSelectedGroupObject(irr::scene::ISceneNode* objet);
         
         //! Deselectionne toute objet dans cette zone.
         void unselectAll();
