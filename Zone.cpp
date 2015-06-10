@@ -77,6 +77,8 @@ void Zone::removeObject(Object* objet){
             removeGroupObject(index);
         }
     }
+    
+    this->current_pointer->gui->updateWindow(this->getSelectedObject()); //Met à jour la fenetre Outils
 }
 
 void Zone::createSingleObject(object form){

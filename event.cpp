@@ -337,7 +337,7 @@ void CEventReceiver::OnObjectCreation(irr::s32 id) {
     position.Y = 0;
                     
     switch(id){             //Creation d'objets
-        case GUI_ID_SQUARE:
+        case GUI_ID_CUBE:
             current_editor->getCurrentZone()->createSingleObject(cube);
             break;
 
@@ -353,7 +353,7 @@ void CEventReceiver::OnObjectCreation(irr::s32 id) {
             current_editor->getCurrentZone()->createSingleObject(cylinder);
             break;
 
-        case GUI_ID_RECTANGLE:
+        case GUI_ID_SQUARE:
             current_editor->getCurrentZone()->createSingleObject(rectangle);
             break;
 

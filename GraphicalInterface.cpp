@@ -62,60 +62,62 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     submenu->addItem(L"Documentation", GUI_ID_DOC);
     submenu->addItem(L"À propos", GUI_ID_ABOUT);
     
+    driver->setTextureCreationFlag(irr::video::ETCF_OPTIMIZED_FOR_QUALITY);
     irr::gui::IGUIButton *bouton = this->gui->addButton(
         irr::core::rect<irr::s32>(10,30,42,62),
         0,
-        GUI_ID_SQUARE,
-        L"1");
-    bouton->setImage(driver->getTexture("ressources/icon/squareicon.png"));
+        GUI_ID_CUBE,
+        L"");
+    bouton->setImage(driver->getTexture("ressources/icon/cube_icon.png"));
     
     irr::gui::IGUIButton *bouton1 = this->gui->addButton(
         irr::core::rect<irr::s32>(52,30,84,62),
         0,
         GUI_ID_SPHERE,
-        L"2");
-    bouton1->setImage(driver->getTexture("ressources/icon/sphereicon.png"));
+        L"");
+    bouton1->setImage(driver->getTexture("ressources/icon/sphere_icon.png"));
     
     irr::gui::IGUIButton *bouton2 = this->gui->addButton(
         irr::core::rect<irr::s32>(94,30,126,62),
         0,
         GUI_ID_PYRAMID,
-        L"3");
-    bouton2->setImage(driver->getTexture("ressources/icon/pyramidicon.png"));
+        L"");
+    bouton2->setImage(driver->getTexture("ressources/icon/pyramid_icon.png"));
     
     irr::gui::IGUIButton *bouton3 = this->gui->addButton(
         irr::core::rect<irr::s32>(136,30,168,62),
         0,
         GUI_ID_CIRCLE,
-        L"4");
+        L"");
     bouton3->setImage(driver->getTexture("ressources/icon/circle_icon.png"));
     
     irr::gui::IGUIButton *bouton4 = this->gui->addButton(
         irr::core::rect<irr::s32>(178,30,210,62),
         0,
         GUI_ID_CYLINDER,
-        L"5");
+        L"");
     bouton4->setImage(driver->getTexture("ressources/icon/cylindre_icon.png"));
     
     irr::gui::IGUIButton *bouton5 = this->gui->addButton(
         irr::core::rect<irr::s32>(220,30,252,62),
         0,
-        GUI_ID_RECTANGLE,
-        L"6");
-    bouton5->setImage(driver->getTexture("ressources/icon/cube_icon.png"));
+        GUI_ID_SQUARE,
+        L"");
+    bouton5->setImage(driver->getTexture("ressources/icon/square_icon.png"));
     
     irr::gui::IGUIButton *bouton6 = this->gui->addButton(
         irr::core::rect<irr::s32>(262,30,294,62),
         0,
         GUI_ID_LINE,
-        L"7");
+        L"");
+    
     bouton6->setImage(driver->getTexture("ressources/icon/ligne_icon.png"));
     
     irr::gui::IGUIButton *bouton7 = this->gui->addButton(
         irr::core::rect<irr::s32>(304,30,336,62),
         0,
         GUI_ID_TRAPEZE,
-        L"8");    
+        L"");    
     bouton7->setImage(driver->getTexture("ressources/icon/trapeze_icon.png"));
     
     this->gui->addStaticText(L"Objects",

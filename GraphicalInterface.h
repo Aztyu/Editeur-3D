@@ -16,8 +16,8 @@
 class Pointer;
 //! Enumeration pour les elements de l'interface
 enum Gui{                  //Ajoutez les ids utilises dans le GUI ici
-    GUI_ID_SQUARE,                          /**< Creation d'un cube. */
-    GUI_ID_RECTANGLE,                       /**< Creation d'un carré(2D). */
+    GUI_ID_CUBE,                          /**< Creation d'un cube. */
+    GUI_ID_SQUARE,                       /**< Creation d'un carré(2D). */
     GUI_ID_LINE,                            /**< Creation d'une ligne(2D). */
     GUI_ID_TRAPEZE,                         /**< Creation d'un trapeze(2D). */
     GUI_ID_SPHERE,                          /**< Creation d'une sphere. */
