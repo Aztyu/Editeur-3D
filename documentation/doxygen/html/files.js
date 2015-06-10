@@ -9,7 +9,7 @@ var files =
       [ "CEventReceiver", "class_c_event_receiver.html", "class_c_event_receiver" ]
     ] ],
     [ "GraphicalInterface.cpp", "_graphical_interface_8cpp.html", null ],
-    [ "GraphicalInterface.h", "_graphical_interface_8h.html", null ],
+    [ "GraphicalInterface.h", "_graphical_interface_8h.html", "_graphical_interface_8h" ],
     [ "GroupObject.cpp", "_group_object_8cpp.html", null ],
     [ "GroupObject.h", "_group_object_8h.html", [
       [ "GroupObject", "class_group_object.html", "class_group_object" ]

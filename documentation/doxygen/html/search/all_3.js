@@ -8,6 +8,7 @@ var searchData=
   ['createzone',['createZone',['../class_editor.html#ae7237d39d3d23d56ace1cfbbf33c3dc1',1,'Editor']]],
   ['cube',['cube',['../_zone_8h.html#ad03408aabe16bb53c780fae6cf3910f9a55c2cbeaa0ff9de0fd83c02ffe5f2aa1',1,'Zone.h']]],
   ['current_5feditor',['current_editor',['../class_c_event_receiver.html#acb7b8b2c76f42b5acf0b52fe4dad3e10',1,'CEventReceiver::current_editor()'],['../struct_pointer.html#a77643ce41e21df24a3b7225f5bcdb4b8',1,'Pointer::current_editor()']]],
+  ['current_5fobject',['current_object',['../class_graphical_interface.html#aac78f691b10c15fcd59ce142147ab9da',1,'GraphicalInterface']]],
   ['current_5fpointer',['current_pointer',['../class_zone.html#a80cf746645cd00566dea9fcd32d33fb4',1,'Zone']]],
   ['current_5fzone',['current_zone',['../class_editor.html#ad10b239b94d45993501dde063429e725',1,'Editor']]],
   ['custom_5fgui',['custom_gui',['../class_c_event_receiver.html#aa25c7588b95eaa98bea91611d29cfd67',1,'CEventReceiver']]],

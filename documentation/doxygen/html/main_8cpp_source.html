@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="struct_pointer.html">Pointer</a> main_pointers;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    GraphicalInterface gui = GraphicalInterface(device-&gt;getGUIEnvironment(), driver, Skybox);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_graphical_interface.html">GraphicalInterface</a> gui = <a class="code" href="class_graphical_interface.html">GraphicalInterface</a>(device-&gt;getGUIEnvironment(), driver, Skybox);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    main_pointers.<a class="code" href="struct_pointer.html#aa8703bd283fa76648d19e58d5001b21b">camera</a> = camera;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    main_pointers.<a class="code" href="struct_pointer.html#a7d167b2f1a72641e4d3f91b9d6b6c2b9">device</a> = device;</div>
@@ -211,7 +211,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        device-&gt;setWindowCaption(titre);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        sceneManager-&gt;drawAll();    <span class="comment">//Dessin de la scene</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        gui.drawAll();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        gui.<a class="code" href="class_graphical_interface.html#af382d2323e9793113ef01273fc26e52b">drawAll</a>();</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        driver-&gt;endScene();</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
@@ -224,6 +224,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div class="ttc" id="class_group_object_html_ac13668b6ad228c6120daa7eb4b4efa8e"><div class="ttname"><a href="class_group_object.html#ac13668b6ad228c6120daa7eb4b4efa8e">GroupObject::addMember</a></div><div class="ttdeci">void addMember(SingleObject *object)</div><div class="ttdoc">Ajoute un objet au groupe. </div><div class="ttdef"><b>Definition:</b> <a href="_group_object_8cpp_source.html#l00043">GroupObject.cpp:43</a></div></div>
 <div class="ttc" id="main_8cpp_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition:</b> <a href="main_8cpp_source.html#l00006">main.cpp:6</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
+<div class="ttc" id="class_graphical_interface_html"><div class="ttname"><a href="class_graphical_interface.html">GraphicalInterface</a></div><div class="ttdoc">Classe qui gere tout l&#39;affichage de l&#39;interface. </div><div class="ttdef"><b>Definition:</b> <a href="_graphical_interface_8h_source.html#l00083">GraphicalInterface.h:83</a></div></div>
 <div class="ttc" id="class_editor_html_a860bab7b03f4adf150c1ceca7941f8b8"><div class="ttname"><a href="class_editor.html#a860bab7b03f4adf150c1ceca7941f8b8">Editor::getCurrentZone</a></div><div class="ttdeci">Zone * getCurrentZone()</div><div class="ttdoc">Renvoie un pointeur vers la zone actuelle. </div><div class="ttdef"><b>Definition:</b> <a href="_editor_8cpp_source.html#l00048">Editor.cpp:48</a></div></div>
 <div class="ttc" id="_zone_8h_html_ad03408aabe16bb53c780fae6cf3910f9ae5d289f4c3b1b59f02e1028751081cb0"><div class="ttname"><a href="_zone_8h.html#ad03408aabe16bb53c780fae6cf3910f9ae5d289f4c3b1b59f02e1028751081cb0">sphere</a></div><div class="ttdef"><b>Definition:</b> <a href="_zone_8h_source.html#l00023">Zone.h:23</a></div></div>
 <div class="ttc" id="class_zone_html_a1c813f191e86a398fc04ab37765cf1a2"><div class="ttname"><a href="class_zone.html#a1c813f191e86a398fc04ab37765cf1a2">Zone::getGroupObjectPointer</a></div><div class="ttdeci">GroupObject * getGroupObjectPointer(int index)</div><div class="ttdoc">Recupere le pointeur vers un GroupObject. </div><div class="ttdef"><b>Definition:</b> <a href="_zone_8cpp_source.html#l00206">Zone.cpp:206</a></div></div>
@@ -242,6 +243,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div class="ttc" id="_zone_8h_html_ad03408aabe16bb53c780fae6cf3910f9a8e7f5a4236ea3e822ff7444f5f2e86b3"><div class="ttname"><a href="_zone_8h.html#ad03408aabe16bb53c780fae6cf3910f9a8e7f5a4236ea3e822ff7444f5f2e86b3">cylinder</a></div><div class="ttdef"><b>Definition:</b> <a href="_zone_8h_source.html#l00024">Zone.h:24</a></div></div>
 <div class="ttc" id="class_editor_html"><div class="ttname"><a href="class_editor.html">Editor</a></div><div class="ttdoc">Classe de base qui contient toutes les zones et la plupart des informations. </div><div class="ttdef"><b>Definition:</b> <a href="_editor_8h_source.html#l00014">Editor.h:14</a></div></div>
 <div class="ttc" id="class_single_object_html_a71cdfbf291b0114652cc8af68bc9ccd0"><div class="ttname"><a href="class_single_object.html#a71cdfbf291b0114652cc8af68bc9ccd0">SingleObject::getPointer</a></div><div class="ttdeci">SingleObject * getPointer()</div><div class="ttdoc">Recupere le pointeur vers cette objet. </div><div class="ttdef"><b>Definition:</b> <a href="_single_object_8cpp_source.html#l00073">SingleObject.cpp:73</a></div></div>
+<div class="ttc" id="class_graphical_interface_html_af382d2323e9793113ef01273fc26e52b"><div class="ttname"><a href="class_graphical_interface.html#af382d2323e9793113ef01273fc26e52b">GraphicalInterface::drawAll</a></div><div class="ttdeci">void drawAll()</div><div class="ttdoc">Appelle la fonction drawAll de Irrlicht. </div><div class="ttdef"><b>Definition:</b> <a href="_graphical_interface_8cpp_source.html#l00145">GraphicalInterface.cpp:145</a></div></div>
 <div class="ttc" id="class_zone_html_a5009a75765c83b0eb363de845e300ede"><div class="ttname"><a href="class_zone.html#a5009a75765c83b0eb363de845e300ede">Zone::createGroupObject</a></div><div class="ttdeci">void createGroupObject()</div><div class="ttdoc">Créer un GroupObject dans la zone. </div><div class="ttdef"><b>Definition:</b> <a href="_zone_8cpp_source.html#l00172">Zone.cpp:172</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -249,7 +251,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Wed Jun 10 2015 12:09:01 for Éditeur 3D by
+    <li class="footer">Generated on Wed Jun 10 2015 12:17:29 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

@@ -11,7 +11,9 @@ var class_graphical_interface =
     [ "setSingleObjectSelected", "class_graphical_interface.html#a906dff32de9a713121f9775127fc33a5", null ],
     [ "updateGroupObject", "class_graphical_interface.html#a8a5800ef8df6738199e5cb6f370f29df", null ],
     [ "updateSingleObject", "class_graphical_interface.html#a10ffd5e51b88c0f1814d294108a88e92", null ],
-    [ "updateWindow", "class_graphical_interface.html#a5404ff344a32c7283673cdec13beca8e", null ],
+    [ "updateWindow", "class_graphical_interface.html#a2b2553bc093c417cdf4208ff916074ab", null ],
+    [ "updateWindow", "class_graphical_interface.html#a0f8425abdd04336c10bf9835219e36b8", null ],
+    [ "updateZone", "class_graphical_interface.html#ac6af8d93a2938c7b1e1ac38888ccfad1", null ],
     [ "current_object", "class_graphical_interface.html#aac78f691b10c15fcd59ce142147ab9da", null ],
     [ "driver", "class_graphical_interface.html#ac34e6231a79ca9d05a6f827bc34dacbd", null ],
     [ "group_object_box", "class_graphical_interface.html#a528ca719850b04eae306fc2e3a60a245", null ],
@@ -19,5 +21,6 @@ var class_graphical_interface =
     [ "menu", "class_graphical_interface.html#ad1ccb05705dfb3579d945801f7b43650", null ],
     [ "single_object_box", "class_graphical_interface.html#a8cbe9f56f55b45e3382817a6ec788be5", null ],
     [ "skybox", "class_graphical_interface.html#a76899c47a903c3057aa284dd136061dc", null ],
-    [ "window", "class_graphical_interface.html#a28f8f0c2420f98ea549e8bce0236b8b1", null ]
+    [ "window", "class_graphical_interface.html#a28f8f0c2420f98ea549e8bce0236b8b1", null ],
+    [ "zone_box", "class_graphical_interface.html#a8e9198c16f9371862d3d7cb259b4a399", null ]
 ];

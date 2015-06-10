@@ -5,12 +5,11 @@
  * Created on 19 avril 2015, 16:48
  */
 
-#include "Zone.h"
-#include "Pointers.h"
-
 #ifndef GRAPHICALINTERFACE_H
 #define	GRAPHICALINTERFACE_H
 
+#include "Zone.h"
+#include "Pointers.h"
 //! Enumeration pour les elements de l'interface
 enum Gui{                  //Ajoutez les ids utilises dans le GUI ici
     GUI_ID_CUBE,                          /**< Creation d'un cube. */

@@ -2,8 +2,8 @@ var _graphical_interface_8h =
 [
     [ "GraphicalInterface", "class_graphical_interface.html", "class_graphical_interface" ],
     [ "Gui", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575c", [
+      [ "GUI_ID_CUBE", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca9bfa1be8114d11bd2aa1d7d4ed2eba71", null ],
       [ "GUI_ID_SQUARE", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cadb74950b44e62d785cc4132d12b502bb", null ],
-      [ "GUI_ID_RECTANGLE", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca0b981281ff36334b3f43942518e0c215", null ],
       [ "GUI_ID_LINE", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca0f15b2bd03adc9bf4187fe0fd3cbc14c", null ],
       [ "GUI_ID_TRAPEZE", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca23de3de377afcd7f6e1165e6f694f3f9", null ],
       [ "GUI_ID_SPHERE", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca79d047dbf6c340dd630728c9825d6a25", null ],
@@ -56,6 +56,6 @@ var _graphical_interface_8h =
       [ "GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_DOWN", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca5c9d268ae2193ba4ec2054d6f702d5fc", null ],
       [ "GUI_ID_OBJECT_WINDOW_GROUP_BOX", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cad1f67059d1caf9a274289bc4fa20681b", null ],
       [ "GUI_ID_OBJECT_WINDOW_ADD_TO_GROUP", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca726da5715d64130875295ddff6d87b13", null ],
-      [ "GUI_ID_OBJECT_WINDOW_ADD_TO__NEW_GROUP", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cabf83708b2735080b094d3c2b966ecb87", null ]
+      [ "GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca135dbbf0a7d43a001066b689ac2b6de4", null ]
     ] ]
 ];
