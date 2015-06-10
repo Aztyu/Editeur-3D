@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['window',['window',['../class_graphical_interface.html#a28f8f0c2420f98ea549e8bce0236b8b1',1,'GraphicalInterface']]]
+  ['type_5fnumber',['type_number',['../class_zone.html#afcf8a165b68158407488a1678bdd2d78',1,'Zone']]]
 ];

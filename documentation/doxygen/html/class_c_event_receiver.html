@@ -149,6 +149,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abd4d447023316eb4263ef31860ae8ef7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#abd4d447023316eb4263ef31860ae8ef7">OnObjectCreation</a> (irr::s32 id)</td></tr>
 <tr class="memdesc:abd4d447023316eb4263ef31860ae8ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gere les clics sur les boutons de création d'objet.  <a href="#abd4d447023316eb4263ef31860ae8ef7">More...</a><br /></td></tr>
 <tr class="separator:abd4d447023316eb4263ef31860ae8ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a007e23fbe772192014063f9290ab1b92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#a007e23fbe772192014063f9290ab1b92">OnValueChanged</a> (irr::gui::IGUIEditBox *editbox)</td></tr>
+<tr class="memdesc:a007e23fbe772192014063f9290ab1b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gere les modifications des valeurs de la fenetre "Outils".  <a href="#a007e23fbe772192014063f9290ab1b92">More...</a><br /></td></tr>
+<tr class="separator:a007e23fbe772192014063f9290ab1b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c8cee284d8d7c0aa12cbe357e6e6fd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#a1c8cee284d8d7c0aa12cbe357e6e6fd4">angleCameraRight</a> ()</td></tr>
 <tr class="memdesc:a1c8cee284d8d7c0aa12cbe357e6e6fd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait tourner la camera vers la droite.  <a href="#a1c8cee284d8d7c0aa12cbe357e6e6fd4">More...</a><br /></td></tr>
 <tr class="separator:a1c8cee284d8d7c0aa12cbe357e6e6fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,13 +169,13 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:acb7b8b2c76f42b5acf0b52fe4dad3e10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_editor.html">Editor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#acb7b8b2c76f42b5acf0b52fe4dad3e10">current_editor</a></td></tr>
 <tr class="separator:acb7b8b2c76f42b5acf0b52fe4dad3e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa25c7588b95eaa98bea91611d29cfd67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_graphical_interface.html">GraphicalInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#aa25c7588b95eaa98bea91611d29cfd67">custom_gui</a></td></tr>
+<tr class="memitem:aa25c7588b95eaa98bea91611d29cfd67"><td class="memItemLeft" align="right" valign="top">GraphicalInterface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_event_receiver.html#aa25c7588b95eaa98bea91611d29cfd67">custom_gui</a></td></tr>
 <tr class="separator:aa25c7588b95eaa98bea91611d29cfd67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe qui gere tous les evenements du programme. </p>
 
-<p>Definition at line <a class="el" href="_event_8h_source.html#l00014">14</a> of file <a class="el" href="_event_8h_source.html">Event.h</a>.</p>
+<p>Definition at line <a class="el" href="_event_8h_source.html#l00017">17</a> of file <a class="el" href="_event_8h_source.html">Event.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac2d6ef7a87ca5295de8d90cbe3eeb8cd"></a>
 <div class="memitem">
@@ -196,7 +199,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00004">4</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Definition at line <a class="el" href="event_8cpp_source.html#l00004">4</a> of file <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -216,7 +219,7 @@ Private Attributes</h2></td></tr>
 
 <p>Fait tourner la camera vers la gauche. </p>
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00250">250</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Definition at line <a class="el" href="event_8cpp_source.html#l00382">382</a> of file <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -235,7 +238,7 @@ Private Attributes</h2></td></tr>
 
 <p>Fait tourner la camera vers la droite. </p>
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00243">243</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Definition at line <a class="el" href="event_8cpp_source.html#l00375">375</a> of file <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -254,7 +257,7 @@ Private Attributes</h2></td></tr>
 
 <p>Fait reculer la camera. </p>
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00284">284</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Definition at line <a class="el" href="event_8cpp_source.html#l00416">416</a> of file <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -273,7 +276,7 @@ Private Attributes</h2></td></tr>
 
 <p>Fait avancer la camera. </p>
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00257">257</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Definition at line <a class="el" href="event_8cpp_source.html#l00389">389</a> of file <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -308,7 +311,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True si traité, False sinon </dd></dl>
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00008">8</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Definition at line <a class="el" href="event_8cpp_source.html#l00009">9</a> of file <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -334,7 +337,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00160">160</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Definition at line <a class="el" href="event_8cpp_source.html#l00157">157</a> of file <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -360,7 +363,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00189">189</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Definition at line <a class="el" href="event_8cpp_source.html#l00321">321</a> of file <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -386,7 +389,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00146">146</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Definition at line <a class="el" href="event_8cpp_source.html#l00143">143</a> of file <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -412,7 +415,33 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_event_8cpp_source.html#l00178">178</a> of file <a class="el" href="_event_8cpp_source.html">Event.cpp</a>.</p>
+<p>Definition at line <a class="el" href="event_8cpp_source.html#l00175">175</a> of file <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a007e23fbe772192014063f9290ab1b92"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CEventReceiver::OnValueChanged </td>
+          <td>(</td>
+          <td class="paramtype">irr::gui::IGUIEditBox *&#160;</td>
+          <td class="paramname"><em>editbox</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gere les modifications des valeurs de la fenetre "Outils". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">editbox</td><td>Pointeur vers l'editbox touchée par l'évènement. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="event_8cpp_source.html#l00262">262</a> of file <a class="el" href="event_8cpp_source.html">event.cpp</a>.</p>
 
 </div>
 </div>
@@ -435,7 +464,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_event_8h_source.html#l00055">55</a> of file <a class="el" href="_event_8h_source.html">Event.h</a>.</p>
+<p>Definition at line <a class="el" href="_event_8h_source.html#l00062">62</a> of file <a class="el" href="_event_8h_source.html">Event.h</a>.</p>
 
 </div>
 </div>
@@ -447,7 +476,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_graphical_interface.html">GraphicalInterface</a>* CEventReceiver::custom_gui</td>
+          <td class="memname">GraphicalInterface* CEventReceiver::custom_gui</td>
         </tr>
       </table>
   </td>
@@ -457,13 +486,13 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_event_8h_source.html#l00056">56</a> of file <a class="el" href="_event_8h_source.html">Event.h</a>.</p>
+<p>Definition at line <a class="el" href="_event_8h_source.html#l00063">63</a> of file <a class="el" href="_event_8h_source.html">Event.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/Aztyu/Documents/Developpement/Editeur-3D/<a class="el" href="_event_8h_source.html">Event.h</a></li>
-<li>C:/Users/Aztyu/Documents/Developpement/Editeur-3D/<a class="el" href="_event_8cpp_source.html">Event.cpp</a></li>
+<li>C:/Users/Aztyu/Documents/Developpement/Editeur-3D/<a class="el" href="event_8cpp_source.html">event.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -471,7 +500,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_c_event_receiver.html">CEventReceiver</a></li>
-    <li class="footer">Generated on Wed Apr 29 2015 16:52:22 for Éditeur 3D by
+    <li class="footer">Generated on Wed Jun 10 2015 12:09:01 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

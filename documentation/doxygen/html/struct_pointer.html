@@ -130,13 +130,15 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a7f7af01d5e32b26fb5d2f463ab658a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8703bd283fa76648d19e58d5001b21b"><td class="memItemLeft" align="right" valign="top">irr::scene::ICameraSceneNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pointer.html#aa8703bd283fa76648d19e58d5001b21b">camera</a></td></tr>
 <tr class="separator:aa8703bd283fa76648d19e58d5001b21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ae381ef7c5768291b98be1daf8d6936"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_graphical_interface.html">GraphicalInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pointer.html#a1ae381ef7c5768291b98be1daf8d6936">gui</a></td></tr>
+<tr class="memitem:a1ae381ef7c5768291b98be1daf8d6936"><td class="memItemLeft" align="right" valign="top">GraphicalInterface *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pointer.html#a1ae381ef7c5768291b98be1daf8d6936">gui</a></td></tr>
 <tr class="separator:a1ae381ef7c5768291b98be1daf8d6936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77643ce41e21df24a3b7225f5bcdb4b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_editor.html">Editor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pointer.html#a77643ce41e21df24a3b7225f5bcdb4b8">current_editor</a></td></tr>
+<tr class="separator:a77643ce41e21df24a3b7225f5bcdb4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Pointeurs necessaire pour l'acces et le fonctionnement dans le programme entier. </p>
 
-<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00014">14</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
+<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00017">17</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a class="anchor" id="aa8703bd283fa76648d19e58d5001b21b"></a>
 <div class="memitem">
@@ -149,7 +151,22 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Pointeur vers la camera. </p>
 
-<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00018">18</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
+<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00021">21</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a77643ce41e21df24a3b7225f5bcdb4b8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_editor.html">Editor</a>* Pointer::current_editor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pointeur vers l'<a class="el" href="class_editor.html" title="Classe de base qui contient toutes les zones et la plupart des informations. ">Editor</a> actuelle. </p>
+
+<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00023">23</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
 
 </div>
 </div>
@@ -164,7 +181,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Pointeur vers le device d'Irrlicht. </p>
 
-<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00015">15</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
+<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00018">18</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
 
 </div>
 </div>
@@ -179,7 +196,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Pointeur vers le driver d'Irrlicht. </p>
 
-<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00016">16</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
+<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00019">19</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
 
 </div>
 </div>
@@ -188,13 +205,13 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_graphical_interface.html">GraphicalInterface</a>* Pointer::gui</td>
+          <td class="memname">GraphicalInterface* Pointer::gui</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Pointeur vers l'objet <a class="el" href="class_graphical_interface.html" title="Classe qui gere tout l&#39;affichage de l&#39;interface. ">GraphicalInterface</a>. </p>
+<p>Pointeur vers l'objet GraphicalInterface. </p>
 
-<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00019">19</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
+<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00022">22</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
 
 </div>
 </div>
@@ -209,7 +226,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Pointeur vers la scene d'Irrlicht. </p>
 
-<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00017">17</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
+<p>Definition at line <a class="el" href="_pointers_8h_source.html#l00020">20</a> of file <a class="el" href="_pointers_8h_source.html">Pointers.h</a>.</p>
 
 </div>
 </div>
@@ -222,7 +239,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="struct_pointer.html">Pointer</a></li>
-    <li class="footer">Generated on Wed Apr 29 2015 16:52:22 for Éditeur 3D by
+    <li class="footer">Generated on Wed Jun 10 2015 12:09:01 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

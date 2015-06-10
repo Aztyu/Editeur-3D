@@ -6,7 +6,6 @@
  */
 
 #include "Editor.h"
-#include "Event.h"
 #include "Pointers.h"
 
 Editor::Editor(Pointer* struct_pointer) : main_pointer(struct_pointer), current_zone(NULL){

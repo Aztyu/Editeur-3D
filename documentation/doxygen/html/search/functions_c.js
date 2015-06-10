@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['removemember',['removeMember',['../class_group_object.html#aeb19fcd9c93a8d4fcec71f89dba5e352',1,'GroupObject::removeMember(int index)'],['../class_group_object.html#ae74c5122084d6f1704012c8ae4e549ce',1,'GroupObject::removeMember(SingleObject *objet)']]],
-  ['removeobject',['removeObject',['../class_zone.html#a3d9919f6123c5a13c1db9010519cd63b',1,'Zone::removeObject(int index)'],['../class_zone.html#a887df1794948f8e260f3aa0f26dca7e2',1,'Zone::removeObject(SingleObject *objet)']]]
+  ['unselectall',['unselectAll',['../class_zone.html#a8994954cffd14da36e9d940537914983',1,'Zone']]],
+  ['unselectobject',['unselectObject',['../class_group_object.html#a9f9f33e4e81fc1d5fba5c26f6c073a81',1,'GroupObject::unselectObject()'],['../class_object.html#aabb72e1baac8b58834f0cce5041ce697',1,'Object::unselectObject()'],['../class_single_object.html#a949adf548c2be426cc4d54987eb92f31',1,'SingleObject::unselectObject()']]]
 ];

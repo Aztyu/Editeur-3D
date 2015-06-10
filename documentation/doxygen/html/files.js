@@ -4,12 +4,12 @@ var files =
     [ "Editor.h", "_editor_8h.html", [
       [ "Editor", "class_editor.html", "class_editor" ]
     ] ],
-    [ "Event.cpp", "_event_8cpp.html", null ],
+    [ "event.cpp", "event_8cpp.html", null ],
     [ "Event.h", "_event_8h.html", [
       [ "CEventReceiver", "class_c_event_receiver.html", "class_c_event_receiver" ]
     ] ],
     [ "GraphicalInterface.cpp", "_graphical_interface_8cpp.html", null ],
-    [ "GraphicalInterface.h", "_graphical_interface_8h.html", "_graphical_interface_8h" ],
+    [ "GraphicalInterface.h", "_graphical_interface_8h.html", null ],
     [ "GroupObject.cpp", "_group_object_8cpp.html", null ],
     [ "GroupObject.h", "_group_object_8h.html", [
       [ "GroupObject", "class_group_object.html", "class_group_object" ]
