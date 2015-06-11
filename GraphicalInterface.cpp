@@ -16,7 +16,7 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     
     irr::gui::IGUISkin* skin = this->gui->getSkin(); 
     irr::gui::IGUIFont* font = this->gui->getFont("ressources/font/editorfont11.xml"); 
-    if (font){ 
+    if(font){ 
         skin->setFont(font); 
         std::cout << "Font changed" << std::endl;
     }

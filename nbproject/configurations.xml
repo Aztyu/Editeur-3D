@@ -74,6 +74,7 @@
         <linkerTool>
           <linkerLibItems>
             <linkerLibLibItem>Irrlicht</linkerLibLibItem>
+            <linkerLibFileItem>libraries/tinyxml/tinyxml.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
