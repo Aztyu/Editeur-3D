@@ -46,7 +46,7 @@ class Editor {
         
         //! Effectue toutes les operations necessaires au changement de Zone.*/
         void finishZoneSwitch();
-        
+                
         //Recuperation d'informations
         //! Renvoie le Pointers utilisé.
         /** \return Un pointer vers le Pointers utilisé.*/
@@ -70,6 +70,9 @@ class Editor {
         //! Importe toutes les donnees */
         void importData();
         
+        //! Importe toutes les zones */
+        void importZone();
+
     private:
         std::vector<Zone*> zone_array;
         Zone* current_zone;

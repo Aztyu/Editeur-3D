@@ -57,6 +57,9 @@ public:
     
     //! Deselectionne l'objet dans tout les cas.
     void unselectObject();
+    
+    //! Exporte tous les objets
+    void exportObject(TiXmlElement* root);
 
     //Sauvegarde (en cours)
     friend std::ostream& operator <<(std::ostream stream, SingleObject& obj);

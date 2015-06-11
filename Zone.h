@@ -135,7 +135,7 @@ class Zone {
         
         
         //Sauvegarde (en cours)
-        void exportZone();
+        void exportZone(TiXmlElement* root);
         void printZone();
 
     private:
