@@ -58,6 +58,10 @@ public:
     /** \param objet Pointeur de l'objet du groupe. */
     void removeMember(SingleObject* objet);
 
+    //! Renvoie le type de la classe.
+    /** \return Une string qui donne le type. */
+    std::string getClassType();
+
     //Sauvegarde(en cours)
     friend std::ostream& operator <<(std::ostream stream, SingleObject& obj);
     const char* printObject();

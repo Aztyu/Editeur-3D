@@ -118,12 +118,16 @@ class Zone {
          *  \return True si l'objet a été selectionné, False sinon. */
         bool setSelectedGroupObject(irr::scene::ISceneNode* objet);
         
-        //! Deselectionne toute objet dans cette zone.
+        //! Deselectionne tout objet dans cette zone.
         void unselectAll();
         
-        //Sauvegarde (en cours)
+        //! Exporte tout objet dans cette zone.
         void exportZone(TiXmlElement* root);
+        
+        
         void printZone();
+        
+        //! Importe les objets contenus dans un noeud xml.
         void importObject(rapidxml::xml_node<> *object_node);
 
     private:

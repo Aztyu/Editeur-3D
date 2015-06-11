@@ -31,7 +31,6 @@ Object::Object(irr::scene::ISceneNode* obj, const char* name, irr::scene::IScene
 }
 
 Object::~Object() {
-    //objet->remove();        //Suppression de l'objet dans irrlicht
     cout << "Object deleted" << endl;
 }
 

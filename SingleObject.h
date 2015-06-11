@@ -85,6 +85,10 @@ public:
     /** \return Un enum de type object */
     object getType();
     
+    //! Renvoie le type de la classe.
+    /** \return Une string qui donne le type. */
+    std::string getClassType();
+    
 private:
     Object* parent;
     object type;

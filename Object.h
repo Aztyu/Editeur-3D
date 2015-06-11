@@ -120,6 +120,8 @@ public:
     //! Selectionne l'objet en changeant la couleur.
     virtual void selectObject()=0;
     
+    virtual std::string getClassType()=0;
+    
     //Recuperation d'information
     //! Retourne l'ISceneNode contenu dans l'objet
     /** \return Pointeur vers l'ISceneNode(l'objet sous Irrlicht)*/

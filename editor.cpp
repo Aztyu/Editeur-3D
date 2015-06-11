@@ -39,7 +39,7 @@ void Editor::createZone(const char* name){
     std::string type = "ressources/form/";
     type += "group";
     type += ".obj";
-    std::string base = "Zone";
+    std::string base = name;
     std::string base_name = "";
     char buffer[50];
     int i = 0;
@@ -155,10 +155,9 @@ void Editor::importData() {
 
 void Editor::importZone(xml_node<> *zone_node) {
     this->createZone(zone_node->name());
-    for(xml_node<> * object_node = zone_node->first_node("Object"); object_node; object_node = object_node->next_sibling())
-        {
+    for(xml_node<> * object_node = zone_node->first_node("Object"); object_node; object_node = object_node->next_sibling()){
         this->current_zone->importObject(zone_node);
-        }
+    }
     cout << endl;
 }
 

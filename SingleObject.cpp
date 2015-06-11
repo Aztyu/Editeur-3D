@@ -109,3 +109,8 @@ object SingleObject::getType() {
     return this->type;
 }
 
+std::string SingleObject::getClassType() {
+    return "SingleObject";
+}
+
+
