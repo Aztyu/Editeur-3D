@@ -11,6 +11,7 @@
 #include <iostream>
 #include "irrlicht.h"
 #include <vector>
+#include "libraries/rapidxml/rapidxml.hpp"
 
 //! Classe de base pour SIngleObject et GroupObject, gere les ISceneNodes natif a Irrlicht
 class Object {

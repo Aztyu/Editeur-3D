@@ -64,6 +64,12 @@ class Editor {
         /** \return true si il est pris, false autrement */
         bool isNameTaken(std::string name);
         
+        //! Exporte toutes les donnees */
+        void exportData();
+        
+        //! Importe toutes les donnees */
+        void importData();
+        
     private:
         std::vector<Zone*> zone_array;
         Zone* current_zone;
