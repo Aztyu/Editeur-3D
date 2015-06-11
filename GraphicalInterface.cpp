@@ -203,12 +203,12 @@ irr::gui::IGUIEnvironment* GraphicalInterface::getGUIEnvironment() {
     return this->gui;
 }
 
-void GraphicalInterface::updateWindow(Object* object) {
+void GraphicalInterface::updateWindow(Object* object){
     this->current_object = object;
     this->updateWindow();
 }
 
-void GraphicalInterface::updateWindow() {
+void GraphicalInterface::updateWindow(){
     Object* object = this->current_object;
     
     irr::gui::IGUIElement* root = this->gui->getRootGUIElement();
@@ -485,6 +485,26 @@ void GraphicalInterface::updateWindow() {
                 static_cast<irr::gui::IGUIElement*>(this->window),
                 GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_UP,
                 L"+");
+            
+            /*if (this->current_object->class_type == "ClassA")
+            {
+                 // do stuff given that we have an object of ClassA
+            }
+            else
+            {
+                 // do stuff given that we have an object of ClassB
+            }*/
+            /*if(!this->is_group){
+                this->gui->addComboBox(irr::core::rect<irr::s32>(15,535,185,565),
+                    static_cast<irr::gui::IGUIElement*>(this->window),
+                    GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX);
+            
+                this->gui->addButton(irr::core::rect<irr::s32>(15,575,185,605),
+                    static_cast<irr::gui::IGUIElement*>(this->window),
+                    GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP,
+                    L"Ajouter au groupe");
+            }*/
+            
 
         }else{
             

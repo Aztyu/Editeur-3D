@@ -144,9 +144,11 @@ void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){  //Appele
     switch(combo->getID()){
         case GUI_ID_SINGLE_OBJECT_COMBO_BOX:
             current_editor->getCurrentZone()->setSelectedSingleObject(combo->getSelected());
+            current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
             break;
         case GUI_ID_GROUP_OBJECT_COMBO_BOX:
             current_editor->getCurrentZone()->setSelectedGroupObject(combo->getSelected());
+            current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
             break;
         case GUI_ID_ZONE_COMBO_BOX:
             current_editor->setCurrentZone(combo->getSelected());
@@ -154,7 +156,6 @@ void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){  //Appele
         default:
             break;
     }
-    current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
 }
 
 void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {

@@ -121,7 +121,6 @@ class Zone {
         //! Deselectionne toute objet dans cette zone.
         void unselectAll();
         
-        
         //Sauvegarde (en cours)
         void exportZone(TiXmlElement* root);
         void printZone();

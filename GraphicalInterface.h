@@ -79,7 +79,8 @@ enum Gui{                  //Ajoutez les ids utilises dans le GUI ici
     
     GUI_ID_OBJECT_WINDOW_GROUP_BOX,         /**< gros plus de debug. */
     GUI_ID_OBJECT_WINDOW_ADD_TO_GROUP,      /**< fenetre d'outils. */
-    GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP  /**< enum value TVal1. */
+    GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP,   /**< enum value TVal1. */
+    GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX    /**< enum value TVal1. */
 };
 
 
