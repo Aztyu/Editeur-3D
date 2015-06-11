@@ -8,6 +8,8 @@
 #include "Editor.h"
 #include "Pointers.h"
 #include <iostream>
+#include "libraries/rapidxml/rapidxml.hpp"
+#include "libraries/tinyxml/tinyxml.h"
 #include <fstream>
 
 using namespace rapidxml;
@@ -130,10 +132,6 @@ bool Editor::isNameTaken(std::string name){
     return false;
 }
 
-void Editor::exportData() {
-
-}
-
 void Editor::importData() {
     cout << "Parsing my beer journal..." << endl;
 	xml_document<> doc;
@@ -166,5 +164,5 @@ void Editor::importData() {
 }
 
 void Editor::exportData(){
-    
+    TiXmlDocument doc;
 }
