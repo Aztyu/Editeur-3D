@@ -23,7 +23,7 @@ class Editor {
         //Gestion des zones
         //! Creer une zone ayant un nom donne.
         /** \param name Le nom de la zone à créer.*/
-        void createZone(const char* name);
+        void createZone(const char* base_name);
         
         //! Creer une zone sans nom specifique.*/
         void createZone();
@@ -71,7 +71,7 @@ class Editor {
         void importData();
         
         //! Importe toutes les zones */
-        void importZone();
+        void importZone(rapidxml::xml_node<> *zone_node);
 
     private:
         std::vector<Zone*> zone_array;
