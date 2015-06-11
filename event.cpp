@@ -178,6 +178,9 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
         case GUI_ID_LOAD:
             current_editor->importData();
             break;
+        case GUI_ID_SAVE:
+            current_editor->exportData();
+            break;
     }
 }
 
@@ -449,6 +452,8 @@ void CEventReceiver::backwardCamera(){
     current_editor->getMainPointer()->camera->setTarget(target);
     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
 }
+
+
 
 
 
