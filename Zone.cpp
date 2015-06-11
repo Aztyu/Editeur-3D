@@ -308,16 +308,11 @@ void Zone::unselectAll() {
     }
 }
 
-
-void Zone::exportZone(){        //Besoin de travail et deplacement possible dans editor
-    ofstream output("C:\\Users\\Aztyu\\Desktop\\testirrlicht.txt", ofstream::out | ofstream::app);
-        if(output.is_open()){
-            for(int i=0; i<this->single_object_array.size() ;++i){
-                output << this->single_object_array[i] << endl;
-            }
-            output.close();
-        }else{
-            cout << "error";
-        }
+void Zone::exportZone(TiXmlElement* root){        //Besoin de travail et deplacement possible dans editor
+    TiXmlElement * windows = new TiXmlElement( "Zone" );  
+    root->LinkEndChild( windows );
+    windows->SetAttribute("name", this->getName().c_str());
+    for(int i = 0; i< this->single_object_array.size(); i++){
+        single_object_array.at(i)->exportObject(windows);
+    }
 }
-

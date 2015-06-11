@@ -9,7 +9,6 @@
 #include "Pointers.h"
 #include <iostream>
 #include "libraries/rapidxml/rapidxml.hpp"
-#include "libraries/tinyxml/tinyxml.h"
 #include <fstream>
 
 using namespace rapidxml;
@@ -133,36 +132,68 @@ bool Editor::isNameTaken(std::string name){
 }
 
 void Editor::importData() {
-    cout << "Parsing my beer journal..." << endl;
-	xml_document<> doc;
-	xml_node<> * root_node;
-	// Read the xml file into a vector
-	ifstream theFile ("beerJournal.xml");
-	vector<char> buffer((istreambuf_iterator<char>(theFile)), istreambuf_iterator<char>());
-	buffer.push_back('\0');
-	// Parse the buffer using the xml file parsing library into doc 
-	doc.parse<0>(&buffer[0]);
-	// Find our root node
-	root_node = doc.first_node("MyBeerJournal");
-	// Iterate over the brewerys
-	for (xml_node<> * brewery_node = root_node->first_node("Brewery"); brewery_node; brewery_node = brewery_node->next_sibling())
-	{
-	    printf("I have visited %s in %s. ", 
-	    	brewery_node->first_attribute("name")->value(),
-	    	brewery_node->first_attribute("location")->value());
-            // Interate over the beers
-	    for(xml_node<> * beer_node = brewery_node->first_node("Beer"); beer_node; beer_node = beer_node->next_sibling())
-	    {
-	    	printf("On %s, I tried their %s which is a %s. ", 
-	    		beer_node->first_attribute("dateSampled")->value(),
-	    		beer_node->first_attribute("name")->value(), 
-	    		beer_node->first_attribute("description")->value());
-	    	printf("I gave it the following review: %s", beer_node->value());
-	    }
-	    cout << endl;
-	}
+    cout << "Start" << endl;
+    xml_document<> doc;
+    xml_node<> * root_node;
+    // Read the xml file into a vector
+    ifstream theFile ("save.xml");
+    vector<char> buffer((istreambuf_iterator<char>(theFile)), istreambuf_iterator<char>());
+    buffer.push_back('\0');
+    // Parse the buffer using the xml file parsing library into doc 
+    doc.parse<0>(&buffer[0]);
+    // Find our root node
+    root_node = doc.first_node("Editor");
+    // Iterate over the brewerys
+    for (xml_node<> * zone_node = root_node->first_node("Zone"); zone_node; zone_node = zone_node->next_sibling())
+    {
+        cout << zone_node->first_attribute("name")->value()<< endl;
+        // Interate over the beers
+        for(xml_node<> * object_node = zone_node->first_node("Object"); object_node; object_node = object_node->next_sibling())
+        {
+            for (xml_node<> * position_node = object_node->first_node("position"); position_node; position_node = position_node->next_sibling())
+            {
+                char * test = position_node->name();
+                if(!strcmp(test, "position")){
+                    cout << position_node->name() << endl;
+                    cout << position_node->first_attribute("x")->value()<< endl;
+                    cout << position_node->first_attribute("y")->value()<< endl;
+                    cout << position_node->first_attribute("z")->value()<< endl;
+                }
+
+                else if(!strcmp(test, "rotation")){
+                    cout << position_node->name() << endl;
+                    cout << position_node->first_attribute("x")->value()<< endl;
+                    cout << position_node->first_attribute("y")->value()<< endl;
+                    cout << position_node->first_attribute("z")->value()<< endl;
+
+                }
+
+                else if(!strcmp(test, "scale")){
+                    cout << position_node->name() << endl;
+                    cout << position_node->first_attribute("x")->value()<< endl;
+                    cout << position_node->first_attribute("y")->value()<< endl;
+                    cout << position_node->first_attribute("z")->value()<< endl;
+                }
+            }
+        }
+        cout << endl;
+    }
+}
+
+void Editor::importZone() {
+
 }
 
 void Editor::exportData(){
-    TiXmlDocument doc;
-}
+    TiXmlDocument doc;  
+    TiXmlDeclaration* decl = new TiXmlDeclaration( "1.0", "", "" );  
+    doc.LinkEndChild( decl );  
+
+    TiXmlElement * root = new TiXmlElement( "Editor" );  
+    doc.LinkEndChild( root );  
+    
+    for(int i = 0; i < this->zone_array.size(); i++){
+        zone_array.at(i)->exportZone(root);
+    }
+    doc.SaveFile( "save.xml" );  
+} 
