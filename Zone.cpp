@@ -12,6 +12,7 @@
 #include "Editor.h"
 
 using namespace std;
+using namespace rapidxml;
 
 Zone::Zone(const char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zone_name(name){
     this->zone_mesh = obj;
@@ -320,5 +321,33 @@ void Zone::exportZone(TiXmlElement* root){        //Besoin de travail et deplace
     windows->SetAttribute("name", this->getName().c_str());
     for(int i = 0; i< this->single_object_array.size(); i++){
         single_object_array.at(i)->exportObject(windows);
+    }
+}
+
+void Zone::importObject(xml_node<> *object_node){
+    for (xml_node<> * position_node = object_node->first_node("position"); position_node; position_node = position_node->next_sibling())
+    {
+        char * test = position_node->name();
+        if(!strcmp(test, "position")){
+            cout << position_node->name() << endl;
+            cout << position_node->first_attribute("x")->value()<< endl;
+            cout << position_node->first_attribute("y")->value()<< endl;
+            cout << position_node->first_attribute("z")->value()<< endl;
+        }
+
+        else if(!strcmp(test, "rotation")){
+            cout << position_node->name() << endl;
+            cout << position_node->first_attribute("x")->value()<< endl;
+            cout << position_node->first_attribute("y")->value()<< endl;
+            cout << position_node->first_attribute("z")->value()<< endl;
+
+        }
+
+        else if(!strcmp(test, "scale")){
+            cout << position_node->name() << endl;
+            cout << position_node->first_attribute("x")->value()<< endl;
+            cout << position_node->first_attribute("y")->value()<< endl;
+            cout << position_node->first_attribute("z")->value()<< endl;
+        }
     }
 }

@@ -8,7 +8,6 @@
 #include "Editor.h"
 #include "Pointers.h"
 #include <iostream>
-#include "libraries/rapidxml/rapidxml.hpp"
 #include <fstream>
 
 using namespace rapidxml;
@@ -33,26 +32,30 @@ Editor* Editor::getEditor(){
 
 void Editor::createZone(){
     std::string base = "Zone";
-    std::string name = "";
-    char buffer[50];
-    int i = 0;
-    do{
-        sprintf(buffer, "%d", i);
-        name = base + buffer;
-        i++;
-    }while(this->isNameTaken(name));
-    this->createZone(name.c_str());
+    this->createZone(base.c_str());
 }
 
 void Editor::createZone(const char* name){
     std::string type = "ressources/form/";
     type += "group";
     type += ".obj";
+    std::string base = "Zone";
+    std::string base_name = "";
+    char buffer[50];
+    int i = 0;
+    do{
+        if(i==0){
+            base_name = base;
+        }else{
+            sprintf(buffer, "%d", i);
+            base_name = base + buffer;
+        }
+        i++;
+    }while(this->isNameTaken(base_name));
     irr::scene::ISceneManager* scene = this->main_pointer->scene;
     irr::scene::ISceneNode* test = scene->addMeshSceneNode(scene->getMesh(type.c_str()));
-    this->zone_array.push_back(new Zone(name, main_pointer, test));
+    this->zone_array.push_back(new Zone(base_name.c_str(), main_pointer, test));
     this->setCurrentZone(zone_array.size()-1);
-    //current_zone = zone_array[zone_array.size()-1];
 }
 
 void Editor::setCurrentZone(Zone* zone){
@@ -146,42 +149,17 @@ void Editor::importData() {
     // Iterate over the brewerys
     for (xml_node<> * zone_node = root_node->first_node("Zone"); zone_node; zone_node = zone_node->next_sibling())
     {
-        cout << zone_node->first_attribute("name")->value()<< endl;
-        // Interate over the beers
-        for(xml_node<> * object_node = zone_node->first_node("Object"); object_node; object_node = object_node->next_sibling())
-        {
-            for (xml_node<> * position_node = object_node->first_node("position"); position_node; position_node = position_node->next_sibling())
-            {
-                char * test = position_node->name();
-                if(!strcmp(test, "position")){
-                    cout << position_node->name() << endl;
-                    cout << position_node->first_attribute("x")->value()<< endl;
-                    cout << position_node->first_attribute("y")->value()<< endl;
-                    cout << position_node->first_attribute("z")->value()<< endl;
-                }
-
-                else if(!strcmp(test, "rotation")){
-                    cout << position_node->name() << endl;
-                    cout << position_node->first_attribute("x")->value()<< endl;
-                    cout << position_node->first_attribute("y")->value()<< endl;
-                    cout << position_node->first_attribute("z")->value()<< endl;
-
-                }
-
-                else if(!strcmp(test, "scale")){
-                    cout << position_node->name() << endl;
-                    cout << position_node->first_attribute("x")->value()<< endl;
-                    cout << position_node->first_attribute("y")->value()<< endl;
-                    cout << position_node->first_attribute("z")->value()<< endl;
-                }
-            }
-        }
-        cout << endl;
+        this->importZone(zone_node);
     }
 }
 
-void Editor::importZone() {
-
+void Editor::importZone(xml_node<> *zone_node) {
+    this->createZone(zone_node->name());
+    for(xml_node<> * object_node = zone_node->first_node("Object"); object_node; object_node = object_node->next_sibling())
+        {
+        this->current_zone->importObject(zone_node);
+        }
+    cout << endl;
 }
 
 void Editor::exportData(){

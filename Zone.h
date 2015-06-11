@@ -124,6 +124,7 @@ class Zone {
         //Sauvegarde (en cours)
         void exportZone(TiXmlElement* root);
         void printZone();
+        void importObject(rapidxml::xml_node<> *object_node);
 
     private:
         std::vector<SingleObject*> single_object_array; //Ne pas passer de pointer a objet ca fait tout peter
