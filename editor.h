@@ -76,5 +76,7 @@ class Editor {
         Pointer* main_pointer;
 };
 
+
+
 #endif	/* EDITOR_H */
 

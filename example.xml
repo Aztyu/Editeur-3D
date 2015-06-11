@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Editor>
+	<Zone name="Main">
+		<Group name="Group">
+		<Position posX="1.0000000" posY="1.00000" posZ="1.00000">
+			</Position>
+			<Rotation posX="1.0000000" posY="1.00000" posZ="1.00000">
+			</Rotation>
+			<Scale scaleX="1.0000000" scaleY="1.00000" scaleZ="1.00000">
+			</Scale>
+			<Objects>
+				<Object name="Rectangle1">
+					<Position posX="2.0000000" posY="1.00000" posZ="1.00000">
+					</Position>
+					<Rotation posX="1.0000000" posY="1.00000" posZ="1.00000">
+					</Rotation>
+					<Scale scaleX="1.0000000" scaleY="1.00000" scaleZ="1.00000">
+					</Scale>
+				</Object>
+				<Object name="Rectangle2">
+					<Position posX="1.0000000" posY="2.00000" posZ="1.00000">
+					</Position>
+					<Rotation posX="1.0000000" posY="1.00000" posZ="1.00000">
+					</Rotation>
+					<Scale scaleX="1.0000000" scaleY="1.00000" scaleZ="1.00000">
+					</Scale>
+				</Object>
+			</Objects>
+		</Group>
+		<Object name="Rectangle">
+			<Position posX="1.0000000" posY="1.00000" posZ="2.00000">
+			</Position>
+			<Rotation posX="1.0000000" posY="1.00000" posZ="1.00000">
+			</Rotation>
+			<Scale scaleX="1.0000000" scaleY="1.00000" scaleZ="1.00000">
+			</Scale>
+		</Object>
+	</Zone>
+</Editor>
