@@ -9,6 +9,7 @@ var class_graphical_interface =
     [ "isInWindow", "class_graphical_interface.html#a91e0436807e5b13bb6241e37cf3aa4b4", null ],
     [ "setGroupObjectSelected", "class_graphical_interface.html#a5620f7161a11e24c91e1cd7a224709a3", null ],
     [ "setSingleObjectSelected", "class_graphical_interface.html#a906dff32de9a713121f9775127fc33a5", null ],
+    [ "setZoneSelected", "class_graphical_interface.html#a64d0a0aa5276508f23864d27321dcdfd", null ],
     [ "updateGroupObject", "class_graphical_interface.html#a8a5800ef8df6738199e5cb6f370f29df", null ],
     [ "updateSingleObject", "class_graphical_interface.html#a10ffd5e51b88c0f1814d294108a88e92", null ],
     [ "updateWindow", "class_graphical_interface.html#a2b2553bc093c417cdf4208ff916074ab", null ],
