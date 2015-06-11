@@ -10,13 +10,10 @@
 GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent): Object(obj, name, parent){
 }
 
-GroupObject::GroupObject(irr::scene::ISceneNode* obj, float total_scale, const char* name, irr::scene::ISceneNode* parent) : Object(obj, total_scale, name, parent) {
+GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, float total_scale) : Object(obj, name, parent, total_scale) {
 }
 
-GroupObject::GroupObject(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent) : Object(obj, x, y, z, name, parent){
-}
-
-GroupObject::GroupObject(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent) : Object(obj, x, y, z, total_scale, name, parent){
+GroupObject::GroupObject(irr::scene::ISceneNode* obj, irr::scene::ISceneNode* parent, const char* name, irr::core::vector3df position) : Object(obj, name, parent, position){
 }
 
 GroupObject::~GroupObject() {
@@ -62,8 +59,6 @@ void GroupObject::removeMember(SingleObject* object) {
         }
     }
 }
-
-
 
 const char* GroupObject::printObject() {
     return "test";

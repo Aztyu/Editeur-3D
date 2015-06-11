@@ -20,33 +20,21 @@ public:
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
 		\param name Le nom desire pour l'objet.
      *          \param parent L'ISceneNode de la Zone.  */
-    Object(irr::scene::ISceneNode* objet, const char* name, irr::scene::ISceneNode* parent);
+    Object(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent);
     
     //! Constructeur avec echelle.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
 		\param name Le nom desire pour l'objet.
                 \param total_scale Un entier qui indique l'echelle de l'objet.
      *          \param parent L'ISceneNode de la Zone.  */
-    Object(irr::scene::ISceneNode* objet, float total_scale, const char* name, irr::scene::ISceneNode* parent);
+    Object(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, float total_scale);
     
     //! Constructeur avec position de base.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
-     *          \param x Position en x.
-     *          \param y Position en y.
-     *          \param z Position en z.
      * 		\param name Le nom desire pour l'objet.
      *          \param parent L'ISceneNode de la Zone. */
-    Object(irr::scene::ISceneNode* objet, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent);
-    
-    //! Constructeur avec echelle et position.
-    /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
-     *          \param x Position en x.
-     *          \param y Position en y.
-     *          \param z Position en z.
-     *          \param total_scale Un entier qui indique l'echelle de l'objet.
-     * 		\param name Le nom desire pour l'objet.
-     *          \param parent L'ISceneNode de la Zone. */
-    Object(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent);
+    Object(irr::scene::ISceneNode* objet, const char* name, irr::scene::ISceneNode* parent, irr::core::vector3df position);
+
     
     //! Destructeur par defaut
     virtual ~Object();

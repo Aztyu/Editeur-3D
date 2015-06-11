@@ -175,6 +175,9 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
         case GUI_ID_NEW_ZONE:
             this->current_editor->createZone();
             break;
+        case GUI_ID_NEW_GROUP:
+            this->current_editor->getCurrentZone()->createGroupObject();
+            break;
         case GUI_ID_LOAD:
             current_editor->importData();
             break;

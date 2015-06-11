@@ -36,7 +36,7 @@ public:
 		\param name Le nom desire pour l'objet.
                 \param total_scale Un entier qui indique l'echelle de l'objet. 
                 \param parent L'ISceneNode de la Zone.*/
-    SingleObject(irr::scene::ISceneNode* objet, float total_scale, const char* name, irr::scene::ISceneNode* parent, object type);
+    SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, float total_scale, object type);
     
     //! Constructeur avec position de base.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
@@ -45,17 +45,8 @@ public:
      *          \param z Position en z.
      * 		\param name Le nom desire pour l'objet.
      *          \param parent L'ISceneNode de la Zone. */
-    SingleObject(irr::scene::ISceneNode* objet, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent, object type);
+    SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, irr::core::vector3df position, object type);
     
-    //! Constructeur avec echelle et position.
-    /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
-     *          \param x Position en x.
-     *          \param y Position en y.
-     *          \param z Position en z.
-     *          \param total_scale Un entier qui indique l'echelle de l'objet.
-     * 		\param name Le nom desire pour l'objet. 
-                \param parent L'ISceneNode de la Zone.*/
-    SingleObject(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent, object type);
 
     //! Destructeur de base.
     ~SingleObject();
@@ -89,6 +80,10 @@ public:
     //! Recupere le pointeur vers cette objet.
     /** \return Un pointeur vers cette objet */
     SingleObject* getPointer();
+    
+    //! Recupere l'enumeration du type de l'objet.
+    /** \return Un enum de type object */
+    object getType();
     
 private:
     Object* parent;

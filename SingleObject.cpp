@@ -14,17 +14,12 @@ SingleObject::SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::s
     this->type = type;
 }
 
-SingleObject::SingleObject(irr::scene::ISceneNode* obj, float total_scale, const char* name, irr::scene::ISceneNode* parent, object type) : Object(obj, total_scale, name, parent) {
+SingleObject::SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, float total_scale, object type) : Object(obj, name, parent, total_scale) {
     this->parent = NULL;
     this->type = type;
 }
 
-SingleObject::SingleObject(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent, object type) : Object(obj, x, y, z, name, parent){
-    this->parent = NULL;
-    this->type = type;
-}
-
-SingleObject::SingleObject(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent, object type) : Object(obj, x, y, z, total_scale, name, parent){
+SingleObject::SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, irr::core::vector3df position, object type) : Object(obj, name, parent, position){
     this->parent = NULL;
     this->type = type;
 }
@@ -108,5 +103,9 @@ bool SingleObject::hasParent() {
 
 SingleObject* SingleObject::getPointer(){
     return this;
+}
+
+object SingleObject::getType() {
+    return this->type;
 }
 

@@ -169,7 +169,7 @@ void Zone::createSingleObject(object form){
     }
 }
 
-void Zone::createGroupObject(){
+void Zone::createGroupObject(Object* base_object){
     string type = "ressources/form/", name;
     name = "Group";
     if(type_number[8] > 0){
@@ -180,7 +180,12 @@ void Zone::createGroupObject(){
     type_number[8]++;
     type += "group";
     type += ".obj";
-    this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
+    if(base_object == NULL){
+        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
+    }else{
+        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
+
+    }
     current_pointer->gui->updateGroupObject(&this->group_object_array); //Ajout de l'objet a la combobox
     
     if(selected_object == NULL){    //Si aucun objet n'est selectionne alors on selectionne celui-la
@@ -188,6 +193,7 @@ void Zone::createGroupObject(){
         current_pointer->gui->setGroupObjectSelected(this->group_object_array.size()-1);
     }
 }
+
 
 int Zone::getObjectCount(){
     return this->single_object_array.size();
