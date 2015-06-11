@@ -10,6 +10,18 @@
 
 #include "Object.h"
 
+//! Enumeration utilise pour lors de la creation d'objets
+enum object {
+    rectangle,      /**< Énumération du carré(2D). */
+    line,           /**< Énumération de la ligne(2D). */
+    circle,         /**< Énumération du cercle(2D). */
+    trapeze,        /**< Énumération du trapeze(2D). */
+    cube,           /**< Énumération du cube. */
+    pyramid,        /**< Énumération d'une pyramide. */
+    sphere,         /**< Énumération d'une sphere. */
+    cylinder,       /**< Énumération du cylindre. */
+    group};         /**< Énumération du groupe. */
+    
 //! Classe qui est utilise pour creer un simple objet
 class SingleObject : public Object{
 public:
@@ -17,14 +29,14 @@ public:
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
 		\param name Le nom desire pour l'objet.
      *          \param parent L'ISceneNode de la Zone. */
-    SingleObject(irr::scene::ISceneNode* objet, const char* name, irr::scene::ISceneNode* parent);
+    SingleObject(irr::scene::ISceneNode* objet, const char* name, irr::scene::ISceneNode* parent, object type);
     
     //! Constructeur avec echelle.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
 		\param name Le nom desire pour l'objet.
                 \param total_scale Un entier qui indique l'echelle de l'objet. 
                 \param parent L'ISceneNode de la Zone.*/
-    SingleObject(irr::scene::ISceneNode* objet, float total_scale, const char* name, irr::scene::ISceneNode* parent);
+    SingleObject(irr::scene::ISceneNode* objet, float total_scale, const char* name, irr::scene::ISceneNode* parent, object type);
     
     //! Constructeur avec position de base.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
@@ -33,7 +45,7 @@ public:
      *          \param z Position en z.
      * 		\param name Le nom desire pour l'objet.
      *          \param parent L'ISceneNode de la Zone. */
-    SingleObject(irr::scene::ISceneNode* objet, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent);
+    SingleObject(irr::scene::ISceneNode* objet, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent, object type);
     
     //! Constructeur avec echelle et position.
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
@@ -43,7 +55,7 @@ public:
      *          \param total_scale Un entier qui indique l'echelle de l'objet.
      * 		\param name Le nom desire pour l'objet. 
                 \param parent L'ISceneNode de la Zone.*/
-    SingleObject(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent);
+    SingleObject(irr::scene::ISceneNode* objet, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent, object type);
 
     //! Destructeur de base.
     ~SingleObject();
@@ -80,6 +92,7 @@ public:
     
 private:
     Object* parent;
+    object type;
 };
 
 #endif	/* SINGLEOBJECT_H */

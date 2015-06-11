@@ -12,7 +12,7 @@
 #include "irrlicht.h"
 #include "libraries/tinyxml/tinyxml.h"
 #include <vector>
-
+    
 //! Classe de base pour SIngleObject et GroupObject, gere les ISceneNodes natif a Irrlicht
 class Object {
 public:

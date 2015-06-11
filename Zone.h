@@ -11,19 +11,9 @@
 #include "GroupObject.h"
 
 class Pointer;
+    
 
-//! Enumeration utilise pour lors de la creation d'objets
-enum object {
-    rectangle,      /**< Énumération du carré(2D). */
-    line,           /**< Énumération de la ligne(2D). */
-    circle,         /**< Énumération du cercle(2D). */
-    trapeze,        /**< Énumération du trapeze(2D). */
-    cube,           /**< Énumération du cube. */
-    pyramid,        /**< Énumération d'une pyramide. */
-    sphere,         /**< Énumération d'une sphere. */
-    cylinder,       /**< Énumération du cylindre. */
-    group};         /**< Énumération du groupe. */
-
+    
 //! Classe qui est utiliser pour creer une zone contenant des objet et groupes d' objets
 class Zone {
     public:

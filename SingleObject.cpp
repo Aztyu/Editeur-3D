@@ -9,20 +9,24 @@
 
 using namespace std;
 
-SingleObject::SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent): Object(obj, name, parent){
+SingleObject::SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, object type): Object(obj, name, parent){
     this->parent = NULL;
+    this->type = type;
 }
 
-SingleObject::SingleObject(irr::scene::ISceneNode* obj, float total_scale, const char* name, irr::scene::ISceneNode* parent) : Object(obj, total_scale, name, parent) {
+SingleObject::SingleObject(irr::scene::ISceneNode* obj, float total_scale, const char* name, irr::scene::ISceneNode* parent, object type) : Object(obj, total_scale, name, parent) {
     this->parent = NULL;
+    this->type = type;
 }
 
-SingleObject::SingleObject(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent) : Object(obj, x, y, z, name, parent){
+SingleObject::SingleObject(irr::scene::ISceneNode* obj, float x, float y, float z, const char* name, irr::scene::ISceneNode* parent, object type) : Object(obj, x, y, z, name, parent){
     this->parent = NULL;
+    this->type = type;
 }
 
-SingleObject::SingleObject(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent) : Object(obj, x, y, z, total_scale, name, parent){
+SingleObject::SingleObject(irr::scene::ISceneNode* obj, float x, float y, float z, float total_scale, const char* name, irr::scene::ISceneNode* parent, object type) : Object(obj, x, y, z, total_scale, name, parent){
     this->parent = NULL;
+    this->type = type;
 }
 
 SingleObject::~SingleObject() {
