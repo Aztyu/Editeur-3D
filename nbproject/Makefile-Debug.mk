@@ -59,11 +59,13 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lIrrlicht
+LDLIBSOPTIONS=-lIrrlicht libraries/tinyxml/tinyxml.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/editeur-3d.exe
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/editeur-3d.exe: libraries/tinyxml/tinyxml.a
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/editeur-3d.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}

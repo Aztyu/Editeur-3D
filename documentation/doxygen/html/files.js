@@ -1,6 +1,6 @@
 var files =
 [
-    [ "Editor.cpp", "_editor_8cpp.html", null ],
+    [ "editor.cpp", "editor_8cpp.html", null ],
     [ "Editor.h", "_editor_8h.html", [
       [ "Editor", "class_editor.html", "class_editor" ]
     ] ],

@@ -162,7 +162,7 @@ void Zone::createSingleObject(object form){
             break;
     }
     type += ".obj";
-    this->single_object_array.push_back(new SingleObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str()), this->zone_mesh), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
+    this->single_object_array.push_back(new SingleObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str()), this->zone_mesh), name.c_str(), this->zone_mesh, form));        //Chargement et creation de l'objet
     current_pointer->gui->updateSingleObject(&this->single_object_array); //Ajout de l'objet a la combobox
     if(selected_object == NULL){    //Si aucun objet n'est selectionne alors on selectionne celui-la
         setSelectedSingleObject(this->single_object_array.size()-1);

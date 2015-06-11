@@ -12,6 +12,8 @@ var searchData=
   ['gui_5fid_5fline',['GUI_ID_LINE',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca0f15b2bd03adc9bf4187fe0fd3cbc14c',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fload',['GUI_ID_LOAD',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caab8a78354038db493e6a2491e01affe9',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fnew',['GUI_ID_NEW',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca13c71b2dbfde56e8bfa85b60acc38fa9',1,'GraphicalInterface.h']]],
+  ['gui_5fid_5fnew_5fgroup',['GUI_ID_NEW_GROUP',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca324e2ce8c0c10c7b87b9b2e042fd4b3b',1,'GraphicalInterface.h']]],
+  ['gui_5fid_5fnew_5fzone',['GUI_ID_NEW_ZONE',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca11bc1b9243b43ee3ffdc1bb0a5fa245a',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow',['GUI_ID_OBJECT_WINDOW',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caf1daae9b8417c03c8f63c9cbf7f6c0a5',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow_5fadd_5fto_5fgroup',['GUI_ID_OBJECT_WINDOW_ADD_TO_GROUP',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca726da5715d64130875295ddff6d87b13',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow_5fadd_5fto_5fnew_5fgroup',['GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca135dbbf0a7d43a001066b689ac2b6de4',1,'GraphicalInterface.h']]],
@@ -55,5 +57,6 @@ var searchData=
   ['gui_5fid_5fsphere',['GUI_ID_SPHERE',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca79d047dbf6c340dd630728c9825d6a25',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fsquare',['GUI_ID_SQUARE',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cadb74950b44e62d785cc4132d12b502bb',1,'GraphicalInterface.h']]],
   ['gui_5fid_5ftoolbox',['GUI_ID_TOOLBOX',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca17e72fbeafdf9cce6382ce55deff9d2f',1,'GraphicalInterface.h']]],
-  ['gui_5fid_5ftrapeze',['GUI_ID_TRAPEZE',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca23de3de377afcd7f6e1165e6f694f3f9',1,'GraphicalInterface.h']]]
+  ['gui_5fid_5ftrapeze',['GUI_ID_TRAPEZE',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca23de3de377afcd7f6e1165e6f694f3f9',1,'GraphicalInterface.h']]],
+  ['gui_5fid_5fzone_5fcombo_5fbox',['GUI_ID_ZONE_COMBO_BOX',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca0c01f32572301aeeb79918fb1bbd1ba8',1,'GraphicalInterface.h']]]
 ];
