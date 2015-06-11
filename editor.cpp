@@ -165,6 +165,6 @@ void Editor::importData() {
 	}
 }
 
-
-
-
+void Editor::exportData(){
+    
+}
