@@ -10,6 +10,9 @@
 #include "Pointers.h"
 #include "fstream"
 #include "Editor.h"
+#include <cstdlib>
+#include <stdio.h>      /* printf, fgets */
+#include <stdlib.h> 
 
 using namespace std;
 using namespace rapidxml;
@@ -339,6 +342,8 @@ void Zone::exportZone(TiXmlElement* root){        //Besoin de travail et deplace
 }
 
 void Zone::importObject(xml_node<> *object_node){
+    char* form = object_node->first_attribute("name")->value();
+    //this->createSingleObject(form);
     for (xml_node<> * position_node = object_node->first_node("position"); position_node; position_node = position_node->next_sibling())
     {
         char * test = position_node->name();

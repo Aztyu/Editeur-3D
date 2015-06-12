@@ -60,6 +60,7 @@ void SingleObject::exportObject(TiXmlElement* windows) {
     window = new TiXmlElement( "Object" );  
     windows->LinkEndChild( window );
     window->SetAttribute("name", this->getName().c_str());
+    window->SetAttribute("type", this->getType());
  
     TiXmlElement * position;
     position = new TiXmlElement( "position" ); 
