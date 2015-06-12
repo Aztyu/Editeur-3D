@@ -10,6 +10,8 @@
 #include "Pointers.h"
 #include "fstream"
 #include "Editor.h"
+#include <cstdlib>
+#include <basetyps.h>
 
 using namespace std;
 using namespace rapidxml;
@@ -335,29 +337,33 @@ void Zone::exportZone(TiXmlElement* root){        //Besoin de travail et deplace
 }
 
 void Zone::importObject(xml_node<> *object_node){
+    object form = (object)atoi(object_node->first_attribute("type")->value());
+    this->createSingleObject(form);
     for (xml_node<> * position_node = object_node->first_node("position"); position_node; position_node = position_node->next_sibling())
     {
         char * test = position_node->name();
         if(!strcmp(test, "position")){
-            cout << position_node->name() << endl;
-            cout << position_node->first_attribute("x")->value()<< endl;
-            cout << position_node->first_attribute("y")->value()<< endl;
-            cout << position_node->first_attribute("z")->value()<< endl;
+            irr::core::vector3df position;
+            position.X = atof(position_node->first_attribute("x")->value());
+            position.Y = atof(position_node->first_attribute("y")->value());
+            position.Z = atof(position_node->first_attribute("z")->value());
+            this->single_object_array.at(this->single_object_array.size()-1)->setPosition(position);
         }
 
         else if(!strcmp(test, "rotation")){
-            cout << position_node->name() << endl;
-            cout << position_node->first_attribute("x")->value()<< endl;
-            cout << position_node->first_attribute("y")->value()<< endl;
-            cout << position_node->first_attribute("z")->value()<< endl;
-
+            irr::core::vector3df rotation;
+            rotation.X = atof(position_node->first_attribute("x")->value());
+            rotation.Y = atof(position_node->first_attribute("y")->value());
+            rotation.Z = atof(position_node->first_attribute("z")->value());
+            this->single_object_array.at(this->single_object_array.size()-1)->setRotation(rotation);
         }
 
         else if(!strcmp(test, "scale")){
-            cout << position_node->name() << endl;
-            cout << position_node->first_attribute("x")->value()<< endl;
-            cout << position_node->first_attribute("y")->value()<< endl;
-            cout << position_node->first_attribute("z")->value()<< endl;
+            irr::core::vector3df scale;
+            scale.X = atof(position_node->first_attribute("x")->value());
+            scale.Y = atof(position_node->first_attribute("y")->value());
+            scale.Z = atof(position_node->first_attribute("z")->value());
+            this->single_object_array.at(this->single_object_array.size()-1)->setScale(scale);
         }
     }
 }
