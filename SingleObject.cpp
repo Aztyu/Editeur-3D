@@ -113,4 +113,18 @@ std::string SingleObject::getClassType() {
     return "SingleObject";
 }
 
+Object* SingleObject::getParent() {
+    if(hasParent()){
+        return this->parent;
+    }else{
+        return NULL;
+    }
+}
+
+
+bool SingleObject::isInGroup() {
+    return this->parent != NULL;
+}
+
+
 

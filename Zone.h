@@ -121,6 +121,10 @@ class Zone {
         //! Deselectionne tout objet dans cette zone.
         void unselectAll();
         
+        void sendSingleObjectUpdate();
+        
+        void sendGroupObjectUpdate();
+        
         //! Exporte tout objet dans cette zone.
         void exportZone(TiXmlElement* root);
         

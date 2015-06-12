@@ -20,7 +20,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
             bool hasfocus = false;
             bool exist = (current_editor->getMainPointer()->gui->getGUIEnvironment()->getRootGUIElement()->getElementFromId(GUI_ID_OBJECT_WINDOW_OBJECT_NAME, true) != NULL);
             
-            if(focus_id >= GUI_ID_OBJECT_WINDOW && focus_id <= GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP){
+            if(focus_id >= GUI_ID_OBJECT_WINDOW && focus_id <= GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX){
                 hasfocus = true;
             }
             
@@ -110,7 +110,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     OnMenuItemSelected((irr::gui::IGUIContextMenu*)event.GUIEvent.Caller );
                     break;
                 case irr::gui::EGET_BUTTON_CLICKED:{
-                    if(id <= GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP && id >= GUI_ID_OBJECT_WINDOW_OBJECT_NAME){
+                    if(id <= GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX && id >= GUI_ID_OBJECT_WINDOW_OBJECT_NAME){
                         this->OnToolBoxItemSelected(id);
                     }else{
                         this->OnObjectCreation(id);
@@ -271,6 +271,19 @@ void CEventReceiver::OnToolBoxItemSelected(irr::s32 id) {
             }
             target->modifyScaleBy(modification);
             this->custom_gui->updateWindow();
+        }else{
+            switch(id){
+                case GUI_ID_OBJECT_WINDOW_REMOVE_FROM_GROUP:{
+                    SingleObject* single = static_cast<SingleObject*>(target);
+                    if(single->hasParent()){
+                        GroupObject* group = static_cast<GroupObject*>(single->getParent());
+                        group->removeMember(single);
+                    }
+                    break;
+                }
+                case GUI_ID_OBJECT_WINDOW_ADD_TO_GROUP:
+                    break;
+            }
         }
     }
 }
@@ -282,9 +295,10 @@ void CEventReceiver::OnValueChanged(irr::gui::IGUIEditBox* editbox) {
     
     irr::gui::IGUIElement* root = this->custom_gui->getGUIEnvironment()->getRootGUIElement();
     irr::core::stringc s = root->getElementFromId(id, true)->getText();
-    irr::f32 value = (irr::f32)atof(s.c_str());
+    
     
     if(id <= GUI_ID_OBJECT_WINDOW_POSITION_Z_VALUE && id >= GUI_ID_OBJECT_WINDOW_POSITION_X_VALUE){
+        irr::f32 value = (irr::f32)atof(s.c_str());
         modification = target->getPosition();
         switch(id){
             case GUI_ID_OBJECT_WINDOW_POSITION_X_VALUE:
@@ -300,6 +314,7 @@ void CEventReceiver::OnValueChanged(irr::gui::IGUIEditBox* editbox) {
         target->setPosition(modification);
         this->custom_gui->updateWindow();
     }else if(id <= GUI_ID_OBJECT_WINDOW_ROTATION_Z_VALUE && id >= GUI_ID_OBJECT_WINDOW_ROTATION_X_VALUE){
+        irr::f32 value = (irr::f32)atof(s.c_str());
         modification = target->getRotation();
         switch(id){
             case GUI_ID_OBJECT_WINDOW_ROTATION_X_VALUE:
@@ -315,6 +330,7 @@ void CEventReceiver::OnValueChanged(irr::gui::IGUIEditBox* editbox) {
         target->setRotation(modification);
         this->custom_gui->updateWindow();
     }else if(id <= GUI_ID_OBJECT_WINDOW_SCALE_Z_VALUE && id >= GUI_ID_OBJECT_WINDOW_SCALE_X_VALUE){
+        irr::f32 value = (irr::f32)atof(s.c_str());
         modification = target->getScale();
         switch(id){
             case GUI_ID_OBJECT_WINDOW_SCALE_X_VALUE:
@@ -329,6 +345,14 @@ void CEventReceiver::OnValueChanged(irr::gui::IGUIEditBox* editbox) {
         }
         target->setScale(modification);
         this->custom_gui->updateWindow();
+    }else if(id == GUI_ID_OBJECT_WINDOW_OBJECT_NAME){
+        std::string value = s.c_str();
+        this->current_editor->getCurrentZone()->getSelectedObject()->setName(value);
+        if(target->getClassType() == "SingleObject"){
+            this->current_editor->getCurrentZone()->sendSingleObjectUpdate();
+        }else{
+            this->current_editor->getCurrentZone()->sendGroupObjectUpdate();
+        }
     }
     current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
 }

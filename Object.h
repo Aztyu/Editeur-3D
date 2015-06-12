@@ -131,6 +131,10 @@ public:
     /** \return Le nom de l'objet*/
     std::string getName();
     
+    //! Donner le nom de l'objet
+    /** \param name Le nom de l'objet*/
+    void setName(std::string name);
+    
 protected:
     irr::scene::ISceneNode* objet;
     std::string object_name;

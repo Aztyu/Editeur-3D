@@ -487,22 +487,29 @@ void GraphicalInterface::updateWindow(){
                 L"+");
             
             if(this->current_object->getClassType() == "SingleObject"){
-                irr::gui::IGUIComboBox* combo = this->gui->addComboBox(irr::core::rect<irr::s32>(15,535,185,565),
-                    static_cast<irr::gui::IGUIElement*>(this->window),
-                    GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX);
-                
-                for(int i =0; i<this->group_object_box->getItemCount(); i++){
-                    combo->addItem(this->group_object_box->getItem(i));
+                if(!static_cast<SingleObject*>(this->current_object)->isInGroup()){
+                    irr::gui::IGUIComboBox* combo = this->gui->addComboBox(irr::core::rect<irr::s32>(15,535,185,565),
+                        static_cast<irr::gui::IGUIElement*>(this->window),
+                        GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX);
+
+                    for(int i =0; i<this->group_object_box->getItemCount(); i++){
+                        combo->addItem(this->group_object_box->getItem(i));
+                    }
+
+                    std::string name = "Nouveau...";
+                    std::wstring widestr = std::wstring(name.begin(), name.end());
+                    combo->addItem(widestr.c_str());
+
+                    this->gui->addButton(irr::core::rect<irr::s32>(15,575,185,605),
+                        static_cast<irr::gui::IGUIElement*>(this->window),
+                        GUI_ID_OBJECT_WINDOW_ADD_TO_GROUP,
+                        L"Ajouter au groupe");
+                }else{
+                    this->gui->addButton(irr::core::rect<irr::s32>(15,575,185,605),
+                        static_cast<irr::gui::IGUIElement*>(this->window),
+                        GUI_ID_OBJECT_WINDOW_REMOVE_FROM_GROUP,
+                        L"Enlever du groupe");
                 }
-                
-                std::string name = "Nouveau...";
-                std::wstring widestr = std::wstring(name.begin(), name.end());
-                combo->addItem(widestr.c_str());
-            
-                this->gui->addButton(irr::core::rect<irr::s32>(15,575,185,605),
-                    static_cast<irr::gui::IGUIElement*>(this->window),
-                    GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP,
-                    L"Ajouter au groupe");
             }
         }else{
             

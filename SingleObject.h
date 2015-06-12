@@ -89,6 +89,10 @@ public:
     /** \return Une string qui donne le type. */
     std::string getClassType();
     
+    Object* getParent();
+    
+    bool isInGroup();
+    
 private:
     Object* parent;
     object type;

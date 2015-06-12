@@ -42,7 +42,7 @@ void Zone::removeSingleObject(int index){ //clear l'objet de tout stockage et de
     }
     delete this->single_object_array[index];      //On l'enleve du programme
     this->single_object_array.erase(this->single_object_array.begin()+index);       //et du vector
-    current_pointer->gui->updateSingleObject(&this->single_object_array);     //Et de la combobox
+    this->sendSingleObjectUpdate();
 }
 
 void Zone::removeGroupObject(int index) {
@@ -51,7 +51,7 @@ void Zone::removeGroupObject(int index) {
     }
     delete this->group_object_array[index];      //On l'enleve du programme
     this->group_object_array.erase(this->group_object_array.begin()+index);       //et du vector
-    current_pointer->gui->updateGroupObject(&this->group_object_array);     //Et de la combobox
+    this->sendGroupObjectUpdate();     //Et de la combobox
 }
 
 
@@ -163,7 +163,7 @@ void Zone::createSingleObject(object form){
     }
     type += ".obj";
     this->single_object_array.push_back(new SingleObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str()), this->zone_mesh), name.c_str(), this->zone_mesh, form));        //Chargement et creation de l'objet
-    current_pointer->gui->updateSingleObject(&this->single_object_array); //Ajout de l'objet a la combobox
+    this->sendSingleObjectUpdate();
     if(selected_object == NULL){    //Si aucun objet n'est selectionne alors on selectionne celui-la
         setSelectedSingleObject(this->single_object_array.size()-1);
         current_pointer->gui->setSingleObjectSelected(this->single_object_array.size()-1);
@@ -187,7 +187,7 @@ void Zone::createGroupObject(Object* base_object){
         this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
 
     }
-    current_pointer->gui->updateGroupObject(&this->group_object_array); //Ajout de l'objet a la combobox
+    this->sendGroupObjectUpdate();
     
     if(selected_object == NULL){    //Si aucun objet n'est selectionne alors on selectionne celui-la
         setSelectedGroupObject(this->group_object_array.size()-1);
@@ -312,6 +312,20 @@ void Zone::unselectAll() {
     if(this->selected_group != NULL){
         this->selected_group->unselectObject();
         this->selected_group = NULL;
+    }
+}
+
+void Zone::sendGroupObjectUpdate() {
+    current_pointer->gui->updateGroupObject(&this->group_object_array);
+    if(this->selected_group != NULL){
+        this->setSelectedGroupObject(this->selected_group->getSceneNode());
+    }
+}
+
+void Zone::sendSingleObjectUpdate() {
+    current_pointer->gui->updateSingleObject(&this->single_object_array);
+    if(this->selected_object != NULL){
+        this->setSelectedSingleObject(this->selected_object->getSceneNode());
     }
 }
 

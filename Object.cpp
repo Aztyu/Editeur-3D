@@ -147,3 +147,8 @@ std::string Object::getName() {
     return this->object_name;
 }
 
+void Object::setName(std::string name) {
+    this->object_name = name;
+}
+
+
