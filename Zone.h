@@ -128,7 +128,6 @@ class Zone {
         //! Exporte tout objet dans cette zone.
         void exportZone(TiXmlElement* root);
         
-        
         void printZone();
         
         //! Importe les objets contenus dans un noeud xml.

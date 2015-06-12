@@ -111,13 +111,14 @@ void Editor::finishZoneSwitch() {
     if(zone->getSelectedGroupObject() != NULL){
         zone->setSelectedGroupObject(zone->getSelectedGroupObject()->getSceneNode());
     }
-    this->main_pointer->gui->updateWindow();
     
     for(int i=0; i<this->zone_array.size(); i++){
         if(this->zone_array.at(i)->getPointer() == zone){
             this->main_pointer->gui->setZoneSelected(i);
         }
     }
+    
+    this->main_pointer->gui->updateWindow(this->current_zone->getSelectedObject());
 }
 
 

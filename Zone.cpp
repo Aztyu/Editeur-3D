@@ -164,10 +164,6 @@ void Zone::createSingleObject(object form){
     type += ".obj";
     this->single_object_array.push_back(new SingleObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str()), this->zone_mesh), name.c_str(), this->zone_mesh, form));        //Chargement et creation de l'objet
     this->sendSingleObjectUpdate();
-    if(selected_object == NULL){    //Si aucun objet n'est selectionne alors on selectionne celui-la
-        setSelectedSingleObject(this->single_object_array.size()-1);
-        current_pointer->gui->setSingleObjectSelected(this->single_object_array.size()-1);
-    }
 }
 
 void Zone::createGroupObject(Object* base_object){
