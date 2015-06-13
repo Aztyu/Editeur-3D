@@ -26,25 +26,26 @@ enum object {
 class SingleObject : public Object{
 public:
     //! Constructeur de base.
-    /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
-		\param name Le nom desire pour l'objet.
-     *          \param parent L'ISceneNode de la Zone. */
-    SingleObject(irr::scene::ISceneNode* objet, const char* name, irr::scene::ISceneNode* parent, object type);
+    /** \param obj Pointeur vers le ISceneNode qui est donne par Irrlicht.
+     *      \param name Le nom desire pour l'objet.
+     *      \param parent L'ISceneNode de la Zone.
+     *      \param type Une énumération de type oject qui indique la forme de l'objet(Carré, Cylindre, ...). */
+    SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, object type);
     
     //! Constructeur avec echelle.
-    /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
-		\param name Le nom desire pour l'objet.
-                \param total_scale Un entier qui indique l'echelle de l'objet. 
-                \param parent L'ISceneNode de la Zone.*/
+    /** \param obj Pointeur vers le ISceneNode qui est donne par Irrlicht.
+     *      \param name Le nom desire pour l'objet.
+     *      \param total_scale Un entier qui indique l'echelle de l'objet. 
+     *      \param parent L'ISceneNode de la Zone.
+     *      \param type Une énumération de type oject qui indique la forme de l'objet(Carré, Cylindre, ...).*/
     SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, float total_scale, object type);
     
     //! Constructeur avec position de base.
-    /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
-     *          \param x Position en x.
-     *          \param y Position en y.
-     *          \param z Position en z.
-     * 		\param name Le nom desire pour l'objet.
-     *          \param parent L'ISceneNode de la Zone. */
+    /** \param obj Pointeur vers le ISceneNode qui est donne par Irrlicht.
+     *      \param name Le nom desire pour l'objet.
+     *      \param parent L'ISceneNode de la Zone.
+     *      \param position Vector3df qui contient la position voulue.
+     *      \param type Une énumération de type oject qui indique la forme de l'objet(Carré, Cylindre, ...). */
     SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, irr::core::vector3df position, object type);
     
 

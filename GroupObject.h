@@ -14,21 +14,20 @@
 class GroupObject : public Object{
 public:
     //! Constructeur de base.
-    /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
+    /** \param obj Pointeur vers le ISceneNode qui est donne par Irrlicht.
 		\param name Le nom desire pour l'objet.
      *          \param parent L'ISceneNode de la Zone. */
-    GroupObject(irr::scene::ISceneNode* objet, const char* name, irr::scene::ISceneNode* parent);
+    GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent);
     
     //! Constructeur avec echelle.
-    /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
+    /** \param obj Pointeur vers le ISceneNode qui est donne par Irrlicht.
 		\param name Le nom desire pour l'objet.
                 \param total_scale Un entier qui indique l'echelle de l'objet.
      *          \param parent L'ISceneNode de la Zone. */
-    GroupObject(irr::scene::ISceneNode* objet, const char* name, irr::scene::ISceneNode* parent, float total_scale);
+    GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, float total_scale);
     
     //! Constructeur avec position de base.
-    /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
-
+    /** \param obj Pointeur vers le ISceneNode qui est donne par Irrlicht.
      * 		\param name Le nom desire pour l'objet.
      *          \param parent L'ISceneNode de la Zone. 
      *          \param position Vector3D qui contient la position de l'objet */

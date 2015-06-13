@@ -2,7 +2,7 @@ var class_editor =
 [
     [ "Editor", "class_editor.html#ac5c22bc0cff1db6632f93c329f752d05", null ],
     [ "~Editor", "class_editor.html#ad465abc9575af92b4fa61525085172d6", null ],
-    [ "createZone", "class_editor.html#a986d4ca31423a0ebaef947bc3d814b3e", null ],
+    [ "createZone", "class_editor.html#a253b70c123922a565456c81cc03a42cb", null ],
     [ "createZone", "class_editor.html#aef2dcf40442fc100f5b73fe5e35505b7", null ],
     [ "exportData", "class_editor.html#ac8c17139c2fa9fe2e9c65d96833d0a4c", null ],
     [ "finishZoneSwitch", "class_editor.html#ac32a32e2d4e32d136e3452aeee003054", null ],
@@ -10,6 +10,7 @@ var class_editor =
     [ "getEditor", "class_editor.html#ad8890a2ec176419d55851f52a5ab80f3", null ],
     [ "getMainPointer", "class_editor.html#a8f66b9b86990932b9f29d919dfb443a6", null ],
     [ "importData", "class_editor.html#af90fdfd9d3d17636cb668d627e30589e", null ],
+    [ "importZone", "class_editor.html#a090a87009661930f22e39c75fd67de5e", null ],
     [ "isNameTaken", "class_editor.html#a29cb0a39b49367d6cc50311747944efe", null ],
     [ "setCurrentZone", "class_editor.html#a3a66d825ac095e7ed3ba716aadf0f76f", null ],
     [ "setCurrentZone", "class_editor.html#a95108d557a16fb164fd2c874882af716", null ],

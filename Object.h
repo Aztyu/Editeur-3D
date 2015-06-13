@@ -18,23 +18,24 @@
 class Object {
 public:
     //! Constructeur de base.
-    /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
-		\param name Le nom desire pour l'objet.
-     *          \param parent L'ISceneNode de la Zone.  */
+    /** \param obj Pointeur vers le ISceneNode qui est donne par Irrlicht.
+     *      \param name Le nom desire pour l'objet.
+     *      \param parent L'ISceneNode de la Zone.  */
     Object(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent);
     
     //! Constructeur avec echelle.
-    /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
-		\param name Le nom desire pour l'objet.
-                \param total_scale Un entier qui indique l'echelle de l'objet.
-     *          \param parent L'ISceneNode de la Zone.  */
+    /** \param obj Pointeur vers le ISceneNode qui est donne par Irrlicht.
+     *      \param name Le nom desire pour l'objet.
+     *      \param total_scale Un entier qui indique l'echelle de l'objet.
+     *      \param parent L'ISceneNode de la Zone.  */
     Object(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, float total_scale);
     
     //! Constructeur avec position de base.
-    /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
-     * 		\param name Le nom desire pour l'objet.
-     *          \param parent L'ISceneNode de la Zone. */
-    Object(irr::scene::ISceneNode* objet, const char* name, irr::scene::ISceneNode* parent, const irr::core::vector3df& position);
+    /** \param obj Pointeur vers le ISceneNode qui est donne par Irrlicht.
+     *      \param name Le nom desire pour l'objet.
+     *      \param parent L'ISceneNode de la Zone.
+     *      \param position Vector3D qui contient la position de l'objet  */
+    Object(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, const irr::core::vector3df& position);
 
     
     //! Destructeur par defaut
@@ -43,8 +44,8 @@ public:
     //Modification de l'objet
     //! Change la position de l'objet pour celle passee en parametre.
     /** \param x Position en x par rapport a l'origine.
-     *          \param y Position en y par rapport a l'origine.
-     *          \param z Position en z par rapport a l'origine. */
+     *      \param y Position en y par rapport a l'origine.
+     *      \param z Position en z par rapport a l'origine. */
     void setPosition(float x, float y, float z);
     
     //! Change la position de l'objet pour celle passee en parametre.
@@ -53,8 +54,8 @@ public:
     
     //! Change l'echelle de l'objet pour celle passee en parametre.
     /** \param x Echelle x par rapport a l'echelle d'origine.
-     *          \param y Echelle y par rapport a l'echelle d'origine.
-     *          \param z Echelle z par rapport a l'echelle d'origine. */
+     *      \param y Echelle y par rapport a l'echelle d'origine.
+     *      \param z Echelle z par rapport a l'echelle d'origine. */
     void setScale(float x, float y, float z);
     
     //! Change l'echelle de l'objet pour celle passee en parametre.

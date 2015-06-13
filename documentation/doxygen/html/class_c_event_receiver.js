@@ -9,7 +9,7 @@ var class_c_event_receiver =
     [ "OnMenuItemSelected", "class_c_event_receiver.html#a43edae6467fb4a33e26532969ea2cfbc", null ],
     [ "OnObjectCreation", "class_c_event_receiver.html#abd4d447023316eb4263ef31860ae8ef7", null ],
     [ "OnObjectSelected", "class_c_event_receiver.html#a3ecac7bd7526986381d369dc4e56a57a", null ],
-    [ "OnToolBoxItemSelected", "class_c_event_receiver.html#a300d2a9e0a753bbcd029d1247102415a", null ],
+    [ "OnToolBoxItemSelected", "class_c_event_receiver.html#aef8d37570495fc5831313f1216b62681", null ],
     [ "OnValueChanged", "class_c_event_receiver.html#a007e23fbe772192014063f9290ab1b92", null ],
     [ "current_editor", "class_c_event_receiver.html#acb7b8b2c76f42b5acf0b52fe4dad3e10", null ],
     [ "custom_gui", "class_c_event_receiver.html#aa25c7588b95eaa98bea91611d29cfd67", null ]

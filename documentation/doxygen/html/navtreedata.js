@@ -28,8 +28,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_editor_8h.html",
-"editor_8cpp_source.html"
+"_event_8h.html",
+"class_zone.html#ad82a7db9d08491742c2fba2e22594c73"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

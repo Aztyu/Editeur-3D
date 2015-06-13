@@ -35,7 +35,8 @@ class CEventReceiver : public irr::IEventReceiver{
         void OnMenuItemSelected(irr::gui::IGUIContextMenu* menu);
         
         //! Gere les clics dans la fenêtre "Outil".
-        /** \param id ID de l'élèment touchée par l'évènement.*/
+        /** \param id ID de l'élèment touchée par l'évènement.
+        /** \param item IGUIElement qui a été sélectionné.*/
         void OnToolBoxItemSelected(irr::s32 id, irr::gui::IGUIElement* item);
         
         //! Gere les clics sur les boutons de création d'objet.

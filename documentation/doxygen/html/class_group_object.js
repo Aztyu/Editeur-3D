@@ -1,11 +1,11 @@
 var class_group_object =
 [
-    [ "GroupObject", "class_group_object.html#aca405d8a6cef99fd3ae5b8a0e2b58738", null ],
-    [ "GroupObject", "class_group_object.html#ae1f28db1ddb1b2ba445dd8eff7b6fc1f", null ],
-    [ "GroupObject", "class_group_object.html#a72aab70373af6fb0d89675cd3b9eeb30", null ],
-    [ "GroupObject", "class_group_object.html#a6edd7ceca18566fca3afcb83e48fd192", null ],
+    [ "GroupObject", "class_group_object.html#a100146919cb79cf9be8421632b5fa6d5", null ],
+    [ "GroupObject", "class_group_object.html#a02dad691f25e73bde77e4646d6bf6d9b", null ],
+    [ "GroupObject", "class_group_object.html#a86aedf4e23ec8ec0f7e3a5619b7527c1", null ],
     [ "~GroupObject", "class_group_object.html#a3c818f9d0e04b760e581461f8bcb08d2", null ],
     [ "addMember", "class_group_object.html#ac13668b6ad228c6120daa7eb4b4efa8e", null ],
+    [ "getClassType", "class_group_object.html#aa3b41e315182c7db74d017343b0425d9", null ],
     [ "printObject", "class_group_object.html#ad03df6c10ee670e99839832ffdcf8a58", null ],
     [ "removeMember", "class_group_object.html#aeb19fcd9c93a8d4fcec71f89dba5e352", null ],
     [ "removeMember", "class_group_object.html#ae74c5122084d6f1704012c8ae4e549ce", null ],

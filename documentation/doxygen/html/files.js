@@ -1,7 +1,7 @@
 var files =
 [
     [ "editor.cpp", "editor_8cpp.html", null ],
-    [ "Editor.h", "_editor_8h.html", [
+    [ "editor.h", "editor_8h.html", [
       [ "Editor", "class_editor.html", "class_editor" ]
     ] ],
     [ "event.cpp", "event_8cpp.html", null ],
@@ -23,9 +23,9 @@ var files =
       [ "Pointer", "struct_pointer.html", "struct_pointer" ]
     ] ],
     [ "SingleObject.cpp", "_single_object_8cpp.html", "_single_object_8cpp" ],
-    [ "SingleObject.h", "_single_object_8h.html", [
-      [ "SingleObject", "class_single_object.html", "class_single_object" ]
-    ] ],
+    [ "SingleObject.h", "_single_object_8h.html", "_single_object_8h" ],
     [ "Zone.cpp", "_zone_8cpp.html", null ],
-    [ "Zone.h", "_zone_8h.html", "_zone_8h" ]
+    [ "Zone.h", "_zone_8h.html", [
+      [ "Zone", "class_zone.html", "class_zone" ]
+    ] ]
 ];

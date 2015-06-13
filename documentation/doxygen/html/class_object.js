@@ -1,10 +1,10 @@
 var class_object =
 [
-    [ "Object", "class_object.html#a6923cc50b96d705cefc416a541cac0a6", null ],
-    [ "Object", "class_object.html#a427859223eb678639c6fda802b6d7a8d", null ],
-    [ "Object", "class_object.html#a29e0baafad0ee933c225406c671a32e6", null ],
-    [ "Object", "class_object.html#a38fe09cd6c190a7dfd6ef797d2818a33", null ],
+    [ "Object", "class_object.html#ae9c0d1c6d958a15483a6d25e3d4aafa7", null ],
+    [ "Object", "class_object.html#aa53ebd9d3c1a2ce6c556f7c5f8fa53d9", null ],
+    [ "Object", "class_object.html#ae9ff7fea631238ad8263cebffaedd4b4", null ],
     [ "~Object", "class_object.html#ae8f5483f459e46687bd01e6f9977afd3", null ],
+    [ "getClassType", "class_object.html#a70c3db5db6b8f1b655a8e9d463f29b95", null ],
     [ "getName", "class_object.html#ae2e7f745c015b67a580c735609cba5b8", null ],
     [ "getPosition", "class_object.html#ab4407a20a44be8764cef1623e3e177ef", null ],
     [ "getRotation", "class_object.html#a5c15a4c2db2345ef8d99f22c5f76b8ed", null ],
@@ -17,6 +17,7 @@ var class_object =
     [ "modifyScaleBy", "class_object.html#aeae16a9ab6ef677bf7d3bf697910c58d", null ],
     [ "modifyScaleBy", "class_object.html#ab2d9b29dabaaf51d559f673673a42cc4", null ],
     [ "selectObject", "class_object.html#a598259a5f54193a5657d8f26c5b62b59", null ],
+    [ "setName", "class_object.html#ae30fea75683c2d149b6b6d17c09ecd0c", null ],
     [ "setPosition", "class_object.html#a3f791496e7faa8e728268b88f56496d1", null ],
     [ "setPosition", "class_object.html#a9f15a0118ed7eb444c60a0aa133fc306", null ],
     [ "setRotation", "class_object.html#a27a19187ba6283151bc271d5927c6abc", null ],

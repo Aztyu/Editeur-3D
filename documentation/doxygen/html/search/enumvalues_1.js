@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['group',['group',['../_zone_8h.html#ad03408aabe16bb53c780fae6cf3910f9a084e12cf09138eec8d807c9ca90d1021',1,'Zone.h']]],
+  ['group',['group',['../_single_object_8h.html#ad03408aabe16bb53c780fae6cf3910f9a084e12cf09138eec8d807c9ca90d1021',1,'SingleObject.h']]],
   ['gui_5fid_5fabout',['GUI_ID_ABOUT',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cabf3ef31d30701203871c07c256307c45',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fcircle',['GUI_ID_CIRCLE',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca17d95d23456e76608737c79bf33120c5',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fcube',['GUI_ID_CUBE',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca9bfa1be8114d11bd2aa1d7d4ed2eba71',1,'GraphicalInterface.h']]],
@@ -16,8 +16,7 @@ var searchData=
   ['gui_5fid_5fnew_5fzone',['GUI_ID_NEW_ZONE',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca11bc1b9243b43ee3ffdc1bb0a5fa245a',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow',['GUI_ID_OBJECT_WINDOW',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caf1daae9b8417c03c8f63c9cbf7f6c0a5',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow_5fadd_5fto_5fgroup',['GUI_ID_OBJECT_WINDOW_ADD_TO_GROUP',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca726da5715d64130875295ddff6d87b13',1,'GraphicalInterface.h']]],
-  ['gui_5fid_5fobject_5fwindow_5fadd_5fto_5fnew_5fgroup',['GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca135dbbf0a7d43a001066b689ac2b6de4',1,'GraphicalInterface.h']]],
-  ['gui_5fid_5fobject_5fwindow_5fgroup_5fbox',['GUI_ID_OBJECT_WINDOW_GROUP_BOX',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cad1f67059d1caf9a274289bc4fa20681b',1,'GraphicalInterface.h']]],
+  ['gui_5fid_5fobject_5fwindow_5fgroup_5fcombo_5fbox',['GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca53dfbf96fe162e648edead87980045f8',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow_5fobject_5fname',['GUI_ID_OBJECT_WINDOW_OBJECT_NAME',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cad3fb11d45826fbf7d6449b0932e69a1c',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow_5fposition_5fx_5fdown',['GUI_ID_OBJECT_WINDOW_POSITION_X_DOWN',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cac8ed0646c5f7cf63cd2a0c8baf5b3c22',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow_5fposition_5fx_5fup',['GUI_ID_OBJECT_WINDOW_POSITION_X_UP',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca89ed1ef6c642a3d9067d682e44dad9a1',1,'GraphicalInterface.h']]],
@@ -28,6 +27,7 @@ var searchData=
   ['gui_5fid_5fobject_5fwindow_5fposition_5fz_5fdown',['GUI_ID_OBJECT_WINDOW_POSITION_Z_DOWN',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca23e469f9fb8544148c2f99d37b728e9b',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow_5fposition_5fz_5fup',['GUI_ID_OBJECT_WINDOW_POSITION_Z_UP',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca1e5ef044909a286a750f62e1b8c3233d',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow_5fposition_5fz_5fvalue',['GUI_ID_OBJECT_WINDOW_POSITION_Z_VALUE',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caadfa7fcb6e2022d7aa5d55e4ea267210',1,'GraphicalInterface.h']]],
+  ['gui_5fid_5fobject_5fwindow_5fremove_5ffrom_5fgroup',['GUI_ID_OBJECT_WINDOW_REMOVE_FROM_GROUP',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caaebd1f90165f90b6759fd9260eb96e97',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow_5frotation_5fx_5fdown',['GUI_ID_OBJECT_WINDOW_ROTATION_X_DOWN',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caa7f4c630dd50ed7e692e13f47651b031',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow_5frotation_5fx_5fup',['GUI_ID_OBJECT_WINDOW_ROTATION_X_UP',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cacab23c7c14d6113205e78f8be118b11a',1,'GraphicalInterface.h']]],
   ['gui_5fid_5fobject_5fwindow_5frotation_5fx_5fvalue',['GUI_ID_OBJECT_WINDOW_ROTATION_X_VALUE',['../_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cac4572616ba8c2dcf0138c64e3c7e39ed',1,'GraphicalInterface.h']]],

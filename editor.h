@@ -22,7 +22,7 @@ class Editor {
         
         //Gestion des zones
         //! Creer une zone ayant un nom donne.
-        /** \param name Le nom de la zone à créer.*/
+        /** \param base_name Le nom de la zone à créer.*/
         void createZone(const char* base_name);
         
         //! Creer une zone sans nom specifique.*/

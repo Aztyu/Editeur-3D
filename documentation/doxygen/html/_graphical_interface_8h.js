@@ -57,8 +57,8 @@ var _graphical_interface_8h =
       [ "GUI_ID_OBJECT_WINDOW_SCALE_Z_DOWN", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca37115188be332a46a701a4d71c9caa4f", null ],
       [ "GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_UP", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca0acc69d26fbb3239af06a5c71835e796", null ],
       [ "GUI_ID_OBJECT_WINDOW_SCALE_TOTAL_DOWN", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca5c9d268ae2193ba4ec2054d6f702d5fc", null ],
-      [ "GUI_ID_OBJECT_WINDOW_GROUP_BOX", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cad1f67059d1caf9a274289bc4fa20681b", null ],
       [ "GUI_ID_OBJECT_WINDOW_ADD_TO_GROUP", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca726da5715d64130875295ddff6d87b13", null ],
-      [ "GUI_ID_OBJECT_WINDOW_ADD_TO_NEW_GROUP", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca135dbbf0a7d43a001066b689ac2b6de4", null ]
+      [ "GUI_ID_OBJECT_WINDOW_REMOVE_FROM_GROUP", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575caaebd1f90165f90b6759fd9260eb96e97", null ],
+      [ "GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca53dfbf96fe162e648edead87980045f8", null ]
     ] ]
 ];
