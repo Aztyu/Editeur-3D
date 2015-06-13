@@ -34,7 +34,7 @@ public:
     /** \param objet Pointeur vers le ISceneNode qui est donne par Irrlicht.
      * 		\param name Le nom desire pour l'objet.
      *          \param parent L'ISceneNode de la Zone. */
-    Object(irr::scene::ISceneNode* objet, const char* name, irr::scene::ISceneNode* parent, irr::core::vector3df position);
+    Object(irr::scene::ISceneNode* objet, const char* name, irr::scene::ISceneNode* parent, const irr::core::vector3df& position);
 
     
     //! Destructeur par defaut

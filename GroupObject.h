@@ -32,7 +32,7 @@ public:
      * 		\param name Le nom desire pour l'objet.
      *          \param parent L'ISceneNode de la Zone. 
      *          \param position Vector3D qui contient la position de l'objet */
-    GroupObject(irr::scene::ISceneNode* obj, irr::scene::ISceneNode* parent, const char* name, irr::core::vector3df position);
+    GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, const irr::core::vector3df& position);
     
     //! Destructeur par defaut
     virtual ~GroupObject();

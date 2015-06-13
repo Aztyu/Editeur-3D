@@ -36,7 +36,7 @@ class CEventReceiver : public irr::IEventReceiver{
         
         //! Gere les clics dans la fenêtre "Outil".
         /** \param id ID de l'élèment touchée par l'évènement.*/
-        void OnToolBoxItemSelected(irr::s32 id);
+        void OnToolBoxItemSelected(irr::s32 id, irr::gui::IGUIElement* item);
         
         //! Gere les clics sur les boutons de création d'objet.
         /** \param id ID du bouton de création.*/

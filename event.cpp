@@ -111,7 +111,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                     break;
                 case irr::gui::EGET_BUTTON_CLICKED:{
                     if(id <= GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX && id >= GUI_ID_OBJECT_WINDOW_OBJECT_NAME){
-                        this->OnToolBoxItemSelected(id);
+                        this->OnToolBoxItemSelected(id, event.GUIEvent.Caller);
                     }else{
                         this->OnObjectCreation(id);
                     }}
@@ -188,7 +188,7 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
     }
 }
 
-void CEventReceiver::OnToolBoxItemSelected(irr::s32 id) {
+void CEventReceiver::OnToolBoxItemSelected(irr::s32 id, irr::gui::IGUIElement* item) {
     Object* target = this->current_editor->getMainPointer()->gui->getTargetObject();
     if(target != NULL){
         irr::core::vector3df modification = irr::core::vector3df();
@@ -276,12 +276,17 @@ void CEventReceiver::OnToolBoxItemSelected(irr::s32 id) {
                 case GUI_ID_OBJECT_WINDOW_REMOVE_FROM_GROUP:{
                     SingleObject* single = static_cast<SingleObject*>(target);
                     if(single->hasParent()){
-                        GroupObject* group = static_cast<GroupObject*>(single->getParent());
-                        group->removeMember(single);
+                        GroupObject* group_object = static_cast<GroupObject*>(single->getParent());
+                        group_object->removeMember(single);
                     }
                     break;
                 }
                 case GUI_ID_OBJECT_WINDOW_ADD_TO_GROUP:
+                    irr::gui::IGUIElement* window = item->getParent();
+                    irr::gui::IGUIElement* combo = window->getElementFromId(GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX, true);
+                    irr::gui::IGUIComboBox* group_box = static_cast<irr::gui::IGUIComboBox*>(combo);
+                    int index = group_box->getSelected();
+                    this->current_editor->getCurrentZone()->addToGroup(index);
                     break;
             }
         }

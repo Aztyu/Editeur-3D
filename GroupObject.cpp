@@ -13,7 +13,7 @@ GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::sce
 GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, float total_scale) : Object(obj, name, parent, total_scale) {
 }
 
-GroupObject::GroupObject(irr::scene::ISceneNode* obj, irr::scene::ISceneNode* parent, const char* name, irr::core::vector3df position) : Object(obj, name, parent, position){
+GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, const irr::core::vector3df& position) : Object(obj, name, parent, position){
 }
 
 GroupObject::~GroupObject() {

@@ -24,7 +24,7 @@ Object::Object(irr::scene::ISceneNode* obj, const char* name, irr::scene::IScene
     this->default_parent = parent;
 }
 
-Object::Object(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, irr::core::vector3df position) : object_name(name){
+Object::Object(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, const irr::core::vector3df& position) : object_name(name){
     this->objet = obj;
     this->objet->setPosition(position);
     this->default_parent = parent;

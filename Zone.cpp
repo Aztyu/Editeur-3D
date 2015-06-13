@@ -168,7 +168,7 @@ void Zone::createSingleObject(object form){
     this->sendSingleObjectUpdate();
 }
 
-void Zone::createGroupObject(Object* base_object){
+void Zone::createGroupObject(SingleObject* base_object){
     string type = "ressources/form/", name;
     name = "Group";
     if(type_number[8] > 0){
@@ -182,8 +182,8 @@ void Zone::createGroupObject(Object* base_object){
     if(base_object == NULL){
         this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
     }else{
-        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
-
+        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh, base_object->getPosition()));        //Chargement et creation de l'objet
+        this->group_object_array.at(this->group_object_array.size()-1)->addMember(base_object);
     }
     this->sendGroupObjectUpdate();
     
@@ -192,6 +192,15 @@ void Zone::createGroupObject(Object* base_object){
         current_pointer->gui->setGroupObjectSelected(this->group_object_array.size()-1);
     }
 }
+
+void Zone::addToGroup(int index) {
+    if(index < this->group_object_array.size()){
+        this->group_object_array.at(index)->addMember(this->selected_object);
+    }else{
+        createGroupObject(this->selected_object);
+    }
+}
+
 
 
 int Zone::getObjectCount(){

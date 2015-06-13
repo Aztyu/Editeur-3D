@@ -49,7 +49,9 @@ class Zone {
         
         //! Créer un GroupObject dans la zone.
         /** \param base_object Pointeur vers le premier objet de ce groupe. */
-        void createGroupObject(Object* base_object=NULL);
+        void createGroupObject(SingleObject* base_object=NULL);
+        
+        void addToGroup(int index);
         
         //Recuperation d'information
         //! Recupere le pointeur vers un SingleObject.
