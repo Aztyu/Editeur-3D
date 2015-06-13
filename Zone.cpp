@@ -182,8 +182,11 @@ void Zone::createGroupObject(SingleObject* base_object){
     if(base_object == NULL){
         this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
     }else{
-        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh, base_object->getSceneNode()->getAbsolutePosition()));        //Chargement et creation de l'objet
-        this->addToGroup(this->group_object_array.size()-1);
+        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh, base_object->getPosition()));        //Chargement et creation de l'objet
+        //this->addToGroup(this->group_object_array.size()-1);
+        this->group_object_array.at(this->group_object_array.size()-1)->addMember(base_object);
+        base_object->setRotation(irr::core::vector3df(0, 0, 0));        //C'est l'objet qui a permis la creation du group donc ses coordonnees sont 0, 0, 0 de même pour la rotation
+        base_object->setPosition(irr::core::vector3df(0, 0, 0));
     }
     this->sendGroupObjectUpdate();
     
