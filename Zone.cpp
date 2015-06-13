@@ -182,8 +182,8 @@ void Zone::createGroupObject(SingleObject* base_object){
     if(base_object == NULL){
         this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
     }else{
-        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh, base_object->getPosition()));        //Chargement et creation de l'objet
-        this->group_object_array.at(this->group_object_array.size()-1)->addMember(base_object);
+        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh, base_object->getSceneNode()->getAbsolutePosition()));        //Chargement et creation de l'objet
+        this->addToGroup(this->group_object_array.size()-1);
     }
     this->sendGroupObjectUpdate();
     
@@ -193,15 +193,32 @@ void Zone::createGroupObject(SingleObject* base_object){
     }
 }
 
-void Zone::addToGroup(int index) {
+void Zone::addToGroup(int index){
     if(index < this->group_object_array.size()){
-        this->group_object_array.at(index)->addMember(this->selected_object);
+        SingleObject* base_object = this->selected_object;
+        
+        GroupObject* new_group = this->group_object_array.at(index);
+        
+        irr::core::matrix4 matr = base_object->getSceneNode()->getAbsoluteTransformation();
+        
+        const irr::core::matrix4 group_inv(new_group->getSceneNode()->getAbsoluteTransformation(), irr::core::matrix4::EM4CONST_INVERSE);
+
+        matr = (group_inv*matr);
+
+        new_group->addMember(base_object);
+        
+        base_object->getSceneNode()->setPosition(matr.getTranslation());
+        base_object->getSceneNode()->setRotation(matr.getRotationDegrees());
+        
+        base_object->getSceneNode()->updateAbsolutePosition();
+        irr::core::vector3df scale_base = new_group->getScale();
+        irr::core::vector3df scale_mod = scale_base.invert();
+        base_object->modifyScaleBy(scale_mod);
+        
     }else{
         createGroupObject(this->selected_object);
     }
 }
-
-
 
 int Zone::getObjectCount(){
     return this->single_object_array.size();

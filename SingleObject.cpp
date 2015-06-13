@@ -88,13 +88,24 @@ void SingleObject::exportObject(TiXmlElement* windows) {
 }
 
 
-void SingleObject::setParent(Object* parent){
-    if(parent == NULL){
-        this->objet->setParent(this->default_parent);
-        this->parent = NULL;
+void SingleObject::setParent(Object* new_parent){
+    if(new_parent == NULL){
+        if(this->parent != NULL){
+            irr::core::matrix4 transformation = this->getSceneNode()->getAbsoluteTransformation();
+            GroupObject* old_parent = static_cast<GroupObject*>(this->parent);
+            this->objet->setParent(this->default_parent);
+            this->parent = NULL;
+            this->setPosition(transformation.getTranslation());        //Garde la position actuelle de l'objet lors du chamgement de parent
+            this->setRotation(transformation.getRotationDegrees());     //Garde la rotation actuelle de l'objet lors du changement de parent
+            
+            this->modifyScaleBy(old_parent->getScale());
+        }else{
+            this->objet->setParent(this->default_parent);
+            this->parent = NULL;
+        } 
     }else{
-        objet->setParent(parent->getSceneNode());
-        this->parent = parent;
+        objet->setParent(new_parent->getSceneNode());
+        this->parent = new_parent;
     }
 }
 

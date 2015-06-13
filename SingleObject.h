@@ -70,8 +70,8 @@ public:
     
     //Gestion de groupe
     //! Definit l'élèment parent de l'objet(donc le groupe).
-    /** \param parent Pointeur vers l'Object qui deviendra le parent. */
-    void setParent(Object* parent);
+    /** \param new_parent Pointeur vers l'Object qui deviendra le parent. */
+    void setParent(Object* new_parent);
     
     //! Permet de savoir si l'objet est déjà dans un groupe ou non.
     /** \return True si l'objet est dans un groupe, False si l'objet n'est pas dans un groupe. */
