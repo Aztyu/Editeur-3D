@@ -60,6 +60,42 @@ void GroupObject::removeMember(SingleObject* object) {
     }
 }
 
+void GroupObject::exportObject(TiXmlElement* windows) {
+    TiXmlElement * window;
+    window = new TiXmlElement( "Group" );  
+    windows->LinkEndChild( window );
+    window->SetAttribute("name", this->getName().c_str());
+ 
+    TiXmlElement * position;
+    position = new TiXmlElement( "position" ); 
+    window->LinkEndChild( position );
+    irr::core::vector3df position_vector = this->getPosition();
+    position->SetDoubleAttribute("x", position_vector.X);
+    position->SetDoubleAttribute("y", position_vector.Y);
+    position->SetDoubleAttribute("z", position_vector.Z);
+    
+    TiXmlElement * rotation;
+    rotation = new TiXmlElement( "rotation" ); 
+    window->LinkEndChild( rotation );
+    irr::core::vector3df rotation_vector = this->getRotation();
+    rotation->SetDoubleAttribute("x", rotation_vector.X);
+    rotation->SetDoubleAttribute("y", rotation_vector.Y);
+    rotation->SetDoubleAttribute("z", rotation_vector.Z);
+
+    TiXmlElement * scale;
+    scale = new TiXmlElement( "scale" ); 
+    window->LinkEndChild( scale );
+    irr::core::vector3df scale_vector = this->getScale();
+    scale->SetDoubleAttribute("x", scale_vector.X);
+    scale->SetDoubleAttribute("y", scale_vector.Y);
+    scale->SetDoubleAttribute("z", scale_vector.Z);
+    
+    for(int i=0; i<this->member_object.size(); i++){
+        this->member_object.at(i)->exportObject(window);
+    }
+}
+
+
 const char* GroupObject::printObject() {
     return "test";
 }

@@ -360,8 +360,14 @@ void Zone::exportZone(TiXmlElement* root){        //Besoin de travail et deplace
     TiXmlElement * windows = new TiXmlElement( "Zone" );  
     root->LinkEndChild( windows );
     windows->SetAttribute("name", this->getName().c_str());
+    for(int i = 0; i< this->group_object_array.size(); i++){
+        group_object_array.at(i)->exportObject(windows);
+    }
     for(int i = 0; i< this->single_object_array.size(); i++){
-        single_object_array.at(i)->exportObject(windows);
+        SingleObject* object = single_object_array.at(i);
+        if(!object->isInGroup()){
+            single_object_array.at(i)->exportObject(windows);
+        }
     }
 }
 

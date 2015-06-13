@@ -60,6 +60,8 @@ public:
     //! Renvoie le type de la classe.
     /** \return Une string qui donne le type. */
     std::string getClassType();
+    
+    void exportObject(TiXmlElement* windows);
 
     //Sauvegarde(en cours)
     friend std::ostream& operator <<(std::ostream stream, SingleObject& obj);

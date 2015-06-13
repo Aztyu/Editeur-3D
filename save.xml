@@ -1,55 +1,28 @@
 <?xml version="1.0" ?>
 <Editor>
     <Zone name="Main">
-        <Object name="Cylinder">
+        <Group name="Group">
             <position x="0" y="0" z="0" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-        </Object>
-        <Object name="Pyramide">
-            <position x="0" y="teteter" z="0" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-        </Object>
-        <Object name="Pyramide1">
-            <position x="0" y="0" z="10" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="3" />
-        </Object>
-        <Object name="Sphere">
+            <rotation x="0" y="45" z="180" />
+            <scale x="3" y="3" z="3" />
+            <Object name="Cylinder" type="7">
+                <position x="0" y="0" z="0" />
+                <rotation x="0" y="0" z="0" />
+                <scale x="1" y="1" z="1" />
+            </Object>
+            <Object name="Pyramide" type="5">
+                <position x="0" y="2" z="0" />
+                <rotation x="0" y="0" z="0" />
+                <scale x="1" y="1" z="1" />
+            </Object>
+            <Object name="Pyramide1" type="5">
+                <position x="0" y="0" z="10" />
+                <rotation x="0" y="0" z="0" />
+                <scale x="1" y="1" z="3" />
+            </Object>
+        </Group>
+        <Object name="Sphere" type="6">
             <position x="0" y="0" z="20" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-        </Object>
-    </Zone>
-    <Zone name="Zone">
-        <Object name="Cube">
-            <position x="1.10215e-015" y="0" z="-12" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-        </Object>
-        <Object name="Cube1">
-            <position x="3.12567" y="0" z="-12.2735" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-        </Object>
-        <Object name="Cube2">
-            <position x="6.15636" y="0" z="-13.0855" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-        </Object>
-        <Object name="Sphere">
-            <position x="-3.12567" y="0" z="-12.2735" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-        </Object>
-        <Object name="Sphere1">
-            <position x="-6.15636" y="0" z="-13.0855" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-        </Object>
-        <Object name="Sphere2">
-            <position x="-9" y="0" z="-14.4115" />
             <rotation x="0" y="0" z="0" />
             <scale x="1" y="1" z="1" />
         </Object>

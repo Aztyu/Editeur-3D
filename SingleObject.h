@@ -63,7 +63,7 @@ public:
     void unselectObject();
     
     //! Exporte tous les objets
-    void exportObject(TiXmlElement* root);
+    void exportObject(TiXmlElement* windows);
 
     //Sauvegarde (en cours)
     friend std::ostream& operator <<(std::ostream stream, SingleObject& obj);
