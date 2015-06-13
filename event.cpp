@@ -180,10 +180,11 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
             this->current_editor->getCurrentZone()->createGroupObject();
             break;
         case GUI_ID_LOAD:
-            current_editor->importData();
+            this->current_editor->importData();
+            this->custom_gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
             break;
         case GUI_ID_SAVE:
-            current_editor->exportData();
+            this->current_editor->exportData();
             break;
     }
 }
@@ -278,6 +279,7 @@ void CEventReceiver::OnToolBoxItemSelected(irr::s32 id, irr::gui::IGUIElement* i
                     if(single->hasParent()){
                         GroupObject* group_object = static_cast<GroupObject*>(single->getParent());
                         group_object->removeMember(single);
+                        this->custom_gui->updateWindow();
                     }
                     break;
                 }
@@ -287,6 +289,7 @@ void CEventReceiver::OnToolBoxItemSelected(irr::s32 id, irr::gui::IGUIElement* i
                     irr::gui::IGUIComboBox* group_box = static_cast<irr::gui::IGUIComboBox*>(combo);
                     int index = group_box->getSelected();
                     this->current_editor->getCurrentZone()->addToGroup(index);
+                    this->custom_gui->updateWindow();
                     break;
             }
         }

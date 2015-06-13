@@ -27,4 +27,26 @@
             <scale x="1" y="1" z="1" />
         </Object>
     </Zone>
+    <Zone name="Zone">
+        <Group name="Group">
+            <position x="13.1564" y="0" z="-16.0855" />
+            <rotation x="-45" y="-45" z="0" />
+            <scale x="1.331" y="1.331" z="1.331" />
+            <Object name="Cube" type="4">
+                <position x="0" y="0" z="0" />
+                <rotation x="0" y="0" z="0" />
+                <scale x="1.77156" y="1.77156" z="1.77156" />
+            </Object>
+            <Object name="Cube1" type="4">
+                <position x="6.72998" y="6.08482" z="-6.08482" />
+                <rotation x="54.7356" y="30" z="35.2644" />
+                <scale x="1" y="1" z="1" />
+            </Object>
+        </Group>
+        <Object name="Sphere" type="6">
+            <position x="-1.87433" y="0" z="-20.9337" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+    </Zone>
 </Editor>

@@ -53,6 +53,8 @@ class Zone {
         
         void addToGroup(int index);
         
+        void importToGroup(int index);
+        
         //Recuperation d'information
         //! Recupere le pointeur vers un SingleObject.
         /** \param index Position de l'objet dans le vector single_object_array.
@@ -132,8 +134,11 @@ class Zone {
         
         void printZone();
         
-        //! Importe les objets contenus dans un noeud xml.
+        //! Importe l'objet contenu dans un noeud xml.
         void importObject(rapidxml::xml_node<> *object_node);
+        
+        //! Importe le groupe contenu dans un noeud xml.
+        void importGroup(rapidxml::xml_node<> *group_node);
 
     private:
         std::vector<SingleObject*> single_object_array; //Ne pas passer de pointer a objet ca fait tout peter

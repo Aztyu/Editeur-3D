@@ -138,7 +138,7 @@ void Zone::createSingleObject(object form){
         case 5:
             name = "Pyramide";
             if(type_number[5] > 0){
-                sprintf (buffer, "%d", type_number[5]);
+                sprintf(buffer, "%d", type_number[5]);
                 name.append(buffer);
             }
             type_number[5]++;
@@ -222,6 +222,13 @@ void Zone::addToGroup(int index){
         createGroupObject(this->selected_object);
     }
 }
+
+void Zone::importToGroup(int index) {
+    SingleObject* base_object = this->selected_object;
+    GroupObject* new_group = this->group_object_array.at(index);
+    new_group->addMember(base_object);
+}
+
 
 int Zone::getObjectCount(){
     return this->single_object_array.size();
@@ -371,7 +378,7 @@ void Zone::exportZone(TiXmlElement* root){        //Besoin de travail et deplace
     }
 }
 
-void Zone::importObject(xml_node<> *object_node){
+void Zone::importObject(xml_node<>* object_node){
     object form = (object)atoi(object_node->first_attribute("type")->value());
     this->createSingleObject(form);
     for (xml_node<> * position_node = object_node->first_node("position"); position_node; position_node = position_node->next_sibling())
@@ -402,3 +409,35 @@ void Zone::importObject(xml_node<> *object_node){
         }
     }
 }
+
+void Zone::importGroup(xml_node<>* group_node) {
+    this->createGroupObject();
+    for (xml_node<> * position_node = group_node->first_node("position"); position_node; position_node = position_node->next_sibling())
+    {
+        char * test = position_node->name();
+        if(!strcmp(test, "position")){
+            irr::core::vector3df position;
+            position.X = atof(position_node->first_attribute("x")->value());
+            position.Y = atof(position_node->first_attribute("y")->value());
+            position.Z = atof(position_node->first_attribute("z")->value());
+            this->group_object_array.at(this->group_object_array.size()-1)->setPosition(position);
+        }else if(!strcmp(test, "rotation")){
+            irr::core::vector3df rotation;
+            rotation.X = atof(position_node->first_attribute("x")->value());
+            rotation.Y = atof(position_node->first_attribute("y")->value());
+            rotation.Z = atof(position_node->first_attribute("z")->value());
+            this->group_object_array.at(this->group_object_array.size()-1)->setRotation(rotation);
+        }else if(!strcmp(test, "scale")){
+            irr::core::vector3df scale;
+            scale.X = atof(position_node->first_attribute("x")->value());
+            scale.Y = atof(position_node->first_attribute("y")->value());
+            scale.Z = atof(position_node->first_attribute("z")->value());
+            this->group_object_array.at(this->group_object_array.size()-1)->setScale(scale);
+        }else if(!strcmp(test, "Object")){
+            this->importObject(position_node);
+            this->setSelectedSingleObject(this->single_object_array.size()-1);
+            this->importToGroup(this->group_object_array.size()-1);
+        }
+    }
+}
+

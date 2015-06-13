@@ -157,8 +157,14 @@ void Editor::importData() {
 void Editor::importZone(xml_node<> *zone_node) {
     this->createZone(zone_node->first_attribute("name")->value());
     this->setCurrentZone(this->zone_array.at(this->zone_array.size()-1));
-    for(xml_node<> * object_node = zone_node->first_node("Object"); object_node; object_node = object_node->next_sibling()){
-        this->current_zone->importObject(object_node);
+    for(xml_node<> * object_node = zone_node->first_node(0); object_node; object_node = object_node->next_sibling()){
+        char * test = object_node->name();
+        if(!strcmp(object_node->name(),"Object")){
+            this->current_zone->importObject(object_node);
+        }else if(!strcmp(object_node->name(),"Group")){
+            this->current_zone->importGroup(object_node);
+        }
+        
     }
     cout << endl;
 }
