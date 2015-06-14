@@ -27,22 +27,4 @@
             <scale x="1" y="1" z="1" />
         </Object>
     </Zone>
-    <Zone name="Zone">
-        <Object name="Cube" type="4">
-            <position x="1.10215e-015" y="0" z="-12" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-        </Object>
-        <Object name="Cube1" type="4">
-            <position x="3.12567" y="0" z="-12.2735" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-        </Object>
-        <Object name="Cube2" type="4">
-            <position x="6.15636" y="0" z="-13.0855" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-        </Object>
-    </Zone>
-    <Zone name="Zone1" />
 </Editor>
