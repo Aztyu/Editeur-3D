@@ -460,5 +460,25 @@ void Zone::loadCamera() {
     this->current_pointer->camera->setRotation(rotation);
 }
 
+bool Zone::isGroupObjectNameTaken(std::string name) {
+    for(int i=0; i<this->group_object_array.size(); i++){
+        if(this->group_object_array.at(i)->getName() == name){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Zone::isSingleObjectNameTaken(std::string name) {
+    for(int i=0; i<this->single_object_array.size(); i++){
+        if(this->single_object_array.at(i)->getName() == name){
+            return true;
+        }
+    }
+    return false;
+}
+
+
+
 
 

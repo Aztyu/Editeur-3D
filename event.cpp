@@ -364,11 +364,24 @@ void CEventReceiver::OnValueChanged(irr::gui::IGUIEditBox* editbox) {
         this->custom_gui->updateWindow();
     }else if(id == GUI_ID_OBJECT_WINDOW_OBJECT_NAME){
         std::string value = s.c_str();
-        this->current_editor->getCurrentZone()->getSelectedObject()->setName(value);
+        irr::core::stringw Caption = L"Message";
+        irr::core::stringw MessageText = L"Le nom est déjà pris";
         if(target->getClassType() == "SingleObject"){
-            this->current_editor->getCurrentZone()->sendSingleObjectUpdate();
+            if(this->current_editor->getCurrentZone()->isSingleObjectNameTaken(value)){
+                this->current_editor->getMainPointer()->gui->getGUIEnvironment()->addMessageBox(
+                    Caption.c_str(), MessageText.c_str());
+            }else{
+                this->current_editor->getCurrentZone()->getSelectedObject()->setName(value);
+                this->current_editor->getCurrentZone()->sendSingleObjectUpdate();
+            }
         }else{
-            this->current_editor->getCurrentZone()->sendGroupObjectUpdate();
+            if(this->current_editor->getCurrentZone()->isGroupObjectNameTaken(value)){
+                this->current_editor->getMainPointer()->gui->getGUIEnvironment()->addMessageBox(
+                    Caption.c_str(), MessageText.c_str());
+            }else{
+                this->current_editor->getCurrentZone()->getSelectedObject()->setName(value);
+                this->current_editor->getCurrentZone()->sendSingleObjectUpdate();
+            }
         }
     }
     current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());

@@ -142,6 +142,10 @@ class Zone {
         void saveCamera();
         
         void loadCamera();
+        
+        bool isSingleObjectNameTaken(std::string name);
+        
+        bool isGroupObjectNameTaken(std::string name);
 
     private:
         std::vector<SingleObject*> single_object_array; //Ne pas passer de pointer a objet ca fait tout peter
