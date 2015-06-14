@@ -130,7 +130,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
             if(event.MouseInput.isLeftPressed() == true){       //Si on clique sur un objet a l'ecran il est selectionne
                 irr::core::vector2di position = irr::core::vector2di(event.MouseInput.X, event.MouseInput.Y);
                 if(!this->current_editor->getMainPointer()->gui->isInWindow(position)){ //Si le clic est en dehors de la fenetre outil
-                    if(current_editor->getCurrentZone()->setSelectedSingleObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), 0, false, 0))){
+                    if(current_editor->getCurrentZone()->setSelectedSingleObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), -1, false, 0))){
                         current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
                     }
                 }
@@ -180,6 +180,7 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
             this->current_editor->getCurrentZone()->createGroupObject();
             break;
         case GUI_ID_LOAD:
+            this->current_editor->removeZones();
             this->current_editor->importData();
             this->custom_gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
             break;

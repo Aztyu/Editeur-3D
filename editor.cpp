@@ -58,6 +58,14 @@ void Editor::createZone(const char* name){
     this->setCurrentZone(zone_array.size()-1);
 }
 
+void Editor::removeZones() {
+    for(size_t i; i<this->zone_array.size(); i++){
+        delete(zone_array.at(i));
+    }
+    this->zone_array.clear();
+}
+
+
 void Editor::setCurrentZone(Zone* zone){
     for(int i=0; i<this->zone_array.size(); i++){
         if(this->zone_array.at(i)->getPointer() == zone){
@@ -157,7 +165,6 @@ void Editor::importData() {
 
 void Editor::importZone(xml_node<> *zone_node) {
     this->createZone(zone_node->first_attribute("name")->value());
-    this->setCurrentZone(this->zone_array.at(this->zone_array.size()-1));
     for(xml_node<> * object_node = zone_node->first_node(0); object_node; object_node = object_node->next_sibling()){
         char * test = object_node->name();
         if(!strcmp(object_node->name(),"Object")){

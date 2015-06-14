@@ -28,6 +28,8 @@ class Editor {
         //! Creer une zone sans nom specifique.*/
         void createZone();
         
+        void removeZones();
+        
         //! Definit la zone actuelle.
         /** \param zone Pointeur vers la zone à définir comme actuelle.*/
         void setCurrentZone(Zone* zone);

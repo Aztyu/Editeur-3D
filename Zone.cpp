@@ -449,12 +449,14 @@ void Zone::saveCamera() {
 }
 
 void Zone::loadCamera() {
-    this->current_pointer->camera->bindTargetAndRotation(false);
     this->current_pointer->camera->setRotation(this->camera_rotation);
     this->current_pointer->camera->setPosition(this->camera_position);
-    this->current_pointer->camera->bindTargetAndRotation(true);
     irr::core::vector3df rotation = this->current_pointer->camera->getRotation();   //Permet de mettre a jour la camera
-    rotation.Y += 0.00001;
+    rotation.Y += 1;
+    this->current_pointer->camera->setRotation(rotation);
+    
+    rotation = this->current_pointer->camera->getRotation();   //Permet de mettre a jour la camera
+    rotation.Y -= 1;
     this->current_pointer->camera->setRotation(rotation);
 }
 
