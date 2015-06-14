@@ -19,7 +19,7 @@ int main(void)
     
     irr::IrrlichtDevice *device = irr::createDeviceEx(params);
     
-    irr::video::IVideoDriver* driver = device->getVideoDriver ();
+    irr::video::IVideoDriver* driver = device->getVideoDriver();
     
     irr::scene::ISceneManager *sceneManager = device->getSceneManager();
     

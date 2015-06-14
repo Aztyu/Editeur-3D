@@ -23,6 +23,9 @@ Zone::Zone(const char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zon
         this->type_number[i] = 0;
     }
     this->current_pointer = pointer;  //liste de pointeurs globaux
+    this->camera_position = this->current_pointer->camera->getPosition();
+    this->camera_rotation = this->current_pointer->camera->getRotation();
+    
     this->selected_object = NULL;        //Objet selectionne en ce moment
     this->selected_group = NULL;
     cout << "Creation de la zone " << zone_name << endl;
@@ -30,7 +33,6 @@ Zone::Zone(const char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zon
 
 Zone::~Zone() {
     this->group_object_array.clear();
-    
     this->single_object_array.clear();
 }
 
@@ -440,4 +442,21 @@ void Zone::importGroup(xml_node<>* group_node) {
         }
     }
 }
+
+void Zone::saveCamera() {
+    this->camera_position = this->current_pointer->camera->getPosition();
+    this->camera_rotation = this->current_pointer->camera->getRotation();
+}
+
+void Zone::loadCamera() {
+    this->current_pointer->camera->bindTargetAndRotation(false);
+    this->current_pointer->camera->setRotation(this->camera_rotation);
+    this->current_pointer->camera->setPosition(this->camera_position);
+    this->current_pointer->camera->bindTargetAndRotation(true);
+    irr::core::vector3df rotation = this->current_pointer->camera->getRotation();   //Permet de mettre a jour la camera
+    rotation.Y += 0.00001;
+    this->current_pointer->camera->setRotation(rotation);
+}
+
+
 

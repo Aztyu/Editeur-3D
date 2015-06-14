@@ -73,13 +73,13 @@ void Editor::setCurrentZone(int index) {
         if(this->current_zone != this->zone_array.at(index)){
             if(this->current_zone != NULL){
                 this->setCurrentZoneVisible(false);
+                this->current_zone->saveCamera();
             }
             this->current_zone = this->zone_array.at(index);
             this->setCurrentZoneVisible(true);
 
             this->main_pointer->gui->updateZone(&this->zone_array);
             finishZoneSwitch();
-
         }
     }
 }
@@ -119,6 +119,7 @@ void Editor::finishZoneSwitch() {
     }
     
     this->main_pointer->gui->updateWindow(this->current_zone->getSelectedObject());
+    this->current_zone->loadCamera();
 }
 
 

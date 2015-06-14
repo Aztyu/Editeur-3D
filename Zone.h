@@ -11,9 +11,7 @@
 #include "GroupObject.h"
 
 class Pointer;
-    
-
-    
+        
 //! Classe qui est utiliser pour creer une zone contenant des objet et groupes d' objets
 class Zone {
     public:
@@ -139,6 +137,11 @@ class Zone {
         
         //! Importe le groupe contenu dans un noeud xml.
         void importGroup(rapidxml::xml_node<> *group_node);
+        
+        //! Enregistre l'etat actuel de la camera.
+        void saveCamera();
+        
+        void loadCamera();
 
     private:
         std::vector<SingleObject*> single_object_array; //Ne pas passer de pointer a objet ca fait tout peter
@@ -146,6 +149,8 @@ class Zone {
         SingleObject* selected_object;
         GroupObject* selected_group;
         Pointer* current_pointer;
+        irr::core::vector3df camera_rotation;
+        irr::core::vector3df camera_position;
         irr::scene::ISceneNode* zone_mesh;
         std::string zone_name;
         int type_number[9];
