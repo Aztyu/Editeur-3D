@@ -152,7 +152,7 @@ void Editor::importData() {
     cout << "Start" << endl;
     xml_document<> doc;
     xml_node<> * root_node;
-    string path = this->GetFileName("Charger une sauvegarde");
+    string path = this->OpenFileName("Charger une sauvegarde");
     ifstream theFile(path.c_str());
     if(theFile){
         try{
@@ -230,5 +230,18 @@ string Editor::GetFileName(const string& prompt){
     ofns.lpstrTitle = prompt.c_str();
     ofns.lpstrFilter = "Save file(.xml)\0*.xml\0";
     GetSaveFileName(&ofns);
+    return buffer;
+}
+
+string Editor::OpenFileName(const string& prompt){ 
+    const int BUFSIZE = 1024;
+    char buffer[BUFSIZE] = {0};
+    OPENFILENAME ofns = {0};
+    ofns.lStructSize = sizeof( ofns );
+    ofns.lpstrFile = buffer;
+    ofns.nMaxFile = BUFSIZE;
+    ofns.lpstrTitle = prompt.c_str();
+    ofns.lpstrFilter = "Save file(.xml)\0*.xml\0";
+    GetOpenFileName(&ofns);
     return buffer;
 }

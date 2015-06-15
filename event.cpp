@@ -1,5 +1,6 @@
 #include "Event.h"
 #include "iostream"
+#include <Shlobj.h>
  
 CEventReceiver::CEventReceiver(Editor* editor){
     this->current_editor = editor;
@@ -184,6 +185,9 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
             break;
         case GUI_ID_SAVE:
             this->current_editor->exportData();
+            break;
+        case GUI_ID_DOC:
+            ShellExecute(NULL, "open", "ressources\\documentation\\Documentation.pdf", NULL, NULL, SW_SHOW);
             break;
     }
 }

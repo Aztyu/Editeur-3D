@@ -78,6 +78,8 @@ class Editor {
         void importZone(rapidxml::xml_node<> *zone_node);
         
         std::string GetFileName(const std::string &prompt);
+        
+        std::string OpenFileName(const std::string &prompt);
 
     private:
         std::vector<Zone*> zone_array;
