@@ -162,7 +162,9 @@ void Editor::importData() {
             root_node = doc.first_node("Editor");
             for (xml_node<> * zone_node = root_node->first_node("Zone"); zone_node; zone_node = zone_node->next_sibling())
             {
-                this->importZone(zone_node);
+                if(!strcmp(zone_node->name(),"Zone")){
+                    this->importZone(zone_node);
+                }
             }
             MessageText = L"L'environnement de travail a bien été chargé";
             this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
@@ -180,21 +182,16 @@ void Editor::importData() {
 }
 
 void Editor::importZone(xml_node<> *zone_node) {
-    try{
-        this->createZone(zone_node->first_attribute("name")->value());
-        for(xml_node<> * object_node = zone_node->first_node(0); object_node; object_node = object_node->next_sibling()){
-            char * test = object_node->name();
-            if(!strcmp(object_node->name(),"Object")){
-                this->current_zone->importObject(object_node);
-            }else if(!strcmp(object_node->name(),"Group")){
-                this->current_zone->importGroup(object_node);
-            }
-
+    this->createZone(zone_node->first_attribute("name")->value());
+    for(xml_node<> * object_node = zone_node->first_node(0); object_node; object_node = object_node->next_sibling()){
+        if(!strcmp(object_node->name(),"Object")){
+            this->current_zone->importObject(object_node);
+        }else if(!strcmp(object_node->name(),"Group")){
+            this->current_zone->importGroup(object_node);
         }
-        cout << endl;
-    }catch(exception e){
-        throw e;
+
     }
+    cout << endl;
 }
 
 void Editor::exportData(){
@@ -211,7 +208,8 @@ void Editor::exportData(){
         for(int i = 0; i < this->zone_array.size(); i++){
             zone_array.at(i)->exportZone(root);
         }
-        doc.SaveFile( "save.xml" );
+        string path = this->GetFileName("Sauvegarder votre travail");
+        doc.SaveFile(path.c_str());
         MessageText = L"La sauvegarde a bien été effectué";
         this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
             Caption.c_str(), MessageText.c_str());
