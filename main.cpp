@@ -86,7 +86,7 @@ int main(void)
             irr::video::SColorf(1.0f, 0.6f, 0.7f, 1.0f),    //Couleur de la lumiere
             5200.0f);                                       //Rayon de la lumiere
     
-    while(device->run ())                        // la boucle de rendu
+    while(device->run())                        // la boucle de rendu
     {
         wchar_t titre[200];
         

@@ -135,6 +135,13 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>comdlg32</linkerLibLibItem>
+            <linkerLibLibItem>Irrlicht</linkerLibLibItem>
+            <linkerLibFileItem>libraries/tinyxml/tinyxml.a</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="GraphicalInterface.cpp" ex="false" tool="1" flavor2="0">
       </item>

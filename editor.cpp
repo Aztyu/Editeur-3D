@@ -17,14 +17,9 @@ using namespace std;
 Editor::Editor(Pointer* struct_pointer) : main_pointer(struct_pointer), current_zone(NULL){
     this->main_pointer->current_editor = this;
     createZone("Main");
-    //std::cout << "finish object" << std::endl;
 }
 
 Editor::~Editor() {
-    //delete current zones;
-    for (int i=0; i< zone_array.size(); ++i) {
-        delete zone_array[i];
-    }
 }
 
 Editor* Editor::getEditor(){
@@ -165,7 +160,7 @@ void Editor::importData() {
                     this->importZone(zone_node);
                 }
             }
-            MessageText = L"L'environnement de travail a bien été sauvegardé";
+            MessageText = L"Le chargement a bien été effectué";
             this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
                 Caption.c_str(), MessageText.c_str());
         }catch(exception e){
