@@ -59,6 +59,8 @@ class CEventReceiver : public irr::IEventReceiver{
         //! Fait reculer la camera.
         void backwardCamera();
         
+        void updateInformation();
+        
     private:
         Editor* current_editor;
         GraphicalInterface* custom_gui;

@@ -41,7 +41,11 @@ enum Gui{                  //Ajoutez les ids utilises dans le GUI ici
     GUI_ID_HELP,                            /**< element "Aide". */
     GUI_ID_DOC,                             /**< element "Documentation". */
     GUI_ID_ABOUT,                            /**< element "A propos". */
-            
+    
+    GUI_ID_INFORMATIONS,                    /**<fenetre d'information. */
+    GUI_ID_INFORMATIONS_RESET_CAMERA,
+    GUI_ID_INFORMATIONS_DELETE_ZONE,
+    
     GUI_ID_OBJECT_WINDOW,                   /**< fenetre d'outils. */
     GUI_ID_OBJECT_WINDOW_OBJECT_NAME,       /**< nom de l'objet. */
     
@@ -133,6 +137,9 @@ public:
     
     //! Mets à jour la fenetre Outils grace a l'attribut current_object.
     void updateWindow();
+    
+    //! Mets à jour la fenetre Informations grace a l'attribut current_zone.
+    void updateInformation(Zone* current_zone);
     
     //! Recupere un pointeur vers l'element skybox.
     /** \return Un pointeur vers un ISceneNode pour pouvoir modifier la skybox */

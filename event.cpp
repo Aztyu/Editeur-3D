@@ -181,6 +181,7 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
             this->current_editor->removeZones();
             this->current_editor->importData();
             this->custom_gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
+            this->custom_gui->updateInformation(this->current_editor->getCurrentZone());
             break;
         case GUI_ID_SAVE:
             this->current_editor->exportData();
@@ -437,6 +438,7 @@ void CEventReceiver::angleCameraRight(){
     
     rotation.Y -= 10;
     current_editor->getMainPointer()->camera->setRotation(rotation);
+    this->updateInformation();
 }
 
 void CEventReceiver::angleCameraLeft(){
@@ -444,6 +446,7 @@ void CEventReceiver::angleCameraLeft(){
     
     rotation.Y += 10;
     current_editor->getMainPointer()->camera->setRotation(rotation);
+    this->updateInformation();
 }
 
 void CEventReceiver::forwardCamera(){
@@ -471,6 +474,7 @@ void CEventReceiver::forwardCamera(){
     current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
     current_editor->getMainPointer()->camera->setTarget(target);
     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
+    this->updateInformation();
 }
 
 void CEventReceiver::backwardCamera(){
@@ -499,7 +503,13 @@ void CEventReceiver::backwardCamera(){
     current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
     current_editor->getMainPointer()->camera->setTarget(target);
     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
+    this->updateInformation();
 }
+
+void CEventReceiver::updateInformation(){
+    this->custom_gui->updateInformation(this->current_editor->getCurrentZone());
+}
+
 
 
 

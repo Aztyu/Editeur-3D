@@ -32,6 +32,7 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
 
     // create the toolbox window
     this->updateWindow();
+    this->updateInformation(NULL);
     
     this->gui->addImage(driver->getTexture("ressources/icon/navbar.jpg"),
     irr::core::position2d<irr::s32>(0,0),
@@ -522,6 +523,38 @@ void GraphicalInterface::updateWindow(){
     } 
 }
 
+void GraphicalInterface::updateInformation(Zone* current_zone) {
+    Zone* object = current_zone;
+    
+    irr::gui::IGUIElement* root = this->gui->getRootGUIElement();
+    irr::gui::IGUIElement* e = root->getElementFromId(GUI_ID_INFORMATIONS, true);
+    
+    this->window = NULL;
+    
+    if (e != NULL){
+        irr::core::rect<irr::s32> test = e->getAbsolutePosition();
+        e->remove();
+        if(test.UpperLeftCorner.X != 0 || test.UpperLeftCorner.Y != 85){
+            this->window = this->gui->addWindow(irr::core::rect<irr::s32>(test.UpperLeftCorner.X, test.UpperLeftCorner.Y, test.LowerRightCorner.X, test.LowerRightCorner.Y),
+                false, L"Informations", 0, GUI_ID_INFORMATIONS);
+        }else{
+            this->window = this->gui->addWindow(irr::core::rect<irr::s32>(0,85,200,400),
+                false, L"Information", 0, GUI_ID_INFORMATIONS);
+        }
+    }else{
+        this->window = this->gui->addWindow(irr::core::rect<irr::s32>(0,85,200,400),
+            false, L"Informations", 0, GUI_ID_INFORMATIONS);
+    }
+    
+    if(this->window != NULL){
+        std::wstring widestr;
+        const wchar_t* widecstr = widestr.c_str();
+            this->gui->addStaticText(L"Position de la camera : ", irr::core::rect<irr::s32>(15,20,185,50),
+                false,
+                true,
+                static_cast<irr::gui::IGUIElement*>(this->window));
+    }
+}
 
 irr::scene::ISceneNode* GraphicalInterface::getSkybox() {
     return this->skybox;
