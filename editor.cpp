@@ -145,21 +145,34 @@ bool Editor::isNameTaken(std::string name){
 }
 
 void Editor::importData() {
+    irr::core::stringw MessageText;
+    irr::core::stringw Caption = L"Message - Chargement";
     cout << "Start" << endl;
     xml_document<> doc;
     xml_node<> * root_node;
-    // Read the xml file into a vector
     ifstream theFile ("save.xml");
-    vector<char> buffer((istreambuf_iterator<char>(theFile)), istreambuf_iterator<char>());
-    buffer.push_back('\0');
-    // Parse the buffer using the xml file parsing library into doc 
-    doc.parse<0>(&buffer[0]);
-    // Find our root node
-    root_node = doc.first_node("Editor");
-    // Iterate over the brewerys
-    for (xml_node<> * zone_node = root_node->first_node("Zone"); zone_node; zone_node = zone_node->next_sibling())
-    {
-        this->importZone(zone_node);
+    if(theFile){
+        try{
+            vector<char> buffer((istreambuf_iterator<char>(theFile)), istreambuf_iterator<char>());
+            buffer.push_back('\0');
+            doc.parse<0>(&buffer[0]);
+            root_node = doc.first_node("Editor");
+            for (xml_node<> * zone_node = root_node->first_node("Zone"); zone_node; zone_node = zone_node->next_sibling())
+            {
+                this->importZone(zone_node);
+            }
+            MessageText = L"L'environnement de travail a bien été sauvegardé";
+            this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
+                Caption.c_str(), MessageText.c_str());
+        }catch(exception e){
+            MessageText = L"Il y a eu un problème lors du chargement, fichier invalide";
+            this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
+                Caption.c_str(), MessageText.c_str());
+        }
+    }else{
+        MessageText = L"Un problème a été rencontré lors de l'ouverture du fichier";
+        this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
+            Caption.c_str(), MessageText.c_str());
     }
 }
 
@@ -178,15 +191,27 @@ void Editor::importZone(xml_node<> *zone_node) {
 }
 
 void Editor::exportData(){
-    TiXmlDocument doc;  
-    TiXmlDeclaration* decl = new TiXmlDeclaration( "1.0", "", "" );  
-    doc.LinkEndChild( decl );  
+    irr::core::stringw MessageText;
+    irr::core::stringw Caption = L"Message - Sauvegarde";
+    try{
+        TiXmlDocument doc;  
+        TiXmlDeclaration* decl = new TiXmlDeclaration( "1.0", "", "" );  
+        doc.LinkEndChild( decl );  
 
-    TiXmlElement * root = new TiXmlElement( "Editor" );  
-    doc.LinkEndChild( root );  
-    
-    for(int i = 0; i < this->zone_array.size(); i++){
-        zone_array.at(i)->exportZone(root);
+        TiXmlElement * root = new TiXmlElement( "Editor" );  
+        doc.LinkEndChild( root );  
+
+        for(int i = 0; i < this->zone_array.size(); i++){
+            zone_array.at(i)->exportZone(root);
+        }
+        doc.SaveFile( "save.xml" );
+        MessageText = L"La sauvegarde a bien été effectué";
+        this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
+            Caption.c_str(), MessageText.c_str());
+    }catch(exception e){
+        MessageText = L"Il y a eu un problème lors de la sauvegarde du fichier.\nRéessayer avec un autre nom de fichier";
+        this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
+            Caption.c_str(), MessageText.c_str());
     }
-    doc.SaveFile( "save.xml" );  
+    
 } 

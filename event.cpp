@@ -116,7 +116,6 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                         this->OnObjectCreation(id);
                     }}
                     break; 
-                  
                 case irr::gui::EGET_COMBO_BOX_CHANGED:
                     OnObjectSelected((irr::gui::IGUIComboBox*)event.GUIEvent.Caller);
                     return true;
@@ -160,9 +159,6 @@ void CEventReceiver::OnObjectSelected(irr::gui::IGUIComboBox* combo ){  //Appele
 
 void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
     irr::s32 id = menu->getItemCommandId(menu->getSelectedItem());
-
-    irr::core::stringw MessageText;
-    irr::core::stringw Caption = L"Message";
     switch(id)
     {
         case GUI_ID_QUIT:
@@ -185,15 +181,9 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
             this->current_editor->removeZones();
             this->current_editor->importData();
             this->custom_gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
-            MessageText = L"L'environnement de travail a bien été chargé";
-            this->current_editor->getMainPointer()->gui->getGUIEnvironment()->addMessageBox(
-                Caption.c_str(), MessageText.c_str());
             break;
         case GUI_ID_SAVE:
             this->current_editor->exportData();
-            MessageText = L"L'environnement de travail a bien été sauvegardé";
-            this->current_editor->getMainPointer()->gui->getGUIEnvironment()->addMessageBox(
-                Caption.c_str(), MessageText.c_str());
             break;
     }
 }
