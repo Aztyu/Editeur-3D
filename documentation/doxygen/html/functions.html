@@ -82,7 +82,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
-      <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
@@ -96,6 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
@@ -170,6 +170,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>camera
 : <a class="el" href="struct_pointer.html#aa8703bd283fa76648d19e58d5001b21b">Pointer</a>
 </li>
+<li>camera_position
+: <a class="el" href="class_zone.html#a1183a6c78fed496780478a1384cf3634">Zone</a>
+</li>
+<li>camera_rotation
+: <a class="el" href="class_zone.html#abf3683f7a32d7144ee52eab5bc639802">Zone</a>
+</li>
 <li>CEventReceiver()
 : <a class="el" href="class_c_event_receiver.html#ac2d6ef7a87ca5295de8d90cbe3eeb8cd">CEventReceiver</a>
 </li>
@@ -226,7 +232,8 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_editor.html#ac8c17139c2fa9fe2e9c65d96833d0a4c">Editor</a>
 </li>
 <li>exportObject()
-: <a class="el" href="class_single_object.html#ab63baad93626fa859e6fb86acadb3d0d">SingleObject</a>
+: <a class="el" href="class_group_object.html#a92bb9e830cff75b120ed0e3096d733c3">GroupObject</a>
+, <a class="el" href="class_single_object.html#af56a7be68ebbf672091cf6efab721526">SingleObject</a>
 </li>
 <li>exportZone()
 : <a class="el" href="class_zone.html#a4eb9d8e4cd4a288f0b5eab0d56ab662e">Zone</a>
@@ -354,11 +361,20 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>importData()
 : <a class="el" href="class_editor.html#af90fdfd9d3d17636cb668d627e30589e">Editor</a>
 </li>
+<li>importGroup()
+: <a class="el" href="class_zone.html#ab5ca7a253f5ce5042c78342bf2965655">Zone</a>
+</li>
 <li>importObject()
 : <a class="el" href="class_zone.html#a193612fd78d53a50b8b4fa66445b00dc">Zone</a>
 </li>
+<li>importToGroup()
+: <a class="el" href="class_zone.html#a26d156d3a0fd88eed16fcc947241cd42">Zone</a>
+</li>
 <li>importZone()
 : <a class="el" href="class_editor.html#a090a87009661930f22e39c75fd67de5e">Editor</a>
+</li>
+<li>isGroupObjectNameTaken()
+: <a class="el" href="class_zone.html#a95911fa782651e93e03cb4a75bf6b26c">Zone</a>
 </li>
 <li>isInGroup()
 : <a class="el" href="class_single_object.html#acaba402d3de9153eee6337a6b7d8b56e">SingleObject</a>
@@ -368,6 +384,16 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>isNameTaken()
 : <a class="el" href="class_editor.html#a29cb0a39b49367d6cc50311747944efe">Editor</a>
+</li>
+<li>isSingleObjectNameTaken()
+: <a class="el" href="class_zone.html#af38f89be8fca430c8c93c3db76837119">Zone</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>loadCamera()
+: <a class="el" href="class_zone.html#acb1d7bf5d78729abe52e793e2bff8465">Zone</a>
 </li>
 </ul>
 
@@ -386,10 +412,10 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_object.html#a0bc35a2616873c1dc861e81b63d38c90">Object</a>
 </li>
 <li>modifyRotationBy()
-: <a class="el" href="class_object.html#a4b25d801c22def0ade39c479bf813818">Object</a>
+: <a class="el" href="class_object.html#aeab2da3a7c16f11d088a24c85282c511">Object</a>
 </li>
 <li>modifyScaleBy()
-: <a class="el" href="class_object.html#ab2d9b29dabaaf51d559f673673a42cc4">Object</a>
+: <a class="el" href="class_object.html#aeae16a9ab6ef677bf7d3bf697910c58d">Object</a>
 </li>
 </ul>
 
@@ -422,20 +448,12 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>OnValueChanged()
 : <a class="el" href="class_c_event_receiver.html#a007e23fbe772192014063f9290ab1b92">CEventReceiver</a>
 </li>
-<li>operator&lt;&lt;
-: <a class="el" href="class_group_object.html#a0f61d0ec96671d0ad2598e0dc0370dd5">GroupObject</a>
-, <a class="el" href="class_single_object.html#a0f61d0ec96671d0ad2598e0dc0370dd5">SingleObject</a>
-</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>parent
 : <a class="el" href="class_single_object.html#a46ecac846dd28131d8cc21e236efaa00">SingleObject</a>
-</li>
-<li>printObject()
-: <a class="el" href="class_group_object.html#ad03df6c10ee670e99839832ffdcf8a58">GroupObject</a>
-, <a class="el" href="class_single_object.html#a58e5b8c436971966f03d353a468db0c6">SingleObject</a>
 </li>
 <li>printZone()
 : <a class="el" href="class_zone.html#a5ccbf75095dc7c9b44681fa4aae70cad">Zone</a>
@@ -456,10 +474,16 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>removeSingleObject()
 : <a class="el" href="class_zone.html#a6ee0dd2d8365216fa7841b3db4a76fe3">Zone</a>
 </li>
+<li>removeZones()
+: <a class="el" href="class_editor.html#a6c3c453a5aff5553f5f3cd5402fee366">Editor</a>
+</li>
 </ul>
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>saveCamera()
+: <a class="el" href="class_zone.html#a5b04db451fad30df913c63f61c9ac0b2">Zone</a>
+</li>
 <li>scene
 : <a class="el" href="struct_pointer.html#a7f7af01d5e32b26fb5d2f463ab658a49">Pointer</a>
 </li>
@@ -502,7 +526,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_object.html#a3f791496e7faa8e728268b88f56496d1">Object</a>
 </li>
 <li>setRotation()
-: <a class="el" href="class_object.html#a03380a40efe6bc27d5804e68e029b660">Object</a>
+: <a class="el" href="class_object.html#a27a19187ba6283151bc271d5927c6abc">Object</a>
 </li>
 <li>setScale()
 : <a class="el" href="class_object.html#aa6851b042761bda5450fceb0b5e98428">Object</a>
@@ -526,7 +550,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_graphical_interface.html#a8cbe9f56f55b45e3382817a6ec788be5">GraphicalInterface</a>
 </li>
 <li>SingleObject()
-: <a class="el" href="class_single_object.html#a36db246ca1a4ada7d55d13a30cfc83ee">SingleObject</a>
+: <a class="el" href="class_single_object.html#a991dc383f54757da8feaa5587504decc">SingleObject</a>
 </li>
 <li>skybox
 : <a class="el" href="class_graphical_interface.html#a76899c47a903c3057aa284dd136061dc">GraphicalInterface</a>
@@ -556,11 +580,15 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>updateGroupObject()
 : <a class="el" href="class_graphical_interface.html#a8a5800ef8df6738199e5cb6f370f29df">GraphicalInterface</a>
 </li>
+<li>updateInformation()
+: <a class="el" href="class_c_event_receiver.html#afcd4129b1717a4e10929fcce381dd71c">CEventReceiver</a>
+, <a class="el" href="class_graphical_interface.html#a610f534ff59af7e39bff8a135c2a65e3">GraphicalInterface</a>
+</li>
 <li>updateSingleObject()
 : <a class="el" href="class_graphical_interface.html#a10ffd5e51b88c0f1814d294108a88e92">GraphicalInterface</a>
 </li>
 <li>updateWindow()
-: <a class="el" href="class_graphical_interface.html#a0f8425abdd04336c10bf9835219e36b8">GraphicalInterface</a>
+: <a class="el" href="class_graphical_interface.html#a2b2553bc093c417cdf4208ff916074ab">GraphicalInterface</a>
 </li>
 <li>updateZone()
 : <a class="el" href="class_graphical_interface.html#ac6af8d93a2938c7b1e1ac38888ccfad1">GraphicalInterface</a>
@@ -619,7 +647,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Jun 13 2015 16:58:06 for Éditeur 3D by
+    <li class="footer">Generated on Mon Jun 15 2015 18:04:22 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

@@ -1,6 +1,8 @@
 var searchData=
 [
   ['camera',['camera',['../struct_pointer.html#aa8703bd283fa76648d19e58d5001b21b',1,'Pointer']]],
+  ['camera_5fposition',['camera_position',['../class_zone.html#a1183a6c78fed496780478a1384cf3634',1,'Zone']]],
+  ['camera_5frotation',['camera_rotation',['../class_zone.html#abf3683f7a32d7144ee52eab5bc639802',1,'Zone']]],
   ['ceventreceiver',['CEventReceiver',['../class_c_event_receiver.html',1,'CEventReceiver'],['../class_c_event_receiver.html#ac2d6ef7a87ca5295de8d90cbe3eeb8cd',1,'CEventReceiver::CEventReceiver()']]],
   ['circle',['circle',['../_single_object_8h.html#ad03408aabe16bb53c780fae6cf3910f9a1155d8992f910feb05ac24fc65521792',1,'SingleObject.h']]],
   ['creategroupobject',['createGroupObject',['../class_zone.html#aeef4467322e0c710fd949bcfcda63aeb',1,'Zone']]],

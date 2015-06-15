@@ -33,15 +33,21 @@ enum Gui{                  //Ajoutez les ids utilises dans le GUI ici
     
     GUI_ID_NEW_ZONE,                        /**< element "Nouveau"-"Zone". */
     GUI_ID_NEW_GROUP,                       /**< element "Nouveau"-"Group". */
+    GUI_ID_NEW_PROJECT,                     /**< element "Nouveau"-"Projet" */
     
     GUI_ID_SETTINGS,                        /**< element "Reglages". */
     GUI_ID_SKYBOX,                          /**< element "Skybox". */
     GUI_ID_TOOLBOX,                         /**< element "Boite a outils". */
+    GUI_ID_INFO,                            /**< element "Informations" */
     
     GUI_ID_HELP,                            /**< element "Aide". */
     GUI_ID_DOC,                             /**< element "Documentation". */
     GUI_ID_ABOUT,                            /**< element "A propos". */
-            
+    
+    GUI_ID_INFORMATIONS,                    /**<fenetre d'information. */
+    GUI_ID_INFORMATIONS_RESET_CAMERA,
+    GUI_ID_INFORMATIONS_DELETE_ZONE,
+    
     GUI_ID_OBJECT_WINDOW,                   /**< fenetre d'outils. */
     GUI_ID_OBJECT_WINDOW_OBJECT_NAME,       /**< nom de l'objet. */
     
@@ -134,6 +140,10 @@ public:
     //! Mets à jour la fenetre Outils grace a l'attribut current_object.
     void updateWindow();
     
+    //! Mets à jour la fenetre Informations grace a l'attribut current_zone.
+    /** position_camera vector3d qui indique la position de la camera*/
+    void updateInformation(irr::core::vector3df position_camera);
+    
     //! Recupere un pointeur vers l'element skybox.
     /** \return Un pointeur vers un ISceneNode pour pouvoir modifier la skybox */
     irr::scene::ISceneNode* getSkybox();
@@ -148,16 +158,31 @@ public:
     bool isInWindow(irr::core::vector2di position);
     
 private:
+    //! Contient le menu du GUI.
     irr::gui::IGUIContextMenu* menu;
+    
+    //! La combobox qui affiche tous les SingleObject.
     irr::gui::IGUIComboBox* single_object_box;
+    
+    //! La combobox qui affiche tous les GroupObject.
     irr::gui::IGUIComboBox* group_object_box;
+    
+    //! La combobox qui affiche toutes les Zone.
     irr::gui::IGUIComboBox* zone_box;
+    
+    //! Pointeur vers l'objet skybox.
     irr::scene::ISceneNode* skybox;
     
+    //! Le driver de Irrlicht.
     irr::video::IVideoDriver* driver;
+    
+    //! L'envirronement graphique fourni par Irrlicht.
     irr::gui::IGUIEnvironment* gui;
+    
+    //! La fenêtre "Outils".
     irr::gui::IGUIWindow* window;
     
+    //! L'Object actuellement sélectionné.
     Object* current_object;
 };
 

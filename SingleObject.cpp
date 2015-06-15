@@ -44,17 +44,6 @@ void SingleObject::unselectObject() {
     this->objet->getMaterial(0).EmissiveColor = 0;
 }
 
-
-std::ostream& operator <<(std::ostream& stream, SingleObject& obj){    //Completer pour l'export
-    stream << obj.printObject();
-    return stream;
-}
-
-const string SingleObject::printObject(){
-    std::string obj_name = "L'objet se trouve en ";
-    return obj_name;
-}
-
 void SingleObject::exportObject(TiXmlElement* windows) {
     TiXmlElement * window;
     window = new TiXmlElement( "Object" );  

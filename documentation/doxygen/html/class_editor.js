@@ -12,6 +12,7 @@ var class_editor =
     [ "importData", "class_editor.html#af90fdfd9d3d17636cb668d627e30589e", null ],
     [ "importZone", "class_editor.html#a090a87009661930f22e39c75fd67de5e", null ],
     [ "isNameTaken", "class_editor.html#a29cb0a39b49367d6cc50311747944efe", null ],
+    [ "removeZones", "class_editor.html#a6c3c453a5aff5553f5f3cd5402fee366", null ],
     [ "setCurrentZone", "class_editor.html#a3a66d825ac095e7ed3ba716aadf0f76f", null ],
     [ "setCurrentZone", "class_editor.html#a95108d557a16fb164fd2c874882af716", null ],
     [ "setCurrentZoneVisible", "class_editor.html#a95554f786035d0f2e559dd0ae92b60b9", null ],

@@ -11,5 +11,5 @@ var searchData=
   ['onobjectselected',['OnObjectSelected',['../class_c_event_receiver.html#a3ecac7bd7526986381d369dc4e56a57a',1,'CEventReceiver']]],
   ['ontoolboxitemselected',['OnToolBoxItemSelected',['../class_c_event_receiver.html#aef8d37570495fc5831313f1216b62681',1,'CEventReceiver']]],
   ['onvaluechanged',['OnValueChanged',['../class_c_event_receiver.html#a007e23fbe772192014063f9290ab1b92',1,'CEventReceiver']]],
-  ['operator_3c_3c',['operator&lt;&lt;',['../class_group_object.html#a0f61d0ec96671d0ad2598e0dc0370dd5',1,'GroupObject::operator&lt;&lt;()'],['../class_single_object.html#a0f61d0ec96671d0ad2598e0dc0370dd5',1,'SingleObject::operator&lt;&lt;()'],['../_single_object_8cpp.html#ad6edfa2051d4bb6ea32f769af57856b3',1,'operator&lt;&lt;():&#160;SingleObject.cpp']]]
+  ['operator_3c_3c',['operator&lt;&lt;',['../_single_object_8cpp.html#ad6edfa2051d4bb6ea32f769af57856b3',1,'SingleObject.cpp']]]
 ];

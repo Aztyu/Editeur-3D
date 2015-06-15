@@ -19,9 +19,6 @@ using namespace rapidxml;
 Zone::Zone(const char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zone_name(name){
     this->zone_mesh = obj;
     this->single_object_array.reserve(10);
-    for(int i=0; i < 9; i++){ //Mise a zero du nombre d'objets
-        this->type_number[i] = 0;
-    }
     this->current_pointer = pointer;  //liste de pointeurs globaux
     this->camera_position = this->current_pointer->camera->getPosition();
     this->camera_rotation = this->current_pointer->camera->getRotation();
@@ -34,6 +31,7 @@ Zone::Zone(const char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zon
 Zone::~Zone() {
     this->group_object_array.clear();
     this->single_object_array.clear();
+    this->zone_mesh->remove();
 }
 
 void Zone::addObject(SingleObject* objet){
@@ -93,98 +91,76 @@ void Zone::createSingleObject(object form){
     switch((int)form){  //Switch qui va choisir quel fichier charger
         case 0:
             name = "Rectangle";
-            if(type_number[0] > 0){
-                sprintf (buffer, "%d", type_number[0]);
-                name.append(buffer);
-            }
-            type_number[0]++;
             type += "rectangle";
             break;
         case 1:
             name = "Line";
-            if(type_number[1] > 0){
-                sprintf (buffer, "%d", type_number[1]);
-                name.append(buffer);
-            }
-            type_number[1]++;
             type += "line";
             break;
         case 2:
             name = "Circle";
-            if(type_number[2] > 0){
-                sprintf (buffer, "%d", type_number[2]);
-                name.append(buffer);
-            }
-            type_number[2]++;
             type += "circle";
             break;
         case 3:
             name = "Trapeze";
-
-            if(type_number[3] > 0){
-                sprintf (buffer, "%d", type_number[3]);
-                name.append(buffer);
-            }
-            type_number[3]++;
             type += "trapeze";
             break;
         case 4:
             name = "Cube";
-            if(type_number[4] > 0){
-                sprintf (buffer, "%d", type_number[4]);
-                name.append(buffer);
-            }
-            type_number[4]++;
             type += "cube";
             break;
         case 5:
             name = "Pyramide";
-            if(type_number[5] > 0){
-                sprintf(buffer, "%d", type_number[5]);
-                name.append(buffer);
-            }
-            type_number[5]++;
             type += "pyramide";
             break;
         case 6:
             name = "Sphere";
-            if(type_number[6] > 0){
-                sprintf (buffer, "%d", type_number[6]);
-                name.append(buffer);
-            }
-            type_number[6]++;
             type += "sphere";
             break;
         case 7:
             name = "Cylinder";
-            if(type_number[7] > 0){
-                sprintf(buffer, "%d", type_number[7]);
-                name.append(buffer);
-            }
-            type_number[7]++;
             type += "cylinder";
             break;
     }
     type += ".obj";
-    this->single_object_array.push_back(new SingleObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str()), this->zone_mesh), name.c_str(), this->zone_mesh, form));        //Chargement et creation de l'objet
+    
+    std::string base_name = "";
+    int i = 0;
+    do{
+        if(i==0){
+            base_name = name;
+        }else{
+            sprintf(buffer, "%d", i);
+            base_name = name + buffer;
+        }
+        i++;
+    }while(this->isSingleObjectNameTaken(base_name));
+    
+    this->single_object_array.push_back(new SingleObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str()), this->zone_mesh), base_name.c_str(), this->zone_mesh, form));        //Chargement et creation de l'objet
     this->sendSingleObjectUpdate();
 }
 
 void Zone::createGroupObject(SingleObject* base_object){
     string type = "ressources/form/", name;
     name = "Group";
-    if(type_number[8] > 0){
-        char buffer[50];
-        sprintf (buffer, "%d", type_number[8]);
-        name.append(buffer);
-    }
-    type_number[8]++;
+    std::string base_name = "";
+    char buffer[50];
+    int i = 0;
+    do{
+        if(i==0){
+            base_name = name;
+        }else{
+            sprintf(buffer, "%d", i);
+            base_name = name + buffer;
+        }
+        i++;
+    }while(this->isGroupObjectNameTaken(base_name));
     type += "group";
     type += ".obj";
     if(base_object == NULL){
-        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
+        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), base_name.c_str(), this->zone_mesh));        //Chargement et creation de l'objet
     }else{
-        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), name.c_str(), this->zone_mesh, base_object->getPosition()));        //Chargement et creation de l'objet
+        this->group_object_array.push_back(new GroupObject(current_pointer->scene->addMeshSceneNode(current_pointer->scene->getMesh(type.c_str())), base_name.c_str(), this->zone_mesh, base_object->getPosition()));        //Chargement et creation de l'objet
         //this->addToGroup(this->group_object_array.size()-1);
         this->group_object_array.at(this->group_object_array.size()-1)->addMember(base_object);
         base_object->setRotation(irr::core::vector3df(0, 0, 0));        //C'est l'objet qui a permis la creation du group donc ses coordonnees sont 0, 0, 0 de même pour la rotation
@@ -234,13 +210,6 @@ void Zone::importToGroup(int index) {
 
 int Zone::getObjectCount(){
     return this->single_object_array.size();
-}
-
-void Zone::printZone(){
-    cout << "La zone s'appelle " << zone_name << endl;
-    for(int i=0; i < this->single_object_array.size(); i++){
-        this->single_object_array[i]->printObject();
-    }
 }
 
 SingleObject* Zone::getSingleObjectPointer(int index){
@@ -449,8 +418,26 @@ void Zone::saveCamera() {
 }
 
 void Zone::loadCamera() {
+    irr::core::vector3df position = this->current_pointer->camera->getPosition();
+    irr::core::vector3df target = this->current_pointer->camera->getTarget();
+
+    position.X += 10;
+    target.X += 10;
+
+    this->current_pointer->camera->setPosition(position);
+    this->current_pointer->camera->bindTargetAndRotation(false);
+    this->current_pointer->camera->setTarget(target);
+    this->current_pointer->camera->bindTargetAndRotation(true);
+    
+    position.X -= 10;
+    target.X -= 10;
+
+    this->current_pointer->camera->setPosition(position);
+    this->current_pointer->camera->bindTargetAndRotation(false);
+    this->current_pointer->camera->setTarget(target);
+    this->current_pointer->camera->bindTargetAndRotation(true);
+    
     this->current_pointer->camera->setRotation(this->camera_rotation);
-    this->current_pointer->camera->setPosition(this->camera_position);
     irr::core::vector3df rotation = this->current_pointer->camera->getRotation();   //Permet de mettre a jour la camera
     rotation.Y += 10;
     rotation.X += 10;
@@ -482,6 +469,12 @@ bool Zone::isSingleObjectNameTaken(std::string name) {
     return false;
 }
 
+void Zone::setZoneVisible(bool isVisible) {
+    this->zone_mesh->setVisible(isVisible);
+    for(int i=0; this->group_object_array.size(); i++){
+        this->group_object_array.at(i)->getSceneNode()->setVisible(isVisible);
+    }
+}
 
 
 

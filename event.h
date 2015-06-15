@@ -39,6 +39,11 @@ class CEventReceiver : public irr::IEventReceiver{
         /** \param item IGUIElement qui a été sélectionné.*/
         void OnToolBoxItemSelected(irr::s32 id, irr::gui::IGUIElement* item);
         
+        //! Gere les clics dans la fenêtre "Information".
+        /** \param id ID de l'élèment touchée par l'évènement.
+        /** \param item IGUIElement qui a été sélectionné.*/
+        void OnInformationItemSelected(irr::s32 id, irr::gui::IGUIElement* item);
+        
         //! Gere les clics sur les boutons de création d'objet.
         /** \param id ID du bouton de création.*/
         void OnObjectCreation(irr::s32 id);
@@ -59,8 +64,14 @@ class CEventReceiver : public irr::IEventReceiver{
         //! Fait reculer la camera.
         void backwardCamera();
         
+        //! Mets à jour les informations de la caméra.
+        void updateInformation();
+        
     private:
+        //! vector de l'Editor actuel.
         Editor* current_editor;
+        
+        //! vector vers la GraphicalInterface actuellement utilisée.
         GraphicalInterface* custom_gui;
 };
 

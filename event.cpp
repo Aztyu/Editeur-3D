@@ -90,6 +90,8 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                         current_editor->getMainPointer()->camera->bindTargetAndRotation(false);     //Sinon la rotation ce fait mal
                         current_editor->getMainPointer()->camera->setTarget(target);
                         current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
+                        
+                        this->custom_gui->updateInformation(this->current_editor->getMainPointer()->camera->getPosition());
                         return true;
 
                     case irr::KEY_KEY_K:  //Camera descend  
@@ -100,6 +102,8 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                         current_editor->getMainPointer()->camera->bindTargetAndRotation(false);     //Sinon la rotation ce fait mal
                         current_editor->getMainPointer()->camera->setTarget(target);
                         current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
+                        
+                        this->custom_gui->updateInformation(this->current_editor->getMainPointer()->camera->getPosition());
                         return true;
                 }
             }
@@ -113,6 +117,8 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                 case irr::gui::EGET_BUTTON_CLICKED:{
                     if(id <= GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX && id >= GUI_ID_OBJECT_WINDOW_OBJECT_NAME){
                         this->OnToolBoxItemSelected(id, event.GUIEvent.Caller);
+                    }else if(id >= GUI_ID_INFORMATIONS && id <= GUI_ID_INFORMATIONS_RESET_CAMERA){
+                        this->OnInformationItemSelected(id, event.GUIEvent.Caller);
                     }else{
                         this->OnObjectCreation(id);
                     }}
@@ -168,6 +174,9 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
         case GUI_ID_TOOLBOX:
             this->current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());             
             break;
+        case GUI_ID_INFO:
+            this->current_editor->getMainPointer()->gui->updateInformation(this->current_editor->getMainPointer()->camera->getPosition());             
+            break;
         case GUI_ID_SKYBOX:
             menu->setItemChecked(menu->getSelectedItem(), !menu->isItemChecked(menu->getSelectedItem()));
             this->current_editor->getMainPointer()->gui->getSkybox()->setVisible(!this->current_editor->getMainPointer()->gui->getSkybox()->isVisible());
@@ -178,10 +187,15 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
         case GUI_ID_NEW_GROUP:
             this->current_editor->getCurrentZone()->createGroupObject();
             break;
+        case GUI_ID_NEW_PROJECT:
+            this->current_editor->removeZones();
+            this->current_editor->createZone("Main");
+            break;
         case GUI_ID_LOAD:
             this->current_editor->removeZones();
             this->current_editor->importData();
             this->custom_gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
+            this->custom_gui->updateInformation(this->current_editor->getMainPointer()->camera->getPosition());
             break;
         case GUI_ID_SAVE:
             this->current_editor->exportData();
@@ -298,6 +312,15 @@ void CEventReceiver::OnToolBoxItemSelected(irr::s32 id, irr::gui::IGUIElement* i
         }
     }
 }
+
+void CEventReceiver::OnInformationItemSelected(irr::s32 id, irr::gui::IGUIElement* item) {
+    switch(id){
+        case GUI_ID_INFORMATIONS_RESET_CAMERA:
+            this->current_editor->getCurrentZone()->loadCamera();
+            break;
+    }
+}
+
 
 void CEventReceiver::OnValueChanged(irr::gui::IGUIEditBox* editbox) {
     int id = editbox->getID();
@@ -462,8 +485,6 @@ void CEventReceiver::forwardCamera(){
     direction_mvnt.Z = target.Z - position.Z;
 
     direction_mvnt.normalize();
-    direction.X = 5*cos(acos(direction.X));
-    direction.Z = 5*sin(asin(direction.Z));
 
     position.X += direction_mvnt.X;
     position.Z += direction_mvnt.Z;
@@ -475,6 +496,7 @@ void CEventReceiver::forwardCamera(){
     current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
     current_editor->getMainPointer()->camera->setTarget(target);
     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
+    this->custom_gui->updateInformation(this->current_editor->getMainPointer()->camera->getPosition());
 }
 
 void CEventReceiver::backwardCamera(){
@@ -489,12 +511,9 @@ void CEventReceiver::backwardCamera(){
     direction_mvnt.Z = target.Z - position.Z;
 
     direction_mvnt.normalize();
-    direction.X = 5*cos(acos(direction.X));
-    direction.Z = 5*sin(asin(direction.Y));
 
     position.X -= direction_mvnt.X;
     position.Z -= direction_mvnt.Z;
-
 
     target.X -= direction_mvnt.X;
     target.Z -= direction_mvnt.Z;
@@ -503,7 +522,9 @@ void CEventReceiver::backwardCamera(){
     current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
     current_editor->getMainPointer()->camera->setTarget(target);
     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
+    this->custom_gui->updateInformation(this->current_editor->getMainPointer()->camera->getPosition());
 }
+
 
 
 

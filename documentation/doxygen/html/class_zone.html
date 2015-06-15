@@ -149,6 +149,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aeef4467322e0c710fd949bcfcda63aeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98342a583a365661effb1bffef7505f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a98342a583a365661effb1bffef7505f9">addToGroup</a> (int index)</td></tr>
 <tr class="separator:a98342a583a365661effb1bffef7505f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d156d3a0fd88eed16fcc947241cd42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a26d156d3a0fd88eed16fcc947241cd42">importToGroup</a> (int index)</td></tr>
+<tr class="separator:a26d156d3a0fd88eed16fcc947241cd42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1db951914db9b97c41f5543920e048f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_single_object.html">SingleObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#af1db951914db9b97c41f5543920e048f">getSingleObjectPointer</a> (int index)</td></tr>
 <tr class="memdesc:af1db951914db9b97c41f5543920e048f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupere le pointeur vers un <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a>.  <a href="#af1db951914db9b97c41f5543920e048f">More...</a><br /></td></tr>
 <tr class="separator:af1db951914db9b97c41f5543920e048f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -207,24 +209,52 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5ccbf75095dc7c9b44681fa4aae70cad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a5ccbf75095dc7c9b44681fa4aae70cad">printZone</a> ()</td></tr>
 <tr class="separator:a5ccbf75095dc7c9b44681fa4aae70cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a193612fd78d53a50b8b4fa66445b00dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a193612fd78d53a50b8b4fa66445b00dc">importObject</a> (rapidxml::xml_node&lt;&gt; *object_node)</td></tr>
-<tr class="memdesc:a193612fd78d53a50b8b4fa66445b00dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Importe les objets contenus dans un noeud xml.  <a href="#a193612fd78d53a50b8b4fa66445b00dc">More...</a><br /></td></tr>
+<tr class="memdesc:a193612fd78d53a50b8b4fa66445b00dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Importe l'objet contenu dans un noeud xml.  <a href="#a193612fd78d53a50b8b4fa66445b00dc">More...</a><br /></td></tr>
 <tr class="separator:a193612fd78d53a50b8b4fa66445b00dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ca7a253f5ce5042c78342bf2965655"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#ab5ca7a253f5ce5042c78342bf2965655">importGroup</a> (rapidxml::xml_node&lt;&gt; *group_node)</td></tr>
+<tr class="memdesc:ab5ca7a253f5ce5042c78342bf2965655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Importe le groupe contenu dans un noeud xml.  <a href="#ab5ca7a253f5ce5042c78342bf2965655">More...</a><br /></td></tr>
+<tr class="separator:ab5ca7a253f5ce5042c78342bf2965655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b04db451fad30df913c63f61c9ac0b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a5b04db451fad30df913c63f61c9ac0b2">saveCamera</a> ()</td></tr>
+<tr class="memdesc:a5b04db451fad30df913c63f61c9ac0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enregistre l'etat actuel de la camera.  <a href="#a5b04db451fad30df913c63f61c9ac0b2">More...</a><br /></td></tr>
+<tr class="separator:a5b04db451fad30df913c63f61c9ac0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb1d7bf5d78729abe52e793e2bff8465"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#acb1d7bf5d78729abe52e793e2bff8465">loadCamera</a> ()</td></tr>
+<tr class="memdesc:acb1d7bf5d78729abe52e793e2bff8465"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge le dernier etat enregistré de la caméra.  <a href="#acb1d7bf5d78729abe52e793e2bff8465">More...</a><br /></td></tr>
+<tr class="separator:acb1d7bf5d78729abe52e793e2bff8465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af38f89be8fca430c8c93c3db76837119"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#af38f89be8fca430c8c93c3db76837119">isSingleObjectNameTaken</a> (std::string name)</td></tr>
+<tr class="memdesc:af38f89be8fca430c8c93c3db76837119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si le nom de <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a> est déjà pris.  <a href="#af38f89be8fca430c8c93c3db76837119">More...</a><br /></td></tr>
+<tr class="separator:af38f89be8fca430c8c93c3db76837119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95911fa782651e93e03cb4a75bf6b26c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a95911fa782651e93e03cb4a75bf6b26c">isGroupObjectNameTaken</a> (std::string name)</td></tr>
+<tr class="memdesc:a95911fa782651e93e03cb4a75bf6b26c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si le nom de <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a> est déjà pris.  <a href="#a95911fa782651e93e03cb4a75bf6b26c">More...</a><br /></td></tr>
+<tr class="separator:a95911fa782651e93e03cb4a75bf6b26c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a11c21e13b18c328994d2b1c9f6c0017b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_single_object.html">SingleObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a11c21e13b18c328994d2b1c9f6c0017b">single_object_array</a></td></tr>
+<tr class="memdesc:a11c21e13b18c328994d2b1c9f6c0017b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le vector qui contient les pointeurs vers tous les <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a>.  <a href="#a11c21e13b18c328994d2b1c9f6c0017b">More...</a><br /></td></tr>
 <tr class="separator:a11c21e13b18c328994d2b1c9f6c0017b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06660482753a89f65da552f6c20334aa"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_group_object.html">GroupObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a06660482753a89f65da552f6c20334aa">group_object_array</a></td></tr>
+<tr class="memdesc:a06660482753a89f65da552f6c20334aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le vector qui contient les pointeurs vers tous les <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a>.  <a href="#a06660482753a89f65da552f6c20334aa">More...</a><br /></td></tr>
 <tr class="separator:a06660482753a89f65da552f6c20334aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a4abffed25a000ecc898cf7deb32820"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_single_object.html">SingleObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a1a4abffed25a000ecc898cf7deb32820">selected_object</a></td></tr>
+<tr class="memdesc:a1a4abffed25a000ecc898cf7deb32820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur vers le <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a> sélectionné, NULL sinon.  <a href="#a1a4abffed25a000ecc898cf7deb32820">More...</a><br /></td></tr>
 <tr class="separator:a1a4abffed25a000ecc898cf7deb32820"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44a0794a2af98a9a042a2b9c85f7be25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_group_object.html">GroupObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a44a0794a2af98a9a042a2b9c85f7be25">selected_group</a></td></tr>
+<tr class="memdesc:a44a0794a2af98a9a042a2b9c85f7be25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur vers le <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a> sélectionné, NULL sinon.  <a href="#a44a0794a2af98a9a042a2b9c85f7be25">More...</a><br /></td></tr>
 <tr class="separator:a44a0794a2af98a9a042a2b9c85f7be25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80cf746645cd00566dea9fcd32d33fb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_pointer.html">Pointer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a80cf746645cd00566dea9fcd32d33fb4">current_pointer</a></td></tr>
+<tr class="memdesc:a80cf746645cd00566dea9fcd32d33fb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur vers la structure Pointers du programme.  <a href="#a80cf746645cd00566dea9fcd32d33fb4">More...</a><br /></td></tr>
 <tr class="separator:a80cf746645cd00566dea9fcd32d33fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3683f7a32d7144ee52eab5bc639802"><td class="memItemLeft" align="right" valign="top">irr::core::vector3df&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#abf3683f7a32d7144ee52eab5bc639802">camera_rotation</a></td></tr>
+<tr class="memdesc:abf3683f7a32d7144ee52eab5bc639802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contient la rotation de la caméra.  <a href="#abf3683f7a32d7144ee52eab5bc639802">More...</a><br /></td></tr>
+<tr class="separator:abf3683f7a32d7144ee52eab5bc639802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1183a6c78fed496780478a1384cf3634"><td class="memItemLeft" align="right" valign="top">irr::core::vector3df&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a1183a6c78fed496780478a1384cf3634">camera_position</a></td></tr>
+<tr class="memdesc:a1183a6c78fed496780478a1384cf3634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contient la position de la caméra.  <a href="#a1183a6c78fed496780478a1384cf3634">More...</a><br /></td></tr>
+<tr class="separator:a1183a6c78fed496780478a1384cf3634"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e3ee8073e6aa90a5083b726dc5cc93b"><td class="memItemLeft" align="right" valign="top">irr::scene::ISceneNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a7e3ee8073e6aa90a5083b726dc5cc93b">zone_mesh</a></td></tr>
+<tr class="memdesc:a7e3ee8073e6aa90a5083b726dc5cc93b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le pointeur vers l'élèment Irrlicht constituant la <a class="el" href="class_zone.html" title="Classe qui est utiliser pour creer une zone contenant des objet et groupes d&#39; objets. ">Zone</a>.  <a href="#a7e3ee8073e6aa90a5083b726dc5cc93b">More...</a><br /></td></tr>
 <tr class="separator:a7e3ee8073e6aa90a5083b726dc5cc93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0df1fac4c7aee18061fc42a6a03faa1b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#a0df1fac4c7aee18061fc42a6a03faa1b">zone_name</a></td></tr>
+<tr class="memdesc:a0df1fac4c7aee18061fc42a6a03faa1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le nom de la <a class="el" href="class_zone.html" title="Classe qui est utiliser pour creer une zone contenant des objet et groupes d&#39; objets. ">Zone</a>.  <a href="#a0df1fac4c7aee18061fc42a6a03faa1b">More...</a><br /></td></tr>
 <tr class="separator:a0df1fac4c7aee18061fc42a6a03faa1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcf8a165b68158407488a1678bdd2d78"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_zone.html#afcf8a165b68158407488a1678bdd2d78">type_number</a> [9]</td></tr>
 <tr class="separator:afcf8a165b68158407488a1678bdd2d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,7 +262,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe qui est utiliser pour creer une zone contenant des objet et groupes d' objets. </p>
 
-<p>Definition at line <a class="el" href="_zone_8h_source.html#l00018">18</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8h_source.html#l00016">16</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8130fcda80dc1be361a2305c1f043830"></a>
 <div class="memitem">
@@ -301,7 +331,7 @@ Private Attributes</h2></td></tr>
 
 <p>Destructeur de base. </p>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00031">31</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00034">34</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -328,7 +358,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00037">37</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00039">39</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -346,7 +376,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00199">199</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00201">201</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -372,7 +402,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00171">171</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00173">173</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -398,7 +428,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00088">88</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00090">90</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -418,7 +448,7 @@ Private Attributes</h2></td></tr>
 
 <p>Exporte tout objet dans cette zone. </p>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00359">359</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00368">368</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -445,7 +475,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointeur vers un <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00245">245</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00254">254</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -465,7 +495,7 @@ Private Attributes</h2></td></tr>
 <p>Renvoie le pointeur vers le vector de <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>le pointeur vers le vector de <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00279">279</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00288">288</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -485,7 +515,7 @@ Private Attributes</h2></td></tr>
 <p>Recupere le pointeur vers l'ISceneNode de la zone actuelle. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointeur vers l'ISceneNode . </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00271">271</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00280">280</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -505,7 +535,7 @@ Private Attributes</h2></td></tr>
 <p>Recupere le nom de la zone actuelle. </p>
 <dl class="section return"><dt>Returns</dt><dd>String contenant le nom de cette zone. </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00275">275</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00284">284</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -525,7 +555,7 @@ Private Attributes</h2></td></tr>
 <p>Recupere le pointeur vers la zone actuelle. </p>
 <dl class="section return"><dt>Returns</dt><dd>Le nombre d'objet de cette zone. </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00226">226</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00235">235</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -545,7 +575,7 @@ Private Attributes</h2></td></tr>
 <p>Recupere le pointeur vers la zone actuelle. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointeur vers cette zone. </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00267">267</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00276">276</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -565,7 +595,7 @@ Private Attributes</h2></td></tr>
 <p>Recupere le pointeur vers le <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a> sélectionné. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointeur vers le <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a> actuellement selectionné, NULL si il n'y en a pas. </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00329">329</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00338">338</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -585,7 +615,7 @@ Private Attributes</h2></td></tr>
 <p>Recupere le pointeur vers l'objet sélectionné. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointeur vers l'objet actuellement selectionné, NULL si il n'y en a pas. </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00253">253</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00262">262</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -605,7 +635,7 @@ Private Attributes</h2></td></tr>
 <p>Recupere le pointeur vers le <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a> sélectionné. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointeur vers le <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a> actuellement selectionné, NULL si il n'y en a pas. </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00263">263</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00272">272</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -632,7 +662,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointeur vers un <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00237">237</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00246">246</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -652,7 +682,27 @@ Private Attributes</h2></td></tr>
 <p>Renvoie le pointeur vers le vector de <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>le pointeur vers le vector de <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00283">283</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00292">292</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5ca7a253f5ce5042c78342bf2965655"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zone::importGroup </td>
+          <td>(</td>
+          <td class="paramtype">rapidxml::xml_node&lt;&gt; *&#160;</td>
+          <td class="paramname"><em>group_node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Importe le groupe contenu dans un noeud xml. </p>
+
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00415">415</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -670,9 +720,86 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Importe les objets contenus dans un noeud xml. </p>
+<p>Importe l'objet contenu dans un noeud xml. </p>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00368">368</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00383">383</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a26d156d3a0fd88eed16fcc947241cd42"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zone::importToGroup </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00228">228</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a95911fa782651e93e03cb4a75bf6b26c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Zone::isGroupObjectNameTaken </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifie si le nom de <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a> est déjà pris. </p>
+
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00481">481</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af38f89be8fca430c8c93c3db76837119"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Zone::isSingleObjectNameTaken </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifie si le nom de <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a> est déjà pris. </p>
+
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00490">490</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acb1d7bf5d78729abe52e793e2bff8465"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zone::loadCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Charge le dernier etat enregistré de la caméra. </p>
+
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00451">451</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -689,7 +816,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00230">230</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00239">239</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -715,7 +842,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00050">50</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00052">52</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -741,7 +868,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00060">60</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00062">62</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -767,7 +894,26 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00041">41</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00043">43</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b04db451fad30df913c63f61c9ac0b2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Zone::saveCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enregistre l'etat actuel de la camera. </p>
+
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00446">446</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -784,7 +930,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00345">345</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00354">354</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -801,7 +947,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00352">352</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00361">361</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -827,7 +973,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00307">307</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00316">316</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -854,7 +1000,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True si l'objet a été selectionné, False sinon. </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00318">318</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00327">327</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -880,7 +1026,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00287">287</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00296">296</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -907,7 +1053,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True si l'objet a été selectionné, False sinon. </dd></dl>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00297">297</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00306">306</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
@@ -926,11 +1072,59 @@ Private Attributes</h2></td></tr>
 
 <p>Deselectionne tout objet dans cette zone. </p>
 
-<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00333">333</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8cpp_source.html#l00342">342</a> of file <a class="el" href="_zone_8cpp_source.html">Zone.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a1183a6c78fed496780478a1384cf3634"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">irr::core::vector3df Zone::camera_position</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contient la position de la caméra. </p>
+
+<p>Definition at line <a class="el" href="_zone_8h_source.html#l00173">173</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf3683f7a32d7144ee52eab5bc639802"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">irr::core::vector3df Zone::camera_rotation</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Contient la rotation de la caméra. </p>
+
+<p>Definition at line <a class="el" href="_zone_8h_source.html#l00170">170</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a80cf746645cd00566dea9fcd32d33fb4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -949,7 +1143,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8h_source.html#l00143">143</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
+<p>Pointeur vers la structure Pointers du programme. </p>
+
+<p>Definition at line <a class="el" href="_zone_8h_source.html#l00167">167</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
 
 </div>
 </div>
@@ -971,7 +1167,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8h_source.html#l00140">140</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
+<p>Le vector qui contient les pointeurs vers tous les <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a>. </p>
+
+<p>Definition at line <a class="el" href="_zone_8h_source.html#l00158">158</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
 
 </div>
 </div>
@@ -993,7 +1191,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8h_source.html#l00142">142</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
+<p>Pointeur vers le <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a> sélectionné, NULL sinon. </p>
+
+<p>Definition at line <a class="el" href="_zone_8h_source.html#l00164">164</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
 
 </div>
 </div>
@@ -1015,7 +1215,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8h_source.html#l00141">141</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
+<p>Pointeur vers le <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a> sélectionné, NULL sinon. </p>
+
+<p>Definition at line <a class="el" href="_zone_8h_source.html#l00161">161</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
 
 </div>
 </div>
@@ -1037,7 +1239,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8h_source.html#l00139">139</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
+<p>Le vector qui contient les pointeurs vers tous les <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a>. </p>
+
+<p>Definition at line <a class="el" href="_zone_8h_source.html#l00155">155</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
 
 </div>
 </div>
@@ -1059,7 +1263,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8h_source.html#l00146">146</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
+<p>Definition at line <a class="el" href="_zone_8h_source.html#l00180">180</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
 
 </div>
 </div>
@@ -1081,7 +1285,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8h_source.html#l00144">144</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
+<p>Le pointeur vers l'élèment Irrlicht constituant la <a class="el" href="class_zone.html" title="Classe qui est utiliser pour creer une zone contenant des objet et groupes d&#39; objets. ">Zone</a>. </p>
+
+<p>Definition at line <a class="el" href="_zone_8h_source.html#l00176">176</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
 
 </div>
 </div>
@@ -1103,7 +1309,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_zone_8h_source.html#l00145">145</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
+<p>Le nom de la <a class="el" href="class_zone.html" title="Classe qui est utiliser pour creer une zone contenant des objet et groupes d&#39; objets. ">Zone</a>. </p>
+
+<p>Definition at line <a class="el" href="_zone_8h_source.html#l00179">179</a> of file <a class="el" href="_zone_8h_source.html">Zone.h</a>.</p>
 
 </div>
 </div>
@@ -1117,7 +1325,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_zone.html">Zone</a></li>
-    <li class="footer">Generated on Sat Jun 13 2015 16:58:06 for Éditeur 3D by
+    <li class="footer">Generated on Mon Jun 15 2015 18:04:22 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

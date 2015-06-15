@@ -141,23 +141,46 @@ class Zone {
         //! Enregistre l'etat actuel de la camera.
         void saveCamera();
         
+        //! Charge le dernier etat enregistré de la caméra.
         void loadCamera();
         
+        //! Vérifie si le nom de SingleObject est déjà pris.
         bool isSingleObjectNameTaken(std::string name);
         
+        //! Vérifie si le nom de GroupObject est déjà pris.
         bool isGroupObjectNameTaken(std::string name);
+        
+        //! Change la visibilite de la Zone et les GroupObject.
+        /** \param isVisible booleen qui definit la visibilite ou non.*/
+        void setZoneVisible(bool isVisible);
 
     private:
-        std::vector<SingleObject*> single_object_array; //Ne pas passer de pointer a objet ca fait tout peter
+        //! Le vector qui contient les pointeurs vers tous les SingleObject.
+        std::vector<SingleObject*> single_object_array;
+        
+        //! Le vector qui contient les pointeurs vers tous les GroupObject.
         std::vector<GroupObject*> group_object_array;
+        
+        //! Pointeur vers le SingleObject sélectionné, NULL sinon.
         SingleObject* selected_object;
+        
+         //! Pointeur vers le GroupObject sélectionné, NULL sinon.
         GroupObject* selected_group;
+        
+        //! Pointeur vers la structure Pointers du programme.
         Pointer* current_pointer;
+        
+        //! Contient la rotation de la caméra.
         irr::core::vector3df camera_rotation;
+        
+        //! Contient la position de la caméra.
         irr::core::vector3df camera_position;
+        
+        //! Le pointeur vers l'élèment Irrlicht constituant la Zone.
         irr::scene::ISceneNode* zone_mesh;
+        
+        //! Le nom de la Zone.
         std::string zone_name;
-        int type_number[9];
 };
 
 

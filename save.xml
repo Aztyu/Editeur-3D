@@ -28,33 +28,45 @@
         </Object>
     </Zone>
     <Zone name="Zone">
-        <Group name="Group">
-            <position x="16.9145" y="0" z="-23.8436" />
-            <rotation x="0" y="0" z="0" />
-            <scale x="1" y="1" z="1" />
-            <Object name="Cube4" type="4">
-                <position x="0" y="0" z="0" />
-                <rotation x="0" y="0" z="0" />
-                <scale x="1" y="1" z="1" />
-            </Object>
-            <Object name="Cube3" type="4">
-                <position x="-1.32601" y="0" z="2.84364" />
-                <rotation x="0" y="-0" z="0" />
-                <scale x="1" y="1" z="1" />
-            </Object>
-            <Object name="Cube2" type="4">
-                <position x="-3.12567" y="0" z="5.41382" />
-                <rotation x="0" y="-0" z="0" />
-                <scale x="1" y="1" z="1" />
-            </Object>
-        </Group>
         <Object name="Cube" type="4">
-            <position x="6.15636" y="0" z="-13.0855" />
+            <position x="-20.7954" y="0" z="-6.11674" />
             <rotation x="0" y="0" z="0" />
             <scale x="1" y="1" z="1" />
         </Object>
         <Object name="Cube1" type="4">
-            <position x="11.5702" y="0" z="-16.2112" />
+            <position x="-20.5051" y="0" z="-10.6335" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube2" type="4">
+            <position x="-21.7696" y="0" z="-15.7748" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube3" type="4">
+            <position x="-24.3677" y="0" z="-17.2748" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube4" type="4">
+            <position x="-23.0417" y="0" z="-20.1185" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube5" type="4">
+            <position x="-22.2296" y="0" z="-23.1491" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+    </Zone>
+    <Zone name="Zone1">
+        <Object name="Pyramide" type="5">
+            <position x="-10.0804" y="0" z="-51.3436" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="2.35795" y="2.35795" z="2.35795" />
+        </Object>
+        <Object name="Circle" type="2">
+            <position x="-12.2991" y="0" z="-53.5622" />
             <rotation x="0" y="0" z="0" />
             <scale x="1" y="1" z="1" />
         </Object>

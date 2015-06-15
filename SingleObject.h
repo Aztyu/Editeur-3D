@@ -64,10 +64,6 @@ public:
     
     //! Exporte tous les objets
     void exportObject(TiXmlElement* windows);
-
-    //Sauvegarde (en cours)
-    friend std::ostream& operator <<(std::ostream stream, SingleObject& obj);
-    const std::string printObject();
     
     //Gestion de groupe
     //! Definit l'élèment parent de l'objet(donc le groupe).
@@ -90,12 +86,19 @@ public:
     /** \return Une string qui donne le type. */
     std::string getClassType();
     
+    //! Renvoie le pointeur vers le parent du SingleObject.
+    /** \return Le pointeur vers l'Object parent. */
     Object* getParent();
     
+    //! Renvoie un boolèen qui nous indique si le SingleObject appartient ou non à un groupe.
+    /** \return True si le SingleObject est dans un groupe, False sinon. */
     bool isInGroup();
     
 private:
+    //! Le pointeur vers le parent du SingleObject.
     Object* parent;
+    
+    //! L'énumération de type object qui nous indique la forme du SingleObject
     object type;
 };
 

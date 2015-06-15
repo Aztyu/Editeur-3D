@@ -6,6 +6,7 @@
  */
 
 #include "GraphicalInterface.h"
+#include <string>
 
 GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::video::IVideoDriver* driver, irr::scene::ISceneNode* skybox) {
     
@@ -32,6 +33,7 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
 
     // create the toolbox window
     this->updateWindow();
+    this->updateInformation(irr::core::vector3df(0, 0, 0));
     
     this->gui->addImage(driver->getTexture("ressources/icon/navbar.jpg"),
     irr::core::position2d<irr::s32>(0,0),
@@ -56,10 +58,12 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     submenu = submenu->getSubMenu(0);
     submenu->addItem(L"Groupe", GUI_ID_NEW_GROUP, true, false, false);
     submenu->addItem(L"Zone", GUI_ID_NEW_ZONE, true, false, false);
+    submenu->addItem(L"Projet", GUI_ID_NEW_PROJECT, true, false, false);
     
     submenu = menu->getSubMenu(1);
     submenu->addItem(L"Skybox", GUI_ID_SKYBOX);
     submenu->addItem(L"Boite à outils", GUI_ID_TOOLBOX);
+    submenu->addItem(L"Information", GUI_ID_INFO);
 
     submenu = menu->getSubMenu(2);
     submenu->addItem(L"Documentation", GUI_ID_DOC);
@@ -522,6 +526,87 @@ void GraphicalInterface::updateWindow(){
     } 
 }
 
+void GraphicalInterface::updateInformation(irr::core::vector3df position_camera){
+    
+    irr::gui::IGUIElement* root = this->gui->getRootGUIElement();
+    irr::gui::IGUIElement* e = root->getElementFromId(GUI_ID_INFORMATIONS, true);
+    
+    this->window = NULL;
+    
+    if (e != NULL){
+        irr::core::rect<irr::s32> test = e->getAbsolutePosition();
+        e->remove();
+        if(test.UpperLeftCorner.X != 0 || test.UpperLeftCorner.Y != 85){
+            this->window = this->gui->addWindow(irr::core::rect<irr::s32>(test.UpperLeftCorner.X, test.UpperLeftCorner.Y, test.LowerRightCorner.X, test.LowerRightCorner.Y),
+                false, L"Informations", 0, GUI_ID_INFORMATIONS);
+        }else{
+            this->window = this->gui->addWindow(irr::core::rect<irr::s32>(0,85,200,330),
+                false, L"Information", 0, GUI_ID_INFORMATIONS);
+        }
+    }else{
+        this->window = this->gui->addWindow(irr::core::rect<irr::s32>(0,85,200,330),
+            false, L"Informations", 0, GUI_ID_INFORMATIONS);
+    }
+    
+    if(this->window != NULL){
+        char buffer[50];
+        std::string base_name;
+        std::wstring widestr;
+        
+        this->gui->addStaticText(L"Position de la camera : ", irr::core::rect<irr::s32>(15,20,185,50),
+            false,
+            true,
+            static_cast<irr::gui::IGUIElement*>(this->window));
+           
+           
+        this->gui->addStaticText(L"X : ", irr::core::rect<irr::s32>(15,50,80,80),
+            false,
+            true,
+            static_cast<irr::gui::IGUIElement*>(this->window));
+
+        sprintf(buffer, "%f", position_camera.X);
+        base_name = buffer;
+        widestr = std::wstring(base_name.begin(), base_name.end());
+        
+        this->gui->addStaticText(widestr.c_str(), irr::core::rect<irr::s32>(40,50,350,80),
+            false,
+            true,
+            static_cast<irr::gui::IGUIElement*>(this->window));
+        
+        this->gui->addStaticText(L"Y : ", irr::core::rect<irr::s32>(15,80,80,110),
+            false,
+            true,
+            static_cast<irr::gui::IGUIElement*>(this->window));
+        
+        sprintf(buffer, "%f", position_camera.Y);
+        base_name = buffer;
+        widestr = std::wstring(base_name.begin(), base_name.end());
+
+        this->gui->addStaticText(widestr.c_str(), irr::core::rect<irr::s32>(40,80,350,110),
+            false,
+            true,
+            static_cast<irr::gui::IGUIElement*>(this->window));
+
+        this->gui->addStaticText(L"Z : ", irr::core::rect<irr::s32>(15,110,80,140),
+            false,
+            true,
+            static_cast<irr::gui::IGUIElement*>(this->window));
+        
+        sprintf(buffer, "%f", position_camera.Z);
+        base_name = buffer;
+        widestr = std::wstring(base_name.begin(), base_name.end());
+
+        this->gui->addStaticText(widestr.c_str(), irr::core::rect<irr::s32>(40,110,350,140),
+            false,
+            true,
+            static_cast<irr::gui::IGUIElement*>(this->window));
+        
+        this->gui->addButton(irr::core::rect<irr::s32>(15,200,180,230),
+            static_cast<irr::gui::IGUIElement*>(this->window),
+            GUI_ID_INFORMATIONS_RESET_CAMERA,
+            L"Remise à zéro caméra");
+   }
+}
 
 irr::scene::ISceneNode* GraphicalInterface::getSkybox() {
     return this->skybox;

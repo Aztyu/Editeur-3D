@@ -9,8 +9,6 @@
 #include "Pointers.h"
 #include <iostream>
 #include <fstream>
-#include <iomanip>
-#include <Shlobj.h>
 
 using namespace rapidxml;
 using namespace std;
@@ -166,7 +164,7 @@ void Editor::importData() {
                     this->importZone(zone_node);
                 }
             }
-            MessageText = L"L'environnement de travail a bien été chargé";
+            MessageText = L"L'environnement de travail a bien été sauvegardé";
             this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
                 Caption.c_str(), MessageText.c_str());
         }catch(exception e){
@@ -184,12 +182,11 @@ void Editor::importData() {
 void Editor::importZone(xml_node<> *zone_node) {
     this->createZone(zone_node->first_attribute("name")->value());
     for(xml_node<> * object_node = zone_node->first_node(0); object_node; object_node = object_node->next_sibling()){
+        char * test = object_node->name();
         if(!strcmp(object_node->name(),"Object")){
             this->current_zone->importObject(object_node);
         }else if(!strcmp(object_node->name(),"Group")){
             this->current_zone->importGroup(object_node);
-        }
-
     }
     cout << endl;
 }

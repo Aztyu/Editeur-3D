@@ -61,12 +61,12 @@ public:
     /** \return Une string qui donne le type. */
     std::string getClassType();
     
+    //! Renvoie le type de la classe.
+    /** \param windows Pointeur vers un TiXmlElement qui represente la base du fichier Xml de sauvegarde. */
     void exportObject(TiXmlElement* windows);
 
-    //Sauvegarde(en cours)
-    friend std::ostream& operator <<(std::ostream stream, SingleObject& obj);
-    const char* printObject();
 private:
+    //! vector qui contient les pointeurs vers tous les SingleObject du GroupObject.
     std::vector<SingleObject*> member_object;
 };
 

@@ -11,6 +11,7 @@ var class_graphical_interface =
     [ "setSingleObjectSelected", "class_graphical_interface.html#a906dff32de9a713121f9775127fc33a5", null ],
     [ "setZoneSelected", "class_graphical_interface.html#a64d0a0aa5276508f23864d27321dcdfd", null ],
     [ "updateGroupObject", "class_graphical_interface.html#a8a5800ef8df6738199e5cb6f370f29df", null ],
+    [ "updateInformation", "class_graphical_interface.html#a610f534ff59af7e39bff8a135c2a65e3", null ],
     [ "updateSingleObject", "class_graphical_interface.html#a10ffd5e51b88c0f1814d294108a88e92", null ],
     [ "updateWindow", "class_graphical_interface.html#a2b2553bc093c417cdf4208ff916074ab", null ],
     [ "updateWindow", "class_graphical_interface.html#a0f8425abdd04336c10bf9835219e36b8", null ],
