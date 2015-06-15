@@ -139,7 +139,8 @@ public:
     void updateWindow();
     
     //! Mets à jour la fenetre Informations grace a l'attribut current_zone.
-    void updateInformation(Zone* current_zone);
+    /** position_camera vector3d qui indique la position de la camera*/
+    void updateInformation(irr::core::vector3df position_camera);
     
     //! Recupere un pointeur vers l'element skybox.
     /** \return Un pointeur vers un ISceneNode pour pouvoir modifier la skybox */

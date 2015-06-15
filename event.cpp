@@ -112,6 +112,8 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                 case irr::gui::EGET_BUTTON_CLICKED:{
                     if(id <= GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX && id >= GUI_ID_OBJECT_WINDOW_OBJECT_NAME){
                         this->OnToolBoxItemSelected(id, event.GUIEvent.Caller);
+                    }else if(id >= GUI_ID_INFORMATIONS && id <= GUI_ID_INFORMATIONS_DELETE_ZONE){
+                        this->OnInformationItemSelected(id, event.GUIEvent.Caller);
                     }else{
                         this->OnObjectCreation(id);
                     }}
@@ -181,7 +183,7 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
             this->current_editor->removeZones();
             this->current_editor->importData();
             this->custom_gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
-            this->custom_gui->updateInformation(this->current_editor->getCurrentZone());
+            this->custom_gui->updateInformation(this->current_editor->getMainPointer()->camera->getPosition());
             break;
         case GUI_ID_SAVE:
             this->current_editor->exportData();
@@ -295,6 +297,18 @@ void CEventReceiver::OnToolBoxItemSelected(irr::s32 id, irr::gui::IGUIElement* i
         }
     }
 }
+
+void CEventReceiver::OnInformationItemSelected(irr::s32 id, irr::gui::IGUIElement* item) {
+    switch(id){
+        case GUI_ID_INFORMATIONS_DELETE_ZONE:
+            //this->current_editor->
+            break;
+        case GUI_ID_INFORMATIONS_RESET_CAMERA:
+            this->current_editor->getCurrentZone()->loadCamera();
+            break;
+    }
+}
+
 
 void CEventReceiver::OnValueChanged(irr::gui::IGUIEditBox* editbox) {
     int id = editbox->getID();
@@ -438,7 +452,6 @@ void CEventReceiver::angleCameraRight(){
     
     rotation.Y -= 10;
     current_editor->getMainPointer()->camera->setRotation(rotation);
-    this->updateInformation();
 }
 
 void CEventReceiver::angleCameraLeft(){
@@ -446,7 +459,6 @@ void CEventReceiver::angleCameraLeft(){
     
     rotation.Y += 10;
     current_editor->getMainPointer()->camera->setRotation(rotation);
-    this->updateInformation();
 }
 
 void CEventReceiver::forwardCamera(){
@@ -461,8 +473,6 @@ void CEventReceiver::forwardCamera(){
     direction_mvnt.Z = target.Z - position.Z;
 
     direction_mvnt.normalize();
-    direction.X = 5*cos(acos(direction.X));
-    direction.Z = 5*sin(asin(direction.Z));
 
     position.X += direction_mvnt.X;
     position.Z += direction_mvnt.Z;
@@ -474,7 +484,7 @@ void CEventReceiver::forwardCamera(){
     current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
     current_editor->getMainPointer()->camera->setTarget(target);
     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
-    this->updateInformation();
+    this->custom_gui->updateInformation(this->current_editor->getMainPointer()->camera->getAbsolutePosition());
 }
 
 void CEventReceiver::backwardCamera(){
@@ -489,12 +499,9 @@ void CEventReceiver::backwardCamera(){
     direction_mvnt.Z = target.Z - position.Z;
 
     direction_mvnt.normalize();
-    direction.X = 5*cos(acos(direction.X));
-    direction.Z = 5*sin(asin(direction.Y));
 
     position.X -= direction_mvnt.X;
     position.Z -= direction_mvnt.Z;
-
 
     target.X -= direction_mvnt.X;
     target.Z -= direction_mvnt.Z;
@@ -503,11 +510,7 @@ void CEventReceiver::backwardCamera(){
     current_editor->getMainPointer()->camera->bindTargetAndRotation(false);
     current_editor->getMainPointer()->camera->setTarget(target);
     current_editor->getMainPointer()->camera->bindTargetAndRotation(true);
-    this->updateInformation();
-}
-
-void CEventReceiver::updateInformation(){
-    this->custom_gui->updateInformation(this->current_editor->getCurrentZone());
+    this->custom_gui->updateInformation(this->current_editor->getMainPointer()->camera->getAbsolutePosition());
 }
 
 
