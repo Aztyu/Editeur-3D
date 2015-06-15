@@ -5,7 +5,6 @@ using namespace std;
 
 int main(void)
 {
-    
     irr::SIrrlichtCreationParameters params = irr::SIrrlichtCreationParameters();
     params.AntiAlias = 16;
     params.DriverType = irr::video::EDT_OPENGL;

@@ -9,6 +9,7 @@
 #include "Pointers.h"
 #include <iostream>
 #include <fstream>
+#include <Shlobj.h>
 
 using namespace rapidxml;
 using namespace std;
@@ -187,8 +188,8 @@ void Editor::importZone(xml_node<> *zone_node) {
             this->current_zone->importObject(object_node);
         }else if(!strcmp(object_node->name(),"Group")){
             this->current_zone->importGroup(object_node);
+        }
     }
-    cout << endl;
 }
 
 void Editor::exportData(){

@@ -75,7 +75,9 @@ class Editor {
         //! Importe toutes les zones */
         void importZone(rapidxml::xml_node<> *zone_node);
         
-        std::string OpenFileName(const std::string &prompt);
+        std::string OpenFileName(const std::string& prompt);
+        
+        std::string GetFileName(const std::string& prompt);
 
     private:
         //! vector qui contient les pointeurs vers toutes les Zones de l'Editor.
