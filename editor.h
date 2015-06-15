@@ -9,8 +9,6 @@
 #define	EDITOR_H
 
 #include "GraphicalInterface.h"
-#include <iostream>
-#include <string>
 
 //! Classe de base qui contient toutes les zones et la plupart des informations
 class Editor {
@@ -76,8 +74,6 @@ class Editor {
         
         //! Importe toutes les zones */
         void importZone(rapidxml::xml_node<> *zone_node);
-        
-        std::string GetFileName(const std::string &prompt);
 
     private:
         std::vector<Zone*> zone_array;

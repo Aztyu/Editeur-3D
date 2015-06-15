@@ -59,7 +59,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lIrrlicht libraries/tinyxml/tinyxml.a -lcomdlg32
+LDLIBSOPTIONS=-lIrrlicht libraries/tinyxml/tinyxml.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}

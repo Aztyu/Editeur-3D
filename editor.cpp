@@ -9,8 +9,6 @@
 #include "Pointers.h"
 #include <iostream>
 #include <fstream>
-#include <iomanip>
-#include <Shlobj.h>
 
 using namespace rapidxml;
 using namespace std;
@@ -152,8 +150,7 @@ void Editor::importData() {
     cout << "Start" << endl;
     xml_document<> doc;
     xml_node<> * root_node;
-    string path = this->GetFileName("Charger une sauvegarde");
-    ifstream theFile(path.c_str());
+    ifstream theFile ("save.xml");
     if(theFile){
         try{
             vector<char> buffer((istreambuf_iterator<char>(theFile)), istreambuf_iterator<char>());
@@ -164,7 +161,7 @@ void Editor::importData() {
             {
                 this->importZone(zone_node);
             }
-            MessageText = L"L'environnement de travail a bien été chargé";
+            MessageText = L"L'environnement de travail a bien été sauvegardé";
             this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
                 Caption.c_str(), MessageText.c_str());
         }catch(exception e){
@@ -180,21 +177,17 @@ void Editor::importData() {
 }
 
 void Editor::importZone(xml_node<> *zone_node) {
-    try{
-        this->createZone(zone_node->first_attribute("name")->value());
-        for(xml_node<> * object_node = zone_node->first_node(0); object_node; object_node = object_node->next_sibling()){
-            char * test = object_node->name();
-            if(!strcmp(object_node->name(),"Object")){
-                this->current_zone->importObject(object_node);
-            }else if(!strcmp(object_node->name(),"Group")){
-                this->current_zone->importGroup(object_node);
-            }
-
+    this->createZone(zone_node->first_attribute("name")->value());
+    for(xml_node<> * object_node = zone_node->first_node(0); object_node; object_node = object_node->next_sibling()){
+        char * test = object_node->name();
+        if(!strcmp(object_node->name(),"Object")){
+            this->current_zone->importObject(object_node);
+        }else if(!strcmp(object_node->name(),"Group")){
+            this->current_zone->importGroup(object_node);
         }
-        cout << endl;
-    }catch(exception e){
-        throw e;
+        
     }
+    cout << endl;
 }
 
 void Editor::exportData(){
@@ -219,18 +212,6 @@ void Editor::exportData(){
         MessageText = L"Il y a eu un problème lors de la sauvegarde du fichier.\nRéessayer avec un autre nom de fichier";
         this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
             Caption.c_str(), MessageText.c_str());
-    } 
+    }
+    
 } 
-
-string Editor::GetFileName(const string& prompt){ 
-    const int BUFSIZE = 1024;
-    char buffer[BUFSIZE] = {0};
-    OPENFILENAME ofns = {0};
-    ofns.lStructSize = sizeof( ofns );
-    ofns.lpstrFile = buffer;
-    ofns.nMaxFile = BUFSIZE;
-    ofns.lpstrTitle = prompt.c_str();
-    ofns.lpstrFilter = "Save file(.xml)\0*.xml\0";
-    GetSaveFileName(&ofns);
-    return buffer;
-}
