@@ -75,6 +75,7 @@
           <linkerLibItems>
             <linkerLibLibItem>Irrlicht</linkerLibLibItem>
             <linkerLibFileItem>libraries/tinyxml/tinyxml.a</linkerLibFileItem>
+            <linkerLibLibItem>comdlg32</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
