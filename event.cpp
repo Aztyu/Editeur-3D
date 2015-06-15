@@ -116,7 +116,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                 case irr::gui::EGET_BUTTON_CLICKED:{
                     if(id <= GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX && id >= GUI_ID_OBJECT_WINDOW_OBJECT_NAME){
                         this->OnToolBoxItemSelected(id, event.GUIEvent.Caller);
-                    }else if(id >= GUI_ID_INFORMATIONS && id <= GUI_ID_INFORMATIONS_DELETE_ZONE){
+                    }else if(id >= GUI_ID_INFORMATIONS && id <= GUI_ID_INFORMATIONS_RESET_CAMERA){
                         this->OnInformationItemSelected(id, event.GUIEvent.Caller);
                     }else{
                         this->OnObjectCreation(id);
@@ -188,6 +188,7 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
             break;
         case GUI_ID_NEW_PROJECT:
             this->current_editor->removeZones();
+            this->current_editor->createZone("Main");
             break;
         case GUI_ID_LOAD:
             this->current_editor->removeZones();
@@ -310,9 +311,6 @@ void CEventReceiver::OnToolBoxItemSelected(irr::s32 id, irr::gui::IGUIElement* i
 
 void CEventReceiver::OnInformationItemSelected(irr::s32 id, irr::gui::IGUIElement* item) {
     switch(id){
-        case GUI_ID_INFORMATIONS_DELETE_ZONE:
-            //this->current_editor->
-            break;
         case GUI_ID_INFORMATIONS_RESET_CAMERA:
             this->current_editor->getCurrentZone()->loadCamera();
             break;
