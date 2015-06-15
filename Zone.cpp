@@ -449,8 +449,26 @@ void Zone::saveCamera() {
 }
 
 void Zone::loadCamera() {
+    irr::core::vector3df position = this->current_pointer->camera->getPosition();
+    irr::core::vector3df target = this->current_pointer->camera->getTarget();
+
+    position.X += 10;
+    target.X += 10;
+
+    this->current_pointer->camera->setPosition(position);
+    this->current_pointer->camera->bindTargetAndRotation(false);
+    this->current_pointer->camera->setTarget(target);
+    this->current_pointer->camera->bindTargetAndRotation(true);
+    
+    position.X -= 10;
+    target.X -= 10;
+
+    this->current_pointer->camera->setPosition(position);
+    this->current_pointer->camera->bindTargetAndRotation(false);
+    this->current_pointer->camera->setTarget(target);
+    this->current_pointer->camera->bindTargetAndRotation(true);
+    
     this->current_pointer->camera->setRotation(this->camera_rotation);
-    this->current_pointer->camera->setPosition(this->camera_position);
     irr::core::vector3df rotation = this->current_pointer->camera->getRotation();   //Permet de mettre a jour la camera
     rotation.Y += 1;
     this->current_pointer->camera->setRotation(rotation);
