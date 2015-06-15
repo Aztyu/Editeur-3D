@@ -58,7 +58,6 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     submenu = submenu->getSubMenu(0);
     submenu->addItem(L"Groupe", GUI_ID_NEW_GROUP, true, false, false);
     submenu->addItem(L"Zone", GUI_ID_NEW_ZONE, true, false, false);
-    submenu->addItem(L"Projet", GUI_ID_NEW_PROJECT, true, false, false);
     
     submenu = menu->getSubMenu(1);
     submenu->addItem(L"Skybox", GUI_ID_SKYBOX);

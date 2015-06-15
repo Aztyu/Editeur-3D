@@ -51,6 +51,7 @@ void Editor::createZone(const char* name){
     irr::scene::ISceneManager* scene = this->main_pointer->scene;
     irr::scene::ISceneNode* test = scene->addMeshSceneNode(scene->getMesh(type.c_str()));
     this->zone_array.push_back(new Zone(base_name.c_str(), main_pointer, test));
+    std::cout << "test2" << std::endl;
     this->setCurrentZone(zone_array.size()-1);
 }
 
