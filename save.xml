@@ -21,8 +21,60 @@
                 <scale x="1" y="1" z="3" />
             </Object>
         </Group>
+        <Group name="Group1">
+            <position x="0" y="0" z="0" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Group>
         <Object name="Sphere" type="6">
             <position x="0" y="0" z="20" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+    </Zone>
+    <Zone name="Zone">
+        <Object name="Cube" type="4">
+            <position x="6.15636" y="0" z="-13.0855" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube1" type="4">
+            <position x="9" y="0" z="-14.4115" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube2" type="4">
+            <position x="11.5702" y="0" z="-16.2112" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube3" type="4">
+            <position x="-2.57115" y="0" z="-15.0642" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube4" type="4">
+            <position x="0.554521" y="0" z="-15.3376" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube5" type="4">
+            <position x="3.58521" y="0" z="-16.1497" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube6" type="4">
+            <position x="11.2176" y="0" z="-21.494" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube7" type="4">
+            <position x="7.07066" y="0" z="-21.5735" />
+            <rotation x="0" y="0" z="0" />
+            <scale x="1" y="1" z="1" />
+        </Object>
+        <Object name="Cube8" type="4">
+            <position x="1.65684" y="0" z="-18.4478" />
             <rotation x="0" y="0" z="0" />
             <scale x="1" y="1" z="1" />
         </Object>

@@ -58,10 +58,12 @@ GraphicalInterface::GraphicalInterface(irr::gui::IGUIEnvironment* gui, irr::vide
     submenu = submenu->getSubMenu(0);
     submenu->addItem(L"Groupe", GUI_ID_NEW_GROUP, true, false, false);
     submenu->addItem(L"Zone", GUI_ID_NEW_ZONE, true, false, false);
+    submenu->addItem(L"Projet", GUI_ID_NEW_PROJECT, true, false, false);
     
     submenu = menu->getSubMenu(1);
     submenu->addItem(L"Skybox", GUI_ID_SKYBOX);
     submenu->addItem(L"Boite à outils", GUI_ID_TOOLBOX);
+    submenu->addItem(L"Information", GUI_ID_INFO);
 
     submenu = menu->getSubMenu(2);
     submenu->addItem(L"Documentation", GUI_ID_DOC);
@@ -547,7 +549,7 @@ void GraphicalInterface::updateInformation(irr::core::vector3df position_camera)
     }
     
     if(this->window != NULL){
-        char buffer[50];;
+        char buffer[50];
         std::string base_name;
         std::wstring widestr;
         
@@ -590,7 +592,7 @@ void GraphicalInterface::updateInformation(irr::core::vector3df position_camera)
             true,
             static_cast<irr::gui::IGUIElement*>(this->window));
         
-        sprintf(buffer, "%f", position_camera.Y);
+        sprintf(buffer, "%f", position_camera.Z);
         base_name = buffer;
         widestr = std::wstring(base_name.begin(), base_name.end());
 
@@ -602,11 +604,12 @@ void GraphicalInterface::updateInformation(irr::core::vector3df position_camera)
         this->gui->addButton(irr::core::rect<irr::s32>(15,150,180,180),
             static_cast<irr::gui::IGUIElement*>(this->window),
             GUI_ID_INFORMATIONS_DELETE_ZONE,
-            L"Delete Zone");  
+            L"Supprimer Zone");  
+        
         this->gui->addButton(irr::core::rect<irr::s32>(15,200,180,230),
             static_cast<irr::gui::IGUIElement*>(this->window),
             GUI_ID_INFORMATIONS_RESET_CAMERA,
-            L"Reset Camera");
+            L"Remise à zéro caméra");
    }
 }
 

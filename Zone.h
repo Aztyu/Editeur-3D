@@ -149,6 +149,10 @@ class Zone {
         
         //! Vérifie si le nom de GroupObject est déjà pris.
         bool isGroupObjectNameTaken(std::string name);
+        
+        //! Change la visibilite de la Zone et les GroupObject.
+        /** \param isVisible booleen qui definit la visibilite ou non.*/
+        void setZoneVisible(bool isVisible);
 
     private:
         //! Le vector qui contient les pointeurs vers tous les SingleObject.

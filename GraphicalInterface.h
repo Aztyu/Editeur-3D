@@ -33,10 +33,12 @@ enum Gui{                  //Ajoutez les ids utilises dans le GUI ici
     
     GUI_ID_NEW_ZONE,                        /**< element "Nouveau"-"Zone". */
     GUI_ID_NEW_GROUP,                       /**< element "Nouveau"-"Group". */
+    GUI_ID_NEW_PROJECT,                     /**< element "Nouveau"-"Projet" */
     
     GUI_ID_SETTINGS,                        /**< element "Reglages". */
     GUI_ID_SKYBOX,                          /**< element "Skybox". */
     GUI_ID_TOOLBOX,                         /**< element "Boite a outils". */
+    GUI_ID_INFO,                            /**< element "Informations" */
     
     GUI_ID_HELP,                            /**< element "Aide". */
     GUI_ID_DOC,                             /**< element "Documentation". */
