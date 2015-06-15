@@ -95,11 +95,6 @@ void GroupObject::exportObject(TiXmlElement* windows) {
     }
 }
 
-
-const char* GroupObject::printObject() {
-    return "test";
-}
-
 std::string GroupObject::getClassType() {
     return "GroupObject";
 }

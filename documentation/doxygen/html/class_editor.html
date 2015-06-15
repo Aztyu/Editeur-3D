@@ -135,6 +135,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aef2dcf40442fc100f5b73fe5e35505b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_editor.html#aef2dcf40442fc100f5b73fe5e35505b7">createZone</a> ()</td></tr>
 <tr class="memdesc:aef2dcf40442fc100f5b73fe5e35505b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creer une zone sans nom specifique.*/.  <a href="#aef2dcf40442fc100f5b73fe5e35505b7">More...</a><br /></td></tr>
 <tr class="separator:aef2dcf40442fc100f5b73fe5e35505b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c3c453a5aff5553f5f3cd5402fee366"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_editor.html#a6c3c453a5aff5553f5f3cd5402fee366">removeZones</a> ()</td></tr>
+<tr class="separator:a6c3c453a5aff5553f5f3cd5402fee366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a66d825ac095e7ed3ba716aadf0f76f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_editor.html#a3a66d825ac095e7ed3ba716aadf0f76f">setCurrentZone</a> (<a class="el" href="class_zone.html">Zone</a> *zone)</td></tr>
 <tr class="memdesc:a3a66d825ac095e7ed3ba716aadf0f76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definit la zone actuelle.  <a href="#a3a66d825ac095e7ed3ba716aadf0f76f">More...</a><br /></td></tr>
 <tr class="separator:a3a66d825ac095e7ed3ba716aadf0f76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,10 +177,13 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ad204fe4cbc02478f6698e70ad704624e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_zone.html">Zone</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_editor.html#ad204fe4cbc02478f6698e70ad704624e">zone_array</a></td></tr>
+<tr class="memdesc:ad204fe4cbc02478f6698e70ad704624e"><td class="mdescLeft">&#160;</td><td class="mdescRight">vector qui contient les pointeurs vers toutes les Zones de l'<a class="el" href="class_editor.html" title="Classe de base qui contient toutes les zones et la plupart des informations. ">Editor</a>.  <a href="#ad204fe4cbc02478f6698e70ad704624e">More...</a><br /></td></tr>
 <tr class="separator:ad204fe4cbc02478f6698e70ad704624e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad10b239b94d45993501dde063429e725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_zone.html">Zone</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_editor.html#ad10b239b94d45993501dde063429e725">current_zone</a></td></tr>
+<tr class="memdesc:ad10b239b94d45993501dde063429e725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur vers la <a class="el" href="class_zone.html" title="Classe qui est utiliser pour creer une zone contenant des objet et groupes d&#39; objets. ">Zone</a> actuelle.  <a href="#ad10b239b94d45993501dde063429e725">More...</a><br /></td></tr>
 <tr class="separator:ad10b239b94d45993501dde063429e725"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada0d7701b1702364d0fc73dd7052c4cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_pointer.html">Pointer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_editor.html#ada0d7701b1702364d0fc73dd7052c4cd">main_pointer</a></td></tr>
+<tr class="memdesc:ada0d7701b1702364d0fc73dd7052c4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur vers la structure Pointers du projet.  <a href="#ada0d7701b1702364d0fc73dd7052c4cd">More...</a><br /></td></tr>
 <tr class="separator:ada0d7701b1702364d0fc73dd7052c4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -300,7 +305,7 @@ Private Attributes</h2></td></tr>
 
 <p>Exporte toutes les donnees */. </p>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00166">166</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00193">193</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -319,7 +324,7 @@ Private Attributes</h2></td></tr>
 
 <p>Effectue toutes les operations necessaires au changement de <a class="el" href="class_zone.html" title="Classe qui est utiliser pour creer une zone contenant des objet et groupes d&#39; objets. ">Zone</a>.*/. </p>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00102">102</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00110">110</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -339,7 +344,7 @@ Private Attributes</h2></td></tr>
 <p>Renvoie un pointeur vers la zone actuelle. </p>
 <dl class="section return"><dt>Returns</dt><dd>Un pointer vers la zone actuellement utilisé. </dd></dl>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00087">87</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00095">95</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -379,7 +384,7 @@ Private Attributes</h2></td></tr>
 <p>Renvoie le Pointers utilisé. </p>
 <dl class="section return"><dt>Returns</dt><dd>Un pointer vers le Pointers utilisé. </dd></dl>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00125">125</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00134">134</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -398,7 +403,7 @@ Private Attributes</h2></td></tr>
 
 <p>Importe toutes les donnees */. </p>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00138">138</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00147">147</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -418,7 +423,7 @@ Private Attributes</h2></td></tr>
 
 <p>Importe toutes les zones */. </p>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00157">157</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00179">179</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -439,7 +444,24 @@ Private Attributes</h2></td></tr>
 <p>Nous indique si le nom est deja pris. </p>
 <dl class="section return"><dt>Returns</dt><dd>true si il est pris, false autrement </dd></dl>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00129">129</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00138">138</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c3c453a5aff5553f5f3cd5402fee366"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Editor::removeZones </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00061">61</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -465,7 +487,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00061">61</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00069">69</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -491,7 +513,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00071">71</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00079">79</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -517,7 +539,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00095">95</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00103">103</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -543,7 +565,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00091">91</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00099">99</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -566,7 +588,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="editor_8h_source.html#l00078">78</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
+<p>Pointeur vers la <a class="el" href="class_zone.html" title="Classe qui est utiliser pour creer une zone contenant des objet et groupes d&#39; objets. ">Zone</a> actuelle. </p>
+
+<p>Definition at line <a class="el" href="editor_8h_source.html#l00083">83</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
 
 </div>
 </div>
@@ -588,7 +612,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="editor_8h_source.html#l00079">79</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
+<p>Pointeur vers la structure Pointers du projet. </p>
+
+<p>Definition at line <a class="el" href="editor_8h_source.html#l00086">86</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
 
 </div>
 </div>
@@ -610,7 +636,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="editor_8h_source.html#l00077">77</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
+<p>vector qui contient les pointeurs vers toutes les Zones de l'<a class="el" href="class_editor.html" title="Classe de base qui contient toutes les zones et la plupart des informations. ">Editor</a>. </p>
+
+<p>Definition at line <a class="el" href="editor_8h_source.html#l00080">80</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
 
 </div>
 </div>
@@ -624,7 +652,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_editor.html">Editor</a></li>
-    <li class="footer">Generated on Sat Jun 13 2015 16:58:06 for Éditeur 3D by
+    <li class="footer">Generated on Mon Jun 15 2015 18:04:22 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

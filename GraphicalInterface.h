@@ -155,16 +155,31 @@ public:
     bool isInWindow(irr::core::vector2di position);
     
 private:
+    //! Contient le menu du GUI.
     irr::gui::IGUIContextMenu* menu;
+    
+    //! La combobox qui affiche tous les SingleObject.
     irr::gui::IGUIComboBox* single_object_box;
+    
+    //! La combobox qui affiche tous les GroupObject.
     irr::gui::IGUIComboBox* group_object_box;
+    
+    //! La combobox qui affiche toutes les Zone.
     irr::gui::IGUIComboBox* zone_box;
+    
+    //! Pointeur vers l'objet skybox.
     irr::scene::ISceneNode* skybox;
     
+    //! Le driver de Irrlicht.
     irr::video::IVideoDriver* driver;
+    
+    //! L'envirronement graphique fourni par Irrlicht.
     irr::gui::IGUIEnvironment* gui;
+    
+    //! La fenêtre "Outils".
     irr::gui::IGUIWindow* window;
     
+    //! L'Object actuellement sélectionné.
     Object* current_object;
 };
 

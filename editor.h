@@ -76,8 +76,13 @@ class Editor {
         void importZone(rapidxml::xml_node<> *zone_node);
 
     private:
+        //! vector qui contient les pointeurs vers toutes les Zones de l'Editor.
         std::vector<Zone*> zone_array;
+        
+        //! Pointeur vers la Zone actuelle.
         Zone* current_zone;
+        
+        //! Pointeur vers la structure Pointers du projet.
         Pointer* main_pointer;
 };
 

@@ -137,8 +137,13 @@ public:
     void setName(std::string name);
     
 protected:
+    //! Contient le pointeur vers l'élèment de Irrlicht qui matérialise l'Object.
     irr::scene::ISceneNode* objet;
+    
+    //! Le nom de l'Object.
     std::string object_name;
+    
+    //! Pointeur vers l'élèment Irrlicht de la Zone.
     irr::scene::ISceneNode* default_parent;
 };
 

@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['object',['Object',['../class_object.html#ae9c0d1c6d958a15483a6d25e3d4aafa7',1,'Object::Object(irr::scene::ISceneNode *obj, const char *name, irr::scene::ISceneNode *parent)'],['../class_object.html#aa53ebd9d3c1a2ce6c556f7c5f8fa53d9',1,'Object::Object(irr::scene::ISceneNode *obj, const char *name, irr::scene::ISceneNode *parent, float total_scale)'],['../class_object.html#ae9ff7fea631238ad8263cebffaedd4b4',1,'Object::Object(irr::scene::ISceneNode *obj, const char *name, irr::scene::ISceneNode *parent, const irr::core::vector3df &amp;position)']]],
-  ['onevent',['OnEvent',['../class_c_event_receiver.html#ad9ca3a8c45f4563d4c6cdafe6de7f983',1,'CEventReceiver']]],
-  ['onmenuitemselected',['OnMenuItemSelected',['../class_c_event_receiver.html#a43edae6467fb4a33e26532969ea2cfbc',1,'CEventReceiver']]],
-  ['onobjectcreation',['OnObjectCreation',['../class_c_event_receiver.html#abd4d447023316eb4263ef31860ae8ef7',1,'CEventReceiver']]],
-  ['onobjectselected',['OnObjectSelected',['../class_c_event_receiver.html#a3ecac7bd7526986381d369dc4e56a57a',1,'CEventReceiver']]],
-  ['ontoolboxitemselected',['OnToolBoxItemSelected',['../class_c_event_receiver.html#aef8d37570495fc5831313f1216b62681',1,'CEventReceiver']]],
-  ['onvaluechanged',['OnValueChanged',['../class_c_event_receiver.html#a007e23fbe772192014063f9290ab1b92',1,'CEventReceiver']]],
-  ['operator_3c_3c',['operator&lt;&lt;',['../_single_object_8cpp.html#ad6edfa2051d4bb6ea32f769af57856b3',1,'SingleObject.cpp']]]
+  ['main',['main',['../main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.cpp']]],
+  ['modifypositionby',['modifyPositionBy',['../class_object.html#a0bc35a2616873c1dc861e81b63d38c90',1,'Object::modifyPositionBy(float x, float y, float z)'],['../class_object.html#aec40244a71c6b257dff98252424649f7',1,'Object::modifyPositionBy(irr::core::vector3df values)']]],
+  ['modifyrotationby',['modifyRotationBy',['../class_object.html#aeab2da3a7c16f11d088a24c85282c511',1,'Object::modifyRotationBy(float x, float y, float z)'],['../class_object.html#a4b25d801c22def0ade39c479bf813818',1,'Object::modifyRotationBy(irr::core::vector3df values)']]],
+  ['modifyscaleby',['modifyScaleBy',['../class_object.html#aeae16a9ab6ef677bf7d3bf697910c58d',1,'Object::modifyScaleBy(float x, float y, float z)'],['../class_object.html#ab2d9b29dabaaf51d559f673673a42cc4',1,'Object::modifyScaleBy(irr::core::vector3df values)']]]
 ];

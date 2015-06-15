@@ -62,7 +62,10 @@ class CEventReceiver : public irr::IEventReceiver{
         void updateInformation();
         
     private:
+        //! vector de l'Editor actuel.
         Editor* current_editor;
+        
+        //! vector vers la GraphicalInterface actuellement utilisée.
         GraphicalInterface* custom_gui;
 };
 
