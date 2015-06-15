@@ -177,7 +177,6 @@ class Zone {
         
         //! Le nom de la Zone.
         std::string zone_name;
-        int type_number[9];
 };
 
 
