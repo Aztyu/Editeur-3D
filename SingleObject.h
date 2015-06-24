@@ -94,6 +94,8 @@ public:
     /** \return True si le SingleObject est dans un groupe, False sinon. */
     bool isInGroup();
     
+    void Remove();
+    
 private:
     //! Le pointeur vers le parent du SingleObject.
     Object* parent;

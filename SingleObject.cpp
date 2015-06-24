@@ -25,10 +25,11 @@ SingleObject::SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::s
 }
 
 SingleObject::~SingleObject() {
+    irr::scene::ISceneNode* test = this->objet;
     if(parent != NULL){
-        static_cast<GroupObject*>(parent)->removeMember(this);
+        static_cast<GroupObject*>(parent)->removeMember();
     }
-    this->objet->remove();        //Suppression de l'objet dans irrlicht
+    //this->objet->remove();       Suppression de l'objet dans irrlicht
     cout << "Object deleted" << endl;
 }
 
@@ -78,6 +79,7 @@ void SingleObject::exportObject(TiXmlElement* windows) {
 
 
 void SingleObject::setParent(Object* new_parent){
+    
     if(new_parent == NULL){
         if(this->parent != NULL){
             irr::core::matrix4 transformation = this->getSceneNode()->getAbsoluteTransformation();
@@ -121,6 +123,12 @@ Object* SingleObject::getParent() {
         return NULL;
     }
 }
+
+void SingleObject::Remove() {
+    this->objet->remove();
+    this->objet = NULL;
+}
+
 
 
 bool SingleObject::isInGroup() {

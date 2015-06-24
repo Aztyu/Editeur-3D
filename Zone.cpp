@@ -42,6 +42,7 @@ void Zone::removeSingleObject(int index){ //clear l'objet de tout stockage et de
     if(selected_object == this->single_object_array[index]){
         selected_object = NULL;
     }
+    this->single_object_array[index]->Remove();
     delete this->single_object_array[index];      //On l'enleve du programme
     this->single_object_array.erase(this->single_object_array.begin()+index);       //et du vector
     this->sendSingleObjectUpdate();
@@ -51,6 +52,8 @@ void Zone::removeGroupObject(int index) {
     if(selected_group == this->group_object_array[index]){
         selected_group = NULL;
     }
+    this->group_object_array[index]->updateChild();
+    this->group_object_array[index]->Remove();
     delete this->group_object_array[index];      //On l'enleve du programme
     this->group_object_array.erase(this->group_object_array.begin()+index);       //et du vector
     this->sendGroupObjectUpdate();     //Et de la combobox

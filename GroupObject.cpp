@@ -17,11 +17,8 @@ GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::sce
 }
 
 GroupObject::~GroupObject() {
-    for(int i =0; i<this->member_object.size(); i++){
-        this->member_object[i]->setParent(NULL);
-    }
     this->unselectObject();
-    this->objet->remove();        //Suppression de l'objet dans irrlicht
+    //this->objet->remove();        //Suppression de l'objet dans irrlicht
     std::cout << "Object deleted" << std::endl;
 }
 
@@ -45,7 +42,9 @@ void GroupObject::addMember(SingleObject* object) {
 void GroupObject::removeMember(int index) {
     if(index >= 0 && index < this->member_object.size()){
         if(this->member_object[index] != NULL){
-            this->member_object[index]->setParent(NULL);
+            if(this->member_object[index]->getSceneNode() != NULL){
+                this->member_object[index]->setParent(NULL);
+            }
             this->member_object.erase(this->member_object.begin()+index);
         }
     }
@@ -54,6 +53,15 @@ void GroupObject::removeMember(int index) {
 void GroupObject::removeMember(SingleObject* object) {
     for(int i = 0;i<this->member_object.size(); ++i){
         if(object == this->member_object[i]){
+            this->removeMember(i);
+            return;
+        }
+    }
+}
+
+void GroupObject::removeMember() {
+    for(int i = 0;i<this->member_object.size(); ++i){
+        if(this->member_object[i]->getSceneNode() == NULL){
             this->removeMember(i);
             return;
         }
@@ -99,6 +107,13 @@ std::string GroupObject::getClassType() {
     return "GroupObject";
 }
 
+void GroupObject::Remove(){
+    this->objet->remove(); 
+    this->objet = NULL;
+}
 
-
-
+void GroupObject::updateChild() {
+    for(int i =0; i<this->member_object.size(); i++){
+        this->member_object[i]->setParent(NULL);
+    }
+}

@@ -56,6 +56,8 @@ public:
     //! Supprime un objet du groupe selon un pointeur de l'objet.
     /** \param objet Pointeur de l'objet du groupe. */
     void removeMember(SingleObject* objet);
+    
+    void removeMember();
 
     //! Renvoie le type de la classe.
     /** \return Une string qui donne le type. */
@@ -64,6 +66,10 @@ public:
     //! Renvoie le type de la classe.
     /** \param windows Pointeur vers un TiXmlElement qui represente la base du fichier Xml de sauvegarde. */
     void exportObject(TiXmlElement* windows);
+    
+    void Remove();
+    
+    void updateChild();
 
 private:
     //! vector qui contient les pointeurs vers tous les SingleObject du GroupObject.

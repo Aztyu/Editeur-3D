@@ -16,7 +16,6 @@ using namespace std;
 
 Editor::Editor(Pointer* struct_pointer) : main_pointer(struct_pointer), current_zone(NULL){
     this->main_pointer->current_editor = this;
-    this->main_pointer->current_editor.
     createZone("Main");
 }
 
