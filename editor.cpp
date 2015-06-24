@@ -56,10 +56,13 @@ void Editor::createZone(const char* name){
 }
 
 void Editor::removeZones() {
-    for(size_t i; i<this->zone_array.size(); i++){
+    
+    for(int i=0; i<this->zone_array.size(); i++){
+        zone_array.at(i)->resetChild();
         delete(zone_array.at(i));
     }
     this->zone_array.clear();
+    this->current_zone = NULL;
 }
 
 

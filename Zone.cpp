@@ -31,7 +31,7 @@ Zone::Zone(const char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zon
 Zone::~Zone() {
     this->group_object_array.clear();
     this->single_object_array.clear();
-    this->zone_mesh->remove();
+    this->zone_mesh->removeAll();
 }
 
 void Zone::addObject(SingleObject* objet){
@@ -478,6 +478,13 @@ void Zone::setZoneVisible(bool isVisible) {
         this->group_object_array.at(i)->getSceneNode()->setVisible(isVisible);
     }
 }
+
+void Zone::resetChild() {
+    for(int i = 0;i<this->group_object_array.size(); ++i){
+        this->group_object_array[i]->updateChild();
+    }
+}
+
 
 
 

@@ -153,6 +153,8 @@ class Zone {
         //! Change la visibilite de la Zone et les GroupObject.
         /** \param isVisible booleen qui definit la visibilite ou non.*/
         void setZoneVisible(bool isVisible);
+        
+        void resetChild();
 
     private:
         //! Le vector qui contient les pointeurs vers tous les SingleObject.
