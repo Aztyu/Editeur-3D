@@ -3,6 +3,7 @@ var searchData=
   ['getclasstype',['getClassType',['../class_group_object.html#aa3b41e315182c7db74d017343b0425d9',1,'GroupObject::getClassType()'],['../class_object.html#a70c3db5db6b8f1b655a8e9d463f29b95',1,'Object::getClassType()'],['../class_single_object.html#a96c35f464abcc623a4edcd0552fb2d93',1,'SingleObject::getClassType()']]],
   ['getcurrentzone',['getCurrentZone',['../class_editor.html#a860bab7b03f4adf150c1ceca7941f8b8',1,'Editor']]],
   ['geteditor',['getEditor',['../class_editor.html#ad8890a2ec176419d55851f52a5ab80f3',1,'Editor']]],
+  ['getfilename',['GetFileName',['../class_editor.html#ab60e4275bf10c5eb4e94f466c114e5cf',1,'Editor']]],
   ['getgroupobjectpointer',['getGroupObjectPointer',['../class_zone.html#a1c813f191e86a398fc04ab37765cf1a2',1,'Zone']]],
   ['getgroupobjectvector',['getGroupObjectVector',['../class_zone.html#aaf3e312b79c742d8fbb12f1ad197f6e8',1,'Zone']]],
   ['getguienvironment',['getGUIEnvironment',['../class_graphical_interface.html#a3d791faeca9b054aa5ff962760ecc54f',1,'GraphicalInterface']]],

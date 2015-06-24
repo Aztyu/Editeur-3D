@@ -23,6 +23,7 @@ var _graphical_interface_8h =
       [ "GUI_ID_SETTINGS", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca5a514e0e233816316bfebd7fb838c13a", null ],
       [ "GUI_ID_SKYBOX", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca36fc1b46c836651e13506a8ee2715d57", null ],
       [ "GUI_ID_TOOLBOX", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca17e72fbeafdf9cce6382ce55deff9d2f", null ],
+      [ "GUI_ID_INFO", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca33d1d5d78118a19f0949d9793f23e318", null ],
       [ "GUI_ID_HELP", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cafc966a63b7520b952cafee2f540eee7d", null ],
       [ "GUI_ID_DOC", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575ca9c68ccf40f2412ed9d4f663418243262", null ],
       [ "GUI_ID_ABOUT", "_graphical_interface_8h.html#aa7dc61091ee76eb1375e64889805575cabf3ef31d30701203871c07c256307c45", null ],

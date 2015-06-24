@@ -17,5 +17,6 @@ var searchData=
   ['setselectedsingleobject',['setSelectedSingleObject',['../class_zone.html#ad82a7db9d08491742c2fba2e22594c73',1,'Zone::setSelectedSingleObject(int index)'],['../class_zone.html#ad2f8eebd5a5e7ca09dbd7ecf4723833c',1,'Zone::setSelectedSingleObject(irr::scene::ISceneNode *objet)']]],
   ['setsingleobjectselected',['setSingleObjectSelected',['../class_graphical_interface.html#a906dff32de9a713121f9775127fc33a5',1,'GraphicalInterface']]],
   ['setzoneselected',['setZoneSelected',['../class_graphical_interface.html#a64d0a0aa5276508f23864d27321dcdfd',1,'GraphicalInterface']]],
+  ['setzonevisible',['setZoneVisible',['../class_zone.html#a12ddf6f75e8f011ad81ee35b489ba70f',1,'Zone']]],
   ['singleobject',['SingleObject',['../class_single_object.html#a991dc383f54757da8feaa5587504decc',1,'SingleObject::SingleObject(irr::scene::ISceneNode *obj, const char *name, irr::scene::ISceneNode *parent, object type)'],['../class_single_object.html#acf7bc6fb1842aadabf1cec93e8caab8d',1,'SingleObject::SingleObject(irr::scene::ISceneNode *obj, const char *name, irr::scene::ISceneNode *parent, float total_scale, object type)'],['../class_single_object.html#a36db246ca1a4ada7d55d13a30cfc83ee',1,'SingleObject::SingleObject(irr::scene::ISceneNode *obj, const char *name, irr::scene::ISceneNode *parent, irr::core::vector3df position, object type)']]]
 ];

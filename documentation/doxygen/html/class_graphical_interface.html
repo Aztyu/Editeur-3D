@@ -159,9 +159,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0f8425abdd04336c10bf9835219e36b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphical_interface.html#a0f8425abdd04336c10bf9835219e36b8">updateWindow</a> ()</td></tr>
 <tr class="memdesc:a0f8425abdd04336c10bf9835219e36b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jour la fenetre Outils grace a l'attribut current_object.  <a href="#a0f8425abdd04336c10bf9835219e36b8">More...</a><br /></td></tr>
 <tr class="separator:a0f8425abdd04336c10bf9835219e36b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a610f534ff59af7e39bff8a135c2a65e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphical_interface.html#a610f534ff59af7e39bff8a135c2a65e3">updateInformation</a> (<a class="el" href="class_zone.html">Zone</a> *current_zone)</td></tr>
-<tr class="memdesc:a610f534ff59af7e39bff8a135c2a65e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jour la fenetre Informations grace a l'attribut current_zone.  <a href="#a610f534ff59af7e39bff8a135c2a65e3">More...</a><br /></td></tr>
-<tr class="separator:a610f534ff59af7e39bff8a135c2a65e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eb65621c05858ecb310b19723b31b46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphical_interface.html#a1eb65621c05858ecb310b19723b31b46">updateInformation</a> (irr::core::vector3df position_camera)</td></tr>
+<tr class="memdesc:a1eb65621c05858ecb310b19723b31b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mets à jour la fenetre Informations grace a l'attribut current_zone.  <a href="#a1eb65621c05858ecb310b19723b31b46">More...</a><br /></td></tr>
+<tr class="separator:a1eb65621c05858ecb310b19723b31b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47fcbbf5c31dc89d1c6f5168af0b4eae"><td class="memItemLeft" align="right" valign="top">irr::scene::ISceneNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_graphical_interface.html#a47fcbbf5c31dc89d1c6f5168af0b4eae">getSkybox</a> ()</td></tr>
 <tr class="memdesc:a47fcbbf5c31dc89d1c6f5168af0b4eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupere un pointeur vers l'element skybox.  <a href="#a47fcbbf5c31dc89d1c6f5168af0b4eae">More...</a><br /></td></tr>
 <tr class="separator:a47fcbbf5c31dc89d1c6f5168af0b4eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,7 +205,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe qui gere tout l'affichage de l'interface. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00091">91</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00092">92</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a823e5966aced0a76a629a0fbae96005f"></a>
 <div class="memitem">
@@ -247,7 +247,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00010">10</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00011">11</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -274,7 +274,7 @@ Private Attributes</h2></td></tr>
 
 <p>Destructeur par default. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00149">149</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00151">151</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -294,7 +294,7 @@ Private Attributes</h2></td></tr>
 
 <p>Appelle la fonction drawAll de Irrlicht. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00152">152</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00154">154</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -314,7 +314,7 @@ Private Attributes</h2></td></tr>
 <p>Recupere un pointeur vers le GUI Environment. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointeur vers le GUI Environment en cours d'utilisation </dd></dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00203">203</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00205">205</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -334,7 +334,7 @@ Private Attributes</h2></td></tr>
 <p>Recupere un pointeur vers l'element skybox. </p>
 <dl class="section return"><dt>Returns</dt><dd>Un pointeur vers un ISceneNode pour pouvoir modifier la skybox </dd></dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00559">559</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00610">610</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -354,7 +354,7 @@ Private Attributes</h2></td></tr>
 <p>Renvoie l'objet actuellement selectionne. </p>
 <dl class="section return"><dt>Returns</dt><dd>Un pointeur vers l'objet selectionne qui apparait dans la fenetre Outils </dd></dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00563">563</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00614">614</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -381,7 +381,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True si le point est dans la fenetre, False sinon ou si la fenetre néxiste pas. </dd></dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00567">567</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00618">618</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -407,7 +407,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00194">194</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00196">196</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -433,7 +433,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00167">167</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00169">169</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -459,7 +459,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00198">198</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00200">200</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -485,27 +485,28 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00171">171</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00173">173</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a610f534ff59af7e39bff8a135c2a65e3"></a>
+<a class="anchor" id="a1eb65621c05858ecb310b19723b31b46"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void GraphicalInterface::updateInformation </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_zone.html">Zone</a> *&#160;</td>
-          <td class="paramname"><em>current_zone</em></td><td>)</td>
+          <td class="paramtype">irr::core::vector3df&#160;</td>
+          <td class="paramname"><em>position_camera</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Mets à jour la fenetre Informations grace a l'attribut current_zone. </p>
+<p>position_camera vector3d qui indique la position de la camera </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00526">526</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00528">528</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -531,7 +532,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00156">156</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00158">158</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -557,7 +558,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00207">207</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00209">209</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -576,7 +577,7 @@ Private Attributes</h2></td></tr>
 
 <p>Mets à jour la fenetre Outils grace a l'attribut current_object. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00212">212</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00214">214</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -602,7 +603,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00182">182</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8cpp_source.html#l00184">184</a> of file <a class="el" href="_graphical_interface_8cpp_source.html">GraphicalInterface.cpp</a>.</p>
 
 </div>
 </div>
@@ -627,7 +628,7 @@ Private Attributes</h2></td></tr>
 
 <p>L'<a class="el" href="class_object.html" title="Classe de base pour SIngleObject et GroupObject, gere les ISceneNodes natif a Irrlicht. ">Object</a> actuellement sélectionné. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00183">183</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00185">185</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
 
 </div>
 </div>
@@ -651,7 +652,7 @@ Private Attributes</h2></td></tr>
 
 <p>Le driver de Irrlicht. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00174">174</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00176">176</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
 
 </div>
 </div>
@@ -675,7 +676,7 @@ Private Attributes</h2></td></tr>
 
 <p>La combobox qui affiche tous les <a class="el" href="class_group_object.html" title="Classe qui est utilise pour creer un groupe d&#39; objet. ">GroupObject</a>. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00165">165</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00167">167</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
 
 </div>
 </div>
@@ -699,7 +700,7 @@ Private Attributes</h2></td></tr>
 
 <p>L'envirronement graphique fourni par Irrlicht. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00177">177</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00179">179</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
 
 </div>
 </div>
@@ -723,7 +724,7 @@ Private Attributes</h2></td></tr>
 
 <p>Contient le menu du GUI. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00159">159</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00161">161</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
 
 </div>
 </div>
@@ -747,7 +748,7 @@ Private Attributes</h2></td></tr>
 
 <p>La combobox qui affiche tous les <a class="el" href="class_single_object.html" title="Classe qui est utilise pour creer un simple objet. ">SingleObject</a>. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00162">162</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00164">164</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
 
 </div>
 </div>
@@ -771,7 +772,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointeur vers l'objet skybox. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00171">171</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00173">173</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
 
 </div>
 </div>
@@ -795,7 +796,7 @@ Private Attributes</h2></td></tr>
 
 <p>La fenêtre "Outils". </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00180">180</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00182">182</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
 
 </div>
 </div>
@@ -819,7 +820,7 @@ Private Attributes</h2></td></tr>
 
 <p>La combobox qui affiche toutes les <a class="el" href="class_zone.html" title="Classe qui est utiliser pour creer une zone contenant des objet et groupes d&#39; objets. ">Zone</a>. </p>
 
-<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00168">168</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
+<p>Definition at line <a class="el" href="_graphical_interface_8h_source.html#l00170">170</a> of file <a class="el" href="_graphical_interface_8h_source.html">GraphicalInterface.h</a>.</p>
 
 </div>
 </div>
@@ -833,7 +834,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_graphical_interface.html">GraphicalInterface</a></li>
-    <li class="footer">Generated on Mon Jun 15 2015 18:04:22 for Éditeur 3D by
+    <li class="footer">Generated on Mon Jun 15 2015 22:39:03 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

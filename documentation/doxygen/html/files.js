@@ -5,7 +5,7 @@ var files =
       [ "Editor", "class_editor.html", "class_editor" ]
     ] ],
     [ "event.cpp", "event_8cpp.html", null ],
-    [ "Event.h", "_event_8h.html", [
+    [ "event.h", "event_8h.html", [
       [ "CEventReceiver", "class_c_event_receiver.html", "class_c_event_receiver" ]
     ] ],
     [ "GraphicalInterface.cpp", "_graphical_interface_8cpp.html", null ],
@@ -22,7 +22,7 @@ var files =
     [ "Pointers.h", "_pointers_8h.html", [
       [ "Pointer", "struct_pointer.html", "struct_pointer" ]
     ] ],
-    [ "SingleObject.cpp", "_single_object_8cpp.html", "_single_object_8cpp" ],
+    [ "SingleObject.cpp", "_single_object_8cpp.html", null ],
     [ "SingleObject.h", "_single_object_8h.html", "_single_object_8h" ],
     [ "Zone.cpp", "_zone_8cpp.html", null ],
     [ "Zone.h", "_zone_8h.html", [

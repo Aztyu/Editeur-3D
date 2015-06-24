@@ -6,6 +6,7 @@ var class_c_event_receiver =
     [ "backwardCamera", "class_c_event_receiver.html#a7ce1bcfe1324870a28faf53eea9f0932", null ],
     [ "forwardCamera", "class_c_event_receiver.html#ab6e66800222483c76e1d0c180d489755", null ],
     [ "OnEvent", "class_c_event_receiver.html#ad9ca3a8c45f4563d4c6cdafe6de7f983", null ],
+    [ "OnInformationItemSelected", "class_c_event_receiver.html#aeddc70459d93234565c999fddb010be2", null ],
     [ "OnMenuItemSelected", "class_c_event_receiver.html#a43edae6467fb4a33e26532969ea2cfbc", null ],
     [ "OnObjectCreation", "class_c_event_receiver.html#abd4d447023316eb4263ef31860ae8ef7", null ],
     [ "OnObjectSelected", "class_c_event_receiver.html#a3ecac7bd7526986381d369dc4e56a57a", null ],

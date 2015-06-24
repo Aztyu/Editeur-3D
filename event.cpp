@@ -187,6 +187,12 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
         case GUI_ID_NEW_GROUP:
             this->current_editor->getCurrentZone()->createGroupObject();
             break;
+        case GUI_ID_ABOUT:{
+            irr::core::stringw MessageText = L"Réalisé par :\nCorentin BEAL\nMatthieu CHIAPPINI\nGuillaume ORIOL\nArnaud ROCHE\nEtienne STHEME DE JUBECOURT\nJulien GARDET\n\nContact :\nproject@dev.com\n\n@copyright 2015";
+            irr::core::stringw Caption = L"Message - Chargement";
+            this->current_editor->getMainPointer()->gui->getGUIEnvironment()->addMessageBox(
+            Caption.c_str(), MessageText.c_str());
+            break;}
         case GUI_ID_LOAD:
             this->current_editor->removeZones();
             this->current_editor->importData();

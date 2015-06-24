@@ -35,6 +35,7 @@ var class_zone =
     [ "setSelectedGroupObject", "class_zone.html#acfe3b49b5293c8c00a1351c161e736f3", null ],
     [ "setSelectedSingleObject", "class_zone.html#ad82a7db9d08491742c2fba2e22594c73", null ],
     [ "setSelectedSingleObject", "class_zone.html#ad2f8eebd5a5e7ca09dbd7ecf4723833c", null ],
+    [ "setZoneVisible", "class_zone.html#a12ddf6f75e8f011ad81ee35b489ba70f", null ],
     [ "unselectAll", "class_zone.html#a8994954cffd14da36e9d940537914983", null ],
     [ "camera_position", "class_zone.html#a1183a6c78fed496780478a1384cf3634", null ],
     [ "camera_rotation", "class_zone.html#abf3683f7a32d7144ee52eab5bc639802", null ],
@@ -43,7 +44,6 @@ var class_zone =
     [ "selected_group", "class_zone.html#a44a0794a2af98a9a042a2b9c85f7be25", null ],
     [ "selected_object", "class_zone.html#a1a4abffed25a000ecc898cf7deb32820", null ],
     [ "single_object_array", "class_zone.html#a11c21e13b18c328994d2b1c9f6c0017b", null ],
-    [ "type_number", "class_zone.html#afcf8a165b68158407488a1678bdd2d78", null ],
     [ "zone_mesh", "class_zone.html#a7e3ee8073e6aa90a5083b726dc5cc93b", null ],
     [ "zone_name", "class_zone.html#a0df1fac4c7aee18061fc42a6a03faa1b", null ]
 ];
