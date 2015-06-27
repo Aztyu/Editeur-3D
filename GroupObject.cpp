@@ -17,7 +17,9 @@ GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::sce
 }
 
 GroupObject::~GroupObject() {
-    this->unselectObject();
+    if(this->objet != NULL){
+        this->unselectObject();
+    }
     //this->objet->remove();        //Suppression de l'objet dans irrlicht
     std::cout << "Object deleted" << std::endl;
 }

@@ -170,6 +170,7 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
     {
         case GUI_ID_QUIT:
             current_editor->getMainPointer()->device->closeDevice();
+            delete current_editor;
             break;
         case GUI_ID_TOOLBOX:
             this->current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());             

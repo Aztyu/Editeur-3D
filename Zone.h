@@ -41,6 +41,8 @@ class Zone {
         /** \param objet Pointeur de l'objet du groupe. */
         void removeObject(Object* objet);
         
+        void removeAllGroups();
+        
         //! Créer un SingleObjet dans la zone selon une énumération object.
         /** \param form Enumeration qui definit le type d'objet créer. */
         void createSingleObject(object form);

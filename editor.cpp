@@ -20,6 +20,10 @@ Editor::Editor(Pointer* struct_pointer) : main_pointer(struct_pointer), current_
 }
 
 Editor::~Editor() {
+    for(int i=0; i<this->zone_array.size(); i++){
+        delete this->zone_array[i];
+    }
+    this->zone_array.clear();
 }
 
 Editor* Editor::getEditor(){

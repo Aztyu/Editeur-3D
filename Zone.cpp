@@ -29,6 +29,13 @@ Zone::Zone(const char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zon
 }
 
 Zone::~Zone() {
+    for(int i=0; i<this->group_object_array.size(); i++){
+        this->group_object_array[i]->Remove();
+        delete this->group_object_array[i];
+    }
+    for(int i=0; i<this->single_object_array.size(); i++){
+        delete this->single_object_array[i];
+    }
     this->group_object_array.clear();
     this->single_object_array.clear();
     this->zone_mesh->removeAll();
@@ -58,6 +65,13 @@ void Zone::removeGroupObject(int index) {
     this->group_object_array.erase(this->group_object_array.begin()+index);       //et du vector
     this->sendGroupObjectUpdate();     //Et de la combobox
 }
+
+void Zone::removeAllGroups() {
+    while(this->group_object_array.size() > 0){
+        this->removeGroupObject(this->group_object_array.size()-1);
+    }
+}
+
 
 
 void Zone::removeObject(Object* objet){
