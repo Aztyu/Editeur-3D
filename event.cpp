@@ -117,7 +117,7 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
                 case irr::gui::EGET_BUTTON_CLICKED:{
                     if(id <= GUI_ID_OBJECT_WINDOW_GROUP_COMBO_BOX && id >= GUI_ID_OBJECT_WINDOW_OBJECT_NAME){
                         this->OnToolBoxItemSelected(id, event.GUIEvent.Caller);
-                    }else if(id >= GUI_ID_INFORMATIONS && id <= GUI_ID_INFORMATIONS_RESET_CAMERA){
+                    }else if(id >= GUI_ID_INFORMATIONS && id <= GUI_ID_INFORMATIONS_DELETE_ZONE){
                         this->OnInformationItemSelected(id, event.GUIEvent.Caller);
                     }else{
                         this->OnObjectCreation(id);
@@ -136,9 +136,19 @@ bool CEventReceiver::OnEvent(const irr::SEvent &event){
             if(event.MouseInput.isLeftPressed() == true){       //Si on clique sur un objet a l'ecran il est selectionne
                 irr::core::vector2di position = irr::core::vector2di(event.MouseInput.X, event.MouseInput.Y);
                 if(!this->current_editor->getMainPointer()->gui->isInWindow(position)){ //Si le clic est en dehors de la fenetre outil
-                    if(current_editor->getCurrentZone()->setSelectedSingleObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), -1, false, 0))){
+                    //boucler dans la zone et les groupes
+                    if(current_editor->getCurrentZone()->setSelectedSingleObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), -1, false, this->current_editor->getCurrentZone()->getMeshPointer()))){
                         current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
+                        return true;
+                    }else{
+                        for(int i=0; i<this->current_editor->getCurrentZone()->getGroupObjectVector()->size(); i++){
+                            if(current_editor->getCurrentZone()->setSelectedSingleObject(current_editor->getMainPointer()->scene->getSceneCollisionManager()->getSceneNodeFromScreenCoordinatesBB(irr::core::position2di(event.MouseInput.X, event.MouseInput.Y), -1, false, this->current_editor->getCurrentZone()->getGroupObjectVector()->at(i)->getSceneNode()))){
+                                current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
+                                return true;
+                            }
+                        }
                     }
+                    
                 }
             }
         }
@@ -170,7 +180,10 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
     {
         case GUI_ID_QUIT:
             current_editor->getMainPointer()->device->closeDevice();
+
+            //current_editor->getMainPointer()->device->drop();
             delete current_editor;
+            current_editor->getMainPointer()->device->run();
             break;
         case GUI_ID_TOOLBOX:
             this->current_editor->getMainPointer()->gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());             
@@ -192,7 +205,8 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
             irr::core::stringw MessageText = L"Réalisé par :\nCorentin BEAL\nMatthieu CHIAPPINI\nGuillaume ORIOL\nArnaud ROCHE\nEtienne STHEME DE JUBECOURT\nJulien GARDET\n\nContact :\nproject@dev.com\n\n@copyright 2015";
             irr::core::stringw Caption = L"Message - Chargement";
             this->current_editor->getMainPointer()->gui->getGUIEnvironment()->addMessageBox(
-            Caption.c_str(), MessageText.c_str());
+                    Caption.c_str(), 
+                    MessageText.c_str());
             break;}
         case GUI_ID_LOAD:
             this->current_editor->removeZones();
@@ -320,6 +334,10 @@ void CEventReceiver::OnInformationItemSelected(irr::s32 id, irr::gui::IGUIElemen
     switch(id){
         case GUI_ID_INFORMATIONS_RESET_CAMERA:
             this->current_editor->getCurrentZone()->loadCamera();
+            break;
+        case GUI_ID_INFORMATIONS_DELETE_ZONE:
+            this->current_editor->removeZone(this->current_editor->getCurrentZone());
+            this->current_editor->setCurrentZone(this->current_editor->getNumberOfZones()-1);
             break;
     }
 }

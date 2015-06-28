@@ -600,6 +600,11 @@ void GraphicalInterface::updateInformation(irr::core::vector3df position_camera)
             true,
             static_cast<irr::gui::IGUIElement*>(this->window));
         
+        this->gui->addButton(irr::core::rect<irr::s32>(15,150,180,180),
+            static_cast<irr::gui::IGUIElement*>(this->window),
+            GUI_ID_INFORMATIONS_DELETE_ZONE,
+            L"Supprimer zone");
+        
         this->gui->addButton(irr::core::rect<irr::s32>(15,200,180,230),
             static_cast<irr::gui::IGUIElement*>(this->window),
             GUI_ID_INFORMATIONS_RESET_CAMERA,

@@ -30,6 +30,8 @@ class Editor {
         
         void removeZones();
         
+        void removeZone(Zone* zone);
+        
         //! Definit la zone actuelle.
         /** \param zone Pointeur vers la zone à définir comme actuelle.*/
         void setCurrentZone(Zone* zone);
@@ -57,6 +59,8 @@ class Editor {
         //! Renvoie un pointeur vers l'Editor.
         /** \return Un pointer vers cet Editor utilisé.*/
         Editor* getEditor();
+        
+        int getNumberOfZones();
         
         //! Renvoie un pointeur vers la zone actuelle
         /** \return Un pointer vers la zone actuellement utilisé.*/

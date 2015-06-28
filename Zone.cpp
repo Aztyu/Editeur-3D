@@ -29,8 +29,9 @@ Zone::Zone(const char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zon
 }
 
 Zone::~Zone() {
+    this->zone_mesh->remove();
     for(int i=0; i<this->group_object_array.size(); i++){
-        this->group_object_array[i]->Remove();
+        //this->group_object_array[i]->Remove();
         delete this->group_object_array[i];
     }
     for(int i=0; i<this->single_object_array.size(); i++){
@@ -38,7 +39,6 @@ Zone::~Zone() {
     }
     this->group_object_array.clear();
     this->single_object_array.clear();
-    this->zone_mesh->removeAll();
 }
 
 void Zone::addObject(SingleObject* objet){

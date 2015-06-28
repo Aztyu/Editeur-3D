@@ -60,7 +60,6 @@ void Editor::createZone(const char* name){
 }
 
 void Editor::removeZones() {
-    
     for(int i=0; i<this->zone_array.size(); i++){
         zone_array.at(i)->resetChild();
         delete(zone_array.at(i));
@@ -68,6 +67,26 @@ void Editor::removeZones() {
     this->zone_array.clear();
     this->current_zone = NULL;
 }
+
+void Editor::removeZone(Zone* zone) {
+    if(this->zone_array.size() > 1){
+        for(int i=0; i<this->zone_array.size(); i++){
+            if(this->zone_array[i]->getPointer() == zone){
+                zone_array.at(i)->resetChild();
+                delete(zone_array.at(i));
+                this->zone_array.erase(this->zone_array.begin()+i);
+            }
+        }
+        this->current_zone = NULL;
+    }else{
+        //print message
+    }
+}
+
+int Editor::getNumberOfZones() {
+    return this->zone_array.size();
+}
+
 
 
 void Editor::setCurrentZone(Zone* zone){

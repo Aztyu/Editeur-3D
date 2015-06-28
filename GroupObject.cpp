@@ -8,18 +8,21 @@
 #include "GroupObject.h"
 
 GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent): Object(obj, name, parent){
+    this->objet->setParent(parent);
 }
 
 GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, float total_scale) : Object(obj, name, parent, total_scale) {
+    this->objet->setParent(parent);
 }
 
 GroupObject::GroupObject(irr::scene::ISceneNode* obj, const char* name, irr::scene::ISceneNode* parent, const irr::core::vector3df& position) : Object(obj, name, parent, position){
+    this->objet->setParent(parent);
 }
 
 GroupObject::~GroupObject() {
-    if(this->objet != NULL){
+    /*if(this->objet != NULL){
         this->unselectObject();
-    }
+    }*/
     //this->objet->remove();        //Suppression de l'objet dans irrlicht
     std::cout << "Object deleted" << std::endl;
 }
@@ -116,6 +119,7 @@ void GroupObject::Remove(){
 
 void GroupObject::updateChild() {
     for(int i =0; i<this->member_object.size(); i++){
+        this->member_object[i]->unselectObject();
         this->member_object[i]->setParent(NULL);
     }
 }

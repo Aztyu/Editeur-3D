@@ -25,11 +25,9 @@ SingleObject::SingleObject(irr::scene::ISceneNode* obj, const char* name, irr::s
 }
 
 SingleObject::~SingleObject() {
-    irr::scene::ISceneNode* test = this->objet;
     if(parent != NULL){
         static_cast<GroupObject*>(parent)->removeMember();
     }
-    //this->objet->remove();       Suppression de l'objet dans irrlicht
     cout << "Object deleted" << endl;
 }
 
