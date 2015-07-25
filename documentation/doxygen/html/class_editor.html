@@ -180,12 +180,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a090a87009661930f22e39c75fd67de5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_editor.html#a090a87009661930f22e39c75fd67de5e">importZone</a> (rapidxml::xml_node&lt;&gt; *zone_node)</td></tr>
 <tr class="memdesc:a090a87009661930f22e39c75fd67de5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Importe toutes les zones */.  <a href="#a090a87009661930f22e39c75fd67de5e">More...</a><br /></td></tr>
 <tr class="separator:a090a87009661930f22e39c75fd67de5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3a737a6b91a2b01b9f6b1c178c64fa9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_editor.html#aa3a737a6b91a2b01b9f6b1c178c64fa9">OpenFileName</a> (const std::string &amp;prompt)</td></tr>
-<tr class="memdesc:aa3a737a6b91a2b01b9f6b1c178c64fa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelle la fonction Windows pour ouvrir un fichier existant.  <a href="#aa3a737a6b91a2b01b9f6b1c178c64fa9">More...</a><br /></td></tr>
-<tr class="separator:aa3a737a6b91a2b01b9f6b1c178c64fa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab60e4275bf10c5eb4e94f466c114e5cf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_editor.html#ab60e4275bf10c5eb4e94f466c114e5cf">GetFileName</a> (const std::string &amp;prompt)</td></tr>
-<tr class="memdesc:ab60e4275bf10c5eb4e94f466c114e5cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelle la fonction Windows pour créer un nouveau fichier.  <a href="#ab60e4275bf10c5eb4e94f466c114e5cf">More...</a><br /></td></tr>
-<tr class="separator:ab60e4275bf10c5eb4e94f466c114e5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -318,7 +312,7 @@ Private Attributes</h2></td></tr>
 
 <p>Exporte toutes les donnees */. </p>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00228">228</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00233">233</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -378,32 +372,6 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Un pointer vers cet <a class="el" href="class_editor.html" title="Classe de base qui contient toutes les zones et la plupart des informations. ">Editor</a> utilisé. </dd></dl>
 
 <p>Definition at line <a class="el" href="editor_8cpp_source.html#l00029">29</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab60e4275bf10c5eb4e94f466c114e5cf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Editor::GetFileName </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>prompt</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Appelle la fonction Windows pour créer un nouveau fichier. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">prompt</td><td>Message affiché </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00262">262</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -483,7 +451,7 @@ Private Attributes</h2></td></tr>
 
 <p>Importe toutes les zones */. </p>
 
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00216">216</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
+<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00221">221</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -505,32 +473,6 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>true si il est pris, false autrement </dd></dl>
 
 <p>Definition at line <a class="el" href="editor_8cpp_source.html#l00163">163</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa3a737a6b91a2b01b9f6b1c178c64fa9"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string Editor::OpenFileName </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>prompt</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Appelle la fonction Windows pour ouvrir un fichier existant. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">prompt</td><td>Message affiché </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="editor_8cpp_source.html#l00278">278</a> of file <a class="el" href="editor_8cpp_source.html">editor.cpp</a>.</p>
 
 </div>
 </div>
@@ -704,7 +646,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointeur vers la <a class="el" href="class_zone.html" title="Classe qui est utiliser pour creer une zone contenant des objet et groupes d&#39; objets. ">Zone</a> actuelle. </p>
 
-<p>Definition at line <a class="el" href="editor_8h_source.html#l00101">101</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
+<p>Definition at line <a class="el" href="editor_8h_source.html#l00093">93</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
 
 </div>
 </div>
@@ -728,7 +670,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pointeur vers la structure Pointers du projet. </p>
 
-<p>Definition at line <a class="el" href="editor_8h_source.html#l00104">104</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
+<p>Definition at line <a class="el" href="editor_8h_source.html#l00096">96</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
 
 </div>
 </div>
@@ -752,7 +694,7 @@ Private Attributes</h2></td></tr>
 
 <p>vector qui contient les pointeurs vers toutes les Zones de l'<a class="el" href="class_editor.html" title="Classe de base qui contient toutes les zones et la plupart des informations. ">Editor</a>. </p>
 
-<p>Definition at line <a class="el" href="editor_8h_source.html#l00098">98</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
+<p>Definition at line <a class="el" href="editor_8h_source.html#l00090">90</a> of file <a class="el" href="editor_8h_source.html">editor.h</a>.</p>
 
 </div>
 </div>
@@ -766,7 +708,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_editor.html">Editor</a></li>
-    <li class="footer">Generated on Sat Jul 25 2015 11:52:28 for Éditeur 3D by
+    <li class="footer">Generated on Sat Jul 25 2015 12:26:07 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

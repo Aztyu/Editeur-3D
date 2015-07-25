@@ -7,6 +7,5 @@ var searchData=
   ['onobjectcreation',['OnObjectCreation',['../class_c_event_receiver.html#abd4d447023316eb4263ef31860ae8ef7',1,'CEventReceiver']]],
   ['onobjectselected',['OnObjectSelected',['../class_c_event_receiver.html#a3ecac7bd7526986381d369dc4e56a57a',1,'CEventReceiver']]],
   ['ontoolboxitemselected',['OnToolBoxItemSelected',['../class_c_event_receiver.html#aef8d37570495fc5831313f1216b62681',1,'CEventReceiver']]],
-  ['onvaluechanged',['OnValueChanged',['../class_c_event_receiver.html#a007e23fbe772192014063f9290ab1b92',1,'CEventReceiver']]],
-  ['openfilename',['OpenFileName',['../class_editor.html#aa3a737a6b91a2b01b9f6b1c178c64fa9',1,'Editor']]]
+  ['onvaluechanged',['OnValueChanged',['../class_c_event_receiver.html#a007e23fbe772192014063f9290ab1b92',1,'CEventReceiver']]]
 ];
