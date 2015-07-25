@@ -28,8 +28,11 @@ class Editor {
         //! Creer une zone sans nom specifique.*/
         void createZone();
         
+        //! Supprime toutes les zones pour préparer au chargement de nouvelles zones
         void removeZones();
         
+        //! Supprime une certaine zone du programme et de Irrlicht
+        /** \param zone Le pointeur vers la Zone à supprimer*/
         void removeZone(Zone* zone);
         
         //! Definit la zone actuelle.
@@ -60,10 +63,12 @@ class Editor {
         /** \return Un pointer vers cet Editor utilisé.*/
         Editor* getEditor();
         
+        //! Renvoie le nombre de zones actuellement chargées
+        /** \return Un entier qui indique le nombre de Zone*/
         int getNumberOfZones();
         
         //! Renvoie un pointeur vers la zone actuelle
-        /** \return Un pointer vers la zone actuellement utilisé.*/
+        /** \return Un pointer vers la zone actuellement utilisée.*/
         Zone* getCurrentZone();
         
         //! Nous indique si le nom est deja pris
@@ -74,13 +79,17 @@ class Editor {
         void exportData();
         
         //! Importe toutes les donnees */
-        void importData();
+        bool importData();
         
         //! Importe toutes les zones */
         void importZone(rapidxml::xml_node<> *zone_node);
         
+        //! Appelle la fonction Windows pour ouvrir un fichier existant
+        /** \param prompt Message affiché*/
         std::string OpenFileName(const std::string& prompt);
         
+        //!Appelle la fonction Windows pour créer un nouveau fichier
+        /** \param prompt Message affiché*/
         std::string GetFileName(const std::string& prompt);
 
     private:

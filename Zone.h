@@ -156,6 +156,8 @@ class Zone {
         /** \param isVisible booleen qui definit la visibilite ou non.*/
         void setZoneVisible(bool isVisible);
         
+        void Remove();
+        
         void resetChild();
 
     private:

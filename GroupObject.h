@@ -57,6 +57,7 @@ public:
     /** \param objet Pointeur de l'objet du groupe. */
     void removeMember(SingleObject* objet);
     
+    //! Nettoie le GroupObject de tous SingleObject étant null
     void removeMember();
 
     //! Renvoie le type de la classe.
@@ -67,8 +68,10 @@ public:
     /** \param windows Pointeur vers un TiXmlElement qui represente la base du fichier Xml de sauvegarde. */
     void exportObject(TiXmlElement* windows);
     
+    //! Supprime le scenenode dans Irrlicht, à utiliser seulement si on supprime un seul GroupObject
     void Remove();
     
+    //! Indique à tous les enfant de GroupObject de changer leur parent à NULL 
     void updateChild();
 
 private:

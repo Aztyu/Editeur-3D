@@ -94,6 +94,7 @@ public:
     /** \return True si le SingleObject est dans un groupe, False sinon. */
     bool isInGroup();
     
+     //! Supprime le scenenode dans Irrlicht, à utiliser seulement si on supprime un seule SingleObject
     void Remove();
     
 private:

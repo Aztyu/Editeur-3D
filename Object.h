@@ -121,6 +121,8 @@ public:
     //! Selectionne l'objet en changeant la couleur.
     virtual void selectObject()=0;
     
+    //! Retourne le type d'objet Group ou Single
+    /** \return Une string contenant le type d'objet*/
     virtual std::string getClassType()=0;
     
     //Recuperation d'information

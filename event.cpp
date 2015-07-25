@@ -209,10 +209,10 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
                     MessageText.c_str());
             break;}
         case GUI_ID_LOAD:
-            this->current_editor->removeZones();
-            this->current_editor->importData();
-            this->custom_gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
-            this->custom_gui->updateInformation(this->current_editor->getMainPointer()->camera->getPosition());
+            if(this->current_editor->importData()){
+                this->custom_gui->updateWindow(this->current_editor->getCurrentZone()->getSelectedObject());
+                this->custom_gui->updateInformation(this->current_editor->getMainPointer()->camera->getPosition());
+            }
             break;
         case GUI_ID_SAVE:
             this->current_editor->exportData();

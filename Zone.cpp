@@ -29,7 +29,6 @@ Zone::Zone(const char* name, Pointer* pointer, irr::scene::ISceneNode* obj): zon
 }
 
 Zone::~Zone() {
-    this->zone_mesh->remove();
     for(int i=0; i<this->group_object_array.size(); i++){
         //this->group_object_array[i]->Remove();
         delete this->group_object_array[i];
@@ -498,6 +497,12 @@ void Zone::resetChild() {
         this->group_object_array[i]->updateChild();
     }
 }
+
+void Zone::Remove() {
+    this->zone_mesh->remove();
+    this->zone_mesh = NULL;
+}
+
 
 
 
