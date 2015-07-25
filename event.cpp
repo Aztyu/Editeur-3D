@@ -218,7 +218,12 @@ void CEventReceiver::OnMenuItemSelected(irr::gui::IGUIContextMenu* menu) {
             this->current_editor->exportData();
             break;
         case GUI_ID_DOC:
-            ShellExecute(NULL, "open", "ressources\\documentation\\Documentation.pdf", NULL, NULL, SW_SHOW);
+            irr::core::stringw MessageText = L"Cette fonctionnalité n'est pas encore présente sur cette version du logiciel";
+            irr::core::stringw Caption = L"Message - En chantier";
+            this->current_editor->getMainPointer()->gui->getGUIEnvironment()->addMessageBox(
+                    Caption.c_str(), 
+                    MessageText.c_str());
+            //ShellExecute(NULL, "open", "ressources\\documentation\\Documentation.pdf", NULL, NULL, SW_SHOW);
             break;
     }
 }

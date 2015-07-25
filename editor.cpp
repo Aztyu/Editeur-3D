@@ -175,7 +175,7 @@ bool Editor::importData() {
     cout << "Start" << endl;
     xml_document<> doc;
     xml_node<> * root_node;
-    string path = this->OpenFileName("Charger une sauvegarde");
+    string path =  "";//this->OpenFileName("Charger une sauvegarde");
     if(path != ""){
         ifstream theFile(path.c_str());
         if(theFile){
@@ -206,10 +206,15 @@ bool Editor::importData() {
         }
         return true;
     }else{
-        MessageText = L"Aucun fichier choisi.\nLe chargement n'a pas pu être effectué";
+        /*MessageText = L"Aucun fichier choisi.\nLe chargement n'a pas pu être effectué";
             this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
-                Caption.c_str(), MessageText.c_str());
-            return false;
+                Caption.c_str(), MessageText.c_str());*/
+        irr::core::stringw MessageText = L"Cette fonctionnalité n'est pas encore présente sur cette version du logiciel";
+        irr::core::stringw Caption = L"Message - En chantier";
+        this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
+                Caption.c_str(), 
+                MessageText.c_str());
+        return false;
     }
 }
 
@@ -229,7 +234,7 @@ void Editor::exportData(){
     irr::core::stringw MessageText;
     irr::core::stringw Caption = L"Message - Sauvegarde";
     
-    string path = this->GetFileName("Sauvegarder votre travail");
+    string path = ""; //this->GetFileName("Sauvegarder votre travail");
     if(path != ""){ 
         try{
             TiXmlDocument doc;  
@@ -253,40 +258,13 @@ void Editor::exportData(){
                 Caption.c_str(), MessageText.c_str());
         }
     }else{
-        MessageText = L"Aucun fichier choisi.\nLa sauvegarde n'a pas été effectuée";
+        /*MessageText = L"Aucun fichier choisi.\nLa sauvegarde n'a pas été effectuée";
             this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
-                Caption.c_str(), MessageText.c_str());
+                Caption.c_str(), MessageText.c_str());*/
+        irr::core::stringw MessageText = L"Cette fonctionnalité n'est pas encore présente sur cette version du logiciel";
+            irr::core::stringw Caption = L"Message - En chantier";
+            this->main_pointer->gui->getGUIEnvironment()->addMessageBox(
+                    Caption.c_str(), 
+                    MessageText.c_str());
     }
 } 
-
-string Editor::GetFileName(const string& prompt){ 
-    const int BUFSIZE = 1024;
-    char buffer[BUFSIZE] = {0};
-    OPENFILENAME ofns = {0};
-    ofns.lStructSize = sizeof( ofns );
-    ofns.lpstrFile = buffer;
-    ofns.nMaxFile = BUFSIZE;
-    ofns.lpstrTitle = prompt.c_str();
-    ofns.lpstrFilter = "Save file(.xml)\0*.xml\0";
-    if(GetSaveFileName(&ofns)){
-        return buffer;
-    }else{
-        return "";
-    }
-}
-
-string Editor::OpenFileName(const string& prompt){ 
-    const int BUFSIZE = 1024;
-    char buffer[BUFSIZE] = {0};
-    OPENFILENAME ofns = {0};
-    ofns.lStructSize = sizeof( ofns );
-    ofns.lpstrFile = buffer;
-    ofns.nMaxFile = BUFSIZE;
-    ofns.lpstrTitle = prompt.c_str();
-    ofns.lpstrFilter = "Save file(.xml)\0*.xml\0";
-    if(GetOpenFileName(&ofns)){
-        return buffer;
-    }else{
-        return "";
-    }
-}

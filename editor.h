@@ -84,14 +84,6 @@ class Editor {
         
         //! Importe toutes les zones */
         void importZone(rapidxml::xml_node<> *zone_node);
-        
-        //! Appelle la fonction Windows pour ouvrir un fichier existant
-        /** \param prompt Message affiché*/
-        std::string OpenFileName(const std::string& prompt);
-        
-        //!Appelle la fonction Windows pour créer un nouveau fichier
-        /** \param prompt Message affiché*/
-        std::string GetFileName(const std::string& prompt);
 
     private:
         //! vector qui contient les pointeurs vers toutes les Zones de l'Editor.
