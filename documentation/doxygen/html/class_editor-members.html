@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Éditeur 3D
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Un simple éditeur 3D, projet de fin d&#39;année</div>
   </td>
@@ -124,11 +124,13 @@ $(document).ready(function(){initNavTree('class_editor.html','');});
   <tr><td class="entry"><a class="el" href="class_editor.html#ad8890a2ec176419d55851f52a5ab80f3">getEditor</a>()</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_editor.html#ab60e4275bf10c5eb4e94f466c114e5cf">GetFileName</a>(const std::string &amp;prompt)</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_editor.html#a8f66b9b86990932b9f29d919dfb443a6">getMainPointer</a>()</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_editor.html#af90fdfd9d3d17636cb668d627e30589e">importData</a>()</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_editor.html#a090a87009661930f22e39c75fd67de5e">importZone</a>(rapidxml::xml_node&lt;&gt; *zone_node)</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_editor.html#a29cb0a39b49367d6cc50311747944efe">isNameTaken</a>(std::string name)</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_editor.html#ada0d7701b1702364d0fc73dd7052c4cd">main_pointer</a></td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_editor.html#aa3a737a6b91a2b01b9f6b1c178c64fa9">OpenFileName</a>(const std::string &amp;prompt)</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_editor.html#aece3936191bd4c94e307e89dd6f78e1b">getNumberOfZones</a>()</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_editor.html#a0340dd96efdf82dbc062f46373398b08">importData</a>()</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_editor.html#a090a87009661930f22e39c75fd67de5e">importZone</a>(rapidxml::xml_node&lt;&gt; *zone_node)</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_editor.html#a29cb0a39b49367d6cc50311747944efe">isNameTaken</a>(std::string name)</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_editor.html#ada0d7701b1702364d0fc73dd7052c4cd">main_pointer</a></td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_editor.html#aa3a737a6b91a2b01b9f6b1c178c64fa9">OpenFileName</a>(const std::string &amp;prompt)</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_editor.html#a424ebbdb9aeec2b7c5fe8232bb705bea">removeZone</a>(Zone *zone)</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_editor.html#a6c3c453a5aff5553f5f3cd5402fee366">removeZones</a>()</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_editor.html#a3a66d825ac095e7ed3ba716aadf0f76f">setCurrentZone</a>(Zone *zone)</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_editor.html#a95108d557a16fb164fd2c874882af716">setCurrentZone</a>(int index)</td><td class="entry"><a class="el" href="class_editor.html">Editor</a></td><td class="entry"></td></tr>
@@ -141,7 +143,7 @@ $(document).ready(function(){initNavTree('class_editor.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 15 2015 22:39:03 for Éditeur 3D by
+    <li class="footer">Generated on Sat Jul 25 2015 11:52:28 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

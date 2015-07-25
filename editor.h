@@ -79,6 +79,7 @@ class Editor {
         void exportData();
         
         //! Importe toutes les donnees */
+        /** \return True si des données ont été importées, False sinon*/
         bool importData();
         
         //! Importe toutes les zones */

@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Éditeur 3D
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Un simple éditeur 3D, projet de fin d&#39;année</div>
   </td>
@@ -285,6 +285,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_object.html#ae2e7f745c015b67a580c735609cba5b8">Object</a>
 , <a class="el" href="class_zone.html#af53e41844011994df5caa3f2a60bce67">Zone</a>
 </li>
+<li>getNumberOfZones()
+: <a class="el" href="class_editor.html#aece3936191bd4c94e307e89dd6f78e1b">Editor</a>
+</li>
 <li>getObjectCount()
 : <a class="el" href="class_zone.html#a6147bbd80bbc3a430d7a6e8966a30d38">Zone</a>
 </li>
@@ -341,7 +344,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 : <a class="el" href="class_graphical_interface.html#a528ca719850b04eae306fc2e3a60a245">GraphicalInterface</a>
 </li>
 <li>GroupObject()
-: <a class="el" href="class_group_object.html#a02dad691f25e73bde77e4646d6bf6d9b">GroupObject</a>
+: <a class="el" href="class_group_object.html#a86aedf4e23ec8ec0f7e3a5619b7527c1">GroupObject</a>
 </li>
 <li>groupSelectObject()
 : <a class="el" href="class_single_object.html#a9cd17fcd1f6a12434dbdd839aab4285f">SingleObject</a>
@@ -362,7 +365,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>importData()
-: <a class="el" href="class_editor.html#af90fdfd9d3d17636cb668d627e30589e">Editor</a>
+: <a class="el" href="class_editor.html#a0340dd96efdf82dbc062f46373398b08">Editor</a>
 </li>
 <li>importGroup()
 : <a class="el" href="class_zone.html#ab5ca7a253f5ce5042c78342bf2965655">Zone</a>
@@ -471,11 +474,19 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>Remove()
+: <a class="el" href="class_group_object.html#a5654c86306b8dd072de4f7bac1105a3b">GroupObject</a>
+, <a class="el" href="class_single_object.html#a28bb064dfae252007c6cd64fbc7f1d85">SingleObject</a>
+, <a class="el" href="class_zone.html#af40f6759d6af1d2bd73b382f5bfa677a">Zone</a>
+</li>
+<li>removeAllGroups()
+: <a class="el" href="class_zone.html#a9b9460b0d32c3acfdbe425230ecd0c8f">Zone</a>
+</li>
 <li>removeGroupObject()
 : <a class="el" href="class_zone.html#a1ae4c60f7685e034c55ce75494754b11">Zone</a>
 </li>
 <li>removeMember()
-: <a class="el" href="class_group_object.html#aeb19fcd9c93a8d4fcec71f89dba5e352">GroupObject</a>
+: <a class="el" href="class_group_object.html#ae74c5122084d6f1704012c8ae4e549ce">GroupObject</a>
 </li>
 <li>removeObject()
 : <a class="el" href="class_zone.html#a773f9e6b4e6fba9429dcabc2d4218a3d">Zone</a>
@@ -483,8 +494,14 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>removeSingleObject()
 : <a class="el" href="class_zone.html#a6ee0dd2d8365216fa7841b3db4a76fe3">Zone</a>
 </li>
+<li>removeZone()
+: <a class="el" href="class_editor.html#a424ebbdb9aeec2b7c5fe8232bb705bea">Editor</a>
+</li>
 <li>removeZones()
 : <a class="el" href="class_editor.html#a6c3c453a5aff5553f5f3cd5402fee366">Editor</a>
+</li>
+<li>resetChild()
+: <a class="el" href="class_zone.html#af4d7440f7d1af5b3baba41db1af6e5f0">Zone</a>
 </li>
 </ul>
 
@@ -586,6 +603,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="class_object.html#aabb72e1baac8b58834f0cce5041ce697">Object</a>
 , <a class="el" href="class_single_object.html#a949adf548c2be426cc4d54987eb92f31">SingleObject</a>
 </li>
+<li>updateChild()
+: <a class="el" href="class_group_object.html#abfa02ef85cd3edb965a8ab6f8791c30a">GroupObject</a>
+</li>
 <li>updateGroupObject()
 : <a class="el" href="class_graphical_interface.html#a8a5800ef8df6738199e5cb6f370f29df">GraphicalInterface</a>
 </li>
@@ -656,7 +676,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 15 2015 22:39:03 for Éditeur 3D by
+    <li class="footer">Generated on Sat Jul 25 2015 11:52:28 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

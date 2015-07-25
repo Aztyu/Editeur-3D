@@ -32,7 +32,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Éditeur 3D
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">1.0</span>
    </div>
    <div id="projectbrief">Un simple éditeur 3D, projet de fin d&#39;année</div>
   </td>
@@ -138,8 +138,10 @@ $(document).ready(function(){initNavTree('class_group_object.html','');});
   <tr><td class="entry"><a class="el" href="class_object.html#ae9ff7fea631238ad8263cebffaedd4b4">Object</a>(irr::scene::ISceneNode *obj, const char *name, irr::scene::ISceneNode *parent, const irr::core::vector3df &amp;position)</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_object.html#ae90266171b7af87eea6bca7884268731">object_name</a></td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_object.html#aec7fd614a6532ca343394de846507738">objet</a></td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_group_object.html#aeb19fcd9c93a8d4fcec71f89dba5e352">removeMember</a>(int index)</td><td class="entry"><a class="el" href="class_group_object.html">GroupObject</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_group_object.html#ae74c5122084d6f1704012c8ae4e549ce">removeMember</a>(SingleObject *objet)</td><td class="entry"><a class="el" href="class_group_object.html">GroupObject</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_group_object.html#a5654c86306b8dd072de4f7bac1105a3b">Remove</a>()</td><td class="entry"><a class="el" href="class_group_object.html">GroupObject</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_group_object.html#aeb19fcd9c93a8d4fcec71f89dba5e352">removeMember</a>(int index)</td><td class="entry"><a class="el" href="class_group_object.html">GroupObject</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_group_object.html#ae74c5122084d6f1704012c8ae4e549ce">removeMember</a>(SingleObject *objet)</td><td class="entry"><a class="el" href="class_group_object.html">GroupObject</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_group_object.html#a5e43e891dd196ccf29f732b9b2ed9a99">removeMember</a>()</td><td class="entry"><a class="el" href="class_group_object.html">GroupObject</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_group_object.html#ad78f66261e44c79fde43d6aceacd6849">selectObject</a>()</td><td class="entry"><a class="el" href="class_group_object.html">GroupObject</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_object.html#ae30fea75683c2d149b6b6d17c09ecd0c">setName</a>(std::string name)</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_object.html#a3f791496e7faa8e728268b88f56496d1">setPosition</a>(float x, float y, float z)</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"></td></tr>
@@ -149,14 +151,15 @@ $(document).ready(function(){initNavTree('class_group_object.html','');});
   <tr class="even"><td class="entry"><a class="el" href="class_object.html#aa6851b042761bda5450fceb0b5e98428">setScale</a>(float x, float y, float z)</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_object.html#a3c47902fc8a819248f1f57dba1ba063b">setScale</a>(irr::core::vector3df values)</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_group_object.html#a9f9f33e4e81fc1d5fba5c26f6c073a81">unselectObject</a>()</td><td class="entry"><a class="el" href="class_group_object.html">GroupObject</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_group_object.html#a3c818f9d0e04b760e581461f8bcb08d2">~GroupObject</a>()</td><td class="entry"><a class="el" href="class_group_object.html">GroupObject</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">~Object</a>()</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_group_object.html#abfa02ef85cd3edb965a8ab6f8791c30a">updateChild</a>()</td><td class="entry"><a class="el" href="class_group_object.html">GroupObject</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_group_object.html#a3c818f9d0e04b760e581461f8bcb08d2">~GroupObject</a>()</td><td class="entry"><a class="el" href="class_group_object.html">GroupObject</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_object.html#ae8f5483f459e46687bd01e6f9977afd3">~Object</a>()</td><td class="entry"><a class="el" href="class_object.html">Object</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Jun 15 2015 22:39:03 for Éditeur 3D by
+    <li class="footer">Generated on Sat Jul 25 2015 11:52:28 for Éditeur 3D by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

@@ -10,6 +10,7 @@ var searchData=
   ['getmainpointer',['getMainPointer',['../class_editor.html#a8f66b9b86990932b9f29d919dfb443a6',1,'Editor']]],
   ['getmeshpointer',['getMeshPointer',['../class_zone.html#a7f56ad5ad34acf9eebff997cd5e1cfad',1,'Zone']]],
   ['getname',['getName',['../class_object.html#ae2e7f745c015b67a580c735609cba5b8',1,'Object::getName()'],['../class_zone.html#af53e41844011994df5caa3f2a60bce67',1,'Zone::getName()']]],
+  ['getnumberofzones',['getNumberOfZones',['../class_editor.html#aece3936191bd4c94e307e89dd6f78e1b',1,'Editor']]],
   ['getobjectcount',['getObjectCount',['../class_zone.html#a6147bbd80bbc3a430d7a6e8966a30d38',1,'Zone']]],
   ['getparent',['getParent',['../class_single_object.html#a9a909e76ebd8753b0cd7690d9a4b213b',1,'SingleObject']]],
   ['getpointer',['getPointer',['../class_single_object.html#a71cdfbf291b0114652cc8af68bc9ccd0',1,'SingleObject::getPointer()'],['../class_zone.html#a309b7e12792087ae35e71a3fefad0fe3',1,'Zone::getPointer()']]],
