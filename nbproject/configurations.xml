@@ -69,12 +69,13 @@
         <ccTool>
           <incDir>
             <pElem>../../../../../MinGW/include</pElem>
+            <pElem>libraries/irrlicht-1.8.1/include</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibLibItem>Irrlicht</linkerLibLibItem>
             <linkerLibFileItem>libraries/tinyxml/tinyxml.a</linkerLibFileItem>
+            <linkerLibLibItem>Irrlicht</linkerLibLibItem>
             <linkerLibLibItem>comdlg32</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>

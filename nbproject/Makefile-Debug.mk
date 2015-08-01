@@ -59,7 +59,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lIrrlicht libraries/tinyxml/tinyxml.a -lcomdlg32
+LDLIBSOPTIONS=libraries/tinyxml/tinyxml.a -lIrrlicht -lcomdlg32
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -74,42 +74,42 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/editeur-3d.exe: ${OBJECTFILES}
 ${OBJECTDIR}/GraphicalInterface.o: GraphicalInterface.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GraphicalInterface.o GraphicalInterface.cpp
+	$(COMPILE.cc) -g -I../../../../../MinGW/include -Ilibraries/irrlicht-1.8.1/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GraphicalInterface.o GraphicalInterface.cpp
 
 ${OBJECTDIR}/GroupObject.o: GroupObject.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GroupObject.o GroupObject.cpp
+	$(COMPILE.cc) -g -I../../../../../MinGW/include -Ilibraries/irrlicht-1.8.1/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/GroupObject.o GroupObject.cpp
 
 ${OBJECTDIR}/Object.o: Object.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Object.o Object.cpp
+	$(COMPILE.cc) -g -I../../../../../MinGW/include -Ilibraries/irrlicht-1.8.1/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Object.o Object.cpp
 
 ${OBJECTDIR}/SingleObject.o: SingleObject.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SingleObject.o SingleObject.cpp
+	$(COMPILE.cc) -g -I../../../../../MinGW/include -Ilibraries/irrlicht-1.8.1/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SingleObject.o SingleObject.cpp
 
 ${OBJECTDIR}/Zone.o: Zone.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Zone.o Zone.cpp
+	$(COMPILE.cc) -g -I../../../../../MinGW/include -Ilibraries/irrlicht-1.8.1/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Zone.o Zone.cpp
 
 ${OBJECTDIR}/editor.o: editor.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/editor.o editor.cpp
+	$(COMPILE.cc) -g -I../../../../../MinGW/include -Ilibraries/irrlicht-1.8.1/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/editor.o editor.cpp
 
 ${OBJECTDIR}/event.o: event.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/event.o event.cpp
+	$(COMPILE.cc) -g -I../../../../../MinGW/include -Ilibraries/irrlicht-1.8.1/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/event.o event.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I../../../../../MinGW/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I../../../../../MinGW/include -Ilibraries/irrlicht-1.8.1/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
